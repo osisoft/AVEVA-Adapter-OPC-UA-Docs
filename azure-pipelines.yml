@@ -33,7 +33,7 @@ jobs:
       connection: 'OCS Samples'
       userRepository: 'osisoft/Edge-Adapter'
       defaultVersionType: 'latest'
-      downloadPath: '$(System.ArtifactsDirectory)'
+      downloadPath: '$(Build.SourcesDirectory)/V1/main'
 
 
   - script: |
