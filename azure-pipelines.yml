@@ -28,12 +28,6 @@ jobs:
     displayName: 'rename config file1'
 
 
-- task: DownloadGitHubRelease@0
-  inputs:
-    connection: 'OCS Samples'
-    userRepository: 'osisoft/Edge-Adapter'
-    defaultVersionType: 'latest'
-    downloadPath: '$(System.ArtifactsDirectory)'
 
   - script: |
       dir
@@ -45,6 +39,12 @@ jobs:
     workingDirectory:  '$(Build.SourcesDirectory)/V1/main'
     displayName: 'rename config file1'
 
+  - task: DownloadGitHubRelease@0
+    inputs:
+      connection: 'OCS Samples'
+      userRepository: 'osisoft/Edge-Adapter'
+      defaultVersionType: 'latest'
+      downloadPath: '$(System.ArtifactsDirectory)'
 
   - script: |
       git pull --recurse-submodules
