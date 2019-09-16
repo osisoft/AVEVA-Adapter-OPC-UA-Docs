@@ -16,7 +16,7 @@ jobs:
     inputs:
       versionSpec: 5.1.0
     
--  task: DownloadGitHubRelease@0
+  -  task: DownloadGitHubRelease@0
     inputs:
       connection: 'OCS Samples'
       userRepository: 'osisoft/Edge-Adapter'
