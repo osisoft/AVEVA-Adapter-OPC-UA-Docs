@@ -27,3 +27,7 @@ jobs:
     workingDirectory:  '$(Build.SourcesDirectory)'
     displayName: 'rename config file1'
 
+  - script: |
+      dir
+    workingDirectory:  '$(Build.SourcesDirectory)/V1/main'
+    displayName: 'rename config file1'
