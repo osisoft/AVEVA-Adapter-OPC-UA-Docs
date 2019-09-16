@@ -31,3 +31,8 @@ jobs:
       dir
     workingDirectory:  '$(Build.SourcesDirectory)/V1/main'
     displayName: 'rename config file1'
+
+  - script: |
+      choco install docfx
+    workingDirectory:  '$(Build.SourcesDirectory)'
+    displayName: 'rename config file1'
