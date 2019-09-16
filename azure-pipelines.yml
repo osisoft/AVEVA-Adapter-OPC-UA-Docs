@@ -15,6 +15,12 @@ jobs:
     displayName: 'Use NuGet 5.1.0'
     inputs:
       versionSpec: 5.1.0
+      
+  - script: |
+      git pull --recurse-submodules
+    workingDirectory:  '$(Build.SourcesDirectory)'
+    displayName: 'rename config file1'
+
   - script: |
       dir
     workingDirectory:  '$(Build.SourcesDirectory)'
