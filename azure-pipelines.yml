@@ -15,13 +15,6 @@ jobs:
     displayName: 'Use NuGet 5.1.0'
     inputs:
       versionSpec: 5.1.0
-
-  - task: NuGetCommand@2
-    displayName: 'Install docfx'
-    inputs:
-      command: custom
-      arguments: 'install -ConfigFile .\NuGet.Config docfx.console -Version "2.43.2"'
-
   - script: |
       dir
     workingDirectory:  '$(Build.SourcesDirectory)'
@@ -36,3 +29,10 @@ jobs:
       choco install docfx
     workingDirectory:  '$(Build.SourcesDirectory)'
     displayName: 'rename config file1'
+
+
+  - task: NuGetCommand@2
+    displayName: 'Install docfx'
+    inputs:
+      command: custom
+      arguments: 'install -ConfigFile .\NuGet.Config docfx.console -Version "2.43.2"'
