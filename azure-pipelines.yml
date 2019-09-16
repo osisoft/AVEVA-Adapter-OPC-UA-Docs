@@ -3,8 +3,9 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- master
+
+jobs:      
+- job: DocFX
 
   pool:
     vmImage: 'vs2017-win2016'
@@ -21,20 +22,8 @@ trigger:
       command: custom
       arguments: 'install -ConfigFile .\NuGet.Config docfx.console -Version "2.43.2"'
 
-  - powershell: |
-    Get-ChildItem Env:
-    
-    # Checkout master and pull updates
-    echo "doing checkout"
-    git checkout origin/master
-    
-    echo "doing pull"
-    git pull    
-    
-    displayName: 'Compile DocFX'
-
   - script: |
-      del $(credfileoidcconfig)
-    workingDirectory:  '$(Build.SourcesDirectory)$(configpath)/' 
+      dir
+    workingDirectory:  '$(Build.SourcesDirectory)'
     displayName: 'rename config file1'
 
