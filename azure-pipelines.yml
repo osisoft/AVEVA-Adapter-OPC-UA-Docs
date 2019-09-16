@@ -17,6 +17,33 @@ jobs:
       versionSpec: 5.1.0
       
   - script: |
+      dir
+    workingDirectory:  '$(Build.SourcesDirectory)'
+    displayName: 'rename config file1'
+
+  - script: |
+      dir
+    workingDirectory:  '$(Build.SourcesDirectory)/V1/main'
+    displayName: 'rename config file1'
+- task: DownloadGitHubRelease@0
+  inputs:
+    connection: 'OCS Samples'
+    userRepository: 'osisoft/Edge-Adapter'
+    defaultVersionType: 'latest'
+    downloadPath: '$(Build.SourcesDirectory)/V1/main)'
+      
+  - script: |
+      dir
+    workingDirectory:  '$(Build.SourcesDirectory)'
+    displayName: 'rename config file1'
+
+  - script: |
+      dir
+    workingDirectory:  '$(Build.SourcesDirectory)/V1/main'
+    displayName: 'rename config file1'
+
+
+  - script: |
       git pull --recurse-submodules
     workingDirectory:  '$(Build.SourcesDirectory)'
     displayName: 'rename config file1'
