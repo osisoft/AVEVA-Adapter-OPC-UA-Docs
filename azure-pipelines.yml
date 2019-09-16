@@ -28,12 +28,12 @@ jobs:
     displayName: 'rename config file1'
 
 
-  -  task: DownloadGitHubRelease@0
-    inputs:
-      connection: 'OCS Samples'
-      userRepository: 'osisoft/Edge-Adapter'
-      defaultVersionType: 'latest'
-      downloadPath: '$(Build.SourcesDirectory)/V1/main'
+- task: DownloadGitHubRelease@0
+  inputs:
+    connection: 'OCS Samples'
+    userRepository: 'osisoft/Edge-Adapter'
+    defaultVersionType: 'latest'
+    downloadPath: '$(System.ArtifactsDirectory)'
 
   - script: |
       dir
