@@ -77,6 +77,6 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 ```code
 <AdapterComponentID>.<NamespaceIndex>.<Identifier>
 ```
-NamespaceIndex refers to the number specified in the `ns` keyword in the **RootNodeIds** parameter of the data source configuration. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in data source configuration.
