@@ -141,12 +141,6 @@
 <td>Password for accessing the OPC UA server.<br><br><strong>Note:</strong> OSIsoft recommends using REST to configure the data source when the password must be specified because REST will encrypt the password. If you do not use REST, the plain text password will be stored on-disk. <br><br>Allowed value: any string <br> Default value: <code>null</code></td>
 </tr>
 <tr>
-<td><strong>RootNodeIds</strong></td>
-<td>Optional</td>
-<td><code>string</code></td>
-<td>List of comma-separated NodeIds of those objects from which the adapter browses the OPC UA server address space. This option allows to select only subsets of the OPC UA address by explicitly listing one or more NodeIds which are used to start the initial browse.<br><br>Examples:<br><code>&quot;ns=5;s=85/0:Simulation&quot;</code><br><code>&quot;ns=3;s=DataItems&quot;</code><br><br>If not specified, it means that the whole address space will be browsed. <br><br>Allowed value: comma-separated collection of node Ids<br> Default value: <code>null</code></td>
-</tr>
-<tr>
 <td><strong>IncomingTimestamp</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
@@ -179,7 +173,6 @@
     &quot;UseSecureConnection&quot;: true,
     &quot;UserName&quot;: null,
     &quot;Password&quot;: null,
-    &quot;RootNodeIds&quot;: null,
     &quot;IncomingTimestamp&quot;: &quot;Source&quot;,
     &quot;StreamIdPrefix&quot;: null,
     &quot;DefaultStreamIdPattern&quot;: &quot;{NamespaceIndex}.{Identifier}&quot;
