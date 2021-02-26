@@ -121,9 +121,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/Templates/Markdown Release Notes template-V1.md",
       "output": {
@@ -148,6 +145,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.3/Administration/delete-an-adapter-component.md",
       "output": {
@@ -172,6 +172,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.3/Administration/start-and-stop-an-adapter.md",
       "output": {
@@ -184,6 +187,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.3/Administration/start-and-stop-ingress-component.md",
       "output": {
@@ -505,6 +511,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.3/Installation/install-the-adapter.md",
       "output": {
@@ -553,6 +562,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.3/Troubleshooting/troubleshoot-the-adapter.md",
       "output": {
@@ -725,7 +737,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -740,9 +751,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Administration/retrieve-product-version-information.md",
       "output": {
@@ -755,9 +763,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Administration/start-and-stop-an-adapter.md",
       "output": {
@@ -770,9 +775,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Administration/start-and-stop-ingress-component.md",
       "output": {
@@ -809,9 +811,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Configuration/buffering-configuration.md",
       "output": {
@@ -824,9 +823,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Configuration/configuration-tools.md",
       "output": {
@@ -840,7 +836,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -1034,6 +1029,7 @@
     },
     {
       "log_codes": [
+        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -1048,6 +1044,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Diagnostics/egress-diagnostics.md",
       "output": {
@@ -1060,6 +1059,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Diagnostics/error-rate.md",
       "output": {
@@ -1072,6 +1074,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Diagnostics/io-rate.md",
       "output": {
@@ -1084,6 +1089,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Diagnostics/stream-count.md",
       "output": {
@@ -1096,6 +1104,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Diagnostics/system.md",
       "output": {
@@ -1109,6 +1120,7 @@
     },
     {
       "log_codes": [
+        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -1210,6 +1222,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/Metadata/adapter-metadata.md",
       "output": {
@@ -1246,6 +1261,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1.4/technical-support-and-feedback.md",
       "output": {
@@ -1258,6 +1276,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/ARCHIVE/Adapter diagnostics_old.md",
       "output": {
@@ -1270,6 +1291,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/ARCHIVE/Diagnostics configuration.md",
       "output": {
@@ -1283,6 +1307,7 @@
     },
     {
       "log_codes": [
+        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -1297,6 +1322,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Administration/Administration.md",
       "output": {
@@ -1324,6 +1352,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Administration/retrieve-product-version-information.md",
       "output": {
@@ -1336,6 +1367,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Administration/start-and-stop-an-adapter.md",
       "output": {
@@ -1348,6 +1382,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Administration/start-and-stop-ingress-component.md",
       "output": {
@@ -1420,6 +1457,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Configuration/egress-endpoint-configuration/prepare-egress-destinations.md",
       "output": {
@@ -1444,9 +1484,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Configuration/egress-endpoints-configuration.md",
       "output": {
@@ -1483,9 +1520,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Configuration/logging-configuration.md",
       "output": {
@@ -1510,6 +1544,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Configuration/system-and-adapter-configuration.md",
       "output": {
@@ -1522,6 +1559,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Configuration/system-components-configuration.md",
       "output": {
@@ -1534,6 +1574,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Diagnostics/System.md",
       "output": {
@@ -1547,7 +1590,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -1562,9 +1604,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Diagnostics/egress-diagnostics.md",
       "output": {
@@ -1577,9 +1616,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Diagnostics/error-rate.md",
       "output": {
@@ -1592,6 +1628,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Diagnostics/io-rate.md",
       "output": {
@@ -1604,6 +1643,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Diagnostics/stream-count.md",
       "output": {
@@ -1745,6 +1787,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/Troubleshooting/troubleshoot-the-adapter.md",
       "output": {
@@ -1772,6 +1817,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/pi-adapter-users.md",
       "output": {
@@ -1784,6 +1832,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/Main/V1/technical-support-and-feedback.md",
       "output": {
@@ -1878,9 +1929,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1.2/index.md",
       "output": {
@@ -2025,6 +2073,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/Templates/Markdown Release Notes template-V1.md",
       "output": {
@@ -2053,7 +2104,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -2083,9 +2133,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.3/Administration/start-and-stop-an-adapter.md",
       "output": {
@@ -2098,9 +2145,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.3/Administration/start-and-stop-ingress-component.md",
       "output": {
@@ -2510,9 +2554,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.3/Installation/install-the-adapter.md",
       "output": {
@@ -2582,9 +2623,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.3/Troubleshooting/troubleshoot-the-adapter.md",
       "output": {
@@ -2625,6 +2663,7 @@
     },
     {
       "log_codes": [
+        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -2639,6 +2678,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Administration/retrieve-product-version-information.md",
       "output": {
@@ -2651,6 +2693,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Administration/start-and-stop-an-adapter.md",
       "output": {
@@ -2663,6 +2708,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Administration/start-and-stop-ingress-component.md",
       "output": {
@@ -2699,6 +2747,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Configuration/buffering-configuration.md",
       "output": {
@@ -2711,6 +2762,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Configuration/configuration-tools.md",
       "output": {
@@ -2764,6 +2818,7 @@
     },
     {
       "log_codes": [
+        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -2887,7 +2942,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -2902,9 +2956,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Diagnostics/egress-diagnostics.md",
       "output": {
@@ -2917,9 +2968,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Diagnostics/error-rate.md",
       "output": {
@@ -2932,9 +2980,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Diagnostics/io-rate.md",
       "output": {
@@ -2947,9 +2992,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Diagnostics/stream-count.md",
       "output": {
@@ -2962,9 +3004,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Diagnostics/system.md",
       "output": {
@@ -2978,7 +3017,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -3096,9 +3134,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/Metadata/adapter-metadata.md",
       "output": {
@@ -3138,9 +3173,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1.4/technical-support-and-feedback.md",
       "output": {
@@ -3153,9 +3185,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/ARCHIVE/Adapter diagnostics_old.md",
       "output": {
@@ -3168,9 +3197,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/ARCHIVE/Diagnostics configuration.md",
       "output": {
@@ -3184,7 +3210,6 @@
     },
     {
       "log_codes": [
-        "DuplicateUids",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -3199,9 +3224,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Administration/Administration.md",
       "output": {
@@ -3229,9 +3251,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Administration/retrieve-product-version-information.md",
       "output": {
@@ -3244,9 +3263,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Administration/start-and-stop-an-adapter.md",
       "output": {
@@ -3259,9 +3275,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Administration/start-and-stop-ingress-component.md",
       "output": {
@@ -3319,9 +3332,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Configuration/egress-endpoint-configuration/prepare-egress-destinations.md",
       "output": {
@@ -3334,6 +3344,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Configuration/egress-endpoints-configuration.md",
       "output": {
@@ -3376,6 +3389,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Configuration/logging-configuration.md",
       "output": {
@@ -3403,9 +3419,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Configuration/system-and-adapter-configuration.md",
       "output": {
@@ -3418,9 +3431,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Configuration/system-components-configuration.md",
       "output": {
@@ -3433,9 +3443,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Diagnostics/System.md",
       "output": {
@@ -3448,6 +3455,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Diagnostics/adapter-diagnostics.md",
       "output": {
@@ -3460,6 +3470,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Diagnostics/egress-diagnostics.md",
       "output": {
@@ -3472,6 +3485,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Diagnostics/error-rate.md",
       "output": {
@@ -3484,9 +3500,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Diagnostics/io-rate.md",
       "output": {
@@ -3499,9 +3512,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Diagnostics/stream-count.md",
       "output": {
@@ -3631,9 +3641,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/Troubleshooting/troubleshoot-the-adapter.md",
       "output": {
@@ -3761,9 +3768,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/pi-adapter-users.md",
       "output": {
@@ -3776,9 +3780,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Main/V1/technical-support-and-feedback.md",
       "output": {
@@ -3873,6 +3874,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/index.md",
       "output": {
