@@ -49,7 +49,7 @@ The following table lists OPC UA variable types that the adapter collects data f
 | Integer          | Integer          |
 | UInteger         | UInteger         |
 
-PI Adapter for OPC UA attempts to verify the data type for each data selection item before subscribing it to the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified are added. Other data selection items are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+PI Adapter for OPC UA attempts to verify the data type for each data selection item before subscribing it to the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added. Other data selection items are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
 ## Stream creation
 
