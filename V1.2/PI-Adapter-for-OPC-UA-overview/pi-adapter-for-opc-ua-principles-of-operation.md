@@ -41,11 +41,11 @@ The following table lists OPC UA variable types that the adapter collects data f
 | Int64            | Int64            |
 | UInt64           | UInt64           |
 | Double           | Float64          |
-| Decimal          |                  |  
+| Decimal          | Float32          |  
 | Float            | Float32          |
 | DateTime         | DateTime         |
 | String           | String           |
-| Number           |                  |
+| Number           | variable, depending on the actual value |
 | Integer          | Integer          |
 | UInteger         | UInteger         |
 
