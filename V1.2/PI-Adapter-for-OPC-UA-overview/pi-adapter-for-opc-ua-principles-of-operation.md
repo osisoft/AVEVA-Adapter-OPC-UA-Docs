@@ -51,6 +51,17 @@ The following table lists OPC UA variable types that the adapter collects data f
 
 PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added. Other data selection items are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
+## Enumeration types
+
+PI Adapter for OPC UA supports the following enumeration types:
+
+- MultiStateDiscreteType
+- MultiStateValueDiscreteType
+- TwoStateDiscreteType
+- Any object that has a data type referenced as enumeration type
+
+The adapter reads the enumeration mapping for data selection items that point to any of the enumeration types and sends these items as enums to the OMF endpoints.
+
 ## Stream creation
 
 The OPC UA adapter creates a stream with two properties for each selected OPC UA item. The properties are described in the following table:
