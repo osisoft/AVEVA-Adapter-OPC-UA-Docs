@@ -26,27 +26,35 @@ Complete the following steps to generate the default client settings file:
 
 ## Configure OPC UA client settings
 
-Complete the following steps to configure the OPC UA client settings:
+Complete the following steps to configure OPC UA client settings. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/ClientSettings` REST endpoint to initialize the configuration.
 
-1. Using any text editor, create a file that contains the OPC UA client settings in the JSON format.
-    - For content structure, see [OPC UA client settings example](#opc-ua-client-settings-example).
-    - For all available parameters, see [OPC UA client settings](#opc-ua-client-settings-parameters).
-2. Save the file. For example, `ConfigureClientSettings.json`.
-3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run a `PUT` command to its appropriate endpoint:
+1. Using a text editor, create an empty text file.
 
-    **Note:** The following example uses OpcUa1 as the adapter component name. For more information on how to add a component, see [System components configuration](xref:SystemComponentsConfiguration1-3).
-  
-    `5590` is the default port number. If you selected a different port number, replace it with that value.
+2. Copy and paste an example configuration for OPC UA client settings into the file.
 
-    **PUT** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/ClientSettings/`
+    For sample JSON, see [OPC UA client settings example](#opc-ua-client-settings-example).
 
-      Example using `curl`:
+3. Update the example JSON parameters for your environment.
+
+    For a table of all available parameters, see [OPC UA client settings parameters](#opc-ua-client-settings-parameters).
+
+4. Save the file. For example, as `ConfigureDataSource.json`.
+
+5. Open a command line session. Change directory to the location of `ConfigureDataSource.json`.
+
+6. Enter the following cURL command (which uses the `PUT` method) to initialize the data source configuration.
 
     ```bash
-    curl -d "@ConfigureClientSettings.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/OpcUa1/ClientSettings"
+    curl -d "@ConfigureDataSource.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/OpcUa1/ClientSettings"
     ```
 
-    **Note:** Run this command from the same directory where the file is located.
+    **Notes:**
+  
+    * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
+    * If you use a component ID other than `OpcUa1`, update the endpoint with your chosen component ID.
+    * For a list of other REST operations you can perform, like updating or deleting a data source configuration, see [REST URLs](#rest-urls).
+    <br/>
+    <br/>
 
 ## OPC UA client settings schema
 
