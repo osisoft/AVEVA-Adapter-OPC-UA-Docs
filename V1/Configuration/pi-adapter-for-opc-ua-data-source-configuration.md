@@ -38,7 +38,7 @@ Complete the following steps to configure an OPC UA data source. Use the `PUT` m
     <br/>
     <br/>
 
-7. Configure data source.
+7. Configure data selection.
 
 ## OPC UA data source schema
 

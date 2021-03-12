@@ -77,7 +77,6 @@ Complete the following steps to configure an OPC UA data selection. Use the `PUT
     <br/>
     <br/>
 
-
 ## OPC UA data selection schema
 
 The full schema definition for the OPC UA data selection configuration is in the `OpcUa_DataSelection_schema.json` file located in one of the following folders:
