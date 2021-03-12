@@ -80,7 +80,7 @@ The following parameters are available for configuring OPC UA client settings:
 | **PublishingInterval**      | Optional | `TimeSpan` | Publishing interval of the subscription. * <br><br> Allowed value: cannot be negative <br> Default value: `0:00:01`|
 | **CreateMonitoredItemsTimeout**      | Optional | `TimeSpan` | Create monitored items timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30`|
 | **SamplingInterval**      | Optional | `TimeSpan` | Monitored item sampling interval. * <br><br>Allowed value: cannot be negative <br>Default value: `0:00:00:5` |
-| **MonitoredItemDataChangeTrigger** | Optional | `integer` | Determines how a subscription sends new values <br><br> Allowed values: `Status`, `StatusValue`, `StatusValueTimestamp` <br>Default value: `StatusValue`
+| **MonitoredItemDataChangeTrigger** | Optional | `integer` | Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: `Status`, `StatusValue`, `StatusValueTimestamp` <br>Default value: `StatusValue`
 | **MonitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. <br><br>Minimum value: `1`<br> Maximum value: `429496729` <br>Default value: `2`|
 | **MaxInternalQueueSize**      | Optional | `integer` | Maximum number of items that can be in the adapter internal queue. <br><br>Minimum value: `1000`<br>Maximum value: `2147483647`<br>Default value: `500000` |
 
