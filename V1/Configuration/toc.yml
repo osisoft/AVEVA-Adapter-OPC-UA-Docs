@@ -25,3 +25,5 @@
   href: ../main/V1/Configuration/buffering-configuration.md
 - name: Logging configuration
   href: ../main/V1/Configuration/logging-configuration.md
+- name: PI Adapter for OPC UA configuration examples
+  href: pi-adapter-for-opc-ua-configuration-examples.md
