@@ -224,6 +224,12 @@
 <td>Monitored item sampling interval. * <br><br>Allowed value: cannot be negative <br>Default value: <code>0:00:00:5</code></td>
 </tr>
 <tr>
+<td><strong>MonitoredItemDataChangeTrigger</strong></td>
+<td>Optional</td>
+<td><code>integer</code></td>
+<td>Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: <code>Status</code>, <code>StatusValue</code>, <code>StatusValueTimestamp</code> <br>Default value: <code>StatusValue</code></td>
+</tr>
+<tr>
 <td><strong>MonitoredItemQueueSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
@@ -256,6 +262,7 @@
     &quot;publishingInterval&quot;: &quot;0:00:01&quot;,
     &quot;createMonitoredItemsTimeout&quot;: &quot;0:00:30&quot;,
     &quot;samplingInterval&quot;: &quot;0:00:00.5&quot;,
+    &quot;monitoredItemDataChangeTrigger&quot;: &quot;StatusValue&quot;,
     &quot;monitoredItemQueueSize&quot;: 2,
     &quot;maxInternalQueueSize&quot;: 500000
 }
