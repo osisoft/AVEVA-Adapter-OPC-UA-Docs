@@ -40,6 +40,8 @@ Complete the following steps to configure an OPC UA data source. Use the `PUT` m
 
 7. Configure data selection.
 
+    For more information, see [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration1-2)
+
 ## OPC UA data source schema
 
 The full schema definition for the OPC UA data source configuration is in the `OpcUa_DataSource_schema.json` file located in one of the following folders:
