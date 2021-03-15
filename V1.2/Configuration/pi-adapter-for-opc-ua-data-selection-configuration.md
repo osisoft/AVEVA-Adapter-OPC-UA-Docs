@@ -47,39 +47,35 @@ Complete the following steps to generate a default data selection file:
 
 ## Configure OPC UA data selection
 
-**Note:** You cannot modify OPC UA data selection configurations manually. You must use the REST endpoints to add or edit the configuration.
+Complete the following steps to configure an OPC UA data selection. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/DataSelection` REST endpoint to initialize the configuration.
 
-Complete the following steps to configure the OPC UA data selection:
+1. Using a text editor, create an empty text file.
 
-1. Use any text editor to create a file that contains an OPC UA data selection in the JSON format.
-    - For content structure, see [OPC UA data selection example](#opc-ua-data-selection-example).
-    - For a table of all available parameters, see [OPC UA data selection](#opc-ua-data-selection-parameters).
-2. Save the file. For example, `ConfigureDataSelection.json`.
-3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run either a POST or PUT command to their appropriate endpoint:
+2. Copy and paste an example configuration for an OPC UA data selection into the file.
 
-    **Note:** The following examples use OpcUa1 as the adapter component name. For more information on how to add a component, see [System components configuration](xref:SystemComponentsConfiguration1-3).
+    For sample JSON, see [OPC UA data selection examples](#opc-ua-data-selection-examples).
+
+3. Update the example JSON parameters for your environment.
+
+    For a table of all available parameters, see [OPC UA data selection parameters](#opc-ua-data-selection-parameters).
+
+4. Save the file. For example, as `ConfigureDataSelection.json`.
+
+5. Open a command line session. Change directory to the location of `ConfigureDataSelection.json`.
+
+6. Enter the following cURL command (which uses the `PUT` method) to initialize the data selection configuration.
+
+    ```bash
+    curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection"
+    ```
+
+    **Notes:**
   
-    `5590` is the default port number. If you selected a different port number, replace it with that value.
-
-    - **POST** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/DataSelection/`
-
-      Example using `curl`:
-
-      ```bash
-      curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection"
-      ```
-
-      **Note:** Run this command from the same directory where the file is located.
-
-    - **PUT** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/DataSelection/<StreamId>`
-
-      Example using `curl`:
-
-        ```bash
-        curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection/ns=5;s=Random1"
-        ```
-
-        **Note:** Run this command from the same directory where the file is located.
+    * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
+    * If you use a component ID other than `OpcUa1`, update the endpoint with your chosen component ID.
+    * For a list of other REST operations you can perform, like updating or deleting a data selection configuration, see [REST URLs](#rest-urls).
+    <br/>
+    <br/>
 
 ## OPC UA data selection schema
 
@@ -101,7 +97,7 @@ The following parameters are available for configuring an OPC UA data selection:
 | **StreamID** | Optional | `string` | The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores ("__").<br>Can contain a maximum of 100 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % < > &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods. |
 | **DataFilterID** | Optional | `string` | Enables data filtering for this data selection item if the ID of a data filter is specified. If no value is specified or set to null, all read values are output without filtering.
 
-## OPC UA data selection example
+## OPC UA data selection examples
 
 The following are examples of valid OPC UA data selection configurations:
 ### Minimal data selection configuration
