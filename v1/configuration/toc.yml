@@ -1,8 +1,8 @@
 - name: Configuration tools
-  href: ../main/v1/Configuration/configuration-tools.md
+  href: ../main/v1/configuration/configuration-tools.md
 - name: System components configuration
-  href: ../main/v1/Configuration/System configuration/toc.yml
-  topicHref: ../main/v1/Configuration/system-components-configuration.md
+  href: ../main/v1/configuration/system-configuration/toc.yml
+  topicHref: ../main/v1/configuration/system-components-configuration.md
 - name: PI Adapter for OPC UA data source configuration 
   href: pi-adapter-for-opc-ua-data-source-configuration.md
 - name: PI Adapter for OPC UA client settings configuration
@@ -10,20 +10,20 @@
 - name: PI Adapter for OPC UA data selection configuration
   href: pi-adapter-for-opc-ua-data-selection-configuration.md
 - name: Data filters configuration
-  href: ../main/v1/Configuration/data-filters-configuration.md
+  href: ../main/v1/configuration/data-filters-configuration.md
 - name: PI Adapter for OPC UA security configuration
   href: pi-adapter-for-opc-ua-security-configuration.md
 - name: Egress endpoints configuration
-  href: ../main/v1/Configuration/egress-endpoint-configuration/toc.yml
-  topicHref: ../main/v1/Configuration/egress-endpoints-configuration.md
+  href: ../main/v1/configuration/egress-endpoint-configuration/toc.yml
+  topicHref: ../main/v1/configuration/egress-endpoints-configuration.md
 - name: Health endpoint configuration
-  href: ../main/v1/Configuration/health-endpoint-configuration.md
+  href: ../main/v1/configuration/health-endpoint-configuration.md
 - name: General configuration
-  href: ../main/v1/Metadata/toc.yml
-  topicHref: ../main/v1/Configuration/general-configuration.md
+  href: ../main/v1/metadata/toc.yml
+  topicHref: ../main/v1/configuration/general-configuration.md
 - name: Buffering configuration
-  href: ../main/v1/Configuration/buffering-configuration.md
+  href: ../main/v1/configuration/buffering-configuration.md
 - name: Logging configuration
-  href: ../main/v1/Configuration/logging-configuration.md
+  href: ../main/v1/configuration/logging-configuration.md
 - name: PI Adapter for OPC UA configuration examples
   href: pi-adapter-for-opc-ua-configuration-examples.md
