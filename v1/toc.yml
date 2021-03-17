@@ -4,20 +4,20 @@
   homepage: index.md
 - name: Installation
   href: Installation/toc.yml
-  topicHref: main/V1/Installation/installation.md
+  topicHref: main/v1/Installation/installation.md
 - name: Configuration
   href: Configuration/toc.yml
   topicHref: Configuration/configuration.md
 - name: Administration
-  href: main/V1/Administration/toc.yml
-  topicHref: main/V1/Administration/administration.md
+  href: main/v1/Administration/toc.yml
+  topicHref: main/v1/Administration/administration.md
 - name: Health and diagnostics
-  href: main/V1/Health/toc.yml
-  topicHref: main/V1/Health/health-and-diagnostics.md
+  href: main/v1/Health/toc.yml
+  topicHref: main/v1/Health/health-and-diagnostics.md
 - name: Troubleshooting
   href: Troubleshooting/toc.yml
-  topicHref: main/V1/Troubleshooting/troubleshoot-the-adapter.md
+  topicHref: main/v1/Troubleshooting/troubleshoot-the-adapter.md
 - name: Release notes
   href: Release-notes/release-notes.md
 - name: Technical support and feedback
-  href: main/V1/technical-support-and-feedback.md
+  href: main/v1/technical-support-and-feedback.md
