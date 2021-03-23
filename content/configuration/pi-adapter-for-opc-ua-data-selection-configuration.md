@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUADataSelectionConfiguration1-2
+uid: PIAdapterForOPCUADataSelectionConfiguration
 ---
 
 # PI Adapter for OPC UA data selection configuration
@@ -18,9 +18,9 @@ A default OPC UA data selection file will be created if there is no OPC UA data 
 
 Complete the following steps to generate a default data selection file:
 
-1. Add an OPC UA adapter with a unique ComponentId. For more information, see [System components configuration](xref:SystemComponentsConfiguration1-3).
+1. Add an OPC UA adapter with a unique ComponentId. For more information, see [System components configuration](xref:SystemComponentsConfiguration).
   
-2. Configure a valid OPC UA data source. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration1-2).
+2. Configure a valid OPC UA data source. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
 
    Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.
   

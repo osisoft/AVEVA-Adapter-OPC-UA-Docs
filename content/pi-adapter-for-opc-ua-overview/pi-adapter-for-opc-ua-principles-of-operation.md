@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAPrinciplesOfOperation1-2
+uid: PIAdapterForOPCUAPrinciplesOfOperation
 ---
 
 # PI Adapter for OPC UA principles of operation
@@ -14,13 +14,13 @@ For the OPC UA adapter to start data collection, configure the following:
 - Data selection: Select the OPC UA items to which the adapter should subscribe for data.
 - Logging: Set up the logging attributes to manage the adapter logging behavior.
 
-For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration1-2) and [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration1-2).
+For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration) and [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration).
 
 ## Connection
 
 The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secured connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establishes a secured connection.
 
-For more information on secure connections, see [PI Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration1-2).
+For more information on secure connections, see [PI Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration).
 
 ## Data collection
 
@@ -81,7 +81,7 @@ Metadata specific to the OPC UA adapter are
 - **BrowseName**: The browse name as provided by the OPC UA server
 - **SourceId**: The NodeId provided by the OPC UA server
 
-**Note:** A configured metadata level allows you to set the amount of metadata for the adapter. Specify the metadata level in [General configuration](xref:GeneralConfiguration1-3). For the OPC UA adapter, the following metadata is sent for the individual level:
+**Note:** A configured metadata level allows you to set the amount of metadata for the adapter. Specify the metadata level in [General configuration](xref:GeneralConfiguration). For the OPC UA adapter, the following metadata is sent for the individual level:
 
 - `None`: No metadata
 - `Low`: AdapterType (ComponentType) and DataSource (ComponentId)
@@ -93,6 +93,6 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 ```code
 <AdapterComponentID>.<NamespaceIndex>.<Identifier>
 ```
-NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration1-2#opc-ua-data-source-parameters).
+NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in data source configuration.

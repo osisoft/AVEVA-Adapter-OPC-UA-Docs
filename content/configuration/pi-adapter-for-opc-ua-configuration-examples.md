@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAConfigurationExamples1-2
+uid: PIAdapterForOPCUAConfigurationExamples
 ---
 
 # PI Adapter for OPC UA configuration examples

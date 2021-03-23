@@ -1,5 +1,5 @@
 ---
-uid: ReleaseNotes1-2
+uid: ReleaseNotes
 ---
 
 # Release notes
@@ -10,7 +10,7 @@ PI Adapter for OPC UA 1.1
 
 This represents the initial standalone release for PI Adapter for OPC UA. This product collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, automatic discovery of available data items on a data source, and various Windows and Linux-based operating systems as well as containerization.
 
-For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview1-2).
+For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
 
 ## Known issues
 
@@ -18,15 +18,15 @@ There are no known issues at this time.
 
 ## System requirements
 
-Refer to [System requirements](xref:SystemRequirements1-2).
+Refer to [System requirements](xref:SystemRequirements).
 
 ## Installation
 
-Refer to [Install the adapter](xref:InstallTheAdapter1-3).
+Refer to [Install the adapter](xref:InstallTheAdapter).
 
 ## Uninstallation
 
-Refer to [Uninstall the adapter](xref:UninstallTheAdapter1-3).
+Refer to [Uninstall the adapter](xref:UninstallTheAdapter).
 
 ## Security information and guidance
 
@@ -54,4 +54,4 @@ No security-related information is applicable to this release.
 
 ## Technical support and resources
 
-Refer to [Technical support and feedback](xref:TechnicalSupportAndFeedback1-3).
+Refer to [Technical support and feedback](xref:TechnicalSupportAndFeedback).

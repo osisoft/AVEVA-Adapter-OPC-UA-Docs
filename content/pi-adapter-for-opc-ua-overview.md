@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAOverview1-2
+uid: PIAdapterForOPCUAOverview
 ---
 
 # PI Adapter for OPC UA overview

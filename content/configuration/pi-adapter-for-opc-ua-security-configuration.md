@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUASecurityConfiguration1-2
+uid: PIAdapterForOPCUASecurityConfiguration
 ---
 
 # PI Adapter for OPC UA security configuration
@@ -12,7 +12,7 @@ The adapter generates a self-signed certificate when the first secure connection
 
 Complete the following steps to configure adapter security:
 
-1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration1-2).
+1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
 
    The adapter verifies whether the server certificate is present in the [adapter trusted certificates](#adapter-trusted-certificates) and hence trusts it. In case the certificates were not exchanged before the first attempted connection, the adapter persists the server certificate within the [adapter rejected certificates](#adapter-rejected-certificates) folder. The following warning message about the rejected server certificate will be printed:
 
