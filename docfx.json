@@ -20,10 +20,7 @@
       {
         "files": [
           "content/**/toc.yml",
-          "content/**/toc.yml",
           "content/**/**.md",
-          "content/**/**.md",
-          "content/toc.yml",
           "content/toc.yml",
           "toc.yml",
           "**.md"
@@ -32,7 +29,7 @@
     ],
     "resource": [
       {
-        "files": ["content/images/**", "content/main/shared-content/images/**", "content/images/**", "content/main/shared-content/images/**" ]
+        "files": ["content/images/**", "content/main/shared-content/images/**" ]
       }
     ],
     "overwrite": [

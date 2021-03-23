@@ -1,6 +1,3 @@
 [submodule "content/main"]
 	path = content/main
 	url = ../PI-Adapter.git
-[submodule "content/Main"]
-	path = content/Main
-	url = ../PI-Adapter.git
