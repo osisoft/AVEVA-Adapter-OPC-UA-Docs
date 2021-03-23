@@ -8,7 +8,7 @@ To troubleshoot issues with PI Adapter for OPC UA, you can check the adapter's c
 
 ## Check configurations
 
-1. In the [data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration), verify that the configured **EndpointURL** and **RootNodeIds**, and if specified, the **UserName** and **Password** are correct.
+1. In the [data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration), verify that the configured **EndpointURL** and, if specified, the **UserName** and **Password** are correct.
 2. In the [data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration), verify that each configured data selection item below is correct.
 
     1. **NodeId** - Verify that the referenced root node exists in the data source configuration.

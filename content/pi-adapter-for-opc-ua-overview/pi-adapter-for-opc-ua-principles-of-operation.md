@@ -33,7 +33,6 @@ The following table lists OPC UA variable types that the adapter collects data f
 | OPC UA data type | Stream data type |
 |------------------|------------------|
 | Boolean          | Boolean          |
-| Byte             | Int16            |
 | SByte            | Int16            |
 | Int16            | Int16            |
 | UInt16           | UInt16           |
@@ -41,10 +40,27 @@ The following table lists OPC UA variable types that the adapter collects data f
 | UInt32           | UInt32           |
 | Int64            | Int64            |
 | UInt64           | UInt64           |
-| Float            | Float32          |
 | Double           | Float64          |
+| Decimal          | Float32          |  
+| Float            | Float32          |
 | DateTime         | DateTime         |
 | String           | String           |
+| Number           | variable, depending on the actual value |
+| Integer          | Integer          |
+| UInteger         | UInteger         |
+
+PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added. Other data selection items are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+
+## Enumeration types
+
+PI Adapter for OPC UA supports the following enumeration types:
+
+- MultiStateDiscreteType
+- MultiStateValueDiscreteType
+- TwoStateDiscreteType
+- Any object that has a data type referenced as enumeration type
+
+The adapter reads the enumeration mapping for data selection items that point to any of the enumeration types and sends these items as enums to the OMF endpoints.
 
 ## Stream creation
 
@@ -53,7 +69,7 @@ The OPC UA adapter creates a stream with two properties for each selected OPC UA
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
 | Timestamp     | DateTime  | Timestamp of the given OPC UA item value update. |
-| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update. |
+| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value.<br><br>**Note:**<br>For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in OCS and the **Zero**/**Span** properties in PI Web API are populated.<br>For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in OCS and the **Eng Units** property in PI Web API are populated.  |
 
 The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are
 

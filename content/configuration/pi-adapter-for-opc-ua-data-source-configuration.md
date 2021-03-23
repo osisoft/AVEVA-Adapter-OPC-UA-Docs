@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUADataSourceConfiguration1-2
+uid: PIAdapterForOPCUADataSourceConfiguration
 ---
 
 # PI Adapter for OPC UA data source configuration
@@ -40,7 +40,7 @@ Complete the following steps to configure an OPC UA data source. Use the `PUT` m
 
 7. Configure data selection.
 
-    For more information, see [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration1-2)
+    For more information, see [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration)
 
 ## OPC UA data source schema
 

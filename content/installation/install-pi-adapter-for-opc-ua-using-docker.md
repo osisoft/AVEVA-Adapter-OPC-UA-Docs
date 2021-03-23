@@ -1,11 +1,11 @@
 ---
-uid: InstallPIAdapterForOPCUAUsingDocker1-2
+uid: InstallPIAdapterForOPCUAUsingDocker
 ---
 
 # Install PI Adapter for OPC UA using Docker
 Docker is a set of tools that you can use on Linux to manage application deployments.
 
-**Note:** If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the OPC UA adapter. Docker is not a requirement to use OPC UA adapter. For more information on how to install the adapter without Docker, see [Install the adapter](xref:InstallTheAdapter1-3).
+**Note:** If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the OPC UA adapter. Docker is not a requirement to use OPC UA adapter. For more information on how to install the adapter without Docker, see [Install the adapter](xref:InstallTheAdapter).
 
 This topic provides examples of how to create a Docker container with the OPC UA adapter.
 
