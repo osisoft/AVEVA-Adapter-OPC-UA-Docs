@@ -14,7 +14,7 @@ For more information on PI adapter configuration tools, see [Configuration tools
 
 Complete the following steps to establish a data flow from an OPC UA data source device to a data endpoint.
 
-1. Configure one or several OPC UA system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#add-a-system-component).
+1. Configure one or several OPC UA system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#configure-system-components).
 
 2. Configure an OPC UA data source for each OPC UA device.<br>See [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#configure-opc-ua-data-source).
 
