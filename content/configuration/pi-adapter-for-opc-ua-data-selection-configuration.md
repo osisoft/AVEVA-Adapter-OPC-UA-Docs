@@ -152,4 +152,4 @@ The following are examples of valid OPC UA data selection configurations:
 | api/v1/configuration/\<ComponentId\>/DataSelection/\<StreamId\> | `PUT` | Updates or creates a new data selection item by **StreamId**. For new items, the adapter starts collecting data after the request is received. |
 | api/v1/configuration/\<ComponentId\>/DataSelection/\<StreamId\> | `DELETE` | Deletes a data selection item from the configuration by **StreamId**. The adapter stops collecting data for the deleted item. |
 
-**Note:** Replace \<ComponentId\> with the Id of your OPC UA component, for example OpcUa1.
+**Note:** Replace \<ComponentId\> with the Id of your OPC UA component, for example _OpcUa1_.
