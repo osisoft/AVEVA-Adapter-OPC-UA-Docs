@@ -7,6 +7,9 @@
   href: pi-adapter-for-opc-ua-data-source-configuration.md
 - name: PI Adapter for OPC UA client settings configuration
   href: pi-adapter-for-opc-ua-client-settings-configuration.md
+- name: History recovery
+  href: ../main/shared-content/configuration/history-recovery/toc.yml
+  topicHref: ../main/shared-content/configuration/history-recovery.md
 - name: PI Adapter for OPC UA data selection configuration
   href: pi-adapter-for-opc-ua-data-selection-configuration.md
 - name: Data filters configuration
