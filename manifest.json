@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/agent/_work/1/s",
+  "source_base_path": "C:/Agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-opc-ua-data-selection-configuration.html",
-          "hash": "piAJ5DlMqdZ8zK8wkxkHtA=="
+          "hash": "w5CThSbi3HZMBr8bcHye+w=="
         }
       },
       "is_incremental": false,
