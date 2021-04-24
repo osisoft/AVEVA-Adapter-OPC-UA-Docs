@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Agent/_work/1/s",
+  "source_base_path": "C:/agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -694,7 +694,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/introduction-to-pi-adapters.html",
-          "hash": "zqTytxKC9rcg3tkSLP/pHQ=="
+          "hash": "5Jj6wQg0I762n12sSBWNQg=="
         }
       },
       "is_incremental": false,
@@ -718,7 +718,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/pi-adapter-users.html",
-          "hash": "xh0hLcvtUKLhIka8P1mMEQ=="
+          "hash": "3AO4wRoxqeoYLO27u+Nd6A=="
         }
       },
       "is_incremental": false,
