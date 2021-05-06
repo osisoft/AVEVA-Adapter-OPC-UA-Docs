@@ -22,7 +22,7 @@ This Quick Start guides you through setup of each configuration file available f
 
 3. **Optional**: Configure client settings.<br> See [PI Adapter for OPC UA client settings configuration](xref:PIAdapterForOPCUAClientSettingsConfiguration#configure-opc-ua-client-settings).
 
-4. Configure an OPC UA data selection for each OPC UA data source.<br>See [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).<br><br>**Note:** If you do not configure data selection, a default OPC UA data selection file will be created if the OPC UA data source is valid.
+4. Configure an OPC UA data selection for each OPC UA data source.<br>See [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).<br>**Note:** If you do not configure data selection, a default OPC UA data selection file will be created if the OPC UA data source is valid.
 
 5. **Optional**: Configure data filters and security<br>See the following topics:
 
