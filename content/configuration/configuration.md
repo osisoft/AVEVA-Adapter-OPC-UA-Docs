@@ -24,13 +24,12 @@ This Quick Start guides you through setup of each configuration file available f
 
 4. Configure an OPC UA data selection for each OPC UA data source.<br>See [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).<br><br>**Note:** If you do not configure data selection, a default OPC UA data selection file will be created if the OPC UA data source is valid.
 
-5. **Optional**: Configure data filters, security, and if there is a proxy between the adapter and your egress endpoints, define it.<br>See the following topics:
+5. **Optional**: Configure data filters and security<br>See the following topics:
 
-- [Data filters configuration](xref:DataFiltersConfiguration#configure-data-filters)
-- [PI Adapter for OPC UA security configuration](xref:pi-adapter-for-opc-ua-security-configuration#configure-opc-ua-adapter-security) 
-- [Configure a network proxy](xref:ConfigureANetworkProxy)
+    - [Data filters configuration](xref:DataFiltersConfiguration#configure-data-filters)
+    - [PI Adapter for OPC UA security configuration](xref:pi-adapter-for-opc-ua-security-configuration#configure-opc-ua-adapter-security)
 
-6. Configure one or several egress endpoints.<br>See [Egress endpoints configuration](xref:EgressEndpointsConfiguration).
+6. Configure one or several egress endpoints.<br>See [Egress endpoints configuration](xref:EgressEndpointsConfiguration#configure-egress-endpoints).
 
 7. **Optional**: Configure health endpoints, general (diagnostics and metadata), buffering, and logging. See the following topics:
 
