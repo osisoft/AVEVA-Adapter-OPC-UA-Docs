@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "arws7wkOaafnr6ACFOzJLw=="
+          "hash": "OVKE1kykujy1DdSXsQT5Ew=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "content/ARCHIVE/OSIsoft Adapter for OPC UA supported features.html",
-          "hash": "FQD+pirHjstHtOmwYUxLHA=="
+          "hash": "nJqQ2/Ax5IzqB3i8mVq/6Q=="
         }
       },
       "is_incremental": false,
@@ -42,19 +42,22 @@
       "output": {
         ".html": {
           "relative_path": "content/README.html",
-          "hash": "/S9JQrpc9wZLXF7fTJmk4A=="
+          "hash": "FygPumfERmsyji5uwmiWBA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "content/configuration/configuration.md",
       "output": {
         ".html": {
           "relative_path": "content/configuration/configuration.html",
-          "hash": "ks22M/u6l7kXaG2V/tc26A=="
+          "hash": "vUoPPZFBxI6C0PXTZQ6HIA=="
         }
       },
       "is_incremental": false,
@@ -66,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-opc-ua-client-settings-configuration.html",
-          "hash": "gTWK7LYiL4W58hHSnphH4A=="
+          "hash": "2rIsrV9nmRIa8ppD5rAFzg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-opc-ua-configuration-examples.html",
-          "hash": "Yrh8FTLQ27PNRB3VQvTg+A=="
+          "hash": "bvfLfUzkf6kJnfVELBj1fg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-opc-ua-data-selection-configuration.html",
-          "hash": "w5CThSbi3HZMBr8bcHye+w=="
+          "hash": "YAHk8WNuNJs11fGHjfpveQ=="
         }
       },
       "is_incremental": false,
@@ -102,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-opc-ua-data-source-configuration.html",
-          "hash": "0fWnn7QOu8/s4CwPlEyqeQ=="
+          "hash": "hrx8+3Nqp+zvuC+D8CKlXA=="
         }
       },
       "is_incremental": false,
@@ -114,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-opc-ua-security-configuration.html",
-          "hash": "W9qUPCVJkJ2vtYHyOSvlDg=="
+          "hash": "RH+B6Gg6L1UVCti9qBa83A=="
         }
       },
       "is_incremental": false,
@@ -148,7 +151,7 @@
       "output": {
         ".html": {
           "relative_path": "content/index.html",
-          "hash": "vblg56fr+0WasOzc1Oe0FQ=="
+          "hash": "IkLiQbs35m1XrFCGN0D1WA=="
         }
       },
       "is_incremental": false,
@@ -160,7 +163,7 @@
       "output": {
         ".html": {
           "relative_path": "content/installation/install-pi-adapter-for-opc-ua-using-docker.html",
-          "hash": "HIwA6Hp+fHASV+JsA15CLA=="
+          "hash": "C7jhJi7klW1JJpBjj86jPg=="
         }
       },
       "is_incremental": false,
@@ -172,7 +175,7 @@
       "output": {
         ".html": {
           "relative_path": "content/installation/system-requirements.html",
-          "hash": "SX4PsRc2c7Fe99z3L9KPtw=="
+          "hash": "ELII/N4ToStXSLjshjjg8A=="
         }
       },
       "is_incremental": false,
@@ -184,7 +187,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/README.html",
-          "hash": "SpTOVQqGo2Y3PdptZytGlg=="
+          "hash": "cbODMjEKoClefW64Rnad4A=="
         }
       },
       "is_incremental": false,
@@ -196,7 +199,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/Templates/Markdown Release Notes template-V1.html",
-          "hash": "bHDYEG/UlMBWjYE/eOnoDg=="
+          "hash": "Z/bH+JQaWcqr7aBA0/FaEw=="
         }
       },
       "is_incremental": false,
@@ -208,7 +211,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/ARCHIVE/Adapter diagnostics_old.html",
-          "hash": "KHcYeyM1MMrHJy0BGmjxrw=="
+          "hash": "eYOHK19oLxhYuRl4dOJsgA=="
         }
       },
       "is_incremental": false,
@@ -220,7 +223,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/ARCHIVE/Diagnostics configuration.html",
-          "hash": "ZrDjWdAdREIl5YIBWI5pYQ=="
+          "hash": "GymO+I2SuNrG+94ymN3Izw=="
         }
       },
       "is_incremental": false,
@@ -235,7 +238,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/ARCHIVE/Egress_DataEndpoints_schema.html",
-          "hash": "5xc1YxCL2y/ZceG/fty+YA=="
+          "hash": "DBDBC+10FKuQGP5AAZzluQ=="
         }
       },
       "is_incremental": false,
@@ -247,7 +250,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/administration/administration.html",
-          "hash": "mUO3iarw9s8sOVYZponmiQ=="
+          "hash": "7WlniRzRjl+B8dNwJvL4Bg=="
         }
       },
       "is_incremental": false,
@@ -259,7 +262,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/administration/delete-an-adapter-component.html",
-          "hash": "9i2jSQUfQo0day91UBlVkg=="
+          "hash": "oqeVScnl+TfE3GHcUEFE3A=="
         }
       },
       "is_incremental": false,
@@ -271,7 +274,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/administration/retrieve-product-version-information.html",
-          "hash": "zlIUvjtHtg7vKPtnjPg4Qw=="
+          "hash": "a5EItQIuhWCD4KkEyYSasw=="
         }
       },
       "is_incremental": false,
@@ -283,7 +286,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/administration/start-and-stop-an-adapter.html",
-          "hash": "2Uv88WdTUeNr92hs+z8Gig=="
+          "hash": "6VaPQj2gWF4BJLDroimThg=="
         }
       },
       "is_incremental": false,
@@ -295,7 +298,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/administration/start-and-stop-ingress-component.html",
-          "hash": "zE32vzU8fPRHWeOqeQ9TZA=="
+          "hash": "MuiG6BftGwy3x1Keoks4eg=="
         }
       },
       "is_incremental": false,
@@ -307,7 +310,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/buffering-configuration.html",
-          "hash": "W0FioAg6sGUXsqU0QyMBWQ=="
+          "hash": "wDPldw8LXBNGguOvCeZagg=="
         }
       },
       "is_incremental": false,
@@ -319,7 +322,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/configuration-tools.html",
-          "hash": "gaW6ZV/cLB0xJ+rNVlV6VQ=="
+          "hash": "nemC+6yAH5eVnifzB5Iayw=="
         }
       },
       "is_incremental": false,
@@ -331,7 +334,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/data-filters-configuration.html",
-          "hash": "WPsp3mqAWVwzIpwwnym+/g=="
+          "hash": "oqFDZR9KXTdoji9g1SGrwg=="
         }
       },
       "is_incremental": false,
@@ -343,7 +346,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/egress-endpoint-configuration/prepare-egress-destinations.html",
-          "hash": "sUR555MhasBKZPjiDw2X+g=="
+          "hash": "uDJyUu3vfDwdJsld6pb/OQ=="
         }
       },
       "is_incremental": false,
@@ -355,7 +358,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/egress-endpoints-configuration.html",
-          "hash": "LLIc1cLC1svAFMVZvjphkg=="
+          "hash": "UOiCiH/VPd2m0r2slRRI/A=="
         }
       },
       "is_incremental": false,
@@ -367,7 +370,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/general-configuration.html",
-          "hash": "QJKJe7MV6j+140cC3gZhrw=="
+          "hash": "qMHBB52jdJ6mRz6adsBTuQ=="
         }
       },
       "is_incremental": false,
@@ -379,7 +382,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/health-endpoint-configuration.html",
-          "hash": "bYNMVHqHjzUEfjFryDj1xA=="
+          "hash": "kJROGjSBtQntXWCKQw3SGQ=="
         }
       },
       "is_incremental": false,
@@ -391,7 +394,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/logging-configuration.html",
-          "hash": "b0yqM1lH0bM0wQedtyG0dA=="
+          "hash": "Amsy2ap/vciFGqr5CN6LrA=="
         }
       },
       "is_incremental": false,
@@ -403,7 +406,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/schedules-configuration.html",
-          "hash": "H68sHoXLyQWbjN+0u/B7tw=="
+          "hash": "XLfwC12FPTjE+3FAqBTFkg=="
         }
       },
       "is_incremental": false,
@@ -415,7 +418,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/system-and-adapter-configuration.html",
-          "hash": "J/A6WuZf3l65k+BOOf1VaQ=="
+          "hash": "XkTMIwM4/mpTz+ilVxGOig=="
         }
       },
       "is_incremental": false,
@@ -427,7 +430,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/system-components-configuration.html",
-          "hash": "yTAQU3VsxBh5E52RYKXxgw=="
+          "hash": "Sk/oAJpZRnVP+LU8K24gJw=="
         }
       },
       "is_incremental": false,
@@ -439,7 +442,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/adapter-diagnostics.html",
-          "hash": "6shOrctcqbM9NW1baebPXg=="
+          "hash": "CKvhCsuHzwEm1cJ8jdHhJg=="
         }
       },
       "is_incremental": false,
@@ -451,7 +454,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/egress-diagnostics.html",
-          "hash": "ltT6Yl4ye50UUUAqyaAmWA=="
+          "hash": "Q4a7FHexYkTQsUFgyM56bQ=="
         }
       },
       "is_incremental": false,
@@ -463,7 +466,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/error-rate.html",
-          "hash": "vywxYTZr3jKWzR9cXT+9Lw=="
+          "hash": "6pbxvxTbBZzCtNy+LEC8Xw=="
         }
       },
       "is_incremental": false,
@@ -475,7 +478,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/io-rate.html",
-          "hash": "nZDiG0tm1O1KmDzr5vTCgA=="
+          "hash": "e8OTmxLFnYcAEhWtXzc0Mw=="
         }
       },
       "is_incremental": false,
@@ -487,7 +490,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/stream-count.html",
-          "hash": "v6EjPVZ5IQzJEb9D2Y0u7A=="
+          "hash": "7+0uujmVJpChTWAYfV6v6A=="
         }
       },
       "is_incremental": false,
@@ -499,7 +502,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/system.html",
-          "hash": "NDIUSO2xokmzfpv6kxfvtw=="
+          "hash": "aYzfLhO+I1eetCyDydpbSw=="
         }
       },
       "is_incremental": false,
@@ -511,7 +514,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/health/adapter-health.html",
-          "hash": "uhhvUA4QtmbiE2GFoOprGg=="
+          "hash": "YaIfYCHDUG1mzdj0/jKmVQ=="
         }
       },
       "is_incremental": false,
@@ -523,7 +526,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/health/device-status.html",
-          "hash": "CYMJCbNPcg3K/9TsBpN+Jg=="
+          "hash": "YibgZEO1aO6UD1BxTF/4OQ=="
         }
       },
       "is_incremental": false,
@@ -535,7 +538,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/health/health-and-diagnostics.html",
-          "hash": "fnOY76ok8tC2h5Zpv0I93Q=="
+          "hash": "M4kmKncz3h8nlWb1Zxzp7w=="
         }
       },
       "is_incremental": false,
@@ -547,7 +550,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/health/next-health-message-expected.html",
-          "hash": "QfVfms6fz1iDd43LEZ/ilg=="
+          "hash": "QPPUYDdD8DJH9E8fekXjRg=="
         }
       },
       "is_incremental": false,
@@ -658,7 +661,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/installation/install-the-adapter.html",
-          "hash": "n7qAtcobnxVnfvF+TLyzRQ=="
+          "hash": "ew1xCT88trDyl24ygGu69A=="
         }
       },
       "is_incremental": false,
@@ -670,7 +673,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/installation/installation.html",
-          "hash": "Vvdpdp/OCnTHfAPJrAEkNQ=="
+          "hash": "faxsZ9WwPHka0ASWxrwqAA=="
         }
       },
       "is_incremental": false,
@@ -682,7 +685,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/installation/uninstall-the-adapter.html",
-          "hash": "uKOBEhlFEBCAKZ9AIoyhRw=="
+          "hash": "xeYi/XPLCkXrOQfWQNrGKQ=="
         }
       },
       "is_incremental": false,
@@ -694,7 +697,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/introduction-to-pi-adapters.html",
-          "hash": "5Jj6wQg0I762n12sSBWNQg=="
+          "hash": "myRayAsPrA6hrGZwiiWepw=="
         }
       },
       "is_incremental": false,
@@ -706,7 +709,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/metadata/adapter-metadata.html",
-          "hash": "MIVQUp1OHseLCDA5hS0RGg=="
+          "hash": "AdfZfjA075guLQo7n3i8+g=="
         }
       },
       "is_incremental": false,
@@ -718,7 +721,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/pi-adapter-users.html",
-          "hash": "3AO4wRoxqeoYLO27u+Nd6A=="
+          "hash": "r4IJKdJbAVaTgD5QxH8jKA=="
         }
       },
       "is_incremental": false,
@@ -730,7 +733,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/technical-support-and-feedback.html",
-          "hash": "C9dtyYdS2zxfTpeeUc9V5A=="
+          "hash": "G/K/TnXMe6rEkQV9dTM6/w=="
         }
       },
       "is_incremental": false,
@@ -742,7 +745,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/troubleshooting/troubleshoot-the-adapter.html",
-          "hash": "WN899e+Fu4Z3uoiiU6litw=="
+          "hash": "5Xdsp6XHCW0SBLVquDVbFg=="
         }
       },
       "is_incremental": false,
@@ -754,7 +757,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/test.html",
-          "hash": "95gVVmQFSyMeRhzRI1bdFA=="
+          "hash": "tuJZ4ssFIpRpefC9HJGeyg=="
         }
       },
       "is_incremental": false,
@@ -766,7 +769,7 @@
       "output": {
         ".html": {
           "relative_path": "content/pi-adapter-for-opc-ua-overview.html",
-          "hash": "NnVePdgxhrzzIiA62uSKsw=="
+          "hash": "ByNxD3AazGlQvhZf6ckX6w=="
         }
       },
       "is_incremental": false,
@@ -778,7 +781,7 @@
       "output": {
         ".html": {
           "relative_path": "content/pi-adapter-for-opc-ua-overview/pi-adapter-for-opc-ua-principles-of-operation.html",
-          "hash": "AxWnUMir8vleffzu7B0bGQ=="
+          "hash": "9Nd42Qc7sk2mnlaT6mYRkw=="
         }
       },
       "is_incremental": false,
@@ -790,7 +793,7 @@
       "output": {
         ".html": {
           "relative_path": "content/release-notes/release-notes.html",
-          "hash": "Bc9jA3DkRD68czIncU/aIg=="
+          "hash": "bRczvF0XcDhRO0cynzWUfw=="
         }
       },
       "is_incremental": false,
@@ -814,7 +817,7 @@
       "output": {
         ".html": {
           "relative_path": "content/troubleshooting/troubleshoot-pi-adapter-for-opc-ua.html",
-          "hash": "mtNBufty5Uami7nOT7GdbA=="
+          "hash": "r/Z93AuEyjHxJTqKMoQDkA=="
         }
       },
       "is_incremental": false,
