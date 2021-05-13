@@ -14,6 +14,7 @@
     items:
     - topicUid: SystemAndAdapterConfiguration
   - topicUid: PIAdapterForOPCUADataSourceConfiguration
+  - topicUid: DiscoveryConfiguration
   - topicUid: PIAdapterForOPCUAClientSettingsConfiguration
   - topicUid: HistoryRecovery
     items:
