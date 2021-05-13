@@ -1,22 +1,58 @@
-- name: PI Adapter for OPC UA overview
-  href: PI-Adapter-for-OPC-UA-overview/toc.yml
-  topicHref: index.md
-- name: Installation
-  href: installation/toc.yml
-  topicHref: main/shared-content/installation/installation.md
-- name: Configuration
-  href: configuration/toc.yml
-  topicHref: configuration/configuration.md
-- name: Administration
-  href: main/shared-content/administration/toc.yml
-  topicHref: main/shared-content/administration/administration.md
-- name: Health and diagnostics
-  href: main/shared-content/health/toc.yml
-  topicHref: main/shared-content/health/health-and-diagnostics.md
-- name: Troubleshooting
-  href: troubleshooting/toc.yml
-  topicHref: main/shared-content/troubleshooting/troubleshoot-the-adapter.md
-- name: Release notes
-  href: release-notes/release-notes.md
-- name: Technical support and feedback
-  href: main/shared-content/technical-support-and-feedback.md
+- topicUid: index
+  items: 
+  - topicUid: PIAdapterForOPCUAPrinciplesOfOperation
+- topicUid: Installation
+  items:
+  - topicUid: SystemRequirements
+  - topicUid: InstallTheAdapter
+  - topicUid: InstallPIAdapterForOPCUAUsingDocker
+  - topicUid: UninstallTheAdapter
+- topicUid: OPCUAConfiguration
+  items:
+  - topicUid: ConfigurationTools
+  - topicUid: SystemComponentsConfiguration
+    items:
+    - topicUid: SystemAndAdapterConfiguration
+  - topicUid: PIAdapterForOPCUADataSourceConfiguration
+  - topicUid: PIAdapterForOPCUAClientSettingsConfiguration
+  - topicUid: HistoryRecovery
+    items:
+    - topicUid: OnDemandHistoryRecoveryConfiguration
+    - topicUid: AutomaticHistoryRecovery
+  - topicUid: PIAdapterForOPCUADataSelectionConfiguration
+  - topicUid: DataFiltersConfiguration
+  - topicUid: PIAdapterForOPCUASecurityConfiguration
+  - topicUid: GeneralConfiguration
+    items:
+    - topicUid: AdapterMetadata
+  - topicUid: BufferingConfiguration
+  - topicUid: LoggingConfiguration
+  - topicUid: EgressEndpointsConfiguration
+    items:
+    - topicUid: PrepareEgressDestinations
+  - topicUid: HealthEndpointConfiguration 
+  - topicUid: PIAdapterForOPCUAConfigurationExamples
+- topicUid: Administration
+  items:
+  - topicUid: StartAndStopAnAdapter
+  - topicUid: StartAndStopIngressComponent
+  - topicUid: DeleteAnAdapterComponent
+  - topicUid: RetrieveProductVersionInformation
+- topicUid: HealthAndDiagnostics
+  items:
+  - topicUid: AdapterHealth
+    items:
+    - topicUid: DeviceStatus
+    - topicUid: NextHealthMessageExpected
+  - topicUid: AdapterDiagnostics
+    items:
+    - topicUid: System
+    - topicUid: StreamCount
+    - topicUid: IORate
+    - topicUid: ErrorRate
+    - topicUid: EgressDiagnostics
+- topicUid: Troubleshooting
+  items:
+  - topicUid: TroubleshootPIAdapterForOPCUA
+- topicUid: ReleaseNotes
+- topicUid: TechnicalSupportAndFeedback
