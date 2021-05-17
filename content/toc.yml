@@ -52,7 +52,7 @@
     - topicUid: IORate
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
-- topicUid: Troubleshooting
+- topicUid: TroubleshootTheAdapter
   items:
   - topicUid: TroubleshootPIAdapterForOPCUA
 - topicUid: ReleaseNotes
