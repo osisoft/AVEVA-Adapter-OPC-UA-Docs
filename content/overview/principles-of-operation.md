@@ -2,7 +2,7 @@
 uid: PIAdapterForOPCUAPrinciplesOfOperation
 ---
 
-# PI Adapter for OPC UA principles of operation
+# Principles of operation
 
 This adapter's operations focus on data collection and stream creation.
 

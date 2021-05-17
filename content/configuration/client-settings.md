@@ -2,7 +2,7 @@
 uid: PIAdapterForOPCUAClientSettingsConfiguration
 ---
 
-# PI Adapter for OPC UA client settings configuration
+# Client settings
 
 The client settings configuration is automatically generated when a new data source is added. If you experience problems with timeouts or when OPC UA limits are exceeded in terms of browse or subscription operation, you can change the client settings configuration.
 
