@@ -49,6 +49,30 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "content/configuration/client-settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "content/configuration/client-settings.html",
+          "hash": "5M37K0SFfdT+8e0C8MkGlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "content/configuration/configuration-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "content/configuration/configuration-examples.html",
+          "hash": "XpQrgY6fYTCZP6z6XSTTZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "log_codes": [
         "UidNotFound"
       ],
@@ -57,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/configuration.html",
-          "hash": "THP/vONb+YchYQbsthKYlg=="
+          "hash": "YpCxUNrfLTZBSDE8t7OT4A=="
         }
       },
       "is_incremental": false,
@@ -65,11 +89,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "content/configuration/pi-adapter-for-opc-ua-client-settings-configuration.md",
+      "source_relative_path": "content/configuration/data-selection.md",
       "output": {
         ".html": {
-          "relative_path": "content/configuration/pi-adapter-for-opc-ua-client-settings-configuration.html",
-          "hash": "2rIsrV9nmRIa8ppD5rAFzg=="
+          "relative_path": "content/configuration/data-selection.html",
+          "hash": "e5Govc9GjcwmLAXzBU9m/w=="
         }
       },
       "is_incremental": false,
@@ -77,11 +101,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "content/configuration/pi-adapter-for-opc-ua-configuration-examples.md",
+      "source_relative_path": "content/configuration/data-source.md",
       "output": {
         ".html": {
-          "relative_path": "content/configuration/pi-adapter-for-opc-ua-configuration-examples.html",
-          "hash": "bvfLfUzkf6kJnfVELBj1fg=="
+          "relative_path": "content/configuration/data-source.html",
+          "hash": "Ci9NIgMFQUJp/v/gWbrecA=="
         }
       },
       "is_incremental": false,
@@ -89,35 +113,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "content/configuration/pi-adapter-for-opc-ua-data-selection-configuration.md",
+      "source_relative_path": "content/configuration/security.md",
       "output": {
         ".html": {
-          "relative_path": "content/configuration/pi-adapter-for-opc-ua-data-selection-configuration.html",
-          "hash": "YAHk8WNuNJs11fGHjfpveQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "content/configuration/pi-adapter-for-opc-ua-data-source-configuration.md",
-      "output": {
-        ".html": {
-          "relative_path": "content/configuration/pi-adapter-for-opc-ua-data-source-configuration.html",
-          "hash": "hrx8+3Nqp+zvuC+D8CKlXA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "content/configuration/pi-adapter-for-opc-ua-security-configuration.md",
-      "output": {
-        ".html": {
-          "relative_path": "content/configuration/pi-adapter-for-opc-ua-security-configuration.html",
-          "hash": "RH+B6Gg6L1UVCti9qBa83A=="
+          "relative_path": "content/configuration/security.html",
+          "hash": "JO8sp9fYze0/69QNDfxzRw=="
         }
       },
       "is_incremental": false,
@@ -151,7 +151,7 @@
       "output": {
         ".html": {
           "relative_path": "content/index.html",
-          "hash": "IkLiQbs35m1XrFCGN0D1WA=="
+          "hash": "M4imtrn7Be8niy8YvSHmUg=="
         }
       },
       "is_incremental": false,
@@ -159,11 +159,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "content/installation/install-pi-adapter-for-opc-ua-using-docker.md",
+      "source_relative_path": "content/installation/installation-using-docker.md",
       "output": {
         ".html": {
-          "relative_path": "content/installation/install-pi-adapter-for-opc-ua-using-docker.html",
-          "hash": "C7jhJi7klW1JJpBjj86jPg=="
+          "relative_path": "content/installation/installation-using-docker.html",
+          "hash": "9LxXWrrb0hgsK6wlGBx0kA=="
         }
       },
       "is_incremental": false,
@@ -175,7 +175,7 @@
       "output": {
         ".html": {
           "relative_path": "content/installation/system-requirements.html",
-          "hash": "ELII/N4ToStXSLjshjjg8A=="
+          "hash": "KC65K6AwZuO87H2KI/zPjQ=="
         }
       },
       "is_incremental": false,
@@ -765,11 +765,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "content/pi-adapter-for-opc-ua-overview.md",
+      "source_relative_path": "content/overview/principles-of-operation.md",
       "output": {
         ".html": {
-          "relative_path": "content/pi-adapter-for-opc-ua-overview.html",
-          "hash": "ByNxD3AazGlQvhZf6ckX6w=="
+          "relative_path": "content/overview/principles-of-operation.html",
+          "hash": "8jZZJHzjsAx1OQFHLnpqJw=="
         }
       },
       "is_incremental": false,
@@ -777,11 +777,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "content/pi-adapter-for-opc-ua-overview/pi-adapter-for-opc-ua-principles-of-operation.md",
+      "source_relative_path": "content/pi-adapter-for-opc-ua-overview.md",
       "output": {
         ".html": {
-          "relative_path": "content/pi-adapter-for-opc-ua-overview/pi-adapter-for-opc-ua-principles-of-operation.html",
-          "hash": "9Nd42Qc7sk2mnlaT6mYRkw=="
+          "relative_path": "content/pi-adapter-for-opc-ua-overview.html",
+          "hash": "ByNxD3AazGlQvhZf6ckX6w=="
         }
       },
       "is_incremental": false,
@@ -805,7 +805,7 @@
       "output": {
         ".html": {
           "relative_path": "content/toc.html",
-          "hash": "e/TgKp/4QhlaTLlpljNEFg=="
+          "hash": "L0LhdZdf3omdNJjTePMo2A=="
         }
       },
       "is_incremental": false,
@@ -817,7 +817,7 @@
       "output": {
         ".html": {
           "relative_path": "content/troubleshooting/troubleshoot-pi-adapter-for-opc-ua.html",
-          "hash": "r/Z93AuEyjHxJTqKMoQDkA=="
+          "hash": "Z1Ao4kpd8A4ArctHttUaDg=="
         }
       },
       "is_incremental": false,

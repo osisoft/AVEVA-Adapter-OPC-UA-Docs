@@ -56,14 +56,14 @@ references:
   name: Health endpoint configuration
   href: content/main/shared-content/configuration/health-endpoint-configuration.html
 - uid: index
-  name: PI Adapter for OPC UA overview
+  name: Overview
   href: content/index.html
 - uid: Installation
   name: Installation
   href: content/main/shared-content/installation/installation.html
 - uid: InstallPIAdapterForOPCUAUsingDocker
-  name: Install PI Adapter for OPC UA using Docker
-  href: content/installation/install-pi-adapter-for-opc-ua-using-docker.html
+  name: Installation using Docker
+  href: content/installation/installation-using-docker.html
 - uid: InstallTheAdapter
   name: Install the adapter
   href: content/main/shared-content/installation/install-the-adapter.html
@@ -83,26 +83,26 @@ references:
   name: Configuration
   href: content/configuration/configuration.html
 - uid: PIAdapterForOPCUAClientSettingsConfiguration
-  name: PI Adapter for OPC UA client settings configuration
-  href: content/configuration/pi-adapter-for-opc-ua-client-settings-configuration.html
+  name: Client settings
+  href: content/configuration/client-settings.html
 - uid: PIAdapterForOPCUAConfigurationExamples
-  name: PI Adapter for OPC UA configuration examples
-  href: content/configuration/pi-adapter-for-opc-ua-configuration-examples.html
+  name: Configuration examples
+  href: content/configuration/configuration-examples.html
 - uid: PIAdapterForOPCUADataSelectionConfiguration
-  name: PI Adapter for OPC UA data selection configuration
-  href: content/configuration/pi-adapter-for-opc-ua-data-selection-configuration.html
+  name: Data selection
+  href: content/configuration/data-selection.html
 - uid: PIAdapterForOPCUADataSourceConfiguration
-  name: PI Adapter for OPC UA data source configuration
-  href: content/configuration/pi-adapter-for-opc-ua-data-source-configuration.html
+  name: Data source
+  href: content/configuration/data-source.html
 - uid: PIAdapterForOPCUAOverview
   name: PI Adapter for OPC UA overview
   href: content/pi-adapter-for-opc-ua-overview.html
 - uid: PIAdapterForOPCUAPrinciplesOfOperation
-  name: PI Adapter for OPC UA principles of operation
-  href: content/pi-adapter-for-opc-ua-overview/pi-adapter-for-opc-ua-principles-of-operation.html
+  name: Principles of operation
+  href: content/overview/principles-of-operation.html
 - uid: PIAdapterForOPCUASecurityConfiguration
-  name: PI Adapter for OPC UA security configuration
-  href: content/configuration/pi-adapter-for-opc-ua-security-configuration.html
+  name: Security
+  href: content/configuration/security.html
 - uid: PIAdapterForOPCUASupportedFeatures
   name: PI Adapter for OPC UA supported features
   href: content/ARCHIVE/OSIsoft%20Adapter%20for%20OPC%20UA%20supported%20features.html
