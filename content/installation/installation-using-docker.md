@@ -83,7 +83,6 @@ This topic provides examples of how to create a Docker container with the OPC UA
 	**AMD64 (x64)**
 
 	```bash
-	
 	FROM ubuntu:20.04
 	WORKDIR /
 	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
