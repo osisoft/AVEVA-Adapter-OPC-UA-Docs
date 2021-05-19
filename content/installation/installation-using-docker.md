@@ -59,9 +59,9 @@ This topic provides examples of how to create a Docker container with the OPC UA
 	**ARM32**
 
 	```bash
-	FROM ubuntu
+	FROM ubuntu:20.04
 	WORKDIR /
-	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
 	COPY opcuadockerstart.sh /
 	RUN chmod +x /opcuadockerstart.sh
 	ADD ./OpcUa_linux-arm.tar.gz .
@@ -71,9 +71,9 @@ This topic provides examples of how to create a Docker container with the OPC UA
 	**ARM64**
 
 	```bash
-	FROM ubuntu
+	FROM ubuntu:20.04
 	WORKDIR /
-	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
 	COPY opcuadockerstart.sh /
 	RUN chmod +x /opcuadockerstart.sh
 	ADD ./OpcUa_linux-arm64.tar.gz .
@@ -83,9 +83,9 @@ This topic provides examples of how to create a Docker container with the OPC UA
 	**AMD64 (x64)**
 
 	```bash
-	FROM ubuntu
+	FROM ubuntu:20.04
 	WORKDIR /
-	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
 	COPY opcuadockerstart.sh /
 	RUN chmod +x /opcuadockerstart.sh
 	ADD ./OpcUa_linux-x64.tar.gz .
