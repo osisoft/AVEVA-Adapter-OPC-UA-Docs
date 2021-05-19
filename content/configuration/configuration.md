@@ -27,7 +27,7 @@ This Quick Start guides you through setup of each configuration file available f
 5. **Optional**: Configure data filters, security, diagnostics and metadata, buffering, and logging.<br>See the following topics:
 
     - [Data filters](xref:DataFiltersConfiguration#configure-data-filters)
-    - [Security](xref:pi-adapter-for-opc-ua-security-configuration#configure-opc-ua-adapter-security)
+    - [Security](xref:PIAdapterForOPCUASecurityConfiguration#configure-opc-ua-adapter-security)
     - [Diagnostics and metadata](xref:GeneralConfiguration#configure-general)
     - [Buffering](xref:BufferingConfiguration#configure-buffering)
     - [Logging](xref:LoggingConfiguration#configure-logging)
