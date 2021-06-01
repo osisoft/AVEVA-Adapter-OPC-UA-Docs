@@ -40,7 +40,7 @@ This topic provides examples of how to create a Docker container with the OPC UA
 	fi
 	```
 
-	**AMD64**
+	**x64**
 
 	```bash
 	#!/bin/sh
