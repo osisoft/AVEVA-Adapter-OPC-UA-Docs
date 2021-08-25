@@ -28,7 +28,7 @@ Complete the following steps to generate a default data selection file:
 
    Windows: *%programdata%\OSIsoft\Adapters\OpcUa\OpcUa\Configuration\OpcUa1_DataSelection.json*
   
-   Linux: */usr/share/OSIsoft/Adapters/OpcUa/OpcUa/Configuration/OpcUa1_DataSelection.json*
+   Linux: */usr/share/OSIsoft/Adapters/OpcUa/Configuration/OpcUa1_DataSelection.json*
 
 3. Copy the file to a different directory.
     - For content structure, see [OPC UA data selection example](#opc-ua-data-selection-examples).
