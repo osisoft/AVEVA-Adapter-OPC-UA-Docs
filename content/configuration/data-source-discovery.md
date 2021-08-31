@@ -4,7 +4,7 @@ uid: DataSourceDiscovery
 
 # Data source discovery
 
-A discovery against the data source of an OPC UA adapter allows you to specify the optional **query** parameter. The query discovers the contents of the data source and limits the number of objects to browse. You can add the discovered items to the data selection.
+A discovery against the data source of an OPC UA adapter allows you to specify the optional **query** parameter. The discovery query limits the number of objects to browse.
 
 **Note:** Only one discovery at a time is supported.
 
