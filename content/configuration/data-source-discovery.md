@@ -21,7 +21,7 @@ The following rules apply for specifying the query string:
 - Multiple comma-separated nodeIds are supported.
 - The nodeId specified in the query string must be valid.
 
-**Note:** The data source might contain tens of thousands of items. Use the root nodeIds in the query string to browse only items that you need.
+**Note:** The data source might contain large amounts of items. Use the root nodeIds in the query string to browse only items that you need.
 
 ## Discovery query example
 
