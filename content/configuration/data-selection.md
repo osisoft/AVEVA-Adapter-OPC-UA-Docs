@@ -8,42 +8,7 @@ In addition to the data source configuration, you need to provide a data selecti
 
 When you add a data source without providing a data selection configuration, the adapter browses the OPC UA server address space and populates the available OPC UA variables into the data selection configuration.  A comma-separated collection of nodeIds (RootNodeIds) in the data source configuration serves as filters to browse only a subset of the OPC UA server. Data selection items configured this way must still be selected for data retrieval. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
 
-You can decide to have the data selection configuration file generated automatically or you can create it manually yourself.
-
-## Generate default OPC UA data selection configuration file
-
-A default OPC UA data selection file will be created if there is no OPC UA data selection configuration although a valid data source exists.
-
-**Note:** To avoid possible time and resource expensive browse operations due to reasons described previously, OSIsoft recommends that you manually create a data selection file instead of automatically creating the default data selection file. For more information, see [Configure OPC UA data selection](#configure-opc-ua-data-selection).
-
-Complete the following steps to generate a default data selection file:
-
-1. Add an OPC UA adapter with a unique ComponentId. For more information, see [System components configuration](xref:SystemComponentsConfiguration).
-  
-2. Configure a valid OPC UA data source. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
-
-   Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.
-  
-   The following are example locations of the file created. In this example, it is assumed that the ComponentId of the OPC UA component is OpcUa1:
-
-   Windows: `%programdata%\OSIsoft\Adapters\OpcUa\Configuration\OpcUa1_DataSelection.json`
-  
-   Linux: */usr/share/OSIsoft/Adapters/OpcUa/Configuration/OpcUa1_DataSelection.json*
-
-3. Copy the file to a different directory.
-    - For content structure, see [OPC UA data selection example](#opc-ua-data-selection-examples).
-
-4. Use any text editor to change the value of any **Selected** key from `false` to `true` in the file.
-
-   Once the configuration is updated, the adapter will subscribe to data for all items that are set to *Selected=true*.
-
-5. In the same directory where you edited the file, run the following `curl` command:
-
-    **Note:** `5590` is the default port number. If you selected a different port number, replace it with that value.
-
-      ```bash
-      curl -d "@OpcUa1_DataSelection.json" -H "Content-Type: application/json" -X PUT      "http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection"
-      ```
+You can decide to create the data selection configuration file yourself or you can perform a data discovery for existing data pieces. For more information, see [Discovery](xref:DiscoveryConfiguration).
 
 ## Configure OPC UA data selection
 
