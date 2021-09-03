@@ -20,7 +20,7 @@ The following rules apply for specifying the query string:
 
 - Multiple comma-separated nodeIds are supported.
 - The nodeId specified in the query string must be valid.
-- <br>`RootNodeIds=` must be followed by a nodeId.
+- `RootNodeIds=` must be followed by a nodeId.
 - Empty string and all white spaces string is equivalent to no query specified.
 - White spaces are supported.
 
