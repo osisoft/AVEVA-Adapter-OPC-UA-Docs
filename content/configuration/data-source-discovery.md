@@ -13,7 +13,7 @@ A discovery against the data source of an OPC UA adapter allows you to specify t
 The string of the **query** parameter must contain string items in the following form: <br>`RootNodeIds=<nodeId>`<br><br>
 | String item      | Required | Description |
 |------------------|----------|-------------|
-| **RootNodeIds**  | Optional |  The node Ids that the adapter will subscribe to when the discovery is posted.<br>**Note:** To specify multiple node IDs in the query, separate the node ID names with a comma. If **RootNodeIds** is not specified, the adapter subscribes to all topics. |
+| **RootNodeIds**  | Optional |  The node Ids that the adapter will subscribe to when the discovery is posted.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **RootNodeIds** is not specified, the adapter subscribes to all topics. |
 
 <br>**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
 
