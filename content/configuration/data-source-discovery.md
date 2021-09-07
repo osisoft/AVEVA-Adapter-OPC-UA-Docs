@@ -10,9 +10,12 @@ A discovery against the data source of an OPC UA adapter allows you to specify t
 
 ## Query string
 
-The string of the **query** parameter must contain the nodeId as shown in the following example:<br>`ns=4;s=Boilers, ns=4;s=Pumps`
+The string of the **query** parameter must contain string items in the following form: <br>`RootNodeIds=<nodeId>`<br><br>
+| String item      | Required | Description |
+|------------------|----------|-------------|
+| **RootNodeIds**  | Optional |  The node Ids that the adapter will subscribe to when the discovery is posted.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **RootNodeIds** is not specified, the adapter subscribes to all topics. |
 
-**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
+<br>**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
 
 ### Query rules
 
@@ -20,20 +23,23 @@ The following rules apply for specifying the query string:
 
 - Multiple comma-separated nodeIds are supported.
 - The nodeId specified in the query string must be valid.
+- `RootNodeIds=` must be followed by a nodeId.
+- Empty string and all white spaces string is equivalent to no query specified.
+- White spaces in the `RooteNodeIds=` section of the query are not supported
 
 **Note:** The data source might contain large amounts of items. Use the root nodeIds in the query string to browse only items that you need.
 
 ## Discovery query example
 
 The query parameter of the OPC UA component must be specified as shown in this example:
-`ns=4;s=Boilers, ns=4;s=Pumps`.
+`RootNodeIds=ns=4;s=Boilers, ns=4;s=Pumps`.
 
 ### Data source discovery initiation
 
 ```json
 {
 	"id" : "SampleA",
-	"query" : "ns=6;s=MyDevice"
+	"query" : "RootNodeIds=ns=6;s=MyDevice"
 }
 ```
 
