@@ -15,11 +15,13 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 ## Fixes and enhancements
 
 ### Fixes
+The following issues reported from version 1.1 are fixed in this release.
 
 - Fixed the issue that timestamp and value migth not be correctly updated for the fast sampling rates.
 - Fixed the issue that browse operation can fail when empty result is returned from a server.
 
 ### Enhancements
+The following enhancements are in this release.
 
 - Enhanced user experience to perform data source discovery.
 - Added support for On-demand and automatic history recovery for data items that support HistoryReady user access level.
