@@ -21,7 +21,7 @@ The following issues reported from version 1.1 are fixed in this release.
 - Fixed the issue that browse operation can fail when empty result is returned from a server.
 
 ### Enhancements
-The following enhancements are in this release.
+The following enhancements are added in this release.
 
 - Enhanced user experience to perform data source discovery.
 - Added support for On-demand and automatic history recovery for data items that support HistoryReady user access level.
