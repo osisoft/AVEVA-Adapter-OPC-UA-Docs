@@ -17,7 +17,7 @@ Alternatively, you can use tar.gz files with binaries to build your own custom i
 
 ## Upgrade
 
-The PI Adapter for OPC UA upgrade from version 1.1 to version 1.2 comes with the following recommendations:
+Before you upgrade PI Adapter for OPC UA from version 1.1 to version 1.2, consider the following:
 
 ### Upgrade and PI Web API
 
