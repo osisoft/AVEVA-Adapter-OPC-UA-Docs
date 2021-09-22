@@ -25,4 +25,4 @@ Upgrade PI Web API before you upgrade the adapter. This upgrade order ensures th
 
 ### Upgrade and OCS
 
-Quality information in OCS will be discarded when you upgrade the adapter. If you want to retrieve quality information, you need to perform a type migration in OCS. For more information, see also [Types best practices](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/store-data/types/types-best-practices.html).
+Perform a type migration in OCS. Quality information in OCS will be discarded when you upgrade the adapter. A type migration helps to retrieve quality information. For more information, see also [Types best practices](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/store-data/types/types-best-practices.html).
