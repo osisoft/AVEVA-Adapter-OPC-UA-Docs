@@ -4,13 +4,30 @@ uid: ReleaseNotes
 
 # Release notes
 
-PI Adapter for OPC UA 1.1
+PI Adapter for OPC UA 1.2
 
 ## Overview
 
-This represents the initial standalone release for PI Adapter for OPC UA. This product collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, automatic discovery of available data items on a data source, and various Windows and Linux-based operating systems as well as containerization.
+PI Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
 For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
+
+## Fixes and enhancements
+
+### Fixes
+The following issues reported from version 1.1 are fixed in this release.
+
+- Timestamp and value might not be correctly updated for the fast sampling rates.
+- Browse operation can fail when empty result is returned from a server.
+
+### Enhancements
+The following enhancements are added in this release.
+
+- On-demand data source discovery.
+- Support for On-demand and automatic history recovery.
+- Support for collection of Unit of Measure, Minimum, and Maximum.
+- Support for enumeration data types.
+- Support for collecting data quality information along with data.
 
 ## Known issues
 
