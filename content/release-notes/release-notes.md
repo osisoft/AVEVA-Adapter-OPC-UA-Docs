@@ -8,7 +8,7 @@ PI Adapter for OPC UA 1.2
 
 ## Overview
 
-PI Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand/automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
+PI Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
 For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
 
