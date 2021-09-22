@@ -23,11 +23,11 @@ The following issues reported from version 1.1 are fixed in this release.
 ### Enhancements
 The following enhancements are added in this release.
 
-- Added on-demand data source discovery.
-- Added support for On-demand and automatic history recovery.
-- Added support for collection of Unit of Measure, Minimum and Maximum.
-- Added support for enumeration data types.
-- Added support for collecting data quality information along with data.
+- On-demand data source discovery.
+- Support for On-demand and automatic history recovery.
+- Support for collection of Unit of Measure, Minimum, and Maximum.
+- Support for enumeration data types.
+- Support for collecting data quality information along with data.
 
 ## Known issues
 
