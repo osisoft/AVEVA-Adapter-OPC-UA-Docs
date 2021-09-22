@@ -17,8 +17,8 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 ### Fixes
 The following issues reported from version 1.1 are fixed in this release.
 
-- Fixed the issue that timestamp and value migth not be correctly updated for the fast sampling rates.
-- Fixed the issue that browse operation can fail when empty result is returned from a server.
+- Timestamp and value might not be correctly updated for the fast sampling rates.
+- Browse operation can fail when empty result is returned from a server.
 
 ### Enhancements
 The following enhancements are added in this release.
