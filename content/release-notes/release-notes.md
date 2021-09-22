@@ -8,7 +8,7 @@ PI Adapter for OPC UA 1.2
 
 ## Overview
 
-This represents the release version 1.2.0 for the PI Adapter for OPC UA. This product collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, automatic discovery of available data items on a data source, on-demand/automatic history recovery of data items supporting HistoryReady user access level, and various Windows and Linux-based operating systems as well as containerization.
+PI Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured OMF endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand/automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
 For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
 
@@ -23,11 +23,11 @@ The following issues reported from version 1.1 are fixed in this release.
 ### Enhancements
 The following enhancements are added in this release.
 
-- Enhanced user experience to perform data source discovery.
-- Added support for On-demand and automatic history recovery for data items that support HistoryReady user access level.
-- Added support for container creation with Unit of Measure, Min, Max, and Data Source properties.
-- Enabled data collection for enumeration data types from data items that have underlying enumeration types.
-- Added support for collecting data quality information along with the container data.
+- Added on-demand data source discovery.
+- Added support for On-demand and automatic history recovery.
+- Added support for collection of Unit of Measure, Minimum and Maximum.
+- Added support for enumeration data types.
+- Added support for collecting data quality information along with data.
 
 ## Known issues
 
