@@ -21,7 +21,7 @@ Before you upgrade PI Adapter for OPC UA from version 1.1 to version 1.2, consid
 
 ### Upgrade and PI Web API
 
-Upgrade PI Web API before you upgrade the adapter. This upgrade order ensures that no data gets lost and that quality information is automatically sent to PI Web API.
+Upgrade to PI Web API 2021 before you upgrade the adapter. This upgrade order ensures that no data gets lost and that quality information is automatically sent to PI Web API.
 
 ### Upgrade and OCS
 
