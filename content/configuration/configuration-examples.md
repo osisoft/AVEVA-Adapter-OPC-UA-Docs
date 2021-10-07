@@ -193,14 +193,14 @@ The following are representations of minimal and complete data selection configu
     "Name": "CustomStreamName",
     "NodeId": "ns=5;s=Random1",
     "StreamId": "CustomStreamName",
-    "DataFilterId": "DataFilterId1"
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": false,
     "Name": null,
     "NodeId": "ns=5;s=Sawtooth1",
     "StreamId": null,
-    "DataFilterId": "DataFilterId1"
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": true,
