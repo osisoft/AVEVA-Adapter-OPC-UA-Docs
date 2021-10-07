@@ -44,7 +44,8 @@ The following tables provide examples for all configurations available for PI Ad
             "Password": null,
             "IncomingTimestamp": "Source",
             "StreamIdPrefix": "OPC_Prefix_",
-            "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}"
+            "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
+            "DataCollectionMode": "CurrentWithBackfill"
         },
         "DataSelection": [
             {
