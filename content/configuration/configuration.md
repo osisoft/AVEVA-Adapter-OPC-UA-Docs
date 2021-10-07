@@ -22,6 +22,8 @@ This Quick Start guides you through setup of each configuration file available f
 
 3. **Optional**: Configure client settings.<br> See [Client settings](xref:PIAdapterForOPCUAClientSettingsConfiguration#configure-opc-ua-client-settings).
 
+4. **Optional**: Perform data source discovery.<br> See [Discovery](xref:DataSourceDiscovery)
+
 4. Configure an OPC UA data selection for each OPC UA data source.<br>See [Data selection](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).
 
 5. **Optional**: Configure data filters, security, diagnostics and metadata, buffering, and logging.<br>See the following topics:
