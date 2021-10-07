@@ -40,19 +40,20 @@ The following tables provide examples for all configurations available for PI Ad
         "DataSource": {
             "EndpointUrl": "opc.tcp://OPCUAServerEndpoint/OPCUA/Server",
             "UseSecureConnection": false,
-            "StreamPrefix": "OPC_Prefix_",
             "UserName": null,
             "Password": null,
-            "RootNodeIds": null,
             "IncomingTimestamp": "Source",
-            "applyPrefixToStreamId": true
+            "StreamIdPrefix": "OPC_Prefix_",
+            "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
+            "DataCollectionMode": "CurrentWithBackfill"
         },
         "DataSelection": [
             {
                 "Selected": true,
                 "Name": "Sawtooth",
                 "NodeId": "ns=3;s=Sawtooth",
-                "StreamId": "SawtoothStream"
+                "StreamId": "SawtoothStream",
+                "DataFilterId": null
             }
         ]
     },
@@ -133,7 +134,6 @@ The following are representations of minimal and complete data source configurat
     "UseSecureConnection": true,
     "UserName": null,
     "Password": null,
-    "RootNodeIds": null,
     "IncomingTimestamp": "Source",
     "StreamIdPrefix": null,
     "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}"
@@ -193,19 +193,22 @@ The following are representations of minimal and complete data selection configu
     "Selected": true,
     "Name": "CustomStreamName",
     "NodeId": "ns=5;s=Random1",
-    "StreamId": "CustomStreamName"
+    "StreamId": "CustomStreamName",
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": false,
     "Name": null,
     "NodeId": "ns=5;s=Sawtooth1",
-    "StreamId": null
+    "StreamId": null,
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": true,
     "Name": "5.Sinusoid1",
     "NodeId": "ns=5;s=Sinusoid1",
-    "StreamId": null
+    "StreamId": null,
+    "DataFilterId": null
   }
 ]
 ```

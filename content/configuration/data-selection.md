@@ -4,11 +4,9 @@ uid: PIAdapterForOPCUADataSelectionConfiguration
 
 # Data selection
 
-In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources.
+In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources. OPC UA data from OPC UA items is read through subscriptions (unsolicited reads).
 
-When you add a data source without providing a data selection configuration, the adapter browses the OPC UA server address space and populates the available OPC UA variables into the data selection configuration.  A comma-separated collection of nodeIds (RootNodeIds) in the data source configuration serves as filters to browse only a subset of the OPC UA server. Data selection items configured this way must still be selected for data retrieval. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
-
-You can decide to create the data selection configuration file yourself or you can perform a data discovery to find available items. For more information, see [Discovery](xref:DiscoveryConfiguration).
+You can decide to create the data selection configuration file yourself or you can perform a data source discovery to find available items. For more information, see [Discovery](xref:DataSourceDiscovery).
 
 ## Configure OPC UA data selection
 
@@ -89,19 +87,22 @@ The following are examples of valid OPC UA data selection configurations:
     "Selected": true,
     "Name": "CustomStreamName",
     "NodeId": "ns=5;s=Random1",
-    "StreamId": "CustomStreamName"
+    "StreamId": "CustomStreamName",
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": false,
     "Name": null,
     "NodeId": "ns=5;s=Sawtooth1",
-    "StreamId": null
+    "StreamId": null,
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": true,
     "Name": "5.Sinusoid1",
     "NodeId": "ns=5;s=Sinusoid1",
-    "StreamId": null
+    "StreamId": null,
+    "DataFilterId": null
   }
 ]
 ```

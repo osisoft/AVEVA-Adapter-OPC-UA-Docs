@@ -5,6 +5,7 @@ uid: ReleaseNotes
 # Release notes
 
 PI Adapter for OPC UA 1.2
+
 Adapter framework 1.4
 
 ## Overview

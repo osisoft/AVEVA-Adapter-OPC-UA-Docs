@@ -4,7 +4,7 @@ uid: PIAdapterForOPCUADataSourceConfiguration
 
 # Data source
 
-To use the adapter, you must configure the data source from which it polls data.
+To use the adapter, you must configure the data source from which it gets data.
 
 ## Configure OPC UA data source
 
