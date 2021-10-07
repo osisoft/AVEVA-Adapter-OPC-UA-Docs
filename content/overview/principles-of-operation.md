@@ -18,13 +18,13 @@ For more information, see [PI Adapter for OPC UA data source configuration](xref
 
 ## Connection
 
-The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secured connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establishes a secured connection.
+The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secure connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establishes a secure connection.
 
 For more information on secure connections, see [PI Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration).
 
 ## Data collection
 
-The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) part of OPC UA specification. For more information, see [Unified Architecture (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access)](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access).
+The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Unified Architecture (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access)](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
 
 ### Data types
 
@@ -48,8 +48,9 @@ The following table lists OPC UA variable types that the adapter collects data f
 | Number           | variable, depending on the actual value |
 | Integer          | Integer          |
 | UInteger         | UInteger         |
+| Enumeration      | Int16            |
 
-PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added. Other data selection items are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added to subscription too. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
 ## Enumeration types
 
@@ -70,7 +71,7 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 |---------------|-----------|-------------|
 | Timestamp     | DateTime  | Timestamp of the given OPC UA item value update. |
 | Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value.<br><br>**Note:**<br>For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in OCS and the **Zero**/**Span** properties in PI Web API are populated.<br>For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in OCS and the **Eng Units** property in PI Web API are populated.<sup>1</sup>  |
-| Quality | Unsigned integer | Data quality of the given OPC UA item update. Quality values are `Good`, `Bad`, and `Questionable`.<sup>1</sup>  |
+| Quality | Unsigned integer | Data quality of the given OPC UA item update.  |
 
 <sup>1</sup> **Note:** `Null` values with `Good` quality are discarded. `Null` values with `Bad` or `Questionable` quality send the default value `0` or `null` to the destination.
 
