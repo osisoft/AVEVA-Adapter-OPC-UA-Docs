@@ -89,19 +89,22 @@ The following are examples of valid OPC UA data selection configurations:
     "Selected": true,
     "Name": "CustomStreamName",
     "NodeId": "ns=5;s=Random1",
-    "StreamId": "CustomStreamName"
+    "StreamId": "CustomStreamName",
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": false,
     "Name": null,
     "NodeId": "ns=5;s=Sawtooth1",
-    "StreamId": null
+    "StreamId": null,
+    "DataFilterId": "DuplicateData"
   },
   {
     "Selected": true,
     "Name": "5.Sinusoid1",
     "NodeId": "ns=5;s=Sinusoid1",
-    "StreamId": null
+    "StreamId": null,
+    "DataFilterId": null
   }
 ]
 ```
