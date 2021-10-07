@@ -51,7 +51,8 @@ The following tables provide examples for all configurations available for PI Ad
                 "Selected": true,
                 "Name": "Sawtooth",
                 "NodeId": "ns=3;s=Sawtooth",
-                "StreamId": "SawtoothStream"
+                "StreamId": "SawtoothStream",
+                "DataFilterId": null
             }
         ]
     },
