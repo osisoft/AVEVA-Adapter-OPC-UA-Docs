@@ -40,12 +40,12 @@ The following tables provide examples for all configurations available for PI Ad
         "DataSource": {
             "EndpointUrl": "opc.tcp://OPCUAServerEndpoint/OPCUA/Server",
             "UseSecureConnection": false,
-            "StreamPrefix": "OPC_Prefix_",
             "UserName": null,
             "Password": null,
             "RootNodeIds": null,
             "IncomingTimestamp": "Source",
-            "applyPrefixToStreamId": true
+            "StreamIdPrefix": "OPC_Prefix_",
+            "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}"
         },
         "DataSelection": [
             {
