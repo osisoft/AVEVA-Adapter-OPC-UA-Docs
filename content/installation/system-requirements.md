@@ -14,3 +14,7 @@ PI Adapter for OPC UA is supported on a variety of platforms and processors. Ins
 | Debian 10 <br>Ubuntu 18.04, 20.04 | ARM64 | `OpcUa_linux-arm64.deb`  | ARM 64-bit processors |
 
 Alternatively, you can use tar.gz files with binaries to build your own custom installers or containers for Linux. For more information on installing PI Adapter for OPC UA with Docker containers, see [Install PI Adapter for OPC UA using Docker](xref:InstallPIAdapterForOPCUAUsingDocker).
+
+## PI Web API compatibility
+
+This version of PI Adapter for OPC UA is compatible with PI Web API 2021 and later.
