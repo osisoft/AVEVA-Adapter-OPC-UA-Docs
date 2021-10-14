@@ -18,20 +18,20 @@ These steps guide you through setup of each configuration file available for PI 
 
 1. Configure one or several OPC UA system components.<br>See [System components](xref:SystemComponentsConfiguration#configure-system-components).
 
-2. Configure an OPC UA data source for each OPC UA device.<br>See [Data source](xref:PIAdapterForOPCUADataSourceConfiguration#configure-opc-ua-data-source).
+1. Configure an OPC UA data source for each OPC UA device.<br>See [Data source](xref:PIAdapterForOPCUADataSourceConfiguration#configure-opc-ua-data-source).
 
-3. **Optional**: Configure client settings.<br> See [Client settings](xref:PIAdapterForOPCUAClientSettingsConfiguration#configure-opc-ua-client-settings).
+1. **Optional**: Configure client settings.<br> See [Client settings](xref:PIAdapterForOPCUAClientSettingsConfiguration#configure-opc-ua-client-settings).
 
-4. **Optional**: Perform data source discovery.<br> See [Discovery](xref:DataSourceDiscovery).
+1. **Optional**: Perform data source discovery.<br> See [Discovery](xref:DataSourceDiscovery).
 
-4. Configure an OPC UA data selection for each OPC UA data source.<br>See [Data selection](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).
+1. Configure an OPC UA data selection for each OPC UA data source.<br>See [Data selection](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).
 
-5. **Optional**: Configure data filters, security, diagnostics and metadata, buffering, and logging.<br>See the following topics:
+1. **Optional**: Configure data filters, security, diagnostics and metadata, buffering, and logging.<br>See the following topics:
 
     - [Data filters](xref:DataFiltersConfiguration#configure-data-filters)
-    - [Security](xref:pi-adapter-for-opc-ua-security-configuration#configure-opc-ua-adapter-security)
+    - [Security](xref:PIAdapterForOPCUASecurityConfiguration#configure-opc-ua-adapter-security)
     - [Diagnostics and metadata](xref:GeneralConfiguration#configure-general)
     - [Buffering](xref:BufferingConfiguration#configure-buffering)
     - [Logging](xref:LoggingConfiguration#configure-logging)
 
-6. Configure one or several egress and health endpoints.<br>See [Egress endpoints](xref:EgressEndpointsConfiguration#configure-egress-endpoints) and [Health endpoints](xref:HealthEndpointConfiguration#configure-health-endpoint).
+1. Configure one or several egress and health endpoints.<br>See [Egress endpoints](xref:EgressEndpointsConfiguration#configure-egress-endpoints) and [Health endpoints](xref:HealthEndpointConfiguration#configure-health-endpoint).
