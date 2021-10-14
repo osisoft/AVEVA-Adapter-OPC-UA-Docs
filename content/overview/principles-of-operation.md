@@ -18,7 +18,7 @@ For more information, see [PI Adapter for OPC UA data source configuration](xref
 
 ## Connection
 
-The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secure connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establishes a secure connection.
+The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secure connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establish a secure connection.
 
 For more information on secure connections, see [PI Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration).
 
@@ -50,7 +50,7 @@ The following table lists OPC UA variable types that the adapter collects data f
 | UInteger         | UInteger         |
 | Enumeration      | Int16            |
 
-PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added to subscription too. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added to the subscription too. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
 ## Enumeration types
 
@@ -75,7 +75,7 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 
 <sup>1</sup> **Note:** `Null` values with `Good` quality are discarded. `Null` values with `Bad` or `Questionable` quality send the default value `0` or `null` to the destination.
 
-The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are
+The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are:
 
 - **ComponentId**: Specifies the data source, for example _OpcUa1_
 - **ComponentType**: Specifies the type of adapter, for example _OpcUa_
@@ -85,7 +85,7 @@ Metadata specific to the OPC UA adapter are
 - **BrowseName**: The browse name as provided by the OPC UA server
 - **SourceId**: The NodeId provided by the OPC UA server
 
-**Note:** A configured metadata level allows you to set the amount of metadata for the adapter. Specify the metadata level in [General configuration](xref:GeneralConfiguration). For the OPC UA adapter, the following metadata is sent for the individual level:
+**Note:** A configured metadata level allows you to set the amount of metadata for the adapter. Specify the metadata level in the [General configuration](xref:GeneralConfiguration). For the OPC UA adapter, the following metadata is sent for the individual level:
 
 - `None`: No metadata
 - `Low`: AdapterType (ComponentType) and DataSource (ComponentId)
@@ -99,4 +99,4 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 ```
 NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
-**Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in data source configuration.
+**Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.

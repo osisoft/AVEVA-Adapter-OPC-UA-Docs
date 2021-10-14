@@ -40,7 +40,7 @@ Complete the following steps to configure an OPC UA data source. Use the `PUT` m
 
 7. Configure data selection.
 
-    For more information, see [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration)
+    For more information, see [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration).
 
 ## OPC UA data source schema
 
@@ -56,7 +56,7 @@ The following parameters are available for configuring an OPC UA data source:
 
 | Parameter | Required | Type | Description |
 |-----------|----------|------|-------------|
-| **EndpointURL** | Required | `string` | The endpoint URL of the OPC UA server in opc.tcp format. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br>**Note:** If you change the EndpointURL on a configured adapter that has _ComponentID_DataSelection_ .json file exported, you need to remove the _ComponentID_DataSelection.json_ file from the configuration directory to trigger a new browse (export). <br><br>Allowed value: well-formed opc.tcp address|
+| **EndpointURL** | Required | `string` | The endpoint URL of the OPC UA server in opc.tcp format. The following is an example of the URL format: `opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer`<br><br>**Note:** If you change the EndpointURL on a configured adapter that has _ComponentID_DataSelection.json_ file exported, you need to remove the _ComponentID_DataSelection.json_ file from the configuration directory to trigger a new browse (export). <br><br>Allowed value: well-formed opc.tcp address|
 | **UseSecureConnection**|Optional | `boolean` | When set to true, the adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.<br><br>**Note:** OSIsoft recommends setting this option to false for testing purposes only. <br><br> Allowed value: `true` or `false`<br>Default value: `true`|
 | **UserName** | Optional | `string` | User name for accessing the OPC UA server. <br><br>Allowed value: any string <br> Default value: `null`|
 | **Password** | Optional | `string` | Password for accessing the OPC UA server.<br><br>**Note:** OSIsoft recommends using REST to configure the data source when the password must be specified because REST will encrypt the password. If you do not use REST, the plain text password will be stored on-disk. <br><br>Allowed value: any string <br> Default value: `null`|
