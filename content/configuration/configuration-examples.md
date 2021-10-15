@@ -13,16 +13,16 @@ The following tables provide examples for all configurations available for PI Ad
 ```json
 [
     {
-        "ComponentId": "OpcUa1",
-        "ComponentType": "OpcUa"
+        "componentId": "OpcUa1",
+        "componentType": "OpcUa"
     },
     {
-        "ComponentId": "OpcUa2",
-        "ComponentType": "OpcUa"
+        "componentId": "OpcUa2",
+        "componentType": "OpcUa"
     },
     {
-        "ComponentId": "OmfEgress",
-        "ComponentType": "OmfEgress"
+        "componentId": "OmfEgress",
+        "componentType": "OmfEgress"
     }
 ]
 ```
@@ -38,22 +38,22 @@ The following tables provide examples for all configurations available for PI Ad
             "logFileCountLimit": 31
         },
         "DataSource": {
-            "EndpointUrl": "opc.tcp://OPCUAServerEndpoint/OPCUA/Server",
-            "UseSecureConnection": false,
-            "UserName": null,
-            "Password": null,
-            "IncomingTimestamp": "Source",
-            "StreamIdPrefix": "OPC_Prefix_",
-            "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
-            "DataCollectionMode": "CurrentWithBackfill"
+            "endpointUrl": "opc.tcp://OPCUAServerEndpoint/OPCUA/Server",
+            "useSecureConnection": false,
+            "userName": null,
+            "password": null,
+            "incomingTimestamp": "Source",
+            "streamIdPrefix": "OPC_Prefix_",
+            "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
+            "dataCollectionMode": "CurrentWithBackfill"
         },
         "DataSelection": [
             {
-                "Selected": true,
-                "Name": "Sawtooth",
-                "NodeId": "ns=3;s=Sawtooth",
-                "StreamId": "SawtoothStream",
-                "DataFilterId": null
+                "selected": true,
+                "name": "Sawtooth",
+                "nodeId": "ns=3;s=Sawtooth",
+                "streamId": "SawtoothStream",
+                "dataFilterId": null
             }
         ]
     },
@@ -79,9 +79,9 @@ The following tables provide examples for all configurations available for PI Ad
             }
         ],
     "Buffering": {
-            "BufferLocation": "C:/ProgramData/OSIsoft/Adapters/OpcUa/Buffers",
-            "MaxBufferSizeMB": -1,
-            "EnableBuffering": true
+            "bufferLocation": "C:/ProgramData/OSIsoft/Adapters/OpcUa/Buffers",
+            "maxBufferSizeMB": -1,
+            "enableBuffering": true
         }
      },
     "OmfEgress": {
@@ -104,10 +104,10 @@ The following tables provide examples for all configurations available for PI Ad
                 "clientSecret": "CLIENTSECRET"
             },
             {
-                "Id": "EDS",
-                "Endpoint": "http://localhost:/api/v1/tenants/default/namespaces/default/omf",
-                "UserName": "eds",
-                "Password": "eds"
+                "id": "EDS",
+                "endpoint": "http://localhost:/api/v1/tenants/default/namespaces/default/omf",
+                "userName": "eds",
+                "password": "eds"
             }
         ]
     }
@@ -122,7 +122,7 @@ The following are representations of minimal and complete data source configurat
 
 ```json
 {
-    "EndpointUrl": "opc.tcp://<IP-Address>:<Port>/<TestOPCUAServer>"
+    "endpointUrl": "opc.tcp://<IP-Address>:<Port>/<TestOPCUAServer>"
 }
 ```
 
@@ -130,13 +130,13 @@ The following are representations of minimal and complete data source configurat
 
 ```json
 {
-    "EndpointUrl": "opc.tcp://<IP-Address>:<Port>/<TestOPCUAServer>",
-    "UseSecureConnection": true,
-    "UserName": null,
-    "Password": null,
-    "IncomingTimestamp": "Source",
-    "StreamIdPrefix": null,
-    "DefaultStreamIdPattern": "{NamespaceIndex}.{Identifier}"
+    "endpointUrl": "opc.tcp://<IP-Address>:<Port>/<TestOPCUAServer>",
+    "useSecureConnection": true,
+    "userName": null,
+    "password": null,
+    "incomingTimestamp": "Source",
+    "streamIdPrefix": null,
+    "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}"
 }
 ```
 
@@ -145,8 +145,8 @@ The following are representations of minimal and complete data source configurat
 ```json
 {
     "maxBrowseReferencesToReturn": 0,
-    "BrowseBlockSize": 10,
-    "ReadBlockSize": 1000,
+    "browseBlockSize": 10,
+    "readBlockSize": 1000,
     "reconnectDelay": "0:00:30",
     "recreateSubscriptionDelay": "0:00:05",
     "sessionRequestTimeout": "0:02:00",
@@ -154,7 +154,7 @@ The following are representations of minimal and complete data source configurat
     "sessionAllowInsecureCredentials": false,
     "sessionMaxOperationsPerRequest": 1000,
     "browseTimeout": "0:01:00",
-    "ReadTimeout": "0:00:30",
+    "readTimeout": "0:00:30",
     "maxMonitoredItemsPerCall": 1000,
     "maxNotificationsPerPublish": 0,
     "publishingInterval": "0:00:01",
@@ -174,13 +174,13 @@ The following are representations of minimal and complete data selection configu
 ```json
 [
  {
-    "NodeId": "ns=5;s=Random1"
+    "nodeId": "ns=5;s=Random1"
   },
   {
-    "NodeId": "ns=5;s=Sawtooth1"
+    "nodeId": "ns=5;s=Sawtooth1"
   },
   {
-    "NodeId": "ns=5;s=Sinusoid1"
+    "nodeId": "ns=5;s=Sinusoid1"
   }
 ]
 ```
@@ -190,25 +190,25 @@ The following are representations of minimal and complete data selection configu
 ```json
 [
  {
-    "Selected": true,
-    "Name": "CustomStreamName",
-    "NodeId": "ns=5;s=Random1",
-    "StreamId": "CustomStreamName",
-    "DataFilterId": "DuplicateData"
+    "selected": true,
+    "name": "CustomStreamName",
+    "nodeId": "ns=5;s=Random1",
+    "streamId": "CustomStreamName",
+    "dataFilterId": "DuplicateData"
   },
   {
-    "Selected": false,
-    "Name": null,
-    "NodeId": "ns=5;s=Sawtooth1",
-    "StreamId": null,
-    "DataFilterId": "DuplicateData"
+    "selected": false,
+    "name": null,
+    "nodeId": "ns=5;s=Sawtooth1",
+    "streamId": null,
+    "dataFilterId": "DuplicateData"
   },
   {
-    "Selected": true,
-    "Name": "5.Sinusoid1",
-    "NodeId": "ns=5;s=Sinusoid1",
-    "StreamId": null,
-    "DataFilterId": null
+    "selected": true,
+    "name": "5.Sinusoid1",
+    "nodeId": "ns=5;s=Sinusoid1",
+    "streamId": null,
+    "dataFilterId": null
   }
 ]
 ```

@@ -54,27 +54,28 @@ The following parameters are available for configuring an OPC UA data selection:
 
 | Parameter     | Required | Type | Description |
 |---------------|----------|------|-------------|
-| **Selected** | Optional | `boolean` | Use this field to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false. <br><br>Allowed value: `true` or `false` <br>Default value: `true`|
-| **Name**      | Optional | `string` | Name of the data item collected from the data source. <br><br>Default value: `null` <br>results in **StreamId** value being used also as a **Name** |
-| **NodeId**    | Required | `string` | The NodeId of the variable.<br><br>Examples<br>`"ns=5;AString"`<br>`"ns=2;i=203"`<br>`"ns=<NamespaceIndex>;<IdentifierType>=<Identifer>"` |
-| **StreamID** | Optional | `string` | The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores ("__").<br>Can contain a maximum of 2000 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % < > &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.<br><br>For more information on how the adapter encodes special characters in the **StreamId**, see [Egress endpoints](xref:EgressEndpointsConfiguration#special-characters-encoding). |
-| **DataFilterID** | Optional | `string` | Enables data filtering for this data selection item if the ID of a data filter is specified.<br>**Note:** If the specified **DataFilterId** does not exist, unfiltered data is sent until that **DataFilterId** is created. |
+| **selected** | Optional | `boolean` | Use this field to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false. <br><br>Allowed value: `true` or `false` <br>Default value: `true`|
+| **name**      | Optional | `string` | Name of the data item collected from the data source. <br><br>Default value: `null` <br>results in **StreamId** value being used also as a **Name** |
+| **nodeId**    | Required | `string` | The NodeId of the variable.<br><br>Examples<br>`"ns=5;AString"`<br>`"ns=2;i=203"`<br>`"ns=<NamespaceIndex>;<IdentifierType>=<Identifer>"` |
+| **streamID** | Optional | `string` | The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores ("__").<br>Can contain a maximum of 2000 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % < > &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.<br><br>For more information on how the adapter encodes special characters in the **StreamId**, see [Egress endpoints](xref:EgressEndpointsConfiguration#special-characters-encoding). |
+| **dataFilterId** | Optional | `string` | Enables data filtering for this data selection item if the ID of a data filter is specified.<br>**Note:** If the specified **DataFilterId** does not exist, unfiltered data is sent until that **DataFilterId** is created. |
 
 ## OPC UA data selection examples
 
 The following are examples of valid OPC UA data selection configurations:
+
 ### Minimal data selection configuration
 
 ```json
 [
  {
-    "NodeId": "ns=5;s=Random1"
+    "nodeId": "ns=5;s=Random1"
   },
   {
-    "NodeId": "ns=5;s=Sawtooth1"
+    "nodeId": "ns=5;s=Sawtooth1"
   },
   {
-    "NodeId": "ns=5;s=Sinusoid1"
+    "nodeId": "ns=5;s=Sinusoid1"
   }
 ]
 ```
@@ -84,25 +85,25 @@ The following are examples of valid OPC UA data selection configurations:
 ```json
 [
  {
-    "Selected": true,
-    "Name": "CustomStreamName",
-    "NodeId": "ns=5;s=Random1",
-    "StreamId": "CustomStreamName",
-    "DataFilterId": "DuplicateData"
+    "selected": true,
+    "name": "CustomStreamName",
+    "nodeId": "ns=5;s=Random1",
+    "streamId": "CustomStreamName",
+    "dataFilterId": "DuplicateData"
   },
   {
-    "Selected": false,
-    "Name": null,
-    "NodeId": "ns=5;s=Sawtooth1",
-    "StreamId": null,
-    "DataFilterId": "DuplicateData"
+    "selected": false,
+    "name": null,
+    "nodeId": "ns=5;s=Sawtooth1",
+    "streamId": null,
+    "dataFilterId": "DuplicateData"
   },
   {
-    "Selected": true,
-    "Name": "5.Sinusoid1",
-    "NodeId": "ns=5;s=Sinusoid1",
-    "StreamId": null,
-    "DataFilterId": null
+    "selected": true,
+    "name": "5.Sinusoid1",
+    "nodeId": "ns=5;s=Sinusoid1",
+    "streamId": null,
+    "dataFilterId": null
   }
 ]
 ```
