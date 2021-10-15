@@ -68,7 +68,7 @@ Linux: `/opt/OSIsoft/Adapters/OpcUa/Schemas`
 
 The following parameters are available for configuring OPC UA client settings:
 
-**Note**: All intervals, delays, and timeouts require the string to be formatted like this:<br> `\[d:\]h:mm:ss\[.FFFFFFF\]` where the items in brackets are optional.<br> d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second.<br><br> Example: `"05:07:10:40.150"` for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.
+**Note**: All intervals, delays, and timeouts require the string to be formatted like this:<br> `[d:]h:mm:ss[.FFFFFFF]` where the items in brackets are optional.<br> d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second.<br><br> Example: `"05:07:10:40.150"` for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.
 
 | Parameter     | Required | Type | Description |
 |---------------|----------|------|-------------|
@@ -117,16 +117,16 @@ The following parameters are available for configuring OPC UA client settings:
     "monitoredItemDataChangeTrigger": "StatusValue",
     "monitoredItemQueueSize": 2,
     "maxInternalQueueSize": 500000
-}
+}  
 ```
 
-## REST URLs
+## REST URLs      
 
 | Relative URL | HTTP verb | Action |
 | ------------ | --------- | ------ |
-| api/v1/configuration/_ComponentId_/ClientSettings  | GET | Retrieves the OPC UA client settings configuration |
-| api/v1/configuration/_ComponentId_/ClientSettings  | PUT | Configures or updates the OPC UA client settings  configuration |
-| api/v1/configuration/_ComponentId_/ClientSettings | DELETE | Deletes the OPC UA client settings  configuration |
-| api/v1/configuration/_ComponentId_/ClientSettings | PATCH | Allows partial updating of configured client settings fields |
+| api/v1/configuration/_ComponentId_/ClientSettings  | GET | Retrieves the OPC UA client settings configuration. |
+| api/v1/configuration/_ComponentId_/ClientSettings  | PUT | Configures or updates the OPC UA client settings  configuration. |
+| api/v1/configuration/_ComponentId_/ClientSettings | DELETE | Deletes the OPC UA client settings  configuration. |
+| api/v1/configuration/_ComponentId_/ClientSettings | PATCH | Allows partial updating of configured client settings fields. |
 
 **Note:** Replace _ComponentId_ with the Id of your OPC UA component, for example OpcUa1.

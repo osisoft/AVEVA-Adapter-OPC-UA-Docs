@@ -13,7 +13,7 @@ A discovery against the data source of an OPC UA adapter allows you to specify t
 The string of the **query** parameter must contain string items in the following form: <br>`RootNodeIds=<nodeId>`<br><br>
 | String item      | Required | Description |
 |------------------|----------|-------------|
-| **RootNodeIds**  | Optional |  The node Ids that the adapter will begin browse operation from.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **RootNodeIds** is not specified, the adapter initiates browse operation from the 'object' folder. |
+| **RootNodeIds**  | Optional |  The node Ids that the adapter will begin browse operation from.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **RootNodeIds** is not specified, the adapter initiates browse operation from the `object` folder. |
 
 <br>**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
 
@@ -38,8 +38,8 @@ The query parameter of the OPC UA component must be specified as shown in this e
 
 ```json
 {
-	"id" : "SampleA",
-	"query" : "RootNodeIds=ns=6;s=MyDevice"
+    "id" : "SampleA",
+    "query" : "RootNodeIds=ns=6;s=MyDevice"
 }
 ```
 
@@ -48,18 +48,18 @@ The query parameter of the OPC UA component must be specified as shown in this e
 ```json
 [
     {
-	    "id": "PlantA",
-	    "query": "RootNodeIds=ns=6;s=MyDevice",
-	    "startTime": "2020-12-14T14:19:01.4383791-08:00",
-	    "endTime": "2020-12-14T14:19:31.8549164-08:00",
-	    "progress": 30,
-	    "itemsFound": 700,
-	    "newItems": 200,
-	    "resultUri": "http://127.0.0.1:5590/api/v1/Configuration/OpcUaComponentId/Discoveries/PlantA/result",
-	    "autoSelect": false,
-	    "status": "Complete",
-	    "errors": null
-	}
+        "id": "PlantA",
+        "query": "RootNodeIds=ns=6;s=MyDevice",
+        "startTime": "2020-12-14T14:19:01.4383791-08:00",
+        "endTime": "2020-12-14T14:19:31.8549164-08:00",
+        "progress": 30,
+        "itemsFound": 700,
+        "newItems": 200,
+        "resultUri": "http://127.0.0.1:5590/api/v1/Configuration/OpcUaComponentId/Discoveries/PlantA/result",
+        "autoSelect": false,
+        "status": "Complete",
+        "errors": null
+    }
 ]
 ```
 
