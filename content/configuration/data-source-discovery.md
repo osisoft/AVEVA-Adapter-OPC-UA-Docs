@@ -10,10 +10,10 @@ A discovery against the data source of an OPC UA adapter allows you to specify t
 
 ## Query string
 
-The string of the **query** parameter must contain string items in the following form: <br>`RootNodeIds=<nodeId>`<br><br>
+The string of the **query** parameter must contain string items in the following form: <br>`rootNodeIds=<nodeId>`<br><br>
 | String item      | Required | Description |
 |------------------|----------|-------------|
-| **RootNodeIds**  | Optional |  The node Ids that the adapter will begin browse operation from.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **RootNodeIds** is not specified, the adapter initiates browse operation from the `object` folder. |
+| **rootNodeIds**  | Optional |  The node Ids that the adapter will begin browse operation from.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **rootNodeIds** is not specified, the adapter initiates browse operation from the `object` folder. |
 
 <br>**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
 
@@ -68,18 +68,18 @@ The query parameter of the OPC UA component must be specified as shown in this e
 ```json
 [
  {
-    "Selected": false,
-    "Name": null,
-    "NodeId": "ns=5;s=Pump.Temperature",
-    "StreamId": "5.Pump.Temperature",
-    "DataFilterId": null
+    "selected": false,
+    "name": null,
+    "nodeId": "ns=5;s=Pump.Temperature",
+    "streamId": "5.Pump.Temperature",
+    "dataFilterId": null
   },
   {
-    "Selected": false,
-    "Name": null,
-    "NodeId": "ns=5;s=Pump.FlowRate",
-    "StreamId": "5.Pump.FlowRate",
-    "DataFilterId": null
+    "selected": false,
+    "name": null,
+    "bodeId": "ns=5;s=Pump.FlowRate",
+    "streamId": "5.Pump.FlowRate",
+    "dataFilterId": null
   }
 ]
 ```
