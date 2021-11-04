@@ -10,7 +10,7 @@
 - topicUid: OPCUAConfiguration
   items:
   - topicUid: ConfigurationTools
-  - topicUid: SystemComponentsConfiguration
+  - topicUid: PIAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
   - topicUid: PIAdapterForOPCUADataSourceConfiguration
