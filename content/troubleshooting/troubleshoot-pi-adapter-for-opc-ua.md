@@ -14,7 +14,7 @@ To troubleshoot issues with PI Adapter for OPC UA, you can check the adapter's c
     1. **NodeId** - Verify that the referenced nodeId exists on the server.
     2. **DataFilterId** - If configured, verify that the referenced data filter exists.
 
-3. In the [egress endpoints configuration](xref:EgressEndpointsConfiguration), verify that each configured endpoint's **Endpoint** property and credentials are correct. For a PI server or EDS endpoint, verify **UserName** and **Password**, for an OCS endpoint, verify **ClientId** and **ClientSecret**.
+3. In the [egress endpoints configuration](xref:EgressEndpointsConfiguration), verify that each configured endpoint's **Endpoint** property and credentials are correct. For a PI server endpoint, verify **UserName** and **Password**, for an OCS endpoint, verify **ClientId** and **ClientSecret**.
 
 ## Check connectivity
 
