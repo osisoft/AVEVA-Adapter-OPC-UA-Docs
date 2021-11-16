@@ -18,3 +18,7 @@ Alternatively, you can use tar.gz files with binaries to build your own custom i
 ## PI Web API compatibility
 
 This version of PI Adapter for OPC UA is compatible with PI Web API 2021 and later.
+
+## PI Adapter for OPC UA upgrade
+
+If you are upgrading PI Adapter for OPC UA from version 1.1 to 1.2 and are sending data to PI Web API 2019, OCS, or both, read [OPC UA Adapter - Upgrade from v1.1 to v1.2](https://osisoft.lightning.force.com/lightning/r/Knowledge__kav/ka08W000000frOFQAY/view). This knowledge article contains important information about upgrade scenarios.
