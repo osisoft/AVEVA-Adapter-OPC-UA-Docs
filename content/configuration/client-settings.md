@@ -75,7 +75,7 @@ The following parameters are available for configuring OPC UA client settings:
 | **maxBrowseReferencesToReturn**      | Optional | `integer` | Maximum number of references returned from browse call. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `0`  |
 | **browseBlockSize**      | Optional | `integer` | Maximum number of nodes to browse in one call. <br><br>Minimum value: `1`<br>Maximum value: `429496729`<br>Default value:  `10`|
 | **readBlockSize**      | Optional | `integer` | Maximum number of variables to read in one call. <br><br>Minimum value: `0`<br>Maximum value: `429496729`<br>Default value: `1000` |
-| **reconnectDelay**      | Optional | `TimeSpan` | Delay between reconnection attempts. * <br><br> Allowed value: cannot be negative <br>Default value: `0:00:30`|
+| **reconnectDelay**      | Optional | `TimeSpan` | Delay between reconnection attempts. *<br>Does not apply to the initial connection, only reconnections.<br><br> Allowed value: cannot be negative <br>Default value: `0:00:30`|
 | **recreateSubscriptionDelay**      | Optional | `TimeSpan` | Delay between successful reconnection and subsequent subscription recreation. * <br><br>Allowed value: cannot be negative <br> Default value: `0:00:10`|
 | **sessionRequestTimeout**      | Optional | `TimeSpan` | Default request timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:02:00`|
 | **connectionTimeout**      | Optional | `TimeSpan` | Connection timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30` |
