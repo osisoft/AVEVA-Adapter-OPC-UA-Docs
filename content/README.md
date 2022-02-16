@@ -4,9 +4,17 @@ PI Adapter for OPC UA is a data-collection component that transfers time-series 
 
 This repository contains the documentation for PI Adapter for OPC UA. You can access a readable version of this documentation [here.](https://osisoft.github.io/OSIsoft-Adapter-OPC-UA-Docs/content/)
 
+## Subtree
+
+This documentation repository consumes the [PI-Adapter](https://github.com/osisoft/PI-Adapter) repository as a subtree. This repository contains a documentation framework for adapters. This subtree should be updated periodically. To update the subtree, enter the following command:
+
+```bash
+git subtree pull --prefix content/main https://github.com/osisoft/PI-Adapter main --squash
+```
+
 ## License
 
-© 2020-2021 by OSIsoft, LLC. All rights reserved.
+&copy; 2020-2021 by OSIsoft, LLC. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
