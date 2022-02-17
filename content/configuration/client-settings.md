@@ -73,24 +73,26 @@ The following parameters are available for configuring OPC UA client settings:
 | Parameter     | Required | Type | Description |
 |---------------|----------|------|-------------|
 | **maxBrowseReferencesToReturn**      | Optional | `integer` | Maximum number of references returned from browse call. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `0`  |
-| **browseBlockSize**      | Optional | `integer` | Maximum number of nodes to browse in one call. <br><br>Minimum value: `1`<br>Maximum value: `429496729`<br>Default value:  `10`|
-| **readBlockSize**      | Optional | `integer` | Maximum number of variables to read in one call. <br><br>Minimum value: `0`<br>Maximum value: `429496729`<br>Default value: `1000` |
+| **browseBlockSize**      | Optional | `integer` | Maximum number of nodes to browse in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value:  `10`|
+| **readBlockSize**      | Optional | `integer` | Maximum number of variables to read in one call. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `1000` |
 | **reconnectDelay**      | Optional | `TimeSpan` | Delay between reconnection attempts. *<br>Does not apply to the initial connection, only reconnections.<br><br> Allowed value: cannot be negative <br>Default value: `0:00:30`|
 | **recreateSubscriptionDelay**      | Optional | `TimeSpan` | Delay between successful reconnection and subsequent subscription recreation. * <br><br>Allowed value: cannot be negative <br> Default value: `0:00:10`|
 | **sessionRequestTimeout**      | Optional | `TimeSpan` | Default request timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:02:00`|
 | **connectionTimeout**      | Optional | `TimeSpan` | Connection timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30` |
 | **sessionAllowInsecureCredentials**      | Optional | `boolean` | When set to true credentials can be communicated over unencrypted channel. <br><br>Allowed value: `true` or `false`<br>Default value: `false` |
-| **sessionMaxOperationsPerRequest**      | Optional | `integer` | Default maximum operation per request. <br><br>Minimum value: `0`<br>Maximum value: `429496729`<br>Default value: `1000`|
+| **sessionMaxOperationsPerRequest**      | Optional | `integer` | Default maximum operation per request. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `1000`|
 | **browseTimeout**      | Optional | `TimeSpan` | Browse operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:01:00`|
 | **readTimeout**      | Optional | `TimeSpan` | Read operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30` |
-| **maxMonitoredItemsPerCall**      | Optional | `integer` | Maximum number of monitored items that can be added to subscription in one call. <br><br>Minimum value: `1`<br>Maximum value: `429496729`<br>Default value: `1000`|
-| **maxNotificationsPerPublish**      | Optional | `integer` | Maximum notification messages in one publish message. <br><br>Minimum value: `0`<br>Maximum value: `429496729`<br>Default value: `0` |
+| **maxMonitoredItemsPerCall**      | Optional | `integer` | Maximum number of monitored items that can be added to subscription in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value: `1000`|
+| **maxNotificationsPerPublish**      | Optional | `integer` | Maximum notification messages in one publish message. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `0` |
 | **publishingInterval**      | Optional | `TimeSpan` | Publishing interval of the subscription. * <br><br> Allowed value: cannot be negative <br> Default value: `0:00:01`|
 | **createMonitoredItemsTimeout**      | Optional | `TimeSpan` | Create monitored items timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30`|
 | **samplingInterval**      | Optional | `TimeSpan` | Monitored item sampling interval. * <br><br>Allowed value: cannot be negative <br>Default value: `0:00:00:5` |
 | **monitoredItemDataChangeTrigger** | Optional | `string` | Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: `Status`, `StatusValue`, `StatusValueTimestamp` <br>Default value: `StatusValue`
-| **monitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. <br><br>Minimum value: `1`<br> Maximum value: `429496729` <br>Default value: `2`|
+| **monitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. <br><br>Minimum value: `1`<br> Maximum value: `4294967295` <br>Default value: `2`|
 | **maxInternalQueueSize**      | Optional | `integer` | Maximum number of items that can be in the adapter internal queue. <br><br>Minimum value: `1000`<br>Maximum value: `2147483647`<br>Default value: `500000` |
+| **HistoryReadBlockSize**      | Optional | `integer` | Maximum number of variables for history to read in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value: `10` |
+| **HistoryReadTimeout**      | Optional | `TimeSpan` | History read operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:01:00` |
 
 **\* Note:** You can also specify timespans as numbers in seconds. For example, `"reconnectDelay": 25` specifies 25 seconds, or `"reconnectDelay": 125.5` specifies 2 minutes and 5.5 seconds.
 
@@ -98,25 +100,27 @@ The following parameters are available for configuring OPC UA client settings:
 
 ```json
 {
-    "maxBrowseReferencesToReturn": 0,
-    "browseBlockSize": 10,
-    "readBlockSize": 1000,
-    "reconnectDelay": "0:00:30",
-    "recreateSubscriptionDelay": "0:00:05",
-    "sessionRequestTimeout": "0:02:00",
-    "connectionTimeout": "0:00:30",
-    "sessionAllowInsecureCredentials": false,
-    "sessionMaxOperationsPerRequest": 1000,
-    "browseTimeout": "0:01:00",
-    "readTimeout": "0:00:30",
-    "maxMonitoredItemsPerCall": 1000,
-    "maxNotificationsPerPublish": 0,
-    "publishingInterval": "0:00:01",
-    "createMonitoredItemsTimeout": "0:00:30",
-    "samplingInterval": "0:00:00.5",
-    "monitoredItemDataChangeTrigger": "StatusValue",
-    "monitoredItemQueueSize": 2,
-    "maxInternalQueueSize": 500000
+    "MaxBrowseReferencesToReturn": 0,
+    "BrowseBlockSize": 10,
+    "ReconnectDelay": "0:00:30",
+    "RecreateSubscriptionDelay": "0:00:10",
+    "ReadBlockSize": 1000,
+    "SessionRequestTimeout": "0:02:00",
+    "ConnectionTimeout": "0:00:30",
+    "ReadTimeout": "0:00:30",
+    "SessionAllowInsecureCredentials": false,
+    "SessionMaxOperationsPerRequest": 1000,
+    "BrowseTimeout": "0:01:00",
+    "MaxMonitoredItemsPerCall": 1000,
+    "MaxNotificationsPerPublish": 0,
+    "PublishingInterval": "0:00:01",
+    "CreateMonitoredItemsTimeout": "0:00:30",
+    "MonitoredItemDataChangeTrigger": "StatusValue",
+    "SamplingInterval": "0:00:00.5",
+    "MonitoredItemQueueSize": 2,
+    "MaxInternalQueueSize": 500000,
+    "HistoryReadBlockSize": 10,
+    "HistoryReadTimeout": "0:01:00"
 }  
 ```
 
