@@ -109,7 +109,7 @@ This topic provides examples of how to create a Docker container with the OPC UA
 
 Complete the following steps to run the container:
 
-1. Use the docker container image opcuaadapter created previously.
+1. Use the docker container image `opcuaadapter` created previously.
 2. Type the following in the command line (sudo may be necessary):
 
 	```bash

@@ -1,1 +1,1 @@
-<Component ID>
+OpcUa1
