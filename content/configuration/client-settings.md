@@ -91,7 +91,7 @@ The following parameters are available for configuring OPC UA client settings:
 | **monitoredItemDataChangeTrigger** | Optional | `string` | Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: `Status`, `StatusValue`, `StatusValueTimestamp` <br>Default value: `StatusValue`
 | **monitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. <br><br>Minimum value: `1`<br> Maximum value: `4294967295` <br>Default value: `2`|
 | **maxInternalQueueSize**      | Optional | `integer` | Maximum number of items that can be in the adapter internal queue. <br><br>Minimum value: `1000`<br>Maximum value: `2147483647`<br>Default value: `500000` |
-| **HistoryReadBlockSize**      | Optional | `integer` | Maximum number of variables for history to read in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value: `10` |
+| **HistoryReadBlockSize**      | Optional | `integer` | Maximum number of nodes for history to read in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value: `10` |
 | **HistoryReadTimeout**      | Optional | `TimeSpan` | History read operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:01:00` |
 
 **\* Note:** You can also specify timespans as numbers in seconds. For example, `"reconnectDelay": 25` specifies 25 seconds, or `"reconnectDelay": 125.5` specifies 2 minutes and 5.5 seconds.
