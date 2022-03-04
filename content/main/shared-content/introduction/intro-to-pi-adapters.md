@@ -6,8 +6,6 @@ uid: IntroToPiAdapters
 
 [!include[product-name](../_includes/inline/product-name.md)] is an OSIsoft data collection technology that collects operations data from a [!include[product-protocol](../_includes/inline/product-protocol.md)] data source and then sends it to a supported storage location in the Open Message Format (OMF).
 
-## About [!include[product-protocol](../_includes/inline/product-protocol.md)]
-
 OPC Unified Architecture (OPC UA) is an open standard, machine-to-machine communication protocol for industrial automation developed by the OPC Foundation. This adapter can connect to any device that uses the OPC UA communication protocol.
 
 ## [!include[product-name](../_includes/inline/product-name.md)] data flow
