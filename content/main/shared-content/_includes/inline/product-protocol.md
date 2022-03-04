@@ -1,1 +1,1 @@
-<PROTOCOL>
+OPC-UA
