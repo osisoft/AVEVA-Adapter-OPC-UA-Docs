@@ -8,7 +8,7 @@ uid: IntroToPiAdapters
 
 ## About [!include[product-protocol](../_includes/inline/product-protocol.md)]
 
-<!-- Add content about the protocol here -->
+OPC Unified Architecture (OPC UA) is an open standard, machine-to-machine communication protocol for industrial automation developed by the OPC Foundation. This adapter can connect to any device that uses the OPC UA communication protocol.
 
 ## [!include[product-name](../_includes/inline/product-name.md)] data flow
 
