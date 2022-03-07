@@ -1,0 +1,3 @@
+## Data collection
+
+The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [Historical Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
