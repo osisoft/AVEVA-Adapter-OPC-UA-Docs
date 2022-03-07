@@ -1,6 +1,4 @@
 - topicUid: IntroToPiAdapters
-  items: 
-  - topicUid: PIAdapterForOPCUAPrinciplesOfOperation
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
