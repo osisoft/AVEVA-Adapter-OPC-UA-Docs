@@ -4,7 +4,7 @@ uid: IntroToPiAdapters
 
 # [!include[product-name](../_includes/inline/product-name.md)] [!include[product-version](../_includes/inline/product-version.md)]
 
-[!include[product-name](../_includes/inline/product-name.md)] is a  data collection technology that collects operations data from a data source over the [!include[product-protocol](../_includes/inline/product-protocol.md)] protocol and then sends it to a supported storage location in the Open Message Format (OMF).
+[!include[product-name](../_includes/inline/product-name.md)] is a  data collection technology that collects time-series operations data from a data source over the [!include[product-protocol](../_includes/inline/product-protocol.md)] protocol and then sends it to a supported storage location in the Open Message Format (OMF).
 
 OPC Unified Architecture (OPC UA) is an open standard, machine-to-machine communication protocol for industrial automation developed by the OPC Foundation. This adapter can connect to any device that uses the OPC UA communication protocol.
 
