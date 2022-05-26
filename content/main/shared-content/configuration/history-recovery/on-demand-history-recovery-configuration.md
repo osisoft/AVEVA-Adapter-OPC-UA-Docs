@@ -27,8 +27,8 @@ The PI adapter supports performing history recovery on-demand by specifying star
 Parameter | Type| Description
 ---------|----------|---------
  **Id** | `string` | The Id of the history recovery<br><br> **Note:** You cannot run multiple history recoveries with the same Id.
- **StartTime** | `datetime` | Time when the the first data items are collected.
- **EndTime** | `datetime`| Time when the last data items are collected.
+ **StartTime** | `datetime` | Time when the first data items are collected.<br><br>**Note:** Timestamps are interpreted into the Coordinated Universal Time (UTC) time standard.<br><br>To specify a timestamp in UTC standard, use the following format in a curl command: YYYY-MM-DDTHH:MM:SSZ.<br>To specify a timestamp in the local time of the PI Adapter, use the following format in a curl command: YYYY-MM-DDTHH:MM:SS.
+ **EndTime** | `datetime`| Time when the last data items are collected.<br><br> **Note:** Timestamps are interpreted into the Coordinated Universal Time (UTC) time standard.<br><br>To specify a timestamp in UTC standard, use the following format in a curl command: YYYY-MM-DDTHH:MM:SSZ.<br>To specify a timestamp in the local time of the PI Adapter, use the following format in a curl command: YYYY-MM-DDTHH:MM:SS.
 | **Checkpoint** | `datetime` | The latest timestamp that the history recovery has completed with the range being between **startTime** and **endTime**.
 | **Items** | `double` | The amount of data selection items in the history recovery operation.
 | **RecoveredEvents** | `double` | Number of events that the history recovery found on the data source.
