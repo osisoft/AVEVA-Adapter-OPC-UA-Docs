@@ -17,20 +17,17 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 
 ### Fixes
 
-The following issues reported from version 1.1 are fixed in this release.
+The following issues reported from earlier versions are fixed in this release.
 
-- Timestamp and value might not be correctly updated for the fast sampling rates.
-- Browse operation can fail when empty result is returned from a server.
+- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server is configured to have optional data item attributes: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
+- History recovery starttime and endtime in localtime format will be treated as local time to the adapter node instead of the UTC time.
 
 ### Enhancements
 
 The following enhancements are added in this release.
 
-- On-demand data source discovery.
-- Support for On-demand and automatic history recovery.
-- Support for collection of Unit of Measure, Minimum, and Maximum.
-- Support for enumeration data types.
-- Support for collecting data quality information along with data.
+- Reduce load on OPC UA server during history recovery by caching user access level.
+- Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
 
 ## Known issues
 
