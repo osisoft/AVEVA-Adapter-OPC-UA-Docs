@@ -76,7 +76,7 @@ This section is intended to provide relevant security-related information to gui
 
 ## Documentation overview
 
-**EdgeCmd utility:** Provides an overview on how to configure and administer PI adapters on Linux and Windows using command line arguments.
+**EdgeCmd utility:** Provides an overview on how to configure and administer PI Adapters on Linux and Windows using command line arguments.
 
 ## Technical support and resources
 
