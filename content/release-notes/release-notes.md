@@ -19,8 +19,8 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 
 The following issues reported from earlier versions are fixed in this release.
 
-- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server is configured to have optional data item attributes: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
-- History recovery starttime and endtime in localtime format will be treated as local time to the adapter node instead of the UTC time.
+- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server has invalid data item attributes like: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
+- History recovery starttime and endtime supplied in local time format will be treated as a local time by the adapter node instead of the UTC time.
 
 ### Enhancements
 
