@@ -17,20 +17,17 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 
 ### Fixes
 
-The following issues reported from version 1.1 are fixed in this release.
+The following issues reported from earlier versions are fixed in this release.
 
-- Timestamp and value might not be correctly updated for the fast sampling rates.
-- Browse operation can fail when empty result is returned from a server.
+- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server has invalid data item attributes like: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
+- History recovery starttime and endtime supplied in local time format will be treated as a local time by the adapter node instead of the UTC time.
 
 ### Enhancements
 
 The following enhancements are added in this release.
 
-- On-demand data source discovery.
-- Support for On-demand and automatic history recovery.
-- Support for collection of Unit of Measure, Minimum, and Maximum.
-- Support for enumeration data types.
-- Support for collecting data quality information along with data.
+- Reduce load on OPC UA server during history recovery by caching user access level.
+- Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
 
 ## Known issues
 
@@ -72,11 +69,14 @@ OSIsoft has selected the [Common Vulnerability Scoring System (CVSS)](https://ww
 
 This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of PI Adapter for OPC UA security vulnerabilities that are fixed in this release.
 
-No security-related information is applicable to this release.
+| Component | Version | CVE or Reference | CVSS | Mitigation                                                                                                 |
+| ----------| ------- | --------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------- |
+| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032)                                   | 7.5  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities  |                                                      |
+| zlib      | 1.2.11  | [BSDA-2018-5271](https://osisoft.blackducksoftware.com/api/vulnerabilities/BDSA-2018-5271/overview) | 7.1  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
 
 ## Documentation overview
 
-**EdgeCmd utility:** Provides an overview on how to configure and administer PI adapters on Linux and Windows using command line arguments.
+**EdgeCmd utility:** Provides an overview on how to configure and administer PI Adapters on Linux and Windows using command line arguments.
 
 ## Technical support and resources
 
