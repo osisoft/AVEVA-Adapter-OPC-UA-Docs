@@ -62,9 +62,9 @@ To create a Docker container that runs the adapter, follow the instructions belo
     **ARM32**
     
     ```dockerfile
-    FROM ubuntu
+    FROM ubuntu:20.04
     WORKDIR /
-    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu60 libssl1.1 curl
+    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
     ADD ./PI-Adapter-for-OpcUa_1.2.0.136-arm_.tar.gz .
@@ -74,7 +74,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     **ARM64**
 
     ```dockerfile
-    FROM ubuntu
+    FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
@@ -86,7 +86,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
 	**AMD64 (x64)**
 
     ```dockerfile
-    FROM ubuntu
+    FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
