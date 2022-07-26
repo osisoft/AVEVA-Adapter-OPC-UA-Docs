@@ -64,6 +64,7 @@ The following parameters are available for configuring an OPC UA data source:
 | **streamIdPrefix** | Optional | `string` | Specifies what prefix is used for Stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`. An empty string means no prefix will be added to the Stream IDs and names. A `null` value defaults to _ComponentID_ followed by a period.<br><br>Example: `OpcUa1.{NamespaceIndex}.{Identifier}`<br><br>**Note:** Every time you change the StreamIdPrefix of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated. <br><br>Allowed value: any string <br> Default value: `null`|
 | **defaultStreamIdPattern** | Optional | `string` | Specifies the default stream Id pattern to use. Possible parameters: `{NamespaceIndex}`<sup>1</sup>, `{Identifier}`. <br><br>Allowed value: any string<br>Default value: `{NamespaceIndex}.{Identifier}` |
 | **dataCollectionMode** | Optional | `string` | Specifies the data collection mode the adapter is in. The following data collection modes are available:<br> **HistoryOnly** <sup>2</sup> - The adapter component does not get started and history recovery on-demand is enabled. For more information, see [On-demand history recovery](xref:OnDemandHistoryRecoveryConfiguration).<br>**CurrentOnly** - The adapter component operates normally and on-demand history recovery is disabled.<br>**CurrentWithBackfill** <sup>2</sup> - The adapter component operates normally, but disconnections are recorded based on device status. History recovery backfills data once device status is `good`. On-demand history recovery is disabled. For more information, see [Automatic history recovery](xref:AutomaticHistoryRecovery). <br>Changing the mode requires a restart of the adapter component.
+| **serverFailoverEnabled** | Optional | `boolean` | Specifies whether to use server-side failover. By default this is set to true and uses the server failover configuration. When set to false, the server failover configuration is ignored. <br><br> Allowed value: `true` or `false` <br> Default value: `true` |
 
 <sup>1</sup> NamespaceIndex refers to the number specified in the `ns` keyword in the **RootNodeIds** parameter.
 
@@ -92,7 +93,8 @@ The following are examples of valid OPC UA data source configurations:
     "incomingTimestamp": "Source",
     "streamIdPrefix": null,
     "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
-    "dataCollectionMode": "CurrentWithBackfill"
+    "dataCollectionMode": "CurrentWithBackfill",
+    "serverFailoverEnabled": true
 }
 ```
 
