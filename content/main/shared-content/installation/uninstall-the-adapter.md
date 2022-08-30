@@ -29,7 +29,7 @@ Complete the procedure corresponding to your specific operating system to uninst
 2. Optional: To delete data, configuration, and log files, run the following command:
 
     ```bash
-    sudo rm -r /usr/share/OSIsoft/Adapters/OpcUa
+    sudo rm -r /usr/share/OSIsoft/Adapters/opcua
     ```
     
     This deletes all data processed by the adapter, in addition to the configuration and log files.
