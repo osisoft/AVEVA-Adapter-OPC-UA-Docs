@@ -17,20 +17,23 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 
 ### Fixes
 
-The following issues reported from version 1.1 are fixed in this release.
+The following issues reported from earlier versions are fixed in this release.
 
-- Timestamp and value might not be correctly updated for the fast sampling rates.
-- Browse operation can fail when empty result is returned from a server.
+- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server has invalid data item attributes like: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
+- History recovery starttime and endtime supplied in local time format will be treated as a local time by the adapter node instead of the UTC time.
+- The OpcUa Data Type 'UtcTime' is now supported as a DateTime type.
 
 ### Enhancements
 
 The following enhancements are added in this release.
 
-- On-demand data source discovery.
-- Support for On-demand and automatic history recovery.
-- Support for collection of Unit of Measure, Minimum, and Maximum.
-- Support for enumeration data types.
-- Support for collecting data quality information along with data.
+- Reduce load on OPC UA server during history recovery by caching user access level.
+- Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
+- Manage edge system configuration secrets in a centralized location while keeping backward compatibility
+- Exclude read-only facets from top level configuration in Get request
+- Increase the payload size to 64MB
+- No longer log and throw System.InvalidOperationException when the same component is added multiple times.
+- The DeviceStatus value "NotConfigured" has been changed to "Not Configured"
 
 ## Known issues
 
