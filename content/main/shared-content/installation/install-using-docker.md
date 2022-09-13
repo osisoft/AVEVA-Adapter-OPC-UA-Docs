@@ -21,9 +21,9 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-        exec /PI-Adapter-for-OpcUa_1.2.0.136-arm_/OSIsoft.Data.System.Host
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host
     else
-        exec /PI-Adapter-for-OpcUa_1.2.0.136-arm_/OSIsoft.Data.System.Host --port:$portnum
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
 
@@ -32,9 +32,9 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-        exec /PI-Adapter-for-OpcUa_1.2.0.136-arm64_/OSIsoft.Data.System.Host
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host
     else
-        exec /PI-Adapter-for-OpcUa_1.2.0.136-arm64_/OSIsoft.Data.System.Host --port:$portnum
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
 
@@ -43,9 +43,9 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-        exec /PI-Adapter-for-OpcUa_1.2.0.136-x64_/OSIsoft.Data.System.Host
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host
     else
-        exec /PI-Adapter-for-OpcUa_1.2.0.136-x64_/OSIsoft.Data.System.Host --port:$portnum
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
 
