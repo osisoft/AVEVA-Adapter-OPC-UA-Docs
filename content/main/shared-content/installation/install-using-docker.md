@@ -67,7 +67,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
-    ADD ./PI-Adapter-for-OpcUa_1.2.0.136-arm_.tar.gz .
+    ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm_.tar.gz .
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
 
@@ -79,7 +79,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
-    ADD ./PI-Adapter-for-OpcUa_1.2.0.136-arm64_.tar.gz .
+    ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm64_.tar.gz .
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
     
@@ -91,7 +91,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
-    ADD ./PI-Adapter-for-OpcUa_1.2.0.136-x64_.tar.gz .
+    ADD ./PI-Adapter-for-OpcUa_1.3.0.169-x64_.tar.gz .
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
 
