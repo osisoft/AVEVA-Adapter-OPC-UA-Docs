@@ -24,7 +24,7 @@ For more information on secure connections, see [PI Adapter for OPC UA security 
 
 ## Data collection
 
-The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access)](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [Historical Data Access (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access)](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
+The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [Historical Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
 
 ### Data types
 
@@ -51,7 +51,7 @@ The following table lists OPC UA variable types that the adapter collects data f
 | UInteger         | UInteger         |
 | Enumeration      | Int16            |
 
-PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added to the subscription too. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Verified data selection items with supported types and data selection items for which the type cannot be verified are added to the subscription. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
 ## Enumeration types
 
@@ -78,10 +78,10 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 
 The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are:
 
-- **ComponentId**: Specifies the data source, for example _OpcUa1_
-- **ComponentType**: Specifies the type of adapter, for example _OpcUa_
+- **ComponentId**: Specifies the data source. For example, _OpcUa1_
+- **ComponentType**: Specifies the type of adapter. For example, _OpcUa_
 
-Metadata specific to the OPC UA adapter are
+Metadata specific to the OPC UA adapter are:
 
 - **BrowseName**: The browse name as provided by the OPC UA server
 - **SourceId**: The NodeId provided by the OPC UA server
@@ -93,7 +93,7 @@ Metadata specific to the OPC UA adapter are
 - `Medium`: AdapterType (ComponentType), DataSource (ComponentId), BrowseName, and DisplayName
 - `High`: AdapterType (ComponentType), DataSource (ComponentId), BrowseName, DisplayName, and SourceId
 
-Each stream created by  the adapter for a given OPC UA item has a unique identifier (Stream ID). If you specify a custom stream ID for the OPC UA item in data selection configuration, the OPC UA adapter uses that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format, which is constructed from the OPC UA item node ID:
+Each stream created by  the adapter for a given OPC UA item has a unique identifier (Stream ID). If you specify a custom stream ID for the OPC UA item in data selection configuration, the OPC UA adapter uses that stream ID to create the stream. Otherwise, the adapter uses the OPC UA item node ID to construct the stream ID, as shown below.
 
 ```code
 <AdapterComponentID>.<NamespaceIndex>.<Identifier>

@@ -14,7 +14,7 @@ As part of making adapters as secure as possible, any passwords or secrets that 
 
 Complete the following steps to configure system components. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/system/components` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for system components into the file.
 
@@ -28,7 +28,7 @@ Complete the following steps to configure system components. Use the `PUT` metho
 
 5. Open a command line session. Change directory to the location of `ConfigureComponents.json`.
 
-6. Enter the following cURL command (which uses the `PUT` method) to initialize the system components configuration.
+6. Enter the following curl command (which uses the `PUT` method) to initialize the system components configuration.
 
     ```bash
     curl -d "@ConfigureComponents.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/system/components"
@@ -64,7 +64,7 @@ You can configure the following parameters for system components:
 
 ### Default system components configuration
 
-The default _System_Components.json_ file for the System component contains the following information.
+The default `System_Components.json` file for the System component contains the following information.
 
 ```json
 [
@@ -101,5 +101,5 @@ The default _System_Components.json_ file for the System component contains the 
 | api/v1/configuration/system/components | GET | Retrieves  the system components configuration |
 | api/v1/configuration/system/components | POST | Adds a new component to the system configuration |
 | api/v1/configuration/system/components | PUT | Updates the system components configuration |
-| api/v1/configuration/system/components/_ComponentId_ | DELETE | Deletes a specific component from the system components configuration |
-| api/v1/configuration/system/components/_ComponentId_ | PUT | Creates a new component with the specified *ComponentId* in the system configuration
+| api/v1/configuration/system/components/\<ComponentId\> | DELETE | Deletes a specific component from the system components configuration |
+| api/v1/configuration/system/components/\<ComponentId\> | PUT | Creates a new component with the specified *ComponentId* in the system configuration

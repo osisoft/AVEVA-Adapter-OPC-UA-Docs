@@ -16,9 +16,9 @@ Complete the following steps to generate the default client settings file:
   
 2. Configure a valid OPC UA data source. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
 
-   Once you complete these steps, a default OPC UA client settings configuration file is generated in the configuration directory for the corresponding platform.
+   Once you complete these steps, a default OPC UA client settings configuration file generates in the configuration directory for the corresponding platform.
   
-   The following are example locations of the file created. In this example, it is assumed that the `ComponentId` of the OPC UA component is OpcUa1:
+   The following are example locations of the file created. In this example, the `ComponentId` of the OPC UA component is OpcUa1:
 
    Windows: `%programdata%\OSIsoft\Adapters\OpcUa\Configuration\OpcUa1_ClientSettings.json`
   
@@ -28,7 +28,7 @@ Complete the following steps to generate the default client settings file:
 
 Complete the following steps to configure OPC UA client settings. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/ClientSettings` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for OPC UA client settings into the file.
 
@@ -128,9 +128,9 @@ The following parameters are available for configuring OPC UA client settings:
 
 | Relative URL | HTTP verb | Action |
 | ------------ | --------- | ------ |
-| api/v1/configuration/_ComponentId_/ClientSettings  | GET | Retrieves the OPC UA client settings configuration. |
-| api/v1/configuration/_ComponentId_/ClientSettings  | PUT | Configures or updates the OPC UA client settings  configuration. |
-| api/v1/configuration/_ComponentId_/ClientSettings | DELETE | Deletes the OPC UA client settings  configuration. |
-| api/v1/configuration/_ComponentId_/ClientSettings | PATCH | Allows partial updating of configured client settings fields. |
+| api/v1/configuration/\<ComponentId\>/ClientSettings  | GET | Retrieves the OPC UA client settings configuration. |
+| api/v1/configuration/\<ComponentId\>/ClientSettings  | PUT | Configures or updates the OPC UA client settings  configuration. |
+| api/v1/configuration/\<ComponentId\>/ClientSettings | DELETE | Deletes the OPC UA client settings  configuration. |
+| api/v1/configuration/\<ComponentId\>/ClientSettings | PATCH | Allows partial updating of configured client settings fields. |
 
-**Note:** Replace _ComponentId_ with the Id of your OPC UA component, for example OpcUa1.
+**Note:** Replace \<ComponentId\> with the Id of your OPC UA component, for example OpcUa1.

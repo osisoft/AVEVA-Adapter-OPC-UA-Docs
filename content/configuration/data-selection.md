@@ -12,7 +12,7 @@ You can decide to create the data selection configuration file yourself or you c
 
 Complete the following steps to configure an OPC UA data selection. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/DataSelection` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for an OPC UA data selection into the file.
 
@@ -26,7 +26,7 @@ Complete the following steps to configure an OPC UA data selection. Use the `PUT
 
 5. Open a command line session. Change directory to the location of `ConfigureDataSelection.json`.
 
-6. Enter the following cURL command (which uses the `PUT` method) to initialize the data selection configuration.
+6. Enter the following curl command (which uses the `PUT` method) to initialize the data selection configuration.
 
     ```bash
     curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection"

@@ -19,7 +19,7 @@ The name of the PI point or OCS stream is a combination of the StreamIdPrefix sp
 
 Complete the following steps to configure egress endpoints. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/OmfEgress/dataendpoints` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for egress endpoints into the file.
 
@@ -123,10 +123,10 @@ The following examples are valid egress configurations:
 | api/v1/configuration/omfegress/DataEndpoints      | POST      | Adds an array of egress endpoints or a single endpoint. Fails if any endpoint already exists |
 | api/v1/configuration/omfegress/DataEndpoints      | PUT       | Replaces all egress endpoints |
 | api/v1/configuration/omfegress/DataEndpoints      | PATCH     | Allows partial updating of configured endpoints.<br>**Note:** The request must be an array containing one or more endpoints. Each endpoint in the array must include its *Id*. |
-| api/v1/configuration/omfegress/DataEndpoints/{Id} | GET       | Gets configured endpoint by *Id* |
-| api/v1/configuration/omfegress/DataEndpoints/{Id} | DELETE    | Deletes configured endpoint by *Id* |
-| api/v1/configuration/omfegress/DataEndpoints/{Id} | PUT       | Updates or creates a new endpoint with the specified *Id* |
-| api/v1/configuration/omfegress/DataEndpoints/{Id} | PATCH     | Allows partial updating of configured endpoint by *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | GET       | Gets configured endpoint by *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | DELETE    | Deletes configured endpoint by *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | PUT       | Updates or creates a new endpoint with the specified *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | PATCH     | Allows partial updating of configured endpoint by *Id* |
 
 ## Egress execution details
 
