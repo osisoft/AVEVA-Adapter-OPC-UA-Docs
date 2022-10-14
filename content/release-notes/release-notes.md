@@ -29,11 +29,11 @@ The following enhancements are added in this release.
 
 - Reduce load on OPC UA server during history recovery by caching user access level.
 - Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
-- Manage edge system configuration secrets in a centralized location while keeping backward compatibility
-- Exclude read-only facets from top level configuration in Get request
-- Increase the payload size to 64MB
+- Manage edge system configuration secrets in a centralized location while keeping backward compatibility.
+- Exclude read-only facets from top level configuration in Get request.
+- Increase the payload size to 64MB.
 - No longer log and throw System.InvalidOperationException when the same component is added multiple times.
-- The DeviceStatus value "NotConfigured" has been changed to "Not Configured"
+- The DeviceStatus value "NotConfigured" has been changed to "Not Configured."
 
 ## Known issues
 
@@ -63,9 +63,9 @@ Because the PI System often serves as a barrier protecting control system networ
 
 The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://ics-cert.us-cert.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf) developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, OSIsoft is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
 
-For more information, refer to [OSIsoft's Ethical Disclosure Policy (https://www.osisoft.com/ethical-disclosure-policy)](https://www.osisoft.com/ethical-disclosure-policy).
+For more information, refer to [OSIsoft's Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
 
-To report a security vulnerability, refer to [OSIsoft's Report a Security Vulnerability (https://www.osisoft.com/report-a-security-vulnerability)](https://www.osisoft.com/report-a-security-vulnerability).
+To report a security vulnerability, refer to [OSIsoft's Report a Security Vulnerability](https://www.osisoft.com/report-a-security-vulnerability).
 
 ### Vulnerability scoring
 
@@ -83,7 +83,7 @@ This section is intended to provide relevant security-related information to gui
 
 ## Documentation overview
 
-**EdgeCmd utility:** Provides an overview on how to configure and administer PI Adapters on Linux and Windows using command line arguments.
+[EdgeCmd utility](https://docs.osisoft.com/bundle/edgecmd/page/index.html): Provides an overview on how to configure and administer PI Adapters on Linux and Windows using command line arguments.
 
 ## Technical support and resources
 

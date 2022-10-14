@@ -14,7 +14,7 @@ A health endpoint designates an OMF endpoint where adapter health information is
 
 Complete the following steps to configure health endpoints. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/system/healthendpoints` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for health endpoints into the file.
 
@@ -98,10 +98,10 @@ The following parameters are available for configuring health endpoints:
 | api/v1/configuration/system/healthEndpoints      | DELETE    | Deletes all configured health endpoints |
 | api/v1/configuration/system/healthEndpoints      | POST      | Adds an array of health endpoints or a single endpoint. Fails if any endpoint already exists |
 | api/v1/configuration/system/healthEndpoints      | PUT       | Replaces all health endpoints. **Note:** Requires an array of endpoints |
-| api/v1/configuration/system/healthEndpoints     | PATCH     | Allows partial updating of configured health endpoints<br>**Note:** The request must be an array containing one or more health endpoints. Each health endpoint in the array must include its *Id*.  |
-| api/v1/configuration/system/healthEndpoints/*Id* | GET       | Gets configured health endpoint by *Id* |
-| api/v1/configuration/system/healthEndpoints/*Id*| DELETE     | Deletes configured health endpoint by *Id* |
-| api/v1/configuration/system/healthEndpoints/*Id* | PUT       | Updates or creates a new health endpoint with the specified *Id* |
-| api/v1/configuration/system/healthEndpoints/*Id* | PATCH     | Allows partial updating of configured health endpoint by *Id* |
+| api/v1/configuration/system/healthEndpoints     | PATCH     | Allows partial updating of configured health endpoints<br>**Note:** The request must be an array containing one or more health endpoints. Each health endpoint in the array must include its **Id**.  |
+| api/v1/configuration/system/healthEndpoints/\<Id\> | GET       | Gets configured health endpoint by \<Id\> |
+| api/v1/configuration/system/healthEndpoints/\<Id\>| DELETE     | Deletes configured health endpoint by \<Id\> |
+| api/v1/configuration/system/healthEndpoints/\<Id\> | PUT       | Updates or creates a new health endpoint with the specified \<Id\> |
+| api/v1/configuration/system/healthEndpoints/\<Id\> | PATCH     | Allows partial updating of configured health endpoint by \<Id\> |
 
-**Note:** Replace *Id* with the Id of the health endpoint.
+**Note:** Replace \<Id\> with the Id of the health endpoint.
