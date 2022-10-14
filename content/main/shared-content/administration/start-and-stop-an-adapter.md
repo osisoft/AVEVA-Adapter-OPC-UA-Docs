@@ -10,30 +10,26 @@ Complete the procedure appropriate for your operating system to start or stop an
 
 1. Open Windows services.
 
-2. Select **PI Adapter for \<AdapterName\>**.
+1. Select **PI Adapter for \<AdapterName\>**.
 
-3. Depending on whether your adapter is running or not, click either **Start** or **Stop**.
+1. Select **Stop** to stop your adapter or select **Start** to start your adapter.
 
 ## Linux
 
 1. Open command line.
 
-2. Depending on whether your adapter is running or not, type one of the following commands:
+1. Confirm the status of your adapter, then run one of the following:
 
-    Example:
-
-    _Start_ PI Adapter for \<AdapterName\>
+ To **Start** PI Adapter for \<AdapterName\>:
 
     ```cmdline
     sudo systemctl start pi.adapter.<adapterName>
     ```
 
-    Example:
-
-    _Stop_ PI Adapter for \<AdapterName\>
+ To **Stop** PI Adapter for \<AdapterName\>:
   
       ```cmdline
       sudo systemctl stop pi.adapter.<adapterName>
       ```
   
-3. Press Enter.
+1. Press Enter.

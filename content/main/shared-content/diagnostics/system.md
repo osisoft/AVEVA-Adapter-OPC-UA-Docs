@@ -5,7 +5,7 @@ uid: System
 # System
 
 The `Diagnostics.System` dynamic type includes the following values which are logged in a stream with the `Id` `System.Diagnostics`.
-This diagnostic stream contains system level information related to the host platform that the adapter is running on.
+This diagnostic stream contains system level information related to the host platform on which the adapter is running.
 
 | Property                            | Type       | Description                                                                       |
 | ----------------------------------- | ---------- | --------------------------------------------------------------------------------- |

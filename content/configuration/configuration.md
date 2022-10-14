@@ -14,7 +14,7 @@ For more information on PI adapter configuration tools, see [Configuration tools
 
 These steps guide you through setup of each configuration file available for PI Adapter for OPC UA. As you complete each step, perform each required configuration to establish a data flow from a data source to one or more endpoints. Some configurations are optional.
 
-**Important:** If you want to complete the optional configurations, complete those tasks before the required tasks.
+**Important:** If you want to complete the optional configurations, complete those tasks _before_ the required tasks.
 
 1. Configure one or several OPC UA system components.<br>See [System components](xref:SystemComponentsConfiguration#configure-system-components).
 

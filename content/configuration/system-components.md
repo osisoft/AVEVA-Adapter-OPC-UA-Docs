@@ -14,7 +14,7 @@ As part of making adapters as secure as possible, any passwords or secrets that 
 
 Complete the following steps to configure system components. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/system/components` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for system components into the file.
 

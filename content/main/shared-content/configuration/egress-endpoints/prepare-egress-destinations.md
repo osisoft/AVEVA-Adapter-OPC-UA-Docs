@@ -12,7 +12,7 @@ To prepare OCS to receive OMF messages from the adapter, create an OMF connectio
 
 1. Create a **Client**.
 
-   The *Client Id* and *Client Secret* will be used for the corresponding properties in the egress configuration.
+   The **Client Id** and **Client Secret** will be used for the corresponding properties in the egress configuration.
 
 2. Create an **OMF** type **Connection**.
 
@@ -36,6 +36,6 @@ To prepare a PI Server to receive OMF messages from the adapter, a PI Web API OM
 
 **Notes:**
 
-- The certificate used by PI Web API must be trusted by the device running the adapter, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
+- The certificate used by PI Web API must be trusted by the device running the adapter, otherwise the egress configuration **ValidateEndpointCertificate** property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
 
 - To continue to send OMF egress messages to the PI Web API endpoint after upgrading PI Web API, restart the adapter service.

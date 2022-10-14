@@ -6,9 +6,9 @@ uid: LoggingConfiguration
 
 PI adapters write daily log messages for the adapter, the system, and OMF egress to flat text files in the following locations:
 
-• Windows: *%ProgramData%\OSIsoft\Adapters\{AdapterInstance}\Logs*
+• Windows: `*%ProgramData%\OSIsoft\Adapters\<AdapterInstance>\Logs*`
 
-• Linux: */usr/share/OSIsoft/Adapters/{AdapterInstance}/Logs*
+• Linux: `*/usr/share/OSIsoft/Adapters/<AdapterInstance>/Logs*`
 
 Each message in the log displays the message severity level, timestamp, and the message itself.
 
@@ -16,7 +16,7 @@ Each message in the log displays the message severity level, timestamp, and the 
 
 Complete the following steps to configure logging. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/<ComponentId>/Logging` REST endpoint to initialize the configuration.
 
-1. Using a text editor, create an empty text file.
+1. Use a text editor to create an empty text file.
 
 2. Copy and paste an example configuration for logging into the file.
 
@@ -30,7 +30,7 @@ Complete the following steps to configure logging. Use the `PUT` method in conju
 
 5. Open a command line session. Change directory to the location of `ConfigureLogging.json`.
 
-6. Enter the following cURL command (which uses the `PUT` method) to initialize the logging configuration.
+6. Enter the following curl command (which uses the `PUT` method) to initialize the logging configuration.
 
     ```bash
     curl -d "@ConfigureLogging.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/<ComponentId>/Logging"
@@ -97,7 +97,7 @@ The following logging configuration is the installation default for a component:
 | ------------ | --------- | ------ |
 | api/v1/configuration/System/Logging | GET | Retrieves the system logging configuration |
 | api/v1/configuration/System/Logging | PUT | Updates the system logging configuration |
-| api/v1/configuration/_ComponentId_/Logging | GET | Retrieves the logging configuration of the specified adapter component |
-| api/v1/configuration/_ComponentId_/Logging | PUT | Updates the logging configuration of the specified adapter component |
+| api/v1/configuration/\<ComponentId\>/Logging | GET | Retrieves the logging configuration of the specified adapter component |
+| api/v1/configuration/\<ComponentId\>/Logging | PUT | Updates the logging configuration of the specified adapter component |
 
-**Note:** Replace *ComponentId* with the Id of your adapter component.
+**Note:** Replace \<ComponentId\> with the Id of your adapter component.
