@@ -24,7 +24,7 @@ For more information on secure connections, see [PI Adapter for OPC UA security 
 
 ## Data collection
 
-The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access)](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [Historical Data Access (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access)](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
+The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [Historical Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
 
 ### Data types
 
@@ -51,7 +51,7 @@ The following table lists OPC UA variable types that the adapter collects data f
 | UInteger         | UInteger         |
 | Enumeration      | Int16            |
 
-PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Data selection items with supported types and data selection items for which the type cannot be verified, are added to the subscription too. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Verified data selection items with supported types and data selection items for which the type cannot be verified are added to the subscription. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
 ## Enumeration types
 
@@ -78,10 +78,10 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 
 The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are:
 
-- **ComponentId**: Specifies the data source, for example _OpcUa1_
-- **ComponentType**: Specifies the type of adapter, for example _OpcUa_
+- **ComponentId**: Specifies the data source. For example, _OpcUa1_
+- **ComponentType**: Specifies the type of adapter. For example, _OpcUa_
 
-Metadata specific to the OPC UA adapter are
+Metadata specific to the OPC UA adapter are:
 
 - **BrowseName**: The browse name as provided by the OPC UA server
 - **SourceId**: The NodeId provided by the OPC UA server
@@ -93,7 +93,7 @@ Metadata specific to the OPC UA adapter are
 - `Medium`: AdapterType (ComponentType), DataSource (ComponentId), BrowseName, and DisplayName
 - `High`: AdapterType (ComponentType), DataSource (ComponentId), BrowseName, DisplayName, and SourceId
 
-Each stream created by  the adapter for a given OPC UA item has a unique identifier (Stream ID). If you specify a custom stream ID for the OPC UA item in data selection configuration, the OPC UA adapter uses that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format, which is constructed from the OPC UA item node ID:
+Each stream created by  the adapter for a given OPC UA item has a unique identifier (Stream ID). If you specify a custom stream ID for the OPC UA item in data selection configuration, the OPC UA adapter uses that stream ID to create the stream. Otherwise, the adapter uses the OPC UA item node ID to construct the stream ID, as shown below.
 
 ```code
 <AdapterComponentID>.<NamespaceIndex>.<Identifier>
@@ -101,3 +101,72 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
+
+## Server Failover
+
+The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+
+Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read 3 node ID's that hold server redundancy related information:
+
+| Node ID | How it's used |
+|---------|---------------|
+| `i=3709`: Server redundancy mode support | This value will be used to determine the redundancy mode the adapter will follow. Currently, the supported modes are `None`, `Cold`, `Warm`, and `Hot`. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
+| `i=11314`: Server URI array | This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
+| `i=2267`: Service level | This value will be used to track each server's health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set. |
+
+**Note:** The adapter does not currently support a runtime change to the server redundancy mode. A user must restart the adapter if they wish to change the server redundancy mode on their server and have it be seen by the adapter.
+
+### Supported Redundancy Modes
+
+The following sections outline how the adapter behaves in each Server Redundancy Mode. For more information on server redundancy, see the [OPC UA Online Reference part 4 - 6.6.2](https://reference.opcfoundation.org/v104/Core/docs/Part4/6.6.2/)
+
+#### None
+
+If the Server Redundancy Mode Support value on the primary OPC UA server is `None`, the adapter will operate as if server failover is not enabled. The adapter will not attempt to connect or failover to any backup servers.
+
+#### Cold
+
+If the servers in the redundancy set are operating in Cold mode, the adapter will take the following steps upon startup:
+
+* Make a connection to each server defined in the primary OPC UA server's Server URI Array.
+* Read the Service Level of each server to determine which server is the healthiest.
+* Disconnect from all servers except for the healthiest.
+
+The adapter will only maintain a connection with a single OPC UA server after its initial startup. The secondary servers will not be connected to unless a server failover occurs.
+
+In Cold server failover, a failover only occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops to 1 or 0. When this occurs, the adapter will connect to all secondary servers, read the service level of each, then disconnect from all servers except for the one with the highest service level. The adapter will maintain a connection with this new server until another failover event occurs.
+
+#### Warm
+
+If the servers in the redundancy set are operating in Warm mode, the adapter will take the following steps upon startup:
+
+* Make a connection to each server defined in the primary OPC UA server's Server URI Array.
+* Read the Service Level of each server to determine which server is the healthiest.
+* Activate publishing and sampling for the data subscription on the healthiest server.
+* Disable publishing and sampling for the data subscription on the rest of the servers.
+
+The adapter will maintain a connection to every OPC UA server in the redundancy set. However, publishing and sampling will only be active on the healthiest server.
+
+In Warm server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and sampling on the current primary server and enable them on whichever secondary server has the highest service level. This healthy server becomes the new primary.
+
+#### Hot
+
+If the servers in the redundancy set are operating in Hot mode, the adapter will take the following steps upon startup:
+
+* Make a connection to each server defined in the primary OPC UA server's Server URI Array.
+* Read the Service Level of each server to determine which server is the healthiest.
+* Activate publishing and reporting for the data subscription on the healthiest server.
+* Disable publishing and activate sampling for the data subscription on the rest of the servers.
+
+The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be buffered until it becomes the primary. The size of this buffer can be configured with the `MonitoredItemQueueSize` property in the Client Settings configuration (ADD LINK TO THAT PAGE HERE). Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode.
+
+In Hot server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and activate sampling on the current primary server. It will then enable publishing and reporting on whichever secondary server has the highest service level. This healthy server becomes the new primary. If the `MonitoredItemQueueSize` property in the Client Settings configuration is large enough to hold all of the data that occurred during the failover period, there will be no data loss.
+
+### Redundancy Server Set Cache
+
+On startup, when the adapter reads the Server URI array, it will store the results in a file on disk in the following locations:
+
+* Windows: `%ProgramData%\OSIsoft\Adapters\OpcUa\<ComponentId>\RedundantServerSet.txt`
+* Linux: `/usr/share/OSIsoft/Adapters/OpcUa/<ComponentId>/RedundantServerSet.txt`
+
+On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will use the servers in this cache as the server redundancy set.
