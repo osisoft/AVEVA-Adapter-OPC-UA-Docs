@@ -101,3 +101,72 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
+
+## Server Failover
+
+The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+
+Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read 3 node ID's that hold server redundancy related information:
+
+| Node ID | How it's used |
+|---------|---------------|
+| `i=3709`: Server redundancy mode support | This value will be used to determine the redundancy mode the adapter will follow. Currently, the supported modes are `None`, `Cold`, `Warm`, and `Hot`. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
+| `i=11314`: Server URI array | This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
+| `i=2267`: Service level | This value will be used to track each server's health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set. |
+
+**Note:** The adapter does not currently support a runtime change to the server redundancy mode. A user must restart the adapter if they wish to change the server redundancy mode on their server and have it be seen by the adapter.
+
+### Supported Redundancy Modes
+
+The following sections outline how the adapter behaves in each Server Redundancy Mode. For more information on server redundancy, see the [OPC UA Online Reference part 4 - 6.6.2](https://reference.opcfoundation.org/v104/Core/docs/Part4/6.6.2/)
+
+#### None
+
+If the Server Redundancy Mode Support value on the primary OPC UA server is `None`, the adapter will operate as if server failover is not enabled. The adapter will not attempt to connect or failover to any backup servers.
+
+#### Cold
+
+If the servers in the redundancy set are operating in Cold mode, the adapter will take the following steps upon startup:
+
+* Make a connection to each server defined in the primary OPC UA server's Server URI Array.
+* Read the Service Level of each server to determine which server is the healthiest.
+* Disconnect from all servers except for the healthiest.
+
+The adapter will only maintain a connection with a single OPC UA server after its initial startup. The secondary servers will not be connected to unless a server failover occurs.
+
+In Cold server failover, a failover only occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops to 1 or 0. When this occurs, the adapter will connect to all secondary servers, read the service level of each, then disconnect from all servers except for the one with the highest service level. The adapter will maintain a connection with this new server until another failover event occurs.
+
+#### Warm
+
+If the servers in the redundancy set are operating in Warm mode, the adapter will take the following steps upon startup:
+
+* Make a connection to each server defined in the primary OPC UA server's Server URI Array.
+* Read the Service Level of each server to determine which server is the healthiest.
+* Activate publishing and sampling for the data subscription on the healthiest server.
+* Disable publishing and sampling for the data subscription on the rest of the servers.
+
+The adapter will maintain a connection to every OPC UA server in the redundancy set. However, publishing and sampling will only be active on the healthiest server.
+
+In Warm server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and sampling on the current primary server and enable them on whichever secondary server has the highest service level. This healthy server becomes the new primary.
+
+#### Hot
+
+If the servers in the redundancy set are operating in Hot mode, the adapter will take the following steps upon startup:
+
+* Make a connection to each server defined in the primary OPC UA server's Server URI Array.
+* Read the Service Level of each server to determine which server is the healthiest.
+* Activate publishing and reporting for the data subscription on the healthiest server.
+* Disable publishing and activate sampling for the data subscription on the rest of the servers.
+
+The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be buffered until it becomes the primary. The size of this buffer can be configured with the `MonitoredItemQueueSize` property in the Client Settings configuration (ADD LINK TO THAT PAGE HERE). Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode.
+
+In Hot server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and activate sampling on the current primary server. It will then enable publishing and reporting on whichever secondary server has the highest service level. This healthy server becomes the new primary. If the `MonitoredItemQueueSize` property in the Client Settings configuration is large enough to hold all of the data that occurred during the failover period, there will be no data loss.
+
+### Redundancy Server Set Cache
+
+On startup, when the adapter reads the Server URI array, it will store the results in a file on disk in the following locations:
+
+* Windows: `%ProgramData%\OSIsoft\Adapters\OpcUa\<ComponentId>\RedundantServerSet.txt`
+* Linux: `/usr/share/OSIsoft/Adapters/OpcUa/<ComponentId>/RedundantServerSet.txt`
+
+On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will use the servers in this cache as the server redundancy set.
