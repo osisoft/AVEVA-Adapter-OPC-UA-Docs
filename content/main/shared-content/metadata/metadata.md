@@ -4,11 +4,21 @@ uid: AdapterMetadata
 
 # Metadata
 
+The Metadata Level in the System/General facet controls the amount of metadata written to an adapter stream and defines the amount of metadata sent to the OMF endpoints. It can be set to one of the following values:
+
+* None - No metadata
+* Low - Includes only framework related information
+* Medium - Includes adapter specific information that is considered not sensitive
+* High - All metadata (including potentially sensitive information and control addresses)
+
 If the **metadataLevel** is set to `Low`, `Medium`, or `High` in the [General configuration](xref:GeneralConfiguration), adapter streams created by the ingress components include the following metadata:
 
 ```code
   Datasource: {ComponentId}
   AdapterType: {ComponentType}
+  BrowseName: Medium
+  LocalName: Medium
+  SourceId: High
 ```
 
 `ComponentId` corresponds to the adapter components' data source configured in the [Components configuration](xref:SystemComponentsConfiguration). `ComponentType` corresponds to the adapter type.
