@@ -18,7 +18,7 @@ If the **metadataLevel** is set to `Low`, `Medium`, or `High` in the [General co
   AdapterType: {ComponentType}
   BrowseName: Medium
   LocalName: Medium
-  SourceId: High
+  SourceId:  High
 ```
 
 `ComponentId` corresponds to the adapter components' data source configured in the [Components configuration](xref:SystemComponentsConfiguration). `ComponentType` corresponds to the adapter type.
