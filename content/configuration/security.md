@@ -11,11 +11,11 @@ The adapter generates a self-signed certificate when the first secure connection
 When determining OPC UA security practices with regards to REST APIs, you should consider the following practice. To keep the adapter secure, only administrators should have access to machines where the adapter is installed. REST APIs are bound to localhost, meaning that only requests coming from within the machine will be accepted.
 
 # Adapter Certificate
-OPC UA connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will have expire 10 years from the date of generation.
+OPC UA connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will expire 10 years from the date of generation.
 
 When the adapter certificate approaches expiration, warnings will be logged daily starting 30 days prior to expiration. After the certificate is expired, errors will be logged daily.
 
-To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory.
+To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory and restart the adapter.
 
 ## Configure OPC UA adapter security
 
