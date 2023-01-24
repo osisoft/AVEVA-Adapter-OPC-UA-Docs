@@ -14,7 +14,7 @@ The device status indicates the health of this component and if it is currently 
 The possible statuses are:
 
 | Status                          | Meaning                               |
-|-----------------------------------|---------------------------------------|
+|---------------------------------|---------------------------------------|
 | `Good`                          | The component is connected to the data source and it is collecting data. |
 | `ConnectedNoData`               | The component is connected to the data source but it is not receiving data from it. |
 | `Starting`                      | The component is currently in the process of starting up and is not yet connected to the data source. |
@@ -22,3 +22,4 @@ The possible statuses are:
 | `Shutdown`                      | The component is either in the process of shutting down or has finished. |
 | `Removed`                       | The adapter component has been removed and will no longer collect data. |
 | `NotConfigured`                 | The adapter component has been created but is not yet configured. |
+| `AttemptingFailover`            | The adapter component is attempting server failover. | 

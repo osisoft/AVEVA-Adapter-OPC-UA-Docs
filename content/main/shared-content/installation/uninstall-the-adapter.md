@@ -14,7 +14,7 @@ Complete the procedure corresponding to your specific operating system to uninst
 
 2. Optional: To delete data, configuration, and log files, delete the directory:
 
-    _%ProgramData%\OSIsoft\Adapters\\[!include[product-name](../_includes/inline/component-type.md)]_
+    `%ProgramData%\OSIsoft\Adapters\\[!include[product-name](../_includes/inline/component-type.md)]`
    
    This deletes all data processed by the adapter, in addition to the configuration and log files.
 
@@ -23,13 +23,13 @@ Complete the procedure corresponding to your specific operating system to uninst
 1. To delete PI Adapter software from a Linux device, open a terminal window and run the following command:
 
     ```bash
-    sudo apt remove pi.adapter.OpcUa 
+    sudo apt remove pi.adapter.opcua 
     ```
 
 2. Optional: To delete data, configuration, and log files, run the following command:
 
     ```bash
-    sudo rm -r /usr/share/OSIsoft/Adapters/OpcUa
+    sudo rm -r /usr/share/OSIsoft/Adapters/opcua
     ```
     
     This deletes all data processed by the adapter, in addition to the configuration and log files.

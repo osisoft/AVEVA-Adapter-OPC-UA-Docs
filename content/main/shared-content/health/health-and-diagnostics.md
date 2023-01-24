@@ -17,7 +17,7 @@ Two OMF endpoints are currently supported for adapter health data:
 - PI Web API
 - OSIsoft Cloud Services (OCS)
 
-There are a few differences in how these two systems treat the associated health and diagnostics data.
+There are some differences in how these two systems treat the associated health and diagnostics data.
 
 - PI Web API parses the information and sends it to configured PI servers for the OMF endpoint. The static data is used to create an AF structure on a PI AF server. The dynamic health data is time-series data that is stored in PI points on a PI Data Archive. You can see it in the AF structure as PI point data reference attributes.
 
@@ -33,5 +33,5 @@ With a health endpoint configured to a PI server, you can use PI System Explorer
   
 - Below **Adapters**, you will find one or more adapter nodes. Each node's title is defined by the node's corresponding computer name and service name in this format: `{ComputerName}.{ServiceName}`. For example, in the following image, **MachineName** is the computer name and **OpcUa** is the service name.
   
-- To see the health and diagnostics values, click on an adapter node and select **Attributes**.
+- To see the health and diagnostics values, select an adapter node and then select **Attributes**.
 

@@ -4,7 +4,7 @@ uid: StartAndStopIngressComponent
 
 # Start and stop ingress component
 
-To control data ingress, you can start and stop the ingress components of an adapter whenever necessary. By default, all currently configured ingress components are started.
+To control data ingress, you can start and stop the ingress components of an adapter whenever necessary. Configured ingress components start by default.
 
 ## Start an ingress component
 

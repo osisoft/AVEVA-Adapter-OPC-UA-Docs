@@ -1,1 +1,1 @@
-PI-Adapter-for-OpcUa-1.2.0.136
+PI-Adapter-for-OpcUa-1.3.0.169
