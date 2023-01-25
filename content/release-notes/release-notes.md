@@ -9,9 +9,9 @@ Adapter Framework [!include[framework-version](../main/shared-content/_includes/
 
 ## Overview
 
-PI Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "OSIsoft Message Format (OMF) endpoints such as PI Web API and OSIsoft Cloud Services. PI Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
+AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open MessageFormat (OMF) endpoints such as PI Web API and AVEVA Data Hub. AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
-For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
+For more information see [AVEVA Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
 
 ## Fixes and enhancements
 
@@ -57,7 +57,7 @@ Refer to [Uninstall the adapter](xref:UninstallTheAdapter).
 
 ### OSIsoft's commitment
 
-Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI Adapter for OPC UA is the highest quality and most secure version of the PI Adapter for OPC UA released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
+Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of AVEVA Adapter for OPC UA is the highest quality and most secure version of the AVEVA Adapter for OPC UA released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
 
 ### Vulnerability communication
 
@@ -73,17 +73,17 @@ OSIsoft has selected the [Common Vulnerability Scoring System (CVSS)](https://ww
 
 ### Overview of new vulnerabilities found or fixed
 
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of PI Adapter for OPC UA security vulnerabilities that are fixed in this release.
+This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of AVEVA Adapter for OPC UA security vulnerabilities that are fixed in this release.
 
 | Component | Version | CVE or Reference | CVSS | Mitigation                                                                                                 |
 | ----------| ------- | --------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------- |
-| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032)                                   | 7.5  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities  |                                                      |
-| zlib      | 1.2.11  | [BSDA-2018-5271](https://osisoft.blackducksoftware.com/api/vulnerabilities/BDSA-2018-5271/overview) | 7.1  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
-| zlib      | 1.2.11  | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434)                                   | 9.3  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
+| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032)                                   | 7.5  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities  |                                                      |
+| zlib      | 1.2.11  | [BSDA-2018-5271](https://osisoft.blackducksoftware.com/api/vulnerabilities/BDSA-2018-5271/overview) | 7.1  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
+| zlib      | 1.2.11  | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434)                                   | 9.3  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
 
 ## Documentation overview
 
-[EdgeCmd utility](https://docs.osisoft.com/bundle/edgecmd/page/index.html): Provides an overview on how to configure and administer PI Adapters on Linux and Windows using command line arguments.
+[EdgeCmd utility](https://docs.osisoft.com/bundle/edgecmd/page/index.html): Provides an overview on how to configure and administer AVEVA Adapters on Linux and Windows using command line arguments.
 
 ## Technical support and resources
 

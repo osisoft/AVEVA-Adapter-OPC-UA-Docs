@@ -14,13 +14,13 @@ For the OPC UA adapter to start data collection, configure the following:
 - Data selection: Select the OPC UA items to which the adapter should subscribe for data.
 - Logging: Set up the logging attributes to manage the adapter logging behavior.
 
-For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration) and [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration).
+For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration) and [AVEVA Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration).
 
 ## Connection
 
 The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secure connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establish a secure connection.
 
-For more information on secure connections, see [PI Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration).
+For more information on secure connections, see [AVEVA Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration).
 
 ## Data collection
 
@@ -51,11 +51,11 @@ The following table lists OPC UA variable types that the adapter collects data f
 | UInteger         | UInteger         |
 | Enumeration      | Int16            |
 
-PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Verified data selection items with supported types and data selection items for which the type cannot be verified are added to the subscription. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
+AVEVA Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Verified data selection items with supported types and data selection items for which the type cannot be verified are added to the subscription. Data selection items with unsupported data type are not added to the subscription and a message including the **NodeId** and **TypeId** is logged.
 
 ## Enumeration types
 
-PI Adapter for OPC UA supports the following enumeration types:
+AVEVA Adapter for OPC UA supports the following enumeration types:
 
 - MultiStateDiscreteType
 - MultiStateValueDiscreteType
@@ -71,7 +71,7 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
 | Timestamp     | DateTime  | Timestamp of the given OPC UA item value update. |
-| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value.<br><br>**Note:**<br>For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in OCS and the **Zero**/**Span** properties in PI Web API are populated.<br>For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in OCS and the **Eng Units** property in PI Web API are populated.<sup>1</sup>  |
+| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value.**Note:**For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in AVEVA Data Hub and the **Zero**/**Span** properties in PI Web API are populated.For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in AVEVA Data Hub and the **Eng Units** property in PI Web API are populated.<sup>1</sup>  |
 | Quality | Unsigned integer | Data quality of the given OPC UA item update.  |
 
 <sup>1</sup> **Note:** `Null` values with `Good` quality are discarded. `Null` values with `Bad` or `Questionable` quality send the default value `0` or `null` to the destination.
@@ -98,13 +98,13 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 ```code
 <AdapterComponentID>.<NamespaceIndex>.<Identifier>
 ```
-NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
 
 ## Server Failover
 
-The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read 3 node ID's that hold server redundancy related information:
 
@@ -166,7 +166,7 @@ In Hot server failover, a failover occurs if the adapter loses connection to the
 
 #### HotAndMirrored
 
-The HotAndMirrored Failover mode is not directly supported by PI Adapter for OPC UA. However, if the servers in the redundancy set are operating in HotAndMirrored failover mode, the adapter will instead use the Cold failover mode. This behavior is permitted by section [6.6.2.4.5.1](https://reference.opcfoundation.org/Core/Part4/v104/docs/6.6.2.4.5.1) of the OPC UA specification.
+The HotAndMirrored Failover mode is not directly supported by AVEVA Adapter for OPC UA. However, if the servers in the redundancy set are operating in HotAndMirrored failover mode, the adapter will instead use the Cold failover mode. This behavior is permitted by section [6.6.2.4.5.1](https://reference.opcfoundation.org/Core/Part4/v104/docs/6.6.2.4.5.1) of the OPC UA specification.
 
 ### Redundancy Server Set Cache
 

@@ -10,7 +10,7 @@ Complete the procedure appropriate for your operating system to start or stop an
 
 1. Open Windows services.
 
-1. Select **PI Adapter for \<AdapterName\>**.
+1. Select **AVEVA Adapter for \<AdapterName\>**.
 
 1. Select **Stop** to stop your adapter or select **Start** to start your adapter.
 
@@ -20,13 +20,13 @@ Complete the procedure appropriate for your operating system to start or stop an
 
 1. Confirm the status of your adapter, then run one of the following:
 
- To **Start** PI Adapter for \<AdapterName\>:
+ To **Start** AVEVA Adapter for \<AdapterName\>:
 
     ```cmdline
     sudo systemctl start pi.adapter.<adapterName>
     ```
 
- To **Stop** PI Adapter for \<AdapterName\>:
+ To **Stop** AVEVA Adapter for \<AdapterName\>:
   
       ```cmdline
       sudo systemctl stop pi.adapter.<adapterName>
