@@ -35,7 +35,7 @@ The following parameters are available for configuring general:
 
 | Parameter             | Required | Type    | Description |
 | ---------             | -------- | ------- | ----------- |
-| **EnableDiagnostics** | Optional | `boolean` | Determines if diagnostics are enabledAllowed value: `true` or `false`Default value: `true`|
+| **EnableDiagnostics** | Optional | `boolean` | Determines if diagnostics are enabled Allow value: `true` or `false`Default value: `true`|
 | **MetadataLevel** | Optional | `reference` | Defines amount of metadata sent to OMF endpoints. Allowed value: `None`, `Low`, `Medium`, and `High` Default value: `Medium`|
 | **HealthPrefix** | Optional | `reference` | Prefix to use for health and diagnostics stream and asset IDs. Default value: `null`|
 

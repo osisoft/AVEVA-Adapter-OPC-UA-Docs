@@ -6,7 +6,7 @@ uid: EgressEndpointsConfiguration
 
 AVEVA Adapters collect time series data, which  they can send to a permanent data store (endpoint). This operation is called data egress. The following endpoints are available for data egress:
 
-- AVEVA Data Hub (AVEVA Data Hub)
+- AVEVA Data Hub (ADH)
 - AVEVA Servers through PI Web API
 
 For long term storage and analysis, you can configure any adapter to send time series data to one or several of these endpoints in any combination. An egress endpoint is comprised of the properties specified under [Egress endpoint parameters](#egress-endpoint-parameters).
@@ -60,10 +60,10 @@ The following parameters are available for configuring egress endpoints:
 
 | Parameter                       | Required                  | Type      | Description                                        |
 |---------------------------------|---------------------------|-----------|-------------|
-| **Id**                          | Optional                  | `string`    | Unique identifierAllowed value: any string identifierDefault value: new GUID |
-| **Endpoint**                    | Required                  | `string`    | Destination that accepts OMF v1.2 messages. Supported destinations include AVEVA Data Hub and AVEVA Server.Allowed value: well-formed http or https endpoint stringDefault: `null` |
-| **Username**                    | Required for AVEVA Server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint _AVEVA Server:_Allowed value: any stringDefault: `null`**Note:** If your username contains a backslash, you must add an escape character, for example, type `OilCompany\TestUser` as `OilCompany\\TestUser`.|
-| **Password**                    | Required for AVEVA Server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint _AVEVA Server:_Allowed value: any stringDefault: `null`  |
+| **Id**                          | Optional                  | `string`    | Unique identifierAllowed value: any string identifier Default value: new GUID |
+| **Endpoint**                    | Required                  | `string`    | Destination that accepts OMF v1.2 messages. Supported destinations include AVEVA Data Hub and AVEVA Server.Allowed value: well-formed http or https endpoint string Default: `null` |
+| **Username**                    | Required for AVEVA Server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: `null`**Note:** If your username contains a backslash, you must add an escape character, for example, type `OilCompany\TestUser` as `OilCompany\\TestUser`.|
+| **Password**                    | Required for AVEVA Server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: `null`  |
 | **ClientId**                    | Required for AVEVA Data Hub endpoint | `string`    | Authentication with the AVEVA Data Hub OMF endpoint Allowed value: any string, can be null if the endpoint URL schema is `HTTP`Default: `null`|
 | **ClientSecret**                | Required for AVEVA Data Hub endpoint | `string`    | Authentication with the AVEVA Data Hub OMF endpoint Allowed value: any string, can be null if the endpoint URL schema is `HTTP`Default: `null`|
 | **TokenEndpoint**               | Optional for AVEVA Data Hub endpoint | `string`    | Retrieves an AVEVA Data Hub token from an alternative endpoint Allowed value: well-formed http or https endpoint string Default value: `null` |
@@ -108,7 +108,7 @@ The following examples are valid egress configurations:
 ```json
 [{
      "Id": "PI Web API",
-     "Endpoint": "https://<pi web aAVEVA Server>:<port>/piwebapi/omf/",
+     "Endpoint": "https://<pi web AVEVA Server>:<port>/piwebapi/omf/",
      "UserName": "<username>",
      "Password": "<password>"
 }]

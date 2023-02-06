@@ -55,12 +55,12 @@ The following parameters are available for configuring health endpoints:
 
 | Parameter                       | Required                            | Type      | Description                                        |
 |---------------------------------|-------------------------------------|-----------|----------------------------------------------------|
-| **Id**                          | Optional                            | `string`    | Uniquely identifies the endpoint. This can be any alphanumeric string. If left blank, a unique value is generated automatically. Allowed value: any string identifierDefault value: new GUID|
-| **Endpoint**                    | Required                            | `string`    | The URL of the OMF endpoint to receive this health data Allowed value: well-formed http or https endpoint stringDefault: `null`|
-| **Username**                    | Required for PI Web API endpoints   | `string`    | The username used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any stringDefault: `null`|
-| **Password**                    | Required for PI Web API endpoints   | `string`    | The password used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any stringDefault: `null`|
-| **ClientId**                    | Required for AVEVA Data Hub endpoints          | `string`    | The client ID used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any stringDefault: `null` |
-| **ClientSecret**                | Required for AVEVA Data Hub endpoints          | `string`    | The client secret used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any stringDefault: `null`|
+| **Id**                          | Optional                            | `string`    | Uniquely identifies the endpoint. This can be any alphanumeric string. If left blank, a unique value is generated automatically. Allowed value: any string identifier Default value: new GUID|
+| **Endpoint**                    | Required                            | `string`    | The URL of the OMF endpoint to receive this health data Allowed value: well-formed http or https endpoint string Default: `null`|
+| **Username**                    | Required for PI Web API endpoints   | `string`    | The username used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: `null`|
+| **Password**                    | Required for PI Web API endpoints   | `string`    | The password used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: `null`|
+| **ClientId**                    | Required for AVEVA Data Hub endpoints          | `string`    | The client ID used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any string Default: `null` |
+| **ClientSecret**                | Required for AVEVA Data Hub endpoints          | `string`    | The client secret used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any string Default: `null`|
 | **TokenEndpoint** | Optional for AVEVA Data Hub endpoints | `string` | Retrieves an AVEVA Data Hub token from an alternative endpoint Allowed value: well-formed http or https endpoint string Default value: `null` |
 | **ValidateEndpointCertificate** | Optional                            | `boolean`      | Disables verification of destination security certificate. Use for testing only with self-signed certificates; OSIsoft recommends keeping this set to the default, true, in production environments. Allowed value: `true` or `false`Default value: `true`|
 
@@ -82,7 +82,7 @@ The following parameters are available for configuring health endpoints:
 ```code
 {
     "Id": "PI Web API",
-    "Endpoint": "https://<pi web aAVEVA Server>:<port>/piwebapi/omf/",
+    "Endpoint": "https://<pi web AVEVA Server>:<port>/piwebapi/omf/",
     "UserName": "<username>",
     "Password": "<password>"
 }
