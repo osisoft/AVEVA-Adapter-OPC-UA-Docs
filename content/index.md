@@ -4,9 +4,9 @@ uid: index
 
 # Overview
 
-PI Adapter for OPC UA is a data-collection component that transfers time-series data from source devices to OMF endpoints in OSIsoft Cloud Services or PI Servers. OPC UA (OPC Unified Architecture) is an open standard, machine-to-machine communication protocol for industrial automation developed by the OPC Foundation. The adapter can connect to any device that uses the OPC UA communication protocol.
+AVEVA Adapter for OPC UA is a data-collection component that transfers time-series data from source devices to OMF endpoints in AVEVA Data Hub, AVEVA Servers, or Edge Data Store. OPC UA (OPC Unified Architecture) is an open standard, machine-to-machine communication protocol for industrial automation developed by the OPC Foundation. The adapter can connect to any device that uses the OPC UA communication protocol.
 
-![PI Adapter for OPC UA architecture](images/pi-adapter-for-opc-ua-architecture-diagram.png)
+![AVEVA Adapter for OPC UA architecture](images/PI-Adapter-for-opc-ua-architecture-diagram.png)
 
 ## Adapter installation
 
@@ -23,22 +23,22 @@ Once you have configured the adapter and it is sending data, you can use adminis
 OSIsoft also provides the EdgeCmd utility, a proprietary command line tool to configure and administer an adapter on both Linux and Windows operating systems. EdgeCmd utility is installed separately from the adapter.
 
 <!--
-# PI Adapter for OPC UA
+# AVEVA Adapter for OPC UA
 
 =======
 
-- [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview)
-  - [PI Adapter for OPC UA principles of operation](xref:PIAdapterForOPCUAPrinciplesOfOperation)
+- [AVEVA Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview)
+  - [AVEVA Adapter for OPC UA principles of operation](xref:PIAdapterForOPCUAPrinciplesOfOperation)
 - [Installation](xref:Installation)
   - [Install the adapter](xref:InstallTheAdapter)
-  - [Install PI Adapter for OPC UA using Docker](xref:InstallPIAdapterForOPCUAUsingDocker)
+  - [Install AVEVA Adapter for OPC UA using Docker](xref:InstallPIAdapterForOPCUAUsingDocker)
   - [Uninstall the adapter](xref:UninstallTheAdapter)
 - [Configuration](xref:OPCUAConfiguration)
   - [Configuration tools](xref:ConfigurationTools)
   - [System components configuration](xref:SystemComponentsConfiguration)
-  - [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration)
-  - [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration)
-  - [PI Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration)
+  - [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration)
+  - [AVEVA Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration)
+  - [AVEVA Adapter for OPC UA security configuration](xref:PIAdapterForOPCUASecurityConfiguration)
   - [Egress endpoints configuration](xref:EgressEndpointsConfiguration)
   - [Health endpoint configuration](xref:HealthEndpointConfiguration)
   - [Diagnostics configuration](xref:DiagnosticsConfiguration)

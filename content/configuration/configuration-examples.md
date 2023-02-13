@@ -4,7 +4,7 @@ uid: PIAdapterForOPCUAConfigurationExamples
 
 # Configuration examples
 
-The following tables provide examples for all configurations available for PI Adapter for OPC UA.
+The following tables provide examples for all configurations available for AVEVA Adapter for OPC UA.
 
 **Note:** The examples in this topic are using the default port number `5590`. If you selected a different port number, replace it with that value.
 
@@ -98,12 +98,17 @@ The following tables provide examples for all configurations available for PI Ad
                 "password": "PASSWORD"
             },
             {
-                "id": "OCS Endpoint",
-                "endpoint": "https://OCSEndpoint/omf",
+                "id": "AVEVA Data Hub Endpoint",
+                "endpoint": "https://AVEVA Data HubEndpoint/omf",
                 "clientId": "CLIENTID",
                 "clientSecret": "CLIENTSECRET"
             }
-        ]
+            {
+                "id": "EDS",
+                "endpoint": "http://localhost:/api/v1/tenants/default/namespaces/default/omf",
+                "clientId": "eds",
+                "clientSecret": "eds"
+            }        ]
     }
 }
 ```

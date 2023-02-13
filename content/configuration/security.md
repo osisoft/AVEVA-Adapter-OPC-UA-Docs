@@ -10,11 +10,19 @@ The adapter generates a self-signed certificate when the first secure connection
 
 When determining OPC UA security practices with regards to REST APIs, you should consider the following practice. To keep the adapter secure, only administrators should have access to machines where the adapter is installed. REST APIs are bound to localhost, meaning that only requests coming from within the machine will be accepted.
 
+# Adapter Certificate
+
+OPC UA connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will expire 10 years from the date of generation.
+
+When the adapter certificate approaches expiration, warnings will be logged daily starting 30 days prior to expiration. After the certificate is expired, errors will be logged daily.
+
+To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory and restart the adapter.
+
 ## Configure OPC UA adapter security
 
 Complete the following steps to configure adapter security:
 
-1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
+1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
 
    The adapter verifies whether the server certificate is present in the [adapter trusted certificates](#adapter-trusted-certificates) and hence trusts it. In case the certificates were not exchanged before the first attempted connection, the adapter persists the server certificate within the [adapter rejected certificates](#adapter-rejected-certificates) folder. The following warning message about the rejected server certificate will be printed:
 
@@ -36,7 +44,7 @@ Complete the following steps to configure adapter security:
   
 3. Add the [certificate of the adapter](#certificate-of-the-adapter) to the server's trust store.
 
-   The connection succeeds only when the adapter certificate is trusted on the server side. <br> For more details on how to make a client certificate trusted, see your OPC UA server documentation. <br> In general, servers work in a similar fashion to the clients, hence you can take a similar approach for making the client certificate trusted on the server side.
+   The connection succeeds only when the adapter certificate is trusted on the server side.  For more details on how to make a client certificate trusted, see your OPC UA server documentation.  In general, servers work in a similar fashion to the clients, hence you can take a similar approach for making the client certificate trusted on the server side.
 
    When certificates are mutually trusted, the connection attempt succeeds and the adapter is connected to the most secure endpoint provided by the server.
 
