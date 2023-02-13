@@ -8,7 +8,7 @@ AVEVA Adapters produce various types of health data. You can use health data to 
 
 AVEVA Adapters also produce diagnostic data. You can use diagnostic data to find more information about a particular adapter instance. Diagnostic data lives alongside the health data and you can egress it using a health endpoint and setting `EnableDiagnostics` to`true`. You can configure `EnableDiagnostics` in the system's [General configuration](xref:GeneralConfiguration). For more information on available adapter diagnostics data, see [diagnostics](xref:AdapterDiagnostics).
 
-In AVEVA Data Hub (ADH), both health and diagnostics data are created as assets. The data are available in the Asset Explorer and you can use them in the AVEVA Data Hub Trend feature. For more information, see the AVEVA Data Hub documentation [Assets](https://docs.osisoft.com/bundle/AVEVA Data Hub/page/add-organize-data/organize-data/assets/asset-concept.html).
+In AVEVA Data Hub (ADH), both health and diagnostics data are created as assets. The data are available in the Asset Explorer and you can use them in the AVEVA Data Hub Trend feature. For more information, see the AVEVA Data Hub documentation [Assets](https://docs.osisoft.com/bundle/PI Data Hub/page/add-organize-data/organize-data/assets/asset-concept.html).
 
 ## Health endpoint differences
 
