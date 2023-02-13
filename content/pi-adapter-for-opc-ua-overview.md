@@ -6,7 +6,7 @@ uid: PIAdapterForOPCUAOverview
 
 AVEVA Adapter for OPC UA is a data-collection component that transfers time-series data from source devices to OMF endpoints in AVEVA Data Hub or AVEVA Servers. OPC UA (OPC Unified Architecture) is an open standard, machine-to-machine communication protocol for industrial automation developed by the OPC Foundation. The adapter can connect to any device that uses the OPC UA communication protocol.
 
-![AVEVA Adapter for OPC UA architecture](images/AVEVA-Adapter-for-opc-ua-architecture-diagram.png)
+![AVEVA Adapter for OPC UA architecture](images/PI-Adapter-for-opc-ua-architecture-diagram.png)
 
 ## Adapter installation
 
