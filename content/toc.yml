@@ -10,7 +10,7 @@
   - topicUid: UninstallTheAdapter
 - topicUid: OPCUAConfiguration
   items:
-    - topicUid: PIAdapterForOPCUASecurity
+  - topicUid: PIAdapterForOPCUASecurity
     items:
     - topicUid: Secrets
     - topicUid: ReferenceSecrets
