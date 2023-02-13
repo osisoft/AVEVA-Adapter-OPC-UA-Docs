@@ -64,4 +64,7 @@
   items:
   - topicUid: TroubleshootPIAdapterForOPCUA
 - topicUid: ReleaseNotes
+  items:
+  - topicUid: ReleaseNotesOPCUA
+  - topicUid: ReleaseNotesOPCUAModule
 - topicUid: TechnicalSupportAndFeedback
