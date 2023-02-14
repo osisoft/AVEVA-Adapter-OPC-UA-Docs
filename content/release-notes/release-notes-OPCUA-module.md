@@ -1,5 +1,5 @@
 ---
-uid: ReleaseNotes
+uid: ReleaseNotesOPCUAModule
 ---
 
 # Release notes
