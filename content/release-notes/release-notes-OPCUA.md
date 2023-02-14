@@ -1,5 +1,5 @@
 ---
-uid: ReleaseNotes
+uid: ReleaseNotesOPCUA
 ---
 
 # Release notes
