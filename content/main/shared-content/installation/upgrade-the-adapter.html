@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Diagnostics configuration </title>
+    <title>Upgrade the adapter </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Diagnostics configuration ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="title" content="Upgrade the adapter ">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
@@ -75,74 +75,72 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DiagnosticsConfiguration">
-<h1 id="diagnostics-configuration">Diagnostics configuration</h1>
+            <article class="content wrap" id="_content" data-uid="UpgradeTheAdapter">
+<h1 id="upgrade-the-adapter">Upgrade the adapter</h1>
 
-<p>You can configure OSIsoft adapters to produce and store diagnostics data at a designated health endpoint.
-For more information about available diagnostics data, see <a class="xref" href="../diagnostics/diagnostics.html">Adapter diagnostics</a>.</p>
-<h2 id="configure-diagnostics">Configure diagnostics</h2>
+<p>When a new version of the adapter is released, you can upgrade to the latest version by running the new installation package.</p>
+<h2 id="windows-upgrade">Windows upgrade</h2>
+<p>Complete the following steps to upgrade a PI adapter on a Windows computer:</p>
 <ol>
-<li>Start any of the <a class="xref" href="../configuration/configuration-tools.html">Configuration tools</a> capable of making HTTP requests.</li>
-<li><p>Run a <code>PUT</code> command to the following endpoint and set the <code>enableDiagnostics</code> parameter to either <strong>true</strong> or <strong>false</strong>: <code>http://localhost:5590/api/v1/configuration/system/diagnostics</code></p>
-<p><strong>Note:</strong> <code>5590</code> is the default port number. If you selected a different port number, replace it with that value.</p>
-<p>Example using <code>curl</code>:</p>
-<pre><code class="lang-bash">curl -d &quot;{ &quot;enableDiagnostics&quot;:true }&quot; -X PUT &quot;http://localhost:5590/api/v1/configuration/system/diagnostics&quot;
+<li><p>Download <code>PI-Adapter-for-OpcUa-1.3.0.169-x64_.msi</code> from the <a href="https://customers.osisoft.com/s/products">OSIsoft Customer Portal</a>.</p>
+<p> <strong>Note:</strong> Customer login credentials are required to access the portal.</p>
+</li>
+<li><p>Run <code>PI-Adapter-for-OpcUa-1.3.0.169-x64_.msi</code>.</p>
+</li>
+<li><p>Complete the setup wizard.</p>
+</li>
+<li><p>Optional: To verify the upgrade, run the following <code>curl</code> command with the port number that you specified when completing the wizard:</p>
+<pre><code class="lang-powershell">curl -X GET &quot;http://localhost:5590/api/v1/Diagnostics/ProductInformation&quot;
+</code></pre><p>Upon successful upgrade, the JSON response lists the updated application version:</p>
+<pre><code class="lang-json">{
+ &quot;Application Version&quot;: &quot;1.3.0.169&quot;,                 // upgraded version
+ &quot;.Net Core Version&quot;: &quot;.NET Core 3.1.15&quot;,
+ &quot;Operating System&quot;: &quot;Microsoft Windows 10.0.19041&quot;
+}
 </code></pre></li>
 </ol>
-<h2 id="diagnostics-schema">Diagnostics schema</h2>
-<p>The full schema definition for the diagnostics configuration is in the <em>System_Diagnostics_schema.json</em> here:</p>
-<p>Windows: <em>%ProgramFiles%\OSIsoft\Adapters\AdapterName\Schemas</em></p>
-<p>Linux: <em>/opt/OSIsoft/Adapters/AdapterName/Schemas</em></p>
-<h2 id="diagnostics-parameters">Diagnostics parameters</h2>
-<p>The following parameters are available for configuring diagnostics:</p>
+<h2 id="linux-upgrade">Linux upgrade</h2>
+<p>Complete the following steps to upgrade a PI adapter on a Linux computer:</p>
+<ol>
+<li><p>Download the appropriate Linux distribution file from the <a href="https://customers.osisoft.com/s/products">OSIsoft Customer Portal</a>.</p>
+<p> <strong>Note:</strong> Customer login credentials are required to access the portal.</p>
+</li>
+<li><p>Open a terminal session.</p>
+</li>
+<li><p>Move the Linux distribution file to the target host and run the <code>sudo apt upgrade</code> command.</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
+<th>Platform</th>
+<th>Command</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>EnableDiagnostics</strong></td>
-<td>Required</td>
-<td><code>boolean</code></td>
-<td>Determines whether Diagnostics are enabled</td>
+<td> <strong>Linux x64</strong></td>
+<td><code>sudo apt upgrade ./PI-Adapter-for-OpcUa-1.3.0.169-x64_.deb</code></td>
+</tr>
+<tr>
+<td> <strong>Linux ARM32 Debian</strong></td>
+<td><code>sudo apt upgrade ./PI-Adapter-for-OpcUa-1.3.0.169-arm_.deb</code></td>
+</tr>
+<tr>
+<td> <strong>Linux ARM64 Debian</strong></td>
+<td><code>sudo apt upgrade ./PI-Adapter-for-OpcUa-1.3.0.169-arm64_.deb</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="example">Example</h2>
-<h3 id="retrieve-the-diagnostics-configuration">Retrieve the diagnostics configuration</h3>
-<p>Example using <code>curl</code>:</p>
-<pre><code class="lang-bash">curl -X GET &quot;http://localhost:{port}/api/v1/configuration/system/diagnostics&quot;
-</code></pre><p>Sample output:</p>
-<pre><code class="lang-code">{
-    &quot;enableDiagnostics&quot;: true
+</li>
+<li><p>Optional: To verify the upgrade, run the following <code>curl</code> command with the port number that you specified:</p>
+<pre><code class="lang-bash">curl -X GET &quot;http://localhost:5590/api/v1/Diagnostics/ProductInformation&quot;
+</code></pre><p>Upon successful upgrade, the JSON response lists the updated application version:</p>
+<pre><code class="lang-json">{
+ &quot;Application Version&quot;: &quot;1.3.0.169&quot;,                 // upgraded version
+ &quot;.Net Core Version&quot;: &quot;.NET Core 3.1.15&quot;,
+ &quot;Operating System&quot;: &quot;Microsoft Windows 10.0.19041&quot;
 }
-</code></pre><h2 id="rest-urls">REST URLs</h2>
-<table>
-<thead>
-<tr>
-<th>Relative URL</th>
-<th>HTTP verb</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>api/v1/configuration/system/diagnostics</td>
-<td>GET</td>
-<td>Gets the diagnostics configuration</td>
-</tr>
-<tr>
-<td>api/v1/configuration/system/diagnostics</td>
-<td>PUT</td>
-<td>Replaces the existing diagnostics configuration</td>
-</tr>
-</tbody>
-</table>
+</code></pre></li>
+</ol>
 </article>
           </div>
           
@@ -151,7 +149,7 @@ For more information about available diagnostics data, see <a class="xref" href=
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/ARCHIVE/Diagnostics configuration.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/installation/upgrade-the-adapter.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

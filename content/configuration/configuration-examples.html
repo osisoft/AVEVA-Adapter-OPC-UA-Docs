@@ -8,7 +8,7 @@
     <title>Configuration examples </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Configuration examples ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,16 +83,16 @@
 <h2 id="system-components-configuration-with-two-opc-ua-adapter-instances">System components configuration with two OPC UA adapter instances</h2>
 <pre><code class="lang-json">[
     {
-        &quot;ComponentId&quot;: &quot;OpcUa1&quot;,
-        &quot;ComponentType&quot;: &quot;OpcUa&quot;
+        &quot;componentId&quot;: &quot;OpcUa1&quot;,
+        &quot;componentType&quot;: &quot;OpcUa&quot;
     },
     {
-        &quot;ComponentId&quot;: &quot;OpcUa2&quot;,
-        &quot;ComponentType&quot;: &quot;OpcUa&quot;
+        &quot;componentId&quot;: &quot;OpcUa2&quot;,
+        &quot;componentType&quot;: &quot;OpcUa&quot;
     },
     {
-        &quot;ComponentId&quot;: &quot;OmfEgress&quot;,
-        &quot;ComponentType&quot;: &quot;OmfEgress&quot;
+        &quot;componentId&quot;: &quot;OmfEgress&quot;,
+        &quot;componentType&quot;: &quot;OmfEgress&quot;
     }
 ]
 </code></pre><h2 id="opc-ua-adapter-configuration">OPC UA adapter configuration</h2>
@@ -104,21 +104,22 @@
             &quot;logFileCountLimit&quot;: 31
         },
         &quot;DataSource&quot;: {
-            &quot;EndpointUrl&quot;: &quot;opc.tcp://OPCUAServerEndpoint/OPCUA/Server&quot;,
-            &quot;UseSecureConnection&quot;: false,
-            &quot;StreamPrefix&quot;: &quot;OPC_Prefix_&quot;,
-            &quot;UserName&quot;: null,
-            &quot;Password&quot;: null,
-            &quot;RootNodeIds&quot;: null,
-            &quot;IncomingTimestamp&quot;: &quot;Source&quot;,
-            &quot;applyPrefixToStreamId&quot;: true
+            &quot;endpointUrl&quot;: &quot;opc.tcp://OPCUAServerEndpoint/OPCUA/Server&quot;,
+            &quot;useSecureConnection&quot;: false,
+            &quot;userName&quot;: null,
+            &quot;password&quot;: null,
+            &quot;incomingTimestamp&quot;: &quot;Source&quot;,
+            &quot;streamIdPrefix&quot;: &quot;OPC_Prefix_&quot;,
+            &quot;defaultStreamIdPattern&quot;: &quot;{NamespaceIndex}.{Identifier}&quot;,
+            &quot;dataCollectionMode&quot;: &quot;CurrentWithBackfill&quot;
         },
         &quot;DataSelection&quot;: [
             {
-                &quot;Selected&quot;: true,
-                &quot;Name&quot;: &quot;Sawtooth&quot;,
-                &quot;NodeId&quot;: &quot;ns=3;s=Sawtooth&quot;,
-                &quot;StreamId&quot;: &quot;SawtoothStream&quot;
+                &quot;selected&quot;: true,
+                &quot;name&quot;: &quot;Sawtooth&quot;,
+                &quot;nodeId&quot;: &quot;ns=3;s=Sawtooth&quot;,
+                &quot;streamId&quot;: &quot;SawtoothStream&quot;,
+                &quot;dataFilterId&quot;: null
             }
         ]
     },
@@ -144,9 +145,9 @@
             }
         ],
     &quot;Buffering&quot;: {
-            &quot;BufferLocation&quot;: &quot;C:/ProgramData/OSIsoft/Adapters/OpcUa/Buffers&quot;,
-            &quot;MaxBufferSizeMB&quot;: -1,
-            &quot;EnableBuffering&quot;: true
+            &quot;bufferLocation&quot;: &quot;C:/ProgramData/OSIsoft/Adapters/OpcUa/Buffers&quot;,
+            &quot;maxBufferSizeMB&quot;: -1,
+            &quot;enableBuffering&quot;: true
         }
      },
     &quot;OmfEgress&quot;: {
@@ -167,38 +168,36 @@
                 &quot;endpoint&quot;: &quot;https://OCSEndpoint/omf&quot;,
                 &quot;clientId&quot;: &quot;CLIENTID&quot;,
                 &quot;clientSecret&quot;: &quot;CLIENTSECRET&quot;
-            },
-            {
-                &quot;Id&quot;: &quot;EDS&quot;,
-                &quot;Endpoint&quot;: &quot;http://localhost:/api/v1/tenants/default/namespaces/default/omf&quot;,
-                &quot;UserName&quot;: &quot;eds&quot;,
-                &quot;Password&quot;: &quot;eds&quot;
             }
-        ]
+            {
+                &quot;id&quot;: &quot;EDS&quot;,
+                &quot;endpoint&quot;: &quot;http://localhost:/api/v1/tenants/default/namespaces/default/omf&quot;,
+                &quot;clientId&quot;: &quot;eds&quot;,
+                &quot;clientSecret&quot;: &quot;eds&quot;
+            }        ]
     }
 }
 </code></pre><h2 id="data-source-configuration">Data source configuration</h2>
 <p>The following are representations of minimal and complete data source configurations of OPC UA adapter.</p>
 <h3 id="minimal-data-source-configuration">Minimal data source configuration</h3>
 <pre><code class="lang-json">{
-    &quot;EndpointUrl&quot;: &quot;opc.tcp://&lt;IP-Address&gt;:&lt;Port&gt;/&lt;TestOPCUAServer&gt;&quot;
+    &quot;endpointUrl&quot;: &quot;opc.tcp://&lt;IP-Address&gt;:&lt;Port&gt;/&lt;TestOPCUAServer&gt;&quot;
 }
 </code></pre><h3 id="complete-data-source-configuration">Complete data source configuration</h3>
 <pre><code class="lang-json">{
-    &quot;EndpointUrl&quot;: &quot;opc.tcp://&lt;IP-Address&gt;:&lt;Port&gt;/&lt;TestOPCUAServer&gt;&quot;,
-    &quot;UseSecureConnection&quot;: true,
-    &quot;UserName&quot;: null,
-    &quot;Password&quot;: null,
-    &quot;RootNodeIds&quot;: null,
-    &quot;IncomingTimestamp&quot;: &quot;Source&quot;,
-    &quot;StreamIdPrefix&quot;: null,
-    &quot;DefaultStreamIdPattern&quot;: &quot;{NamespaceIndex}.{Identifier}&quot;
+    &quot;endpointUrl&quot;: &quot;opc.tcp://&lt;IP-Address&gt;:&lt;Port&gt;/&lt;TestOPCUAServer&gt;&quot;,
+    &quot;useSecureConnection&quot;: true,
+    &quot;userName&quot;: null,
+    &quot;password&quot;: null,
+    &quot;incomingTimestamp&quot;: &quot;Source&quot;,
+    &quot;streamIdPrefix&quot;: null,
+    &quot;defaultStreamIdPattern&quot;: &quot;{NamespaceIndex}.{Identifier}&quot;
 }
 </code></pre><h2 id="client-settings-configuration">Client settings configuration</h2>
 <pre><code class="lang-json">{
     &quot;maxBrowseReferencesToReturn&quot;: 0,
-    &quot;BrowseBlockSize&quot;: 10,
-    &quot;ReadBlockSize&quot;: 1000,
+    &quot;browseBlockSize&quot;: 10,
+    &quot;readBlockSize&quot;: 1000,
     &quot;reconnectDelay&quot;: &quot;0:00:30&quot;,
     &quot;recreateSubscriptionDelay&quot;: &quot;0:00:05&quot;,
     &quot;sessionRequestTimeout&quot;: &quot;0:02:00&quot;,
@@ -206,7 +205,7 @@
     &quot;sessionAllowInsecureCredentials&quot;: false,
     &quot;sessionMaxOperationsPerRequest&quot;: 1000,
     &quot;browseTimeout&quot;: &quot;0:01:00&quot;,
-    &quot;ReadTimeout&quot;: &quot;0:00:30&quot;,
+    &quot;readTimeout&quot;: &quot;0:00:30&quot;,
     &quot;maxMonitoredItemsPerCall&quot;: 1000,
     &quot;maxNotificationsPerPublish&quot;: 0,
     &quot;publishingInterval&quot;: &quot;0:00:01&quot;,
@@ -220,34 +219,37 @@
 <h3 id="minimal-data-selection-configuration">Minimal data selection configuration</h3>
 <pre><code class="lang-json">[
  {
-    &quot;NodeId&quot;: &quot;ns=5;s=Random1&quot;
+    &quot;nodeId&quot;: &quot;ns=5;s=Random1&quot;
   },
   {
-    &quot;NodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;
+    &quot;nodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;
   },
   {
-    &quot;NodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;
+    &quot;nodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;
   }
 ]
 </code></pre><h3 id="complete-data-selection-configuration">Complete data selection configuration</h3>
 <pre><code class="lang-json">[
  {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;CustomStreamName&quot;,
-    &quot;NodeId&quot;: &quot;ns=5;s=Random1&quot;,
-    &quot;StreamId&quot;: &quot;CustomStreamName&quot;
+    &quot;selected&quot;: true,
+    &quot;name&quot;: &quot;CustomStreamName&quot;,
+    &quot;nodeId&quot;: &quot;ns=5;s=Random1&quot;,
+    &quot;streamId&quot;: &quot;CustomStreamName&quot;,
+    &quot;dataFilterId&quot;: &quot;DuplicateData&quot;
   },
   {
-    &quot;Selected&quot;: false,
-    &quot;Name&quot;: null,
-    &quot;NodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;,
-    &quot;StreamId&quot;: null
+    &quot;selected&quot;: false,
+    &quot;name&quot;: null,
+    &quot;nodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;,
+    &quot;streamId&quot;: null,
+    &quot;dataFilterId&quot;: &quot;DuplicateData&quot;
   },
   {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;5.Sinusoid1&quot;,
-    &quot;NodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;,
-    &quot;StreamId&quot;: null
+    &quot;selected&quot;: true,
+    &quot;name&quot;: &quot;5.Sinusoid1&quot;,
+    &quot;nodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;,
+    &quot;streamId&quot;: null,
+    &quot;dataFilterId&quot;: null
   }
 ]
 </code></pre></article>

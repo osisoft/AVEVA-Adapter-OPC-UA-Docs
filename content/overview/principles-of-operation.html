@@ -8,7 +8,7 @@
     <title>Principles of operation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Principles of operation ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -88,10 +88,10 @@
 </ul>
 <p>For more information, see <a class="xref" href="../configuration/data-source.html">PI Adapter for OPC UA data source configuration</a> and <a class="xref" href="../configuration/data-selection.html">PI Adapter for OPC UA data selection configuration</a>.</p>
 <h2 id="connection">Connection</h2>
-<p>The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secured connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establishes a secured connection.</p>
+<p>The OPC UA adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. As part of the OPC UA server and client establishing a secure connection, each one sends its X.509-type certificate to the other for verification. Upon verification of the certificates, the server and client establish a secure connection.</p>
 <p>For more information on secure connections, see <a class="xref" href="../configuration/security.html">PI Adapter for OPC UA security configuration</a>.</p>
 <h2 id="data-collection">Data collection</h2>
-<p>The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) part of OPC UA specification. For more information, see <a href="https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access">Unified Architecture (https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access)</a>.</p>
+<p>The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see <a href="https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access">Data Access</a> and <a href="https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access">Historical Data Access</a>.</p>
 <h3 id="data-types">Data types</h3>
 <p>The following table lists OPC UA variable types that the adapter collects data from and types of streams that will be created.</p>
 <table>
@@ -105,10 +105,6 @@
 <tr>
 <td>Boolean</td>
 <td>Boolean</td>
-</tr>
-<tr>
-<td>Byte</td>
-<td>Int16</td>
 </tr>
 <tr>
 <td>SByte</td>
@@ -139,25 +135,59 @@
 <td>UInt64</td>
 </tr>
 <tr>
-<td>Float</td>
-<td>Float32</td>
-</tr>
-<tr>
 <td>Double</td>
 <td>Float64</td>
 </tr>
 <tr>
+<td>Decimal</td>
+<td>Float32</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Float32</td>
+</tr>
+<tr>
 <td>DateTime</td>
+<td>DateTime</td>
+</tr>
+<tr>
+<td>UtcTime</td>
 <td>DateTime</td>
 </tr>
 <tr>
 <td>String</td>
 <td>String</td>
 </tr>
+<tr>
+<td>Number</td>
+<td>variable, depending on the actual value</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>UInteger</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Enumeration</td>
+<td>Int16</td>
+</tr>
 </tbody>
 </table>
+<p>PI Adapter for OPC UA attempts to verify the data type for each data selection item before adding the item to the subscription on the OPC UA server. Verified data selection items with supported types and data selection items for which the type cannot be verified are added to the subscription. Data selection items with unsupported data type are not added to the subscription and a message including the <strong>NodeId</strong> and <strong>TypeId</strong> is logged.</p>
+<h2 id="enumeration-types">Enumeration types</h2>
+<p>PI Adapter for OPC UA supports the following enumeration types:</p>
+<ul>
+<li>MultiStateDiscreteType</li>
+<li>MultiStateValueDiscreteType</li>
+<li>TwoStateDiscreteType</li>
+<li>Any object that has a data type referenced as enumeration type</li>
+</ul>
+<p>The adapter reads the enumeration mapping for data selection items that point to any of the enumeration types and sends these items as enums to the OMF endpoints.</p>
 <h2 id="stream-creation">Stream creation</h2>
-<p>The OPC UA adapter creates a stream with two properties for each selected OPC UA item. The properties are described in the following table:</p>
+<p>The OPC UA adapter creates a stream with three properties for each selected OPC UA item. The properties are described in the following table:</p>
 <table>
 <thead>
 <tr>
@@ -175,31 +205,106 @@
 <tr>
 <td>Value</td>
 <td>Based on type of incoming OPC UA value</td>
-<td>Value of the given OPC UA item update.</td>
+<td>Value of the given OPC UA item update, which includes multiple properties in addition to the data value.<br><br><strong>Note:</strong><br>For OPC UA items that support EURange, the additional <strong>Minimum</strong>/<strong>Maximum</strong> properties in OCS and the <strong>Zero</strong>/<strong>Span</strong> properties in PI Web API are populated.<br>For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional <strong>UOM</strong> property in OCS and the <strong>Eng Units</strong> property in PI Web API are populated.<sup>1</sup></td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>Unsigned integer</td>
+<td>Data quality of the given OPC UA item update.</td>
 </tr>
 </tbody>
 </table>
-<p>The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are</p>
+<p><sup>1</sup> <strong>Note:</strong> <code>Null</code> values with <code>Good</code> quality are discarded. <code>Null</code> values with <code>Bad</code> or <code>Questionable</code> quality send the default value <code>0</code> or <code>null</code> to the destination.</p>
+<p>The OPC UA adapter sends metadata with each stream it creates. Metadata common for every adapter type are:</p>
 <ul>
-<li><strong>ComponentId</strong>: Specifies the data source, for example <em>OpcUa1</em></li>
-<li><strong>ComponentType</strong>: Specifies the type of adapter, for example <em>OpcUa</em></li>
+<li><strong>ComponentId</strong>: Specifies the data source. For example, <em>OpcUa1</em></li>
+<li><strong>ComponentType</strong>: Specifies the type of adapter. For example, <em>OpcUa</em></li>
 </ul>
-<p>Metadata specific to the OPC UA adapter are</p>
+<p>Metadata specific to the OPC UA adapter are:</p>
 <ul>
 <li><strong>BrowseName</strong>: The browse name as provided by the OPC UA server</li>
 <li><strong>SourceId</strong>: The NodeId provided by the OPC UA server</li>
 </ul>
-<p><strong>Note:</strong> A configured metadata level allows you to set the amount of metadata for the adapter. Specify the metadata level in <a class="xref" href="../main/shared-content/configuration/diagnostics-and-metadata.html">General configuration</a>. For the OPC UA adapter, the following metadata is sent for the individual level:</p>
+<p><strong>Note:</strong> A configured metadata level allows you to set the amount of metadata for the adapter. Specify the metadata level in the <a class="xref" href="../main/shared-content/configuration/diagnostics-and-metadata.html">General configuration</a>. For the OPC UA adapter, the following metadata is sent for the individual level:</p>
 <ul>
 <li><code>None</code>: No metadata</li>
 <li><code>Low</code>: AdapterType (ComponentType) and DataSource (ComponentId)</li>
 <li><code>Medium</code>: AdapterType (ComponentType), DataSource (ComponentId), BrowseName, and DisplayName</li>
 <li><code>High</code>: AdapterType (ComponentType), DataSource (ComponentId), BrowseName, DisplayName, and SourceId</li>
 </ul>
-<p>Each stream created by  the adapter for a given OPC UA item has a unique identifier (Stream ID). If you specify a custom stream ID for the OPC UA item in data selection configuration, the OPC UA adapter uses that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format, which is constructed from the OPC UA item node ID:</p>
+<p>Each stream created by  the adapter for a given OPC UA item has a unique identifier (Stream ID). If you specify a custom stream ID for the OPC UA item in data selection configuration, the OPC UA adapter uses that stream ID to create the stream. Otherwise, the adapter uses the OPC UA item node ID to construct the stream ID, as shown below.</p>
 <pre><code class="lang-code">&lt;AdapterComponentID&gt;.&lt;NamespaceIndex&gt;.&lt;Identifier&gt;
 </code></pre><p>NamespaceIndex refers to the number specified in the <code>ns</code> keyword in the <strong>NodeId</strong> parameter of the data selection configuration item. For more information, see <a class="xref" href="../configuration/data-source.html#opc-ua-data-source-parameters">PI Adapter for OPC UA data source configuration</a>.</p>
-<p><strong>Note:</strong> The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in data source configuration.</p>
+<p><strong>Note:</strong> The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.</p>
+<h2 id="server-failover">Server Failover</h2>
+<p>The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the <code>ServerFailoverEnabled</code> property in the adapter component&#39;s DataSource must be set to <code>true</code>. For more information on setting this property, see <a class="xref" href="../configuration/data-source.html#opc-ua-data-source-parameters">PI Adapter for OPC UA data source configuration</a>.</p>
+<p>Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read 3 node ID&#39;s that hold server redundancy related information:</p>
+<table>
+<thead>
+<tr>
+<th>Node ID</th>
+<th>How it&#39;s used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i=3709</code>: Server redundancy mode support</td>
+<td>This value will be used to determine the redundancy mode the adapter will follow. Currently, the supported modes are <code>None</code>, <code>Cold</code>, <code>Warm</code>, and <code>Hot</code>. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration.</td>
+</tr>
+<tr>
+<td><code>i=11314</code>: Server URI array</td>
+<td>This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration.</td>
+</tr>
+<tr>
+<td><code>i=2267</code>: Service level</td>
+<td>This value will be used to track each server&#39;s health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set.</td>
+</tr>
+</tbody>
+</table>
+<p>For any of the supported redundancy modes, the adapter will report <code>AttemptingFailover</code> as its device status whenever it determines that server failover should occur. After the failover is complete, the an appropriate device status will be reported. For more information about Device status, see <a class="xref" href="../main/shared-content/health/device-status.html">Device Status</a></p>
+<p><strong>Note:</strong> The adapter does not currently support a runtime change to the server redundancy mode. A user must restart the adapter if they wish to change the server redundancy mode on their server and have it be seen by the adapter.</p>
+<h3 id="supported-redundancy-modes">Supported Redundancy Modes</h3>
+<p>The following sections outline how the adapter behaves in each Server Redundancy Mode. For more information on server redundancy, see the <a href="https://reference.opcfoundation.org/v104/Core/docs/Part4/6.6.2/">OPC UA Online Reference part 4 - 6.6.2</a></p>
+<h4 id="none">None</h4>
+<p>If the Server Redundancy Mode Support value on the primary OPC UA server is <code>None</code>, the adapter will operate as if server failover is not enabled. The adapter will not attempt to connect or failover to any backup servers.</p>
+<h4 id="cold">Cold</h4>
+<p>If the servers in the redundancy set are operating in Cold mode, the adapter will take the following steps upon startup:</p>
+<ul>
+<li>Make a connection to each server defined in the primary OPC UA server&#39;s Server URI Array.</li>
+<li>Read the Service Level of each server to determine which server is the healthiest.</li>
+<li>Disconnect from all servers except for the healthiest.</li>
+</ul>
+<p>The adapter will only maintain a connection with a single OPC UA server after its initial startup. The secondary servers will not be connected to unless a server failover occurs.</p>
+<p>In Cold server failover, a failover only occurs if the adapter loses connection to the primary server or if the primary server&#39;s Service Level drops to 1 or 0. When this occurs, the adapter will connect to all secondary servers, read the service level of each, then disconnect from all servers except for the one with the highest service level. The adapter will maintain a connection with this new server until another failover event occurs.</p>
+<h4 id="warm">Warm</h4>
+<p>If the servers in the redundancy set are operating in Warm mode, the adapter will take the following steps upon startup:</p>
+<ul>
+<li>Make a connection to each server defined in the primary OPC UA server&#39;s Server URI Array.</li>
+<li>Read the Service Level of each server to determine which server is the healthiest.</li>
+<li>Activate publishing and sampling for the data subscription on the healthiest server.</li>
+<li>Disable publishing and sampling for the data subscription on the rest of the servers.</li>
+</ul>
+<p>The adapter will maintain a connection to every OPC UA server in the redundancy set. However, publishing and sampling will only be active on the healthiest server.</p>
+<p>In Warm server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server&#39;s Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and sampling on the current primary server and enable them on whichever secondary server has the highest service level. This healthy server becomes the new primary.</p>
+<h4 id="hot">Hot</h4>
+<p>If the servers in the redundancy set are operating in Hot mode, the adapter will take the following steps upon startup:</p>
+<ul>
+<li>Make a connection to each server defined in the primary OPC UA server&#39;s Server URI Array.</li>
+<li>Read the Service Level of each server to determine which server is the healthiest.</li>
+<li>Activate publishing and reporting for the data subscription on the healthiest server.</li>
+<li>Disable publishing and activate sampling for the data subscription on the rest of the servers.</li>
+</ul>
+<p>The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be buffered until it becomes the primary. The size of this buffer can be configured with the <code>MonitoredItemQueueSize</code> property in the Client Settings configuration (ADD LINK TO THAT PAGE HERE). Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode.</p>
+<p>In Hot server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server&#39;s Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and activate sampling on the current primary server. It will then enable publishing and reporting on whichever secondary server has the highest service level. This healthy server becomes the new primary. If the <code>MonitoredItemQueueSize</code> property in the Client Settings configuration is large enough to hold all of the data that occurred during the failover period, there will be no data loss.</p>
+<h4 id="hotandmirrored">HotAndMirrored</h4>
+<p>The HotAndMirrored Failover mode is not directly supported by PI Adapter for OPC UA. However, if the servers in the redundancy set are operating in HotAndMirrored failover mode, the adapter will instead use the Cold failover mode. This behavior is permitted by section <a href="https://reference.opcfoundation.org/Core/Part4/v104/docs/6.6.2.4.5.1">6.6.2.4.5.1</a> of the OPC UA specification.</p>
+<h3 id="redundancy-server-set-cache">Redundancy Server Set Cache</h3>
+<p>On startup, when the adapter reads the Server URI array, it will store the results in a file on disk in the following locations:</p>
+<ul>
+<li>Windows: <code>%ProgramData%\OSIsoft\Adapters\OpcUa\&lt;ComponentId&gt;\RedundantServerSet.txt</code></li>
+<li>Linux: <code>/usr/share/OSIsoft/Adapters/OpcUa/&lt;ComponentId&gt;/RedundantServerSet.txt</code></li>
+</ul>
+<p>On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will use the servers in this cache as the server redundancy set.</p>
 </article>
           </div>
           

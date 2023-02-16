@@ -8,7 +8,7 @@
     <title>Security </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Security ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -78,8 +78,13 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForOPCUASecurityConfiguration">
 <h1 id="security">Security</h1>
 
-<p>The OPC UA security standard is concerned with the authentication of client and server applications, the authentication of users and confidentiality of their communication. As the security model relies heavily on Transport Level Security (TLS) to establish a secure communication link with an OPC UA server, each client, including the adapter, must have a digital certificate deployed and configured. Certificates uniquely identify client applications and machines on servers, and allow for creation of a secure communication link when trusted on both sides.</p>
-<p>The adapter generates a self-signed certificate when the first secure connection attempt is made. The adapter&#39;s certificates and those of the server are stored in the certificate store which is shared between all adapter instances.</p>
+<p>The OPC UA security standard is concerned with the authentication of client and server applications, the authentication of users, and confidentiality of their communication. Because the security model relies heavily on Transport Level Security (TLS) to establish a secure communication link with an OPC UA server, each client, including the adapter, must have a digital certificate deployed and configured. Certificates uniquely identify client applications and machines on servers, and allow for creation of a secure communication link when trusted on both sides.</p>
+<p>The adapter generates a self-signed certificate when the first secure connection attempt is made. The adapter&#39;s certificates and those of the server are stored in the certificate store, which is shared between all adapter instances.</p>
+<p>When determining OPC UA security practices with regards to REST APIs, you should consider the following practice. To keep the adapter secure, only administrators should have access to machines where the adapter is installed. REST APIs are bound to localhost, meaning that only requests coming from within the machine will be accepted.</p>
+<h1 id="adapter-certificate">Adapter Certificate</h1>
+<p>OPC UA connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will have expire 10 years from the date of generation.</p>
+<p>When the adapter certificate approaches expiration, warnings will be logged daily starting 30 days prior to expiration. After the certificate is expired, errors will be logged daily.</p>
+<p>To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory.</p>
 <h2 id="configure-opc-ua-adapter-security">Configure OPC UA adapter security</h2>
 <p>Complete the following steps to configure adapter security:</p>
 <ol>

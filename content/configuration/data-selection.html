@@ -8,7 +8,7 @@
     <title>Data selection </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Data selection ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -78,39 +78,12 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForOPCUADataSelectionConfiguration">
 <h1 id="data-selection">Data selection</h1>
 
-<p>In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources.</p>
-<p>When you add a data source without providing a data selection configuration, the adapter browses the OPC UA server address space and populates the available OPC UA variables into the data selection configuration.  A comma-separated collection of nodeIds (RootNodeIds) in the data source configuration serves as filters to browse only a subset of the OPC UA server. Data selection items configured this way must still be selected for data retrieval. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
-<p>You can decide to have the data selection configuration file generated automatically or you can create it manually yourself.</p>
-<h2 id="generate-default-opc-ua-data-selection-configuration-file">Generate default OPC UA data selection configuration file</h2>
-<p>A default OPC UA data selection file will be created if there is no OPC UA data selection configuration although a valid data source exists.</p>
-<p><strong>Note:</strong> To avoid possible time and resource expensive browse operations due to reasons described previously, OSIsoft recommends that you manually create a data selection file instead of automatically creating the default data selection file. For more information, see <a href="#configure-opc-ua-data-selection">Configure OPC UA data selection</a>.</p>
-<p>Complete the following steps to generate a default data selection file:</p>
-<ol>
-<li><p>Add an OPC UA adapter with a unique ComponentId. For more information, see <a class="xref" href="../main/shared-content/configuration/system-components.html">System components configuration</a>.</p>
-</li>
-<li><p>Configure a valid OPC UA data source. For more information, see <a class="xref" href="data-source.html">PI Adapter for OPC UA data source configuration</a>.</p>
-<p>Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.</p>
-<p>The following are example locations of the file created. In this example, it is assumed that the ComponentId of the OPC UA component is OpcUa1:</p>
-<p>Windows: <em>%programdata%\OSIsoft\Adapters\OpcUa\OpcUa\Configuration\OpcUa1_DataSelection.json</em></p>
-<p>Linux: <em>/usr/share/OSIsoft/Adapters/OpcUa/OpcUa/Configuration/OpcUa1_DataSelection.json</em></p>
-</li>
-<li><p>Copy the file to a different directory.</p>
-<ul>
-<li>For content structure, see <a href="#opc-ua-data-selection-examples">OPC UA data selection example</a>.</li>
-</ul>
-</li>
-<li><p>Use any text editor to change the value of any <strong>Selected</strong> key from <code>false</code> to <code>true</code> in the file.</p>
-<p>Once the configuration is updated, the adapter will subscribe to data for all items that are set to <em>Selected=true</em>.</p>
-</li>
-<li><p>In the same directory where you edited the file, run the following <code>curl</code> command:</p>
-<p> <strong>Note:</strong> <code>5590</code> is the default port number. If you selected a different port number, replace it with that value.</p>
-<pre><code class="lang-bash">curl -d &quot;@OpcUa1_DataSelection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT      &quot;http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection&quot;
-</code></pre></li>
-</ol>
+<p>In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources. OPC UA data from OPC UA items is read through subscriptions (unsolicited reads).</p>
+<p>You can decide to create the data selection configuration file yourself or you can perform a data source discovery to find available items. For more information, see <a class="xref" href="data-source-discovery.html">Discovery</a>.</p>
 <h2 id="configure-opc-ua-data-selection">Configure OPC UA data selection</h2>
-<p>Complete the following steps to configure an OPC UA data selection. Use the <code>PUT</code> method in conjunction with the <code>api/v1/configuration/&lt;ComponentId&gt;/DataSelection/</code> REST endpoint to initialize the configuration.</p>
+<p>Complete the following steps to configure an OPC UA data selection. Use the <code>PUT</code> method in conjunction with the <code>api/v1/configuration/&lt;ComponentId&gt;/DataSelection</code> REST endpoint to initialize the configuration.</p>
 <ol>
-<li><p>Using a text editor, create an empty text file.</p>
+<li><p>Use a text editor to create an empty text file.</p>
 </li>
 <li><p>Copy and paste an example configuration for an OPC UA data selection into the file.</p>
 <p> For sample JSON, see <a href="#opc-ua-data-selection-examples">OPC UA data selection examples</a>.</p>
@@ -122,7 +95,7 @@
 </li>
 <li><p>Open a command line session. Change directory to the location of <code>ConfigureDataSelection.json</code>.</p>
 </li>
-<li><p>Enter the following cURL command (which uses the <code>PUT</code> method) to initialize the data selection configuration.</p>
+<li><p>Enter the following curl command (which uses the <code>PUT</code> method) to initialize the data selection configuration.</p>
 <pre><code class="lang-bash">curl -d &quot;@ConfigureDataSelection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT &quot;http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection&quot;
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
@@ -151,34 +124,34 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Selected</strong></td>
+<td><strong>selected</strong></td>
 <td>Optional</td>
 <td><code>boolean</code></td>
 <td>Use this field to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false. <br><br>Allowed value: <code>true</code> or <code>false</code> <br>Default value: <code>true</code></td>
 </tr>
 <tr>
-<td><strong>Name</strong></td>
+<td><strong>name</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Name of the data item collected from the data source. <br><br>Default value: <code>null</code> <br>results in <strong>StreamId</strong> value being used also as a <strong>Name</strong></td>
 </tr>
 <tr>
-<td><strong>NodeId</strong></td>
+<td><strong>nodeId</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
 <td>The NodeId of the variable.<br><br>Examples<br><code>&quot;ns=5;AString&quot;</code><br><code>&quot;ns=2;i=203&quot;</code><br><code>&quot;ns=&lt;NamespaceIndex&gt;;&lt;IdentifierType&gt;=&lt;Identifer&gt;&quot;</code></td>
 </tr>
 <tr>
-<td><strong>StreamID</strong></td>
+<td><strong>streamID</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 100 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
+<td>The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 2000 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.<br><br>For more information on how the adapter encodes special characters in the <strong>StreamId</strong>, see <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html#special-characters-encoding">Egress endpoints</a>.</td>
 </tr>
 <tr>
-<td><strong>DataFilterID</strong></td>
+<td><strong>dataFilterId</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The ID of the data filter. <br><br>Allowed value: any string <br>Default value: <code>null</code><br><strong>Note:</strong> If the specified <strong>DataFilterId</strong> does not exist, unfiltered data is sent until that <strong>DataFilterId</strong> is created.</td>
+<td>Enables data filtering for this data selection item if the ID of a data filter is specified.<br><strong>Note:</strong> If the specified <strong>DataFilterId</strong> does not exist, unfiltered data is sent until that <strong>DataFilterId</strong> is created.</td>
 </tr>
 </tbody>
 </table>
@@ -187,34 +160,37 @@
 <h3 id="minimal-data-selection-configuration">Minimal data selection configuration</h3>
 <pre><code class="lang-json">[
  {
-    &quot;NodeId&quot;: &quot;ns=5;s=Random1&quot;
+    &quot;nodeId&quot;: &quot;ns=5;s=Random1&quot;
   },
   {
-    &quot;NodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;
+    &quot;nodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;
   },
   {
-    &quot;NodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;
+    &quot;nodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;
   }
 ]
 </code></pre><h3 id="complete-data-selection-configuration">Complete data selection configuration</h3>
 <pre><code class="lang-json">[
  {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;CustomStreamName&quot;,
-    &quot;NodeId&quot;: &quot;ns=5;s=Random1&quot;,
-    &quot;StreamId&quot;: &quot;CustomStreamName&quot;
+    &quot;selected&quot;: true,
+    &quot;name&quot;: &quot;CustomStreamName&quot;,
+    &quot;nodeId&quot;: &quot;ns=5;s=Random1&quot;,
+    &quot;streamId&quot;: &quot;CustomStreamName&quot;,
+    &quot;dataFilterId&quot;: &quot;DuplicateData&quot;
   },
   {
-    &quot;Selected&quot;: false,
-    &quot;Name&quot;: null,
-    &quot;NodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;,
-    &quot;StreamId&quot;: null
+    &quot;selected&quot;: false,
+    &quot;name&quot;: null,
+    &quot;nodeId&quot;: &quot;ns=5;s=Sawtooth1&quot;,
+    &quot;streamId&quot;: null,
+    &quot;dataFilterId&quot;: &quot;DuplicateData&quot;
   },
   {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;5.Sinusoid1&quot;,
-    &quot;NodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;,
-    &quot;StreamId&quot;: null
+    &quot;selected&quot;: true,
+    &quot;name&quot;: &quot;5.Sinusoid1&quot;,
+    &quot;nodeId&quot;: &quot;ns=5;s=Sinusoid1&quot;,
+    &quot;streamId&quot;: null,
+    &quot;dataFilterId&quot;: null
   }
 ]
 </code></pre><h2 id="rest-urls">REST URLs</h2>
@@ -228,38 +204,38 @@
 </thead>
 <tbody>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataSelection</td>
-<td>GET</td>
-<td>Retrieves the OPC UA data selection configuration</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataSelection</td>
+<td><code>GET</code></td>
+<td>Retrieves the data selection configuration, including all data selection items.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataSelection</td>
-<td>PUT</td>
-<td>Configures or updates the OPC UA data selection configuration</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataSelection</td>
+<td><code>PUT</code></td>
+<td>Configures or updates the data selection configuration. The adapter starts collecting data for each data selection item when the following conditions are met:<br><br>&bull; The data selection configuration <code>PUT</code> request is received.<br>&bull; A data source configuration is active.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataSelection</td>
-<td>DELETE</td>
-<td>Deletes the OPC UA data selection configuration</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataSelection</td>
+<td><code>DELETE</code></td>
+<td>Deletes the active data selection configuration. The adapter stops collecting data.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataSelection</td>
-<td>PATCH</td>
-<td>Allows partial updating of configured data selection items. <br><strong>Note:</strong> The request must be an array containing one or more data selection items. Each data selection item in the array must include its <em>StreamId</em>.</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataSelection</td>
+<td><code>PATCH</code></td>
+<td>Allows partial updates of configured data selection items.<br><br><strong>Note:</strong> The request must be an array containing one or more data selection items. Each item in the array must include its <strong>StreamId</strong>.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataSelection/<em>StreamId</em></td>
-<td>PUT</td>
-<td>Updates or creates a new data selection with the specified <em>StreamId</em></td>
+<td>api/v1/configuration/&lt;ComponentId>/DataSelection/&lt;StreamId></td>
+<td><code>PUT</code></td>
+<td>Updates or creates a new data selection item by <strong>StreamId</strong>. For new items, the adapter starts collecting data after the request is received.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataSelection/<em>StreamId</em></td>
-<td>DELETE</td>
-<td>Deletes a specific data selection item of the OPC UA data selection configuration</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataSelection/&lt;StreamId></td>
+<td><code>DELETE</code></td>
+<td>Deletes a data selection item from the configuration by <strong>StreamId</strong>. The adapter stops collecting data for the deleted item.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> Replace <em>ComponentId</em> with the Id of your OPC UA component, for example OpcUa1.</p>
+<p><strong>Note:</strong> Replace &lt;ComponentId> with the Id of your OPC UA component, for example <em>OpcUa1</em>.</p>
 </article>
           </div>
           

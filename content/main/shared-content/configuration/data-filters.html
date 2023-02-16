@@ -8,7 +8,7 @@
     <title>Data filters </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Data filters ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
@@ -78,11 +78,12 @@
             <article class="content wrap" id="_content" data-uid="DataFiltersConfiguration">
 <h1 id="data-filters">Data filters</h1>
 
-<p>PI adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the ID of a data filter. The adapter will then filter data for those data items based on the data filter configuration.</p>
+<p>PI adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.</p>
+<p><strong>Note:</strong> If data filters are enabled and data quality changes, both the old and current data quality values are passed on.</p>
 <h2 id="configure-data-filters">Configure data filters</h2>
 <p>Complete the following steps to configure data filters. Use the <code>PUT</code> method in conjunction with the <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/DataFilters</code> REST endpoint to initialize the configuration.</p>
 <ol>
-<li><p>Using a text editor, create an empty text file.</p>
+<li><p>Use a text editor to create an empty text file.</p>
 </li>
 <li><p>Copy and paste an example configuration for data filters into the file.</p>
 <p> For sample JSON, see <a href="#data-filters-example">Data filters example</a>.</p>
@@ -144,11 +145,11 @@
 <td><strong>ExpirationPeriod</strong></td>
 <td>Optional</td>
 <td><code>timespan</code></td>
-<td>The length in time that can elapse after an event before automatically storing the next event. The expected format is HH:MM:SS.###. * <br><br>Allowed value: any timespan <br>Default value: <code>null</code></td>
+<td>The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.* <br><br>Allowed value: any timespan <br>Default value: <code>null</code></td>
 </tr>
 </tbody>
 </table>
-<p><strong>* Note:</strong> You can also specify timespans as numbers in seconds. For example, <code>&quot;ExpirationPeriod&quot;: 25</code> specifies 25 seconds, or <code>&quot;ExpirationPeriod&quot;: 125</code> specifies 2 minutes and 5 seconds.</p>
+<p><strong>* Note:</strong> For example, <code>&quot;ExpirationPeriod&quot;: 5:00</code> and <code>&quot;ExpirationPeriod&quot;: 300</code> both specify an expiration period of 5 minutes and 0 seconds.</p>
 <h2 id="data-filters-example">Data filters example</h2>
 <pre><code class="lang-code">[
   {
@@ -169,48 +170,48 @@
 </thead>
 <tbody>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters</td>
 <td>GET</td>
 <td>Gets all configured data filters.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters</td>
 <td>DELETE</td>
 <td>Deletes all configured data filters.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters</td>
 <td>POST</td>
 <td>Adds an array of data filters or a single data filter. Fails if any data filter already exists.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters</td>
 <td>PUT</td>
 <td>Replaces all data.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters</td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters</td>
 <td>PATCH</td>
 <td>Allows partial updating of configured data filter.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters/<em>id</em></td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters/&lt;Id></td>
 <td>GET</td>
-<td>Gets configured data filter by <em>id</em>.</td>
+<td>Gets configured data filter by &lt;Id>.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters/<em>id</em></td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters/&lt;Id></td>
 <td>DELETE</td>
-<td>Deletes configured data filter by <em>id</em>.</td>
+<td>Deletes configured data filter by &lt;Id>.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/DataFilters/<em>id</em></td>
+<td>api/v1/configuration/&lt;ComponentId>/DataFilters/&lt;Id></td>
 <td>PUT</td>
-<td>Replaces data filter by <em>id</em>. Fails if data filter does not exist.</td>
+<td>Replaces data filter by &lt;Id>. Fails if data filter does not exist.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> Replace <em>ComponentId</em> with the Id of your adapter component.</p>
+<p><strong>Note:</strong> Replace &lt;ComponentId> with the Id of your adapter component.</p>
 </article>
           </div>
           
@@ -219,7 +220,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/configuration/data-filters.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/configuration/data-filters.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

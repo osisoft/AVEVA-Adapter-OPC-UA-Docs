@@ -8,7 +8,7 @@
     <title>System and adapter </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="System and adapter ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
@@ -82,7 +82,7 @@
 <h2 id="change-system-and-adapter-configuration">Change system and adapter configuration</h2>
 <p>Complete the following steps to configure system and adapter. Use the <code>PUT</code> method in conjunction with the <code>http://localhost:5590/api/v1/configuration</code> REST endpoint to initialize the configuration.</p>
 <ol>
-<li><p>Using a text editor, create an empty text file.</p>
+<li><p>Use a text editor to create an empty text file.</p>
 </li>
 <li><p>Copy and paste an example configuration for system and adapter into the file.</p>
 <p> For sample JSON, see the corresponding adapter configuration examples topic.</p>
@@ -91,12 +91,14 @@
 </li>
 <li><p>Open a command line session. Change directory to the location of <code>ConfigureSystemAndAdapter.json</code>.</p>
 </li>
-<li><p>Enter the following cURL command (which uses the <code>PUT</code> method) to initialize the system and adapter configuration.</p>
+<li><p>Enter the following curl command (which uses the <code>PUT</code> method) to initialize the system and adapter configuration.</p>
 <pre><code class="lang-bash">curl -d &quot;@ConfigureSystemAndAdapter.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT &quot;http://localhost:5590/api/v1/configuration&quot;
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
 <li>If you installed the adapter to listen on a non-default port, update <code>5590</code> to the port number in use.</li>
 <li>In order for some of the adapter specific configurations to take effect, you have to restart the adapter.</li>
+<li>Discoveries and HistoryRecoveries facet details are not required to be supplied as part of the configuration and supplied values will be ignored. 
+Their results will be restored from the previous states. </li>
 </ul>
 </li>
 </ol>
@@ -126,7 +128,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/configuration/system-and-adapter.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/configuration/system-and-adapter.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

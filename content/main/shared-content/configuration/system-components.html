@@ -8,7 +8,7 @@
     <title>System components </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="System components ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
@@ -84,7 +84,7 @@
 <h2 id="configure-system-components">Configure system components</h2>
 <p>Complete the following steps to configure system components. Use the <code>PUT</code> method in conjunction with the <code>http://localhost:5590/api/v1/configuration/system/components</code> REST endpoint to initialize the configuration.</p>
 <ol>
-<li><p>Using a text editor, create an empty text file.</p>
+<li><p>Use a text editor to create an empty text file.</p>
 </li>
 <li><p>Copy and paste an example configuration for system components into the file.</p>
 <p> For sample JSON, see <a href="#examples">Examples</a>.</p>
@@ -96,7 +96,7 @@
 </li>
 <li><p>Open a command line session. Change directory to the location of <code>ConfigureComponents.json</code>.</p>
 </li>
-<li><p>Enter the following cURL command (which uses the <code>PUT</code> method) to initialize the system components configuration.</p>
+<li><p>Enter the following curl command (which uses the <code>PUT</code> method) to initialize the system components configuration.</p>
 <pre><code class="lang-bash">curl -d &quot;@ConfigureComponents.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT &quot;http://localhost:5590/api/v1/configuration/system/components&quot;
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
@@ -127,7 +127,7 @@
 <td><strong>ComponentId</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
-<td>The ID of the component<sup>1</sup>. It can be any alphanumeric string. A properly configured ComponentID follows these rules:<br>Cannot contain leading or trailing space <br> Cannot use the following characters:<br> <code>&gt;</code> <code>&lt;</code> <code>/</code> <code>:</code> <code>?</code> <code>#</code> <code>[</code> <code>]</code> <code>@</code> <code>!</code> <code>$</code> <code>&amp;</code> <code>*</code> <code>\</code> <code>&quot;</code> <code>(</code> <code>)</code> <code>\\</code> <code>+</code> <code>,</code> <code>;</code> <code>=</code> <code>\|</code> <code>` </code> <code>{</code> <code>}</code></td>
+<td>The ID of the component<sup>1</sup> . It can be any alphanumeric string. A properly configured ComponentID follows these rules:<br>Cannot contain leading or trailing space <br> Cannot use the following characters:<br> <code>&gt;</code> <code>&lt;</code> <code>/</code> <code>:</code> <code>?</code> <code>#</code> <code>[</code> <code>]</code> <code>@</code> <code>!</code> <code>$</code> <code>&amp;</code> <code>*</code> <code>&quot;</code> <code>(</code> <code>)</code> <code>\\</code> <code>+</code> <code>,</code> <code>;</code> <code>=</code> `</td>
 </tr>
 <tr>
 <td><strong>ComponentType</strong></td>
@@ -140,7 +140,7 @@
 <p><sup>1</sup><strong>Note:</strong> The OmfEgress component is required to run the adapter. Both its <strong>ComponentId</strong> and <strong>ComponentType</strong> are reserved and should not be modified.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="default-system-components-configuration">Default system components configuration</h3>
-<p>The default <em>System_Components.json</em> file for the System component contains the following information.</p>
+<p>The default <code>System_Components.json</code> file for the System component contains the following information.</p>
 <pre><code class="lang-json">[
   {
     &quot;ComponentId&quot;: &quot;OmfEgress&quot;,
@@ -188,14 +188,14 @@
 <td>Updates the system components configuration</td>
 </tr>
 <tr>
-<td>api/v1/configuration/system/components/<em>componentId</em></td>
+<td>api/v1/configuration/system/components/&lt;ComponentId></td>
 <td>DELETE</td>
-<td>Deletes a specific component from the system components configuration<br><strong>Note:</strong> All the logs and configurations files for the deleted components are moved to the corresponding <em>logs/Removed</em> or <em>Configuration/Removed</em> folder.</td>
+<td>Deletes a specific component from the system components configuration</td>
 </tr>
 <tr>
-<td>api/v1/configuration/system/components/<em>componentId</em></td>
+<td>api/v1/configuration/system/components/&lt;ComponentId></td>
 <td>PUT</td>
-<td>Creates a new component with the specified <em>componentId</em> in the system configuration</td>
+<td>Creates a new component with the specified <em>ComponentId</em> in the system configuration</td>
 </tr>
 </tbody>
 </table>
@@ -207,7 +207,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/configuration/system-components.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/configuration/system-components.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

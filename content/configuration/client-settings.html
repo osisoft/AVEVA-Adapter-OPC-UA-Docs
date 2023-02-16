@@ -8,7 +8,7 @@
     <title>Client settings </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Client settings ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -86,8 +86,8 @@
 <li><p>Add an OPC UA adapter with a unique <code>ComponentId</code>. For more information, see <a class="xref" href="../main/shared-content/configuration/system-components.html">System components configuration</a>.</p>
 </li>
 <li><p>Configure a valid OPC UA data source. For more information, see <a class="xref" href="data-source.html">PI Adapter for OPC UA data source configuration</a>.</p>
-<p>Once you complete these steps, a default OPC UA client settings configuration file is generated in the configuration directory for the corresponding platform.</p>
-<p>The following are example locations of the file created. In this example, it is assumed that the <code>ComponentId</code> of the OPC UA component is OpcUa1:</p>
+<p>Once you complete these steps, a default OPC UA client settings configuration file generates in the configuration directory for the corresponding platform.</p>
+<p>The following are example locations of the file created. In this example, the <code>ComponentId</code> of the OPC UA component is OpcUa1:</p>
 <p>Windows: <code>%programdata%\OSIsoft\Adapters\OpcUa\Configuration\OpcUa1_ClientSettings.json</code></p>
 <p>Linux: <code>/usr/share/OSIsoft/Adapters/OpcUa/Configuration/OpcUa1_ClientSettings.json</code></p>
 </li>
@@ -95,7 +95,7 @@
 <h2 id="configure-opc-ua-client-settings">Configure OPC UA client settings</h2>
 <p>Complete the following steps to configure OPC UA client settings. Use the <code>PUT</code> method in conjunction with the <code>api/v1/configuration/&lt;ComponentId&gt;/ClientSettings</code> REST endpoint to initialize the configuration.</p>
 <ol>
-<li><p>Using a text editor, create an empty text file.</p>
+<li><p>Use a text editor to create an empty text file.</p>
 </li>
 <li><p>Copy and paste an example configuration for OPC UA client settings into the file.</p>
 <p> For sample JSON, see <a href="#opc-ua-client-settings-example">OPC UA client settings example</a>.</p>
@@ -125,7 +125,7 @@
 <p>Linux: <code>/opt/OSIsoft/Adapters/OpcUa/Schemas</code></p>
 <h2 id="opc-ua-client-settings-parameters">OPC UA client settings parameters</h2>
 <p>The following parameters are available for configuring OPC UA client settings:</p>
-<p><strong>Note</strong>: All intervals, delays, and timeouts require the string to be formatted like this:<br> <code>\[d:\]h:mm:ss\[.FFFFFFF\]</code> where the items in brackets are optional.<br> d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second.<br><br> Example: <code>&quot;05:07:10:40.150&quot;</code> for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.</p>
+<p><strong>Note</strong>: All intervals, delays, and timeouts require the string to be formatted like this:<br> <code>[d:]h:mm:ss[.FFFFFFF]</code> where the items in brackets are optional.<br> d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second.<br><br> Example: <code>&quot;05:07:10:40.150&quot;</code> for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.</p>
 <table>
 <thead>
 <tr>
@@ -137,137 +137,158 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>MaxBrowseReferencesToReturn</strong></td>
+<td><strong>maxBrowseReferencesToReturn</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
 <td>Maximum number of references returned from browse call. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>0</code></td>
 </tr>
 <tr>
-<td><strong>BrowseBlockSize</strong></td>
+<td><strong>browseBlockSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of nodes to browse in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>429496729</code><br>Default value:  <code>10</code></td>
+<td>Maximum number of nodes to browse in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>4294967295</code><br>Default value:  <code>10</code></td>
 </tr>
 <tr>
-<td><strong>ReadBlockSize</strong></td>
+<td><strong>readBlockSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of variables to read in one call. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>429496729</code><br>Default value: <code>1000</code></td>
+<td>Maximum number of variables to read in one call. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>1000</code></td>
 </tr>
 <tr>
-<td><strong>ReconnectDelay</strong></td>
+<td><strong>reconnectDelay</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Delay between reconnection attempts. * <br><br> Allowed value: cannot be negative <br>Default value: <code>0:02:20</code></td>
+<td>Delay between reconnection attempts. *<br>Does not apply to the initial connection, only reconnections.<br><br> Allowed value: cannot be negative <br>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
-<td><strong>RecreateSubscriptionDelay</strong></td>
+<td><strong>recreateSubscriptionDelay</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Delay between successful reconnection and subsequent subscription recreation. * <br><br>Allowed value: cannot be negative <br> Default value: <code>0:00:10</code></td>
 </tr>
 <tr>
-<td><strong>SessionRequestTimeout</strong></td>
+<td><strong>sessionRequestTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Default request timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:02:00</code></td>
 </tr>
 <tr>
-<td><strong>ConnectionTimeout</strong></td>
+<td><strong>connectionTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Connection timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
-<td><strong>SessionAllowInsecureCredentials</strong></td>
+<td><strong>sessionAllowInsecureCredentials</strong></td>
 <td>Optional</td>
 <td><code>boolean</code></td>
 <td>When set to true credentials can be communicated over unencrypted channel. <br><br>Allowed value: <code>true</code> or <code>false</code><br>Default value: <code>false</code></td>
 </tr>
 <tr>
-<td><strong>SessionMaxOperationsPerRequest</strong></td>
+<td><strong>sessionMaxOperationsPerRequest</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Default maximum operation per request. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>429496729</code><br>Default value: <code>1000</code></td>
+<td>Default maximum operation per request. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>1000</code></td>
 </tr>
 <tr>
-<td><strong>BrowseTimeout</strong></td>
+<td><strong>browseTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Browse operation timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:01:00</code></td>
 </tr>
 <tr>
-<td><strong>ReadTimeout</strong></td>
+<td><strong>readTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Read operation timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
-<td><strong>MaxMonitoredItemsPerCall</strong></td>
+<td><strong>maxMonitoredItemsPerCall</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of monitored items that can be added to subscription in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>429496729</code><br>Default value: <code>1000</code></td>
+<td>Maximum number of monitored items that can be added to subscription in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>1000</code></td>
 </tr>
 <tr>
-<td><strong>MaxNotificationsPerPublish</strong></td>
+<td><strong>maxNotificationsPerPublish</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum notification messages in one publish message. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>429496729</code><br>Default value: <code>0</code></td>
+<td>Maximum notification messages in one publish message. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>0</code></td>
 </tr>
 <tr>
-<td><strong>PublishingInterval</strong></td>
+<td><strong>publishingInterval</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Publishing interval of the subscription. * <br><br> Allowed value: cannot be negative <br> Default value: <code>0:00:01</code></td>
 </tr>
 <tr>
-<td><strong>CreateMonitoredItemsTimeout</strong></td>
+<td><strong>createMonitoredItemsTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Create monitored items timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
-<td><strong>SamplingInterval</strong></td>
+<td><strong>samplingInterval</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
 <td>Monitored item sampling interval. * <br><br>Allowed value: cannot be negative <br>Default value: <code>0:00:00:5</code></td>
 </tr>
 <tr>
-<td><strong>MonitoredItemQueueSize</strong></td>
+<td><strong>monitoredItemDataChangeTrigger</strong></td>
 <td>Optional</td>
-<td><code>integer</code></td>
-<td>Monitored item queue size. <br><br>Minimum value: <code>1</code><br> Maximum value: <code>429496729</code> <br>Default value: <code>2</code></td>
+<td><code>string</code></td>
+<td>Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: <code>Status</code>, <code>StatusValue</code>, <code>StatusValueTimestamp</code> <br>Default value: <code>StatusValue</code></td>
 </tr>
 <tr>
-<td><strong>MaxInternalQueueSize</strong></td>
+<td><strong>monitoredItemQueueSize</strong></td>
+<td>Optional</td>
+<td><code>integer</code></td>
+<td>Monitored item queue size. <br><br>Minimum value: <code>1</code><br> Maximum value: <code>4294967295</code> <br>Default value: <code>2</code></td>
+</tr>
+<tr>
+<td><strong>maxInternalQueueSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
 <td>Maximum number of items that can be in the adapter internal queue. <br><br>Minimum value: <code>1000</code><br>Maximum value: <code>2147483647</code><br>Default value: <code>500000</code></td>
 </tr>
+<tr>
+<td><strong>HistoryReadBlockSize</strong></td>
+<td>Optional</td>
+<td><code>integer</code></td>
+<td>Maximum number of nodes for history to read in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>10</code></td>
+</tr>
+<tr>
+<td><strong>HistoryReadTimeout</strong></td>
+<td>Optional</td>
+<td><code>TimeSpan</code></td>
+<td>History read operation timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:01:00</code></td>
+</tr>
 </tbody>
 </table>
-<p><strong>* Note:</strong> You can also specify timespans as numbers in seconds. For example, <code>&quot;ReconnectDelay&quot;: 25</code> specifies 25 seconds, or <code>&quot;ReconnectDelay&quot;: 125.5</code> specifies 2 minutes and 5.5 seconds.</p>
+<p><strong>* Note:</strong> You can also specify timespans as numbers in seconds. For example, <code>&quot;reconnectDelay&quot;: 25</code> specifies 25 seconds, or <code>&quot;reconnectDelay&quot;: 125.5</code> specifies 2 minutes and 5.5 seconds.</p>
 <h2 id="opc-ua-client-settings-example">OPC UA client settings example</h2>
 <pre><code class="lang-json">{
-    &quot;maxBrowseReferencesToReturn&quot;: 0,
+    &quot;MaxBrowseReferencesToReturn&quot;: 0,
     &quot;BrowseBlockSize&quot;: 10,
+    &quot;ReconnectDelay&quot;: &quot;0:00:30&quot;,
+    &quot;RecreateSubscriptionDelay&quot;: &quot;0:00:10&quot;,
     &quot;ReadBlockSize&quot;: 1000,
-    &quot;reconnectDelay&quot;: &quot;0:00:30&quot;,
-    &quot;recreateSubscriptionDelay&quot;: &quot;0:00:05&quot;,
-    &quot;sessionRequestTimeout&quot;: &quot;0:02:00&quot;,
-    &quot;connectionTimeout&quot;: &quot;0:00:30&quot;,
-    &quot;sessionAllowInsecureCredentials&quot;: false,
-    &quot;sessionMaxOperationsPerRequest&quot;: 1000,
-    &quot;browseTimeout&quot;: &quot;0:01:00&quot;,
+    &quot;SessionRequestTimeout&quot;: &quot;0:02:00&quot;,
+    &quot;ConnectionTimeout&quot;: &quot;0:00:30&quot;,
     &quot;ReadTimeout&quot;: &quot;0:00:30&quot;,
-    &quot;maxMonitoredItemsPerCall&quot;: 1000,
-    &quot;maxNotificationsPerPublish&quot;: 0,
-    &quot;publishingInterval&quot;: &quot;0:00:01&quot;,
-    &quot;createMonitoredItemsTimeout&quot;: &quot;0:00:30&quot;,
-    &quot;samplingInterval&quot;: &quot;0:00:00.5&quot;,
-    &quot;monitoredItemQueueSize&quot;: 2,
-    &quot;maxInternalQueueSize&quot;: 500000
-}
+    &quot;SessionAllowInsecureCredentials&quot;: false,
+    &quot;SessionMaxOperationsPerRequest&quot;: 1000,
+    &quot;BrowseTimeout&quot;: &quot;0:01:00&quot;,
+    &quot;MaxMonitoredItemsPerCall&quot;: 1000,
+    &quot;MaxNotificationsPerPublish&quot;: 0,
+    &quot;PublishingInterval&quot;: &quot;0:00:01&quot;,
+    &quot;CreateMonitoredItemsTimeout&quot;: &quot;0:00:30&quot;,
+    &quot;MonitoredItemDataChangeTrigger&quot;: &quot;StatusValue&quot;,
+    &quot;SamplingInterval&quot;: &quot;0:00:00.5&quot;,
+    &quot;MonitoredItemQueueSize&quot;: 2,
+    &quot;MaxInternalQueueSize&quot;: 500000,
+    &quot;HistoryReadBlockSize&quot;: 10,
+    &quot;HistoryReadTimeout&quot;: &quot;0:01:00&quot;
+}  
 </code></pre><h2 id="rest-urls">REST URLs</h2>
 <table>
 <thead>
@@ -279,28 +300,28 @@
 </thead>
 <tbody>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/ClientSettings</td>
+<td>api/v1/configuration/&lt;ComponentId>/ClientSettings</td>
 <td>GET</td>
-<td>Retrieves the OPC UA client settings configuration</td>
+<td>Retrieves the OPC UA client settings configuration.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/ClientSettings</td>
+<td>api/v1/configuration/&lt;ComponentId>/ClientSettings</td>
 <td>PUT</td>
-<td>Configures or updates the OPC UA client settings  configuration</td>
+<td>Configures or updates the OPC UA client settings  configuration.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/ClientSettings</td>
+<td>api/v1/configuration/&lt;ComponentId>/ClientSettings</td>
 <td>DELETE</td>
-<td>Deletes the OPC UA client settings  configuration</td>
+<td>Deletes the OPC UA client settings  configuration.</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/ClientSettings</td>
+<td>api/v1/configuration/&lt;ComponentId>/ClientSettings</td>
 <td>PATCH</td>
 <td>Allows partial updating of configured client settings fields.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> Replace <em>ComponentId</em> with the Id of your OPC UA component, for example OpcUa1.</p>
+<p><strong>Note:</strong> Replace &lt;ComponentId> with the Id of your OPC UA component, for example OpcUa1.</p>
 </article>
           </div>
           

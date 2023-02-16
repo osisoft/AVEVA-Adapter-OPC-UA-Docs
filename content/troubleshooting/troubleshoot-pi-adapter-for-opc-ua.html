@@ -8,7 +8,7 @@
     <title>Troubleshoot PI Adapter for OPC UA </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Troubleshoot PI Adapter for OPC UA ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -78,17 +78,22 @@
             <article class="content wrap" id="_content" data-uid="TroubleshootPIAdapterForOPCUA">
 <h1 id="troubleshoot-pi-adapter-for-opc-ua">Troubleshoot PI Adapter for OPC UA</h1>
 
-<p>To troubleshoot issues with PI Adapter for OPC UA, you can check the adapter&#39;s configuration, connectivity, and logs, as detailed in the following sections. If you are unable to resolve issues with the adapter or need additional guidance, contact OSIsoft Technical Support.</p>
+<p>To troubleshoot issues with PI Adapter for OPC UA, you should check the adapter&#39;s configuration, connectivity, and logs, as detailed in the following sections. If you are unable to resolve issues with the adapter or need additional guidance, contact OSIsoft Technical Support.</p>
 <h2 id="check-configurations">Check configurations</h2>
 <ol>
-<li>In the <a class="xref" href="../configuration/data-source.html">data source configuration</a>, verify that the configured <strong>EndpointURL</strong> and <strong>RootNodeIds</strong>, and if specified, the <strong>UserName</strong> and <strong>Password</strong> are correct.</li>
+<li>In the <a class="xref" href="../configuration/data-source.html">data source configuration</a>, verify that the configured <strong>EndpointURL</strong> and, if specified, the <strong>UserName</strong> and <strong>Password</strong> are correct. Verify that OPC UA server trusts PI Adapter&#39;s certificate and vice versa.</li>
 <li><p>In the <a class="xref" href="../configuration/data-selection.html">data selection configuration</a>, verify that each configured data selection item below is correct.</p>
 <ol>
-<li><strong>NodeId</strong> - Verify that the referenced root node exists in the data source configuration.</li>
-<li><strong>DataFilterId</strong> - If configured, verify that the referenced data filter exists.</li>
+<li><code>NodeId</code> - Verify that the referenced nodeId exists on the server.</li>
+<li><code>DataFilterId</code> - If configured, verify that the referenced data filter exists.</li>
 </ol>
 </li>
-<li><p>In the <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html">egress endpoints configuration</a>, verify that each configured endpoint&#39;s <strong>Endpoint</strong> property and credentials are correct. For a PI server or EDS endpoint, verify <strong>UserName</strong> and <strong>Password</strong>, for an OCS endpoint, verify <strong>ClientId</strong> and <strong>ClientSecret</strong>.</p>
+<li><p>In the <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html">egress endpoints configuration</a>, verify that each configured endpoint&#39;s <strong>Endpoint</strong> property and credentials are correct. </p>
+<ul>
+<li>For a PI server or EDS endpoint, verify <strong>UserName</strong> and <strong>Password</strong>.</li>
+<li>For a PI server endpoint, verify <strong>UserName</strong> and <strong>Password</strong>. </li>
+<li>For an OCS endpoint, verify <strong>ClientId</strong> and <strong>ClientSecret</strong>.</li>
+</ul>
 </li>
 </ol>
 <h2 id="check-connectivity">Check connectivity</h2>
@@ -99,7 +104,7 @@
 <h2 id="check-logs">Check logs</h2>
 <ol>
 <li>Check the adapter and endpoint logs to isolate issues.</li>
-<li>Optional: Change the log level of the adapter to receive additional information and context.<br>For more information, see <a class="xref" href="../main/shared-content/configuration/logging.html">Logging configuration</a>.</li>
+<li><strong>Optional</strong>: Change the log level of the adapter to receive additional information and context.<br>For more information, see <a class="xref" href="../main/shared-content/configuration/logging.html">Logging configuration</a>.</li>
 </ol>
 </article>
           </div>

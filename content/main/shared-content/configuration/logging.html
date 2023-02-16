@@ -8,7 +8,7 @@
     <title>Logging </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Logging ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
@@ -79,13 +79,13 @@
 <h1 id="logging">Logging</h1>
 
 <p>PI adapters write daily log messages for the adapter, the system, and OMF egress to flat text files in the following locations:</p>
-<p>• Windows: <em>%ProgramData%\OSIsoft\Adapters\{AdapterInstance}\Logs</em></p>
-<p>• Linux: <em>/usr/share/OSIsoft/Adapters/{AdapterInstance}/Logs</em></p>
+<p>• Windows: <code>*%ProgramData%\OSIsoft\Adapters\&lt;AdapterInstance&gt;\Logs*</code></p>
+<p>• Linux: <code>*/usr/share/OSIsoft/Adapters/&lt;AdapterInstance&gt;/Logs*</code></p>
 <p>Each message in the log displays the message severity level, timestamp, and the message itself.</p>
 <h2 id="configure-logging">Configure logging</h2>
 <p>Complete the following steps to configure logging. Use the <code>PUT</code> method in conjunction with the <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging</code> REST endpoint to initialize the configuration.</p>
 <ol>
-<li><p>Using a text editor, create an empty text file.</p>
+<li><p>Use a text editor to create an empty text file.</p>
 </li>
 <li><p>Copy and paste an example configuration for logging into the file.</p>
 <p> For sample JSON, see <a href="#example">Example</a>.</p>
@@ -97,7 +97,7 @@
 </li>
 <li><p>Open a command line session. Change directory to the location of <code>ConfigureLogging.json</code>.</p>
 </li>
-<li><p>Enter the following cURL command (which uses the <code>PUT</code> method) to initialize the logging configuration.</p>
+<li><p>Enter the following curl command (which uses the <code>PUT</code> method) to initialize the logging configuration.</p>
 <pre><code class="lang-bash">curl -d &quot;@ConfigureLogging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT &quot;http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging&quot;
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
@@ -169,7 +169,7 @@
 </tr>
 <tr>
 <td>Warning</td>
-<td>Logs that highlight an abnormal or unexpected event in the application flow that does not otherwise cause the application execution to stop. Warning messages can indicate an unconfigured data source state, that a communication with backup failover instance has been lost, an insecure communication channel in use, or any other event that could require attention but that does not impact data flow.</td>
+<td>Logs that highlight an abnormal or unexpected event in the application flow that does not otherwise cause the application execution to stop. Warning messages can indicate an unconfigured data source state, an insecure communication channel in use, or any other event that could require attention but that does not impact data flow.</td>
 </tr>
 <tr>
 <td>Error</td>
@@ -215,18 +215,18 @@ The following logging configuration is the installation default for a component:
 <td>Updates the system logging configuration</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/Logging</td>
+<td>api/v1/configuration/&lt;ComponentId>/Logging</td>
 <td>GET</td>
 <td>Retrieves the logging configuration of the specified adapter component</td>
 </tr>
 <tr>
-<td>api/v1/configuration/<em>ComponentId</em>/Logging</td>
+<td>api/v1/configuration/&lt;ComponentId>/Logging</td>
 <td>PUT</td>
 <td>Updates the logging configuration of the specified adapter component</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> Replace <em>ComponentId</em> with the Id of your adapter component.</p>
+<p><strong>Note:</strong> Replace &lt;ComponentId> with the Id of your adapter component.</p>
 </article>
           </div>
           
@@ -235,7 +235,7 @@ The following logging configuration is the installation default for a component:
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/configuration/logging.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/configuration/logging.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
