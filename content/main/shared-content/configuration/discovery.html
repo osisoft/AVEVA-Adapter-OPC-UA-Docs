@@ -115,12 +115,12 @@
 <tr>
 <td> <strong>id</strong></td>
 <td><code>string</code></td>
-<td>The Id of the discovery <br><br> <strong>Notes:</strong><br>&bull; You cannot run multiple discoveries with the same Id.<br>&bull; Including an <code>id</code> is optional. If you do not include one, the adapter automatically generates one.</td>
+<td>The Id of the discovery  <strong>Notes:</strong>&bull; You cannot run multiple discoveries with the same Id.&bull; Including an <code>id</code> is optional. If you do not include one, the adapter automatically generates one.</td>
 </tr>
 <tr>
 <td> <strong>query</strong></td>
 <td><code>string</code></td>
-<td>A filter that is specific to the data source. The query filter can limit the scope of the discovery.<br><br>For more information, see the Data source configuration topic.</td>
+<td>A filter that is specific to the data source. The query filter can limit the scope of the discovery.For more information, see the Data source configuration topic.</td>
 </tr>
 <tr>
 <td> <strong>startTime</strong></td>
@@ -170,7 +170,7 @@
 </tbody>
 </table>
 <h2 id="discoveries-status-example">Discoveries status example</h2>
-<p>The following example shows the status of all discoveries. The discovery id in this example was auto-generated.<br></p>
+<p>The following example shows the status of all discoveries. The discovery id in this example was auto-generated.</p>
 <pre><code class="lang-json">[
     {
         &quot;id&quot;: &quot;8ff855f1-a636-490a-bb31-207410a6e607&quot;,
@@ -214,7 +214,7 @@
 <tr>
 <td>api/v1/configuration/<em>&lt;componentId&gt;</em>/discoveries/<em>&lt;discoveryId&gt;</em></td>
 <td>GET</td>
-<td>Gets the status of an individual discovery<br><br><strong>Note:</strong> If a discovery with the specified Id does not exist, you will get an error message</td>
+<td>Gets the status of an individual discovery<strong>Note:</strong> If a discovery with the specified Id does not exist, you will get an error message</td>
 </tr>
 <tr>
 <td>api/v1/configuration/<em>&lt;componentId&gt;</em>/discoveries/<em>&lt;discoveryId&gt;</em></td>
@@ -239,7 +239,7 @@
 <tr>
 <td>api/v1/configuration/<em>&lt;componentId&gt;</em>/discoveries/<em>&lt;discoveryId&gt;</em>/result</td>
 <td>DELETE</td>
-<td>Cancels and deletes discovery result<br><br><strong>Note:</strong> The discovery Id is still valid, but a query will contain a status of <code>canceled</code><br>Only the <strong>Status</strong> property will contain a <code>canceled</code> status, but not the query</td>
+<td>Cancels and deletes discovery result<strong>Note:</strong> The discovery Id is still valid, but a query will contain a status of <code>canceled</code>Only the <strong>Status</strong> property will contain a <code>canceled</code> status, but not the query</td>
 </tr>
 <tr>
 <td>api/v1/configuration/<em>&lt;componentId&gt;</em>/discoveries/<em>&lt;discoveryId&gt;</em>/cancel</td>
@@ -258,7 +258,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> Replace <em>&lt;componentId&gt;</em> with the Id of your adapter component.<br>Replace <em>&lt;discoveryId&gt;</em> with the Id of the discovery for which you want to perform the action.</p>
+<p><strong>Note:</strong> Replace <em>&lt;componentId&gt;</em> with the Id of your adapter component.Replace <em>&lt;discoveryId&gt;</em> with the Id of the discovery for which you want to perform the action.</p>
 </article>
           </div>
           
