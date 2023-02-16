@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="GeneralConfiguration">
 <h1 id="diagnostics-and-metadata">Diagnostics and metadata</h1>
 
-<p>You can configure AVEVA Adapters to produce and store diagnostics data at a designated health endpoint, and to send metadata for created streams.
+<p>You can configure PI adapters to produce and store diagnostics data at a designated health endpoint, and to send metadata for created streams.
 For more information about available diagnostics data, see <a class="xref" href="../diagnostics/diagnostics.html">Adapter diagnostics</a> and <a class="xref" href="../diagnostics/egress.html">Egress diagnostics</a>.
 For more information about available metadata and what metadata are sent per metadata level, see <a class="xref" href="../metadata/metadata.html">Adapter Metadata</a>.</p>
 <h2 id="configure-general">Configure general</h2>
@@ -110,19 +110,19 @@ For more information about available metadata and what metadata are sent per met
 <td><strong>EnableDiagnostics</strong></td>
 <td>Optional</td>
 <td><code>boolean</code></td>
-<td>Determines if diagnostics are enabledAllowed value: <code>true</code> or <code>false</code>Default value: <code>true</code></td>
+<td>Determines if diagnostics are enabled<br><br>Allowed value: <code>true</code> or <code>false</code><br>Default value: <code>true</code><br></td>
 </tr>
 <tr>
 <td><strong>MetadataLevel</strong></td>
 <td>Optional</td>
 <td><code>reference</code></td>
-<td>Defines amount of metadata sent to OMF endpoints. Allowed value: <code>None</code>, <code>Low</code>, <code>Medium</code>, and <code>High</code> Default value: <code>Medium</code></td>
+<td>Defines amount of metadata sent to OMF endpoints.<br><br> Allowed value: <code>None</code>, <code>Low</code>, <code>Medium</code>, and <code>High</code><br> Default value: <code>Medium</code></td>
 </tr>
 <tr>
 <td><strong>HealthPrefix</strong></td>
 <td>Optional</td>
 <td><code>reference</code></td>
-<td>Prefix to use for health and diagnostics stream and asset IDs. Default value: <code>null</code></td>
+<td>Prefix to use for health and diagnostics stream and asset IDs.<br> Default value: <code>null</code></td>
 </tr>
 </tbody>
 </table>

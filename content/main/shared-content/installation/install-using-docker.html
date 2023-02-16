@@ -88,23 +88,23 @@
 <p> <strong>ARM32</strong></p>
 <pre><code class="lang-bash">#!/bin/sh
 if [ -z $portnum ] ; then
-    exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host
+    exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host
 else
-    exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host --port:$portnum
+    exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host --port:$portnum
 fi
 </code></pre><p> <strong>ARM64</strong></p>
 <pre><code class="lang-bash">#!/bin/sh
 if [ -z $portnum ] ; then
-    exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host
+    exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host
 else
-    exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host --port:$portnum
+    exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host --port:$portnum
 fi
 </code></pre><p> <strong>AMD64</strong></p>
 <pre><code class="lang-bash">#!/bin/sh
 if [ -z $portnum ] ; then
-    exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host
+    exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host
 else
-    exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host --port:$portnum
+    exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host --port:$portnum
 fi
 </code></pre></li>
 <li><p>Name the script <code>opcuadockerstart.sh</code> and save it to the directory where you plan to create the container.</p>
@@ -121,7 +121,7 @@ WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
 COPY opcuadockerstart.sh /
 RUN chmod +x /opcuadockerstart.sh
-ADD ./AVEVA-Adapter-for-OpcUa_1.3.0.169-arm_.tar.gz .
+ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm_.tar.gz .
 ENTRYPOINT [&quot;/opcuadockerstart.sh&quot;]
 </code></pre><p> <strong>ARM64</strong></p>
 <pre><code class="lang-dockerfile">FROM ubuntu:20.04
@@ -129,7 +129,7 @@ WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
 COPY opcuadockerstart.sh /
 RUN chmod +x /opcuadockerstart.sh
-ADD ./AVEVA-Adapter-for-OpcUa_1.3.0.169-arm64_.tar.gz .
+ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm64_.tar.gz .
 ENTRYPOINT [&quot;/opcuadockerstart.sh&quot;]
 </code></pre><p> <strong>AMD64 (x64)</strong></p>
 <pre><code class="lang-dockerfile">FROM ubuntu:20.04
@@ -137,10 +137,10 @@ WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
 COPY opcuadockerstart.sh /
 RUN chmod +x /opcuadockerstart.sh
-ADD ./AVEVA-Adapter-for-OpcUa_1.3.0.169-x64_.tar.gz .
+ADD ./PI-Adapter-for-OpcUa_1.3.0.169-x64_.tar.gz .
 ENTRYPOINT [&quot;/opcuadockerstart.sh&quot;]
 </code></pre></li>
-<li><p>Copy the <code>AVEVA-Adapter-for-OpcUa-1.3.0.169-<var>platform</var>_.tar.gz</code> file to the same directory as the <code>Dockerfile</code>.</p>
+<li><p>Copy the <code>PI-Adapter-for-OpcUa-1.3.0.169-<var>platform</var>_.tar.gz</code> file to the same directory as the <code>Dockerfile</code>.</p>
 </li>
 <li><p>Copy the <code>opcuadockerstart.sh</code> script to the same directory as the <code>Dockerfile</code>.</p>
 </li>

@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="DataFiltersConfiguration">
 <h1 id="data-filters">Data filters</h1>
 
-<p>AVEVA Adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.</p>
+<p>PI adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.</p>
 <p><strong>Note:</strong> If data filters are enabled and data quality changes, both the old and current data quality values are passed on.</p>
 <h2 id="configure-data-filters">Configure data filters</h2>
 <p>Complete the following steps to configure data filters. Use the <code>PUT</code> method in conjunction with the <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/DataFilters</code> REST endpoint to initialize the configuration.</p>
@@ -127,25 +127,25 @@
 <td><strong>Id</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
-<td>Unique identifier for the data filter. Allowed value: any string identifier</td>
+<td>Unique identifier for the data filter. <br><br>Allowed value: any string identifier<br></td>
 </tr>
 <tr>
 <td><strong>AbsoluteDeadband</strong></td>
 <td>Optional</td>
 <td><code>double</code></td>
-<td>Specifies the absolute change in data value that should cause the current value to pass the filter test.  <strong>Note:</strong> You must specify <code>AbsoluteDeadband</code> or <code>PercentChange</code>.Allowed value: double value representing absolute deadband numberDefault value: <code>null</code></td>
+<td>Specifies the absolute change in data value that should cause the current value to pass the filter test. <br> <strong>Note:</strong> You must specify <code>AbsoluteDeadband</code> or <code>PercentChange</code>.<br><br>Allowed value: double value representing absolute deadband number<br>Default value: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>PercentChange</strong></td>
 <td>Optional</td>
 <td><code>double</code></td>
-<td>Specifies the percent change from previous value that should cause the current value to pass the filter test.  <strong>Note:</strong> You must specify <code>AbsoluteDeadband</code> or <code>PercentChange</code>.Allowed value: double value representing percent changeDefault value: <code>null</code></td>
+<td>Specifies the percent change from previous value that should cause the current value to pass the filter test. <br> <strong>Note:</strong> You must specify <code>AbsoluteDeadband</code> or <code>PercentChange</code>.<br><br>Allowed value: double value representing percent change<br>Default value: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>ExpirationPeriod</strong></td>
 <td>Optional</td>
 <td><code>timespan</code></td>
-<td>The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.* Allowed value: any timespan Default value: <code>null</code></td>
+<td>The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.* <br><br>Allowed value: any timespan <br>Default value: <code>null</code></td>
 </tr>
 </tbody>
 </table>

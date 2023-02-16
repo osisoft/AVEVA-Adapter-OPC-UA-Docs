@@ -81,7 +81,7 @@
 <p>A discovery against the data source of an OPC UA adapter allows you to specify the optional <strong>query</strong> parameter. The discovery query limits the number of objects to browse.</p>
 <p><strong>Note:</strong> Only one discovery at a time is supported.</p>
 <h2 id="query-string">Query string</h2>
-<p>The string of the <strong>query</strong> parameter must contain string items in the following form: <code>rootNodeIds=&lt;nodeId&gt;</code></p>
+<p>The string of the <strong>query</strong> parameter must contain string items in the following form: <br><code>rootNodeIds=&lt;nodeId&gt;</code><br><br></p>
 <table>
 <thead>
 <tr>
@@ -94,11 +94,11 @@
 <tr>
 <td><strong>rootNodeIds</strong></td>
 <td>Optional</td>
-<td>The node Ids that the adapter will begin browse operation from.<strong>Note:</strong> To specify multiple node IDs in the query, separate the node IDs with a comma. If <strong>rootNodeIds</strong> is not specified, the adapter initiates browse operation from the <code>object</code> folder.</td>
+<td>The node Ids that the adapter will begin browse operation from.<br><strong>Note:</strong> To specify multiple node IDs in the query, separate the node IDs with a comma. If <strong>rootNodeIds</strong> is not specified, the adapter initiates browse operation from the <code>object</code> folder.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.</p>
+<p><br><strong>Note:</strong> A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.</p>
 <h3 id="query-rules">Query rules</h3>
 <p>The following rules apply for specifying the query string:</p>
 <ul>

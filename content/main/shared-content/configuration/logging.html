@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="LoggingConfiguration">
 <h1 id="logging">Logging</h1>
 
-<p>AVEVA Adapters write daily log messages for the adapter, the system, and OMF egress to flat text files in the following locations:</p>
+<p>PI adapters write daily log messages for the adapter, the system, and OMF egress to flat text files in the following locations:</p>
 <p>• Windows: <code>*%ProgramData%\OSIsoft\Adapters\&lt;AdapterInstance&gt;\Logs*</code></p>
 <p>• Linux: <code>*/usr/share/OSIsoft/Adapters/&lt;AdapterInstance&gt;/Logs*</code></p>
 <p>Each message in the log displays the message severity level, timestamp, and the message itself.</p>
@@ -130,19 +130,19 @@
 <td><strong>LogLevel</strong></td>
 <td>Optional</td>
 <td>reference</td>
-<td>The logLevel sets the minimum severity for messages to be included in the logs. Messages with a severity below the level set are not included. The log levels in their increasing order of severity are as follows: <code>Trace</code>, <code>Debug</code>, <code>Information</code>, <code>Warning</code>, <code>Error</code>, <code>Critical</code>, and <code>None</code>. Default log level: <code>Information</code>For detailed information about the log levels, see <a href="#loglevel">LogLevel</a>.</td>
+<td>The logLevel sets the minimum severity for messages to be included in the logs. <br>Messages with a severity below the level set are not included. <br><br>The log levels in their increasing order of severity are as follows: <code>Trace</code>, <code>Debug</code>, <code>Information</code>, <code>Warning</code>, <code>Error</code>, <code>Critical</code>, and <code>None</code>. <br>Default log level: <code>Information</code><br><br>For detailed information about the log levels, see <a href="#loglevel">LogLevel</a>.</td>
 </tr>
 <tr>
 <td><strong>LogFileSizeLimitBytes</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>The maximum size (in bytes) of log files that the service will create for the component. The value must be a positive integer.Minimum value: <code>1000</code>Maximum value: <code>9223372036854775807</code>Default value: <code>34636833</code></td>
+<td>The maximum size (in bytes) of log files that the service will create for the component. The value must be a positive integer.<br><br>Minimum value: <code>1000</code><br>Maximum value: <code>9223372036854775807</code><br>Default value: <code>34636833</code></td>
 </tr>
 <tr>
 <td><strong>LogFileCountLimit</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>The maximum number of log files that the service will create for the component. The value must be a positive integer.Minimum value: <code>1</code>Maximum value: <code>2147483647</code> Default value: <code>31</code></td>
+<td>The maximum number of log files that the service will create for the component. The value must be a positive integer.<br><br>Minimum value: <code>1</code><br>Maximum value: <code>2147483647</code><br> Default value: <code>31</code></td>
 </tr>
 </tbody>
 </table>
@@ -157,7 +157,7 @@
 <tbody>
 <tr>
 <td>Trace</td>
-<td>Logs that contain the most detailed messages. These messages may contain sensitive application data like actual received values, which is why these messages should not be enabled in production environment.<strong>Note:</strong> Trace is translated to <em>Verbose</em> in the log file.</td>
+<td>Logs that contain the most detailed messages. These messages may contain sensitive application data like actual received values, which is why these messages should not be enabled in production environment.<br><br><strong>Note:</strong> Trace is translated to <em>Verbose</em> in the log file.</td>
 </tr>
 <tr>
 <td>Debug</td>
@@ -165,7 +165,7 @@
 </tr>
 <tr>
 <td>Information</td>
-<td>Logs that track the general flow of the application. Any non-repetitive general information like the following can be useful for diagnosing potential application errors:  - Version information related to the software at startup  - External services used  - Data source connection string  - Number of measurements  - Egress URL  - Change of state “Starting” or “Stopping”  - Configuration</td>
+<td>Logs that track the general flow of the application. Any non-repetitive general information like the following can be useful for diagnosing potential application errors: <br> - Version information related to the software at startup <br> - External services used <br> - Data source connection string <br> - Number of measurements <br> - Egress URL <br> - Change of state “Starting” or “Stopping” <br> - Configuration</td>
 </tr>
 <tr>
 <td>Warning</td>
@@ -177,7 +177,7 @@
 </tr>
 <tr>
 <td>Critical</td>
-<td>Logs that describe an unrecoverable application or system crash or a catastrophic failure that requires immediate attention. This can indicate application wide failures like beta timeout expired, unable to start self-hosted endpoint, unable to access vital resource (for example, Data Protection key file), and so on.<strong>Note:</strong> Critical is translated to <em>Fatal</em> in the log file.</td>
+<td>Logs that describe an unrecoverable application or system crash or a catastrophic failure that requires immediate attention. This can indicate application wide failures like beta timeout expired, unable to start self-hosted endpoint, unable to access vital resource (for example, Data Protection key file), and so on.<br><br><strong>Note:</strong> Critical is translated to <em>Fatal</em> in the log file.</td>
 </tr>
 <tr>
 <td>None</td>

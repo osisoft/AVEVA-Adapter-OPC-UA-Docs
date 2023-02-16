@@ -82,13 +82,13 @@
 <p>The adapter generates a self-signed certificate when the first secure connection attempt is made. The adapter&#39;s certificates and those of the server are stored in the certificate store, which is shared between all adapter instances.</p>
 <p>When determining OPC UA security practices with regards to REST APIs, you should consider the following practice. To keep the adapter secure, only administrators should have access to machines where the adapter is installed. REST APIs are bound to localhost, meaning that only requests coming from within the machine will be accepted.</p>
 <h1 id="adapter-certificate">Adapter Certificate</h1>
-<p>OPC UA connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will expire 10 years from the date of generation.</p>
+<p>OPC UA connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will have expire 10 years from the date of generation.</p>
 <p>When the adapter certificate approaches expiration, warnings will be logged daily starting 30 days prior to expiration. After the certificate is expired, errors will be logged daily.</p>
-<p>To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory and restart the adapter.</p>
+<p>To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory.</p>
 <h2 id="configure-opc-ua-adapter-security">Configure OPC UA adapter security</h2>
 <p>Complete the following steps to configure adapter security:</p>
 <ol>
-<li><p>In your data source configuration, set <code>UseSecureConnection</code> to <strong>true</strong>. For more information, see <a class="xref" href="data-source.html">AVEVA Adapter for OPC UA data source configuration</a>.</p>
+<li><p>In your data source configuration, set <code>UseSecureConnection</code> to <strong>true</strong>. For more information, see <a class="xref" href="data-source.html">PI Adapter for OPC UA data source configuration</a>.</p>
 <p>The adapter verifies whether the server certificate is present in the <a href="#adapter-trusted-certificates">adapter trusted certificates</a> and hence trusts it. In case the certificates were not exchanged before the first attempted connection, the adapter persists the server certificate within the <a href="#adapter-rejected-certificates">adapter rejected certificates</a> folder. The following warning message about the rejected server certificate will be printed:</p>
 <pre><code class="lang-bash">~~2019-09-08 11:45:48.093 +01:00~~ [Warning] Rejected Certificate: &quot;DC=MyServer.MyDomain.int, O=OSIsoft, CN=Simulation
 </code></pre></li>
@@ -99,7 +99,7 @@
 <p>Once the certificate is in the adapter trusted certificates folder, the adapter trusts the server and the connection attempt proceeds in making the connection call to the configured server.</p>
 </li>
 <li><p>Add the <a href="#certificate-of-the-adapter">certificate of the adapter</a> to the server&#39;s trust store.</p>
-<p>The connection succeeds only when the adapter certificate is trusted on the server side.  For more details on how to make a client certificate trusted, see your OPC UA server documentation.  In general, servers work in a similar fashion to the clients, hence you can take a similar approach for making the client certificate trusted on the server side.</p>
+<p>The connection succeeds only when the adapter certificate is trusted on the server side. <br> For more details on how to make a client certificate trusted, see your OPC UA server documentation. <br> In general, servers work in a similar fashion to the clients, hence you can take a similar approach for making the client certificate trusted on the server side.</p>
 <p>When certificates are mutually trusted, the connection attempt succeeds and the adapter is connected to the most secure endpoint provided by the server.</p>
 </li>
 </ol>
