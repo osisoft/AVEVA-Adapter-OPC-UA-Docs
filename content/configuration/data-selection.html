@@ -127,31 +127,31 @@
 <td><strong>selected</strong></td>
 <td>Optional</td>
 <td><code>boolean</code></td>
-<td>Use this field to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false. <br><br>Allowed value: <code>true</code> or <code>false</code> <br>Default value: <code>true</code></td>
+<td>Use this field to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false. Allowed value: <code>true</code> or <code>false</code> Default value: <code>true</code></td>
 </tr>
 <tr>
 <td><strong>name</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Name of the data item collected from the data source. <br><br>Default value: <code>null</code> <br>results in <strong>StreamId</strong> value being used also as a <strong>Name</strong></td>
+<td>Name of the data item collected from the data source. Default value: <code>null</code> results in <strong>StreamId</strong> value being used also as a <strong>Name</strong></td>
 </tr>
 <tr>
 <td><strong>nodeId</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
-<td>The NodeId of the variable.<br><br>Examples<br><code>&quot;ns=5;AString&quot;</code><br><code>&quot;ns=2;i=203&quot;</code><br><code>&quot;ns=&lt;NamespaceIndex&gt;;&lt;IdentifierType&gt;=&lt;Identifer&gt;&quot;</code></td>
+<td>The NodeId of the variable.Examples<code>&quot;ns=5;AString&quot;``&quot;ns=2;i=203&quot;``&quot;ns=&lt;NamespaceIndex&gt;;&lt;IdentifierType&gt;=&lt;Identifer&gt;&quot;</code></td>
 </tr>
 <tr>
 <td><strong>streamID</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 2000 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.<br><br>For more information on how the adapter encodes special characters in the <strong>StreamId</strong>, see <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html#special-characters-encoding">Egress endpoints</a>.</td>
+<td>The custom stream ID used to create the streams. If not specified, the adapter will generate a default stream ID based on the measurement configuration. The StreamId serves as the unique identifier of a data selection item. A properly configured custom stream ID follows these rules:Is not case-sensitive.Can contain spaces.Cannot start with two underscores (&quot;__&quot;).Can contain a maximum of 2000 characters.Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;Cannot start or end with a period.Cannot contain consecutive periods.Cannot consist of only periods.For more information on how the adapter encodes special characters in the <strong>StreamId</strong>, see <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html#special-characters-encoding">Egress endpoints</a>.</td>
 </tr>
 <tr>
 <td><strong>dataFilterId</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Enables data filtering for this data selection item if the ID of a data filter is specified.<br><strong>Note:</strong> If the specified <strong>DataFilterId</strong> does not exist, unfiltered data is sent until that <strong>DataFilterId</strong> is created.</td>
+<td>Enables data filtering for this data selection item if the ID of a data filter is specified.<strong>Note:</strong> If the specified <strong>DataFilterId</strong> does not exist, unfiltered data is sent until that <strong>DataFilterId</strong> is created.</td>
 </tr>
 </tbody>
 </table>

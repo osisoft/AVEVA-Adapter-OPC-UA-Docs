@@ -78,16 +78,16 @@
             <article class="content wrap" id="_content" data-uid="TroubleshootTheAdapter">
 <h1 id="troubleshooting">Troubleshooting</h1>
 
-<p>PI adapters provide features for troubleshooting issues related to connectivity, data flow, and configuration. Resources include adapter logs and the Wireshark troubleshooting tool . If you are still unable to resolve issues or need additional guidance, contact OSIsoft Technical Support through the <a href="https://my.osisoft.com/">OSIsoft Customer Portal</a>.</p>
+<p>AVEVA Adapters provide features for troubleshooting issues related to connectivity, data flow, and configuration. Resources include adapter logs and the Wireshark troubleshooting tool . If you are still unable to resolve issues or need additional guidance, contact OSIsoft Technical Support through the <a href="https://my.osisoft.com/">OSIsoft Customer Portal</a>.</p>
 <p><strong>Note:</strong> Make sure to also check the troubleshooting information specific to your adapter in this user guide.</p>
 <h2 id="logs">Logs</h2>
 <p>Messages from the System and OmfEgress logs provide information on the status of the adapter. For example, the messages show if a connection from the adapter to an egress endpoint exists.</p>
 <p>Perform the following steps to view the System and OmfEgress logs:</p>
 <ol>
-<li><p>Navigate to the logs directory:<br>
- Windows: <code>%ProgramData%\OSIsoft\Adapters\&lt;AdapterName&gt;\Logs</code><br>
- Linux: <code>/usr/share/OSIsoft/Adapters/&lt;AdapterName&gt;/Logs</code><br><br>
- <strong>Example:</strong><br> A successful connection to a PI Web API egress endpoint displays the following message in the OmfEgress log:</p>
+<li><p>Navigate to the logs directory:
+ Windows: <code>%ProgramData%\OSIsoft\Adapters\&lt;AdapterName&gt;\Logs</code>
+ Linux: <code>/usr/share/OSIsoft/Adapters/&lt;AdapterName&gt;/Logs</code>
+ <strong>Example:</strong> A successful connection to a PI Web API egress endpoint displays the following message in the OmfEgress log:</p>
 <pre><code class="lang-json">2020-11-02 11:08:51.870 -06:00 [Information] Data will be sent to the following OMF endpoint: 
 Id: &lt;omfegress id&gt;
 Endpoint: &lt;pi web api URL&gt;   (note: the pi web api default port is 443)
@@ -121,7 +121,7 @@ ValidateEndpointCertificate: &lt;true or false&gt;
 <li>Start the adapter.</li>
 </ol>
 <h2 id="adapter-connection-to-egress-endpoint">Adapter connection to egress endpoint</h2>
-<p>Certain egress health information in both PI Web API and OCS show if an adapter connection to an egress endpoint exists. To verify an active connection, perform one of the following procedures:</p>
+<p>Certain egress health information in both PI Web API and AVEVA Data Hub show if an adapter connection to an egress endpoint exists. To verify an active connection, perform one of the following procedures:</p>
 <h3 id="pi-web-api-connection">PI Web API connection</h3>
 <p>Perform the following steps to determine if a connection to the PI Web API endpoint exists:</p>
 <ol>
@@ -134,10 +134,10 @@ ValidateEndpointCertificate: &lt;true or false&gt;
 </ul>
 </li>
 </ol>
-<h3 id="ocs-connection">OCS connection</h3>
-<p>Perform the following steps to determine if a connection to the OCS endpoint exists:</p>
+<h3 id="aveva-data-hub-connection">AVEVA Data Hub connection</h3>
+<p>Perform the following steps to determine if a connection to the AVEVA Data Hub endpoint exists:</p>
 <ol>
-<li>Open OCS.</li>
+<li>Open AVEVA Data Hub.</li>
 <li>Select <strong>Sequential Data Store</strong> &gt; <strong>Streams</strong>.</li>
 <li>Makes sure that  the following streams have been created for your egress endpoint:<ul>
 <li>DeviceStatus</li>

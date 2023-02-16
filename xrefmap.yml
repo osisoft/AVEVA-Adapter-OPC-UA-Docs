@@ -74,7 +74,7 @@ references:
   name: Installation using Docker
   href: content/main/shared-content/installation/install-using-docker.html
 - uid: IntroToPiAdapters
-  name: PI Adapter for OPC UA 1.4
+  name: AVEVA Adapter for OPC UA 1.4
   href: content/main/shared-content/introduction/intro-to-pi-adapters.html
 - uid: IORate
   name: IO rate
@@ -107,7 +107,7 @@ references:
   name: Data source
   href: content/configuration/data-source.html
 - uid: PIAdapterForOPCUAOverview
-  name: PI Adapter for OPC UA overview
+  name: AVEVA Adapter for OPC UA overview
   href: content/pi-adapter-for-opc-ua-overview.html
 - uid: PIAdapterForOPCUAPrinciplesOfOperation
   name: Principles of operation
@@ -158,7 +158,7 @@ references:
   name: Text parser
   href: content/main/shared-content/configuration/text-parser/text-parser.html
 - uid: TroubleshootPIAdapterForOPCUA
-  name: Troubleshoot PI Adapter for OPC UA
+  name: Troubleshoot AVEVA Adapter for OPC UA
   href: content/troubleshooting/troubleshoot-pi-adapter-for-opc-ua.html
 - uid: TroubleshootTheAdapter
   name: Troubleshooting

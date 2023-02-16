@@ -85,7 +85,7 @@
 <ol>
 <li><p>Add an OPC UA adapter with a unique <code>ComponentId</code>. For more information, see <a class="xref" href="../main/shared-content/configuration/system-components.html">System components configuration</a>.</p>
 </li>
-<li><p>Configure a valid OPC UA data source. For more information, see <a class="xref" href="data-source.html">PI Adapter for OPC UA data source configuration</a>.</p>
+<li><p>Configure a valid OPC UA data source. For more information, see <a class="xref" href="data-source.html">AVEVA Adapter for OPC UA data source configuration</a>.</p>
 <p>Once you complete these steps, a default OPC UA client settings configuration file generates in the configuration directory for the corresponding platform.</p>
 <p>The following are example locations of the file created. In this example, the <code>ComponentId</code> of the OPC UA component is OpcUa1:</p>
 <p>Windows: <code>%programdata%\OSIsoft\Adapters\OpcUa\Configuration\OpcUa1_ClientSettings.json</code></p>
@@ -125,7 +125,7 @@
 <p>Linux: <code>/opt/OSIsoft/Adapters/OpcUa/Schemas</code></p>
 <h2 id="opc-ua-client-settings-parameters">OPC UA client settings parameters</h2>
 <p>The following parameters are available for configuring OPC UA client settings:</p>
-<p><strong>Note</strong>: All intervals, delays, and timeouts require the string to be formatted like this:<br> <code>[d:]h:mm:ss[.FFFFFFF]</code> where the items in brackets are optional.<br> d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second.<br><br> Example: <code>&quot;05:07:10:40.150&quot;</code> for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.</p>
+<p><strong>Note</strong>: All intervals, delays, and timeouts require the string to be formatted like this: <code>[d:]h:mm:ss[.FFFFFFF]</code> where the items in brackets are optional. d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second. Example: <code>&quot;05:07:10:40.150&quot;</code> for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.</p>
 <table>
 <thead>
 <tr>
@@ -140,127 +140,127 @@
 <td><strong>maxBrowseReferencesToReturn</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of references returned from browse call. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>0</code></td>
+<td>Maximum number of references returned from browse call. Minimum value: <code>0</code>Maximum value: <code>4294967295</code>Default value: <code>0</code></td>
 </tr>
 <tr>
 <td><strong>browseBlockSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of nodes to browse in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>4294967295</code><br>Default value:  <code>10</code></td>
+<td>Maximum number of nodes to browse in one call. Minimum value: <code>1</code>Maximum value: <code>4294967295</code>Default value:  <code>10</code></td>
 </tr>
 <tr>
 <td><strong>readBlockSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of variables to read in one call. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>1000</code></td>
+<td>Maximum number of variables to read in one call. Minimum value: <code>0</code>Maximum value: <code>4294967295</code>Default value: <code>1000</code></td>
 </tr>
 <tr>
 <td><strong>reconnectDelay</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Delay between reconnection attempts. *<br>Does not apply to the initial connection, only reconnections.<br><br> Allowed value: cannot be negative <br>Default value: <code>0:00:30</code></td>
+<td>Delay between reconnection attempts. *Does not apply to the initial connection, only reconnections. Allowed value: cannot be negative Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
 <td><strong>recreateSubscriptionDelay</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Delay between successful reconnection and subsequent subscription recreation. * <br><br>Allowed value: cannot be negative <br> Default value: <code>0:00:10</code></td>
+<td>Delay between successful reconnection and subsequent subscription recreation. * Allowed value: cannot be negative  Default value: <code>0:00:10</code></td>
 </tr>
 <tr>
 <td><strong>sessionRequestTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Default request timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:02:00</code></td>
+<td>Default request timeout. * Allowed value: greater than <code>00:00:05</code>Default value: <code>0:02:00</code></td>
 </tr>
 <tr>
 <td><strong>connectionTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Connection timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:00:30</code></td>
+<td>Connection timeout. * Allowed value: greater than <code>00:00:05</code>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
 <td><strong>sessionAllowInsecureCredentials</strong></td>
 <td>Optional</td>
 <td><code>boolean</code></td>
-<td>When set to true credentials can be communicated over unencrypted channel. <br><br>Allowed value: <code>true</code> or <code>false</code><br>Default value: <code>false</code></td>
+<td>When set to true credentials can be communicated over unencrypted channel. Allowed value: <code>true</code> or <code>false</code>Default value: <code>false</code></td>
 </tr>
 <tr>
 <td><strong>sessionMaxOperationsPerRequest</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Default maximum operation per request. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>1000</code></td>
+<td>Default maximum operation per request. Minimum value: <code>0</code>Maximum value: <code>4294967295</code>Default value: <code>1000</code></td>
 </tr>
 <tr>
 <td><strong>browseTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Browse operation timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:01:00</code></td>
+<td>Browse operation timeout. * Allowed value: greater than <code>00:00:05</code>Default value: <code>0:01:00</code></td>
 </tr>
 <tr>
 <td><strong>readTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Read operation timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:00:30</code></td>
+<td>Read operation timeout. * Allowed value: greater than <code>00:00:05</code>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
 <td><strong>maxMonitoredItemsPerCall</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of monitored items that can be added to subscription in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>1000</code></td>
+<td>Maximum number of monitored items that can be added to subscription in one call. Minimum value: <code>1</code>Maximum value: <code>4294967295</code>Default value: <code>1000</code></td>
 </tr>
 <tr>
 <td><strong>maxNotificationsPerPublish</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum notification messages in one publish message. <br><br>Minimum value: <code>0</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>0</code></td>
+<td>Maximum notification messages in one publish message. Minimum value: <code>0</code>Maximum value: <code>4294967295</code>Default value: <code>0</code></td>
 </tr>
 <tr>
 <td><strong>publishingInterval</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Publishing interval of the subscription. * <br><br> Allowed value: cannot be negative <br> Default value: <code>0:00:01</code></td>
+<td>Publishing interval of the subscription. *  Allowed value: cannot be negative  Default value: <code>0:00:01</code></td>
 </tr>
 <tr>
 <td><strong>createMonitoredItemsTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Create monitored items timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:00:30</code></td>
+<td>Create monitored items timeout. * Allowed value: greater than <code>00:00:05</code>Default value: <code>0:00:30</code></td>
 </tr>
 <tr>
 <td><strong>samplingInterval</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>Monitored item sampling interval. * <br><br>Allowed value: cannot be negative <br>Default value: <code>0:00:00:5</code></td>
+<td>Monitored item sampling interval. * Allowed value: cannot be negative Default value: <code>0:00:00:5</code></td>
 </tr>
 <tr>
 <td><strong>monitoredItemDataChangeTrigger</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: <code>Status</code>, <code>StatusValue</code>, <code>StatusValueTimestamp</code> <br>Default value: <code>StatusValue</code></td>
+<td>Determines on what conditions a subscription sends new values to the adapter. Allowed values: <code>Status</code>, <code>StatusValue</code>, <code>StatusValueTimestamp</code> Default value: <code>StatusValue</code></td>
 </tr>
 <tr>
 <td><strong>monitoredItemQueueSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Monitored item queue size. <br><br>Minimum value: <code>1</code><br> Maximum value: <code>4294967295</code> <br>Default value: <code>2</code></td>
+<td>Monitored item queue size. Minimum value: <code>1</code> Maximum value: <code>4294967295</code> Default value: <code>2</code></td>
 </tr>
 <tr>
 <td><strong>maxInternalQueueSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of items that can be in the adapter internal queue. <br><br>Minimum value: <code>1000</code><br>Maximum value: <code>2147483647</code><br>Default value: <code>500000</code></td>
+<td>Maximum number of items that can be in the adapter internal queue. Minimum value: <code>1000</code>Maximum value: <code>2147483647</code>Default value: <code>500000</code></td>
 </tr>
 <tr>
 <td><strong>HistoryReadBlockSize</strong></td>
 <td>Optional</td>
 <td><code>integer</code></td>
-<td>Maximum number of nodes for history to read in one call. <br><br>Minimum value: <code>1</code><br>Maximum value: <code>4294967295</code><br>Default value: <code>10</code></td>
+<td>Maximum number of nodes for history to read in one call. Minimum value: <code>1</code>Maximum value: <code>4294967295</code>Default value: <code>10</code></td>
 </tr>
 <tr>
 <td><strong>HistoryReadTimeout</strong></td>
 <td>Optional</td>
 <td><code>TimeSpan</code></td>
-<td>History read operation timeout. * <br><br>Allowed value: greater than <code>00:00:05</code><br>Default value: <code>0:01:00</code></td>
+<td>History read operation timeout. * Allowed value: greater than <code>00:00:05</code>Default value: <code>0:01:00</code></td>
 </tr>
 </tbody>
 </table>

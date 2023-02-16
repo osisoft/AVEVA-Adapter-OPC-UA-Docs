@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="AutomaticHistoryRecovery">
 <h1 id="automatic-history-recovery">Automatic history recovery</h1>
 
-<p>In addition to on-demand history recovery, the PI adapter also supports automatic history recovery.</p>
+<p>In addition to on-demand history recovery, the AVEVA Adapter also supports automatic history recovery.</p>
 <p>For automatic history recovery, the adapter tracks changes to the <strong>DeviceStatus</strong> of each component. When the <strong>DeviceStatus</strong> changes to <code>DeviceInError</code> or <code>Shutdown</code>, the adapter starts a new <a href="#history-recovery-intervals">History recovery interval</a>. The <strong>DeviceStatus</strong> changes to <code>Good</code> when the issue resolves or if the adapter restarts and then the adapter closes any current intervals for that component. The adapter tracks these intervals for each component and, when <strong>DeviceStatus</strong> has a value of <code>Good</code>, it performs history recovery for these intervals from oldest entry to newest. For more information, see also <a class="xref" href="../../health/device-status.html">Device status</a>.</p>
 <p><strong>Note:</strong> If the data collection mode is set to <code>CurrentWithBackfill</code>, the adapter clears periods not recovered for the component and stops keeping track of them. Only if the data collection mode is set to <code>HistoryOnly</code>, an automatic history recovery operation in progress will be canceled, otherwise it will be finished.</p>
 <h2 id="history-recovery-intervals">History recovery intervals</h2>

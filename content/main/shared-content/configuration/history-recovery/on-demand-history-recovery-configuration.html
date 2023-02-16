@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="OnDemandHistoryRecoveryConfiguration">
 <h1 id="on-demand-history-recovery-configuration">On-demand history recovery configuration</h1>
 
-<p>The PI adapter supports performing history recovery on-demand by specifying start and end time.</p>
+<p>The AVEVA Adapter supports performing history recovery on-demand by specifying start and end time.</p>
 <h2 id="configure-history-recovery">Configure history recovery</h2>
 <ol>
 <li>Start any of the <a class="xref" href="../configuration-tools.html">Configuration tools</a> capable of making HTTP requests.</li>
@@ -105,17 +105,17 @@
 <tr>
 <td> <strong>Id</strong></td>
 <td><code>string</code></td>
-<td>The Id of the history recovery<br><br> <strong>Note:</strong> You cannot run multiple history recoveries with the same Id.</td>
+<td>The Id of the history recovery <strong>Note:</strong> You cannot run multiple history recoveries with the same Id.</td>
 </tr>
 <tr>
 <td> <strong>StartTime</strong></td>
 <td><code>datetime</code></td>
-<td>Time when the first data items are collected.<br><br> <strong>Note:</strong> Timestamps are interpreted into the Coordinated Universal Time (UTC) time standard. OSIsoft recommends the following format for entering a startTime in a curl command: <em>YYYY-MM-DD</em>T<em>HH:MM:SS</em>Z.</td>
+<td>Time when the first data items are collected. <strong>Note:</strong> Timestamps are interpreted into the Coordinated Universal Time (UTC) time standard. OSIsoft recommends the following format for entering a startTime in a curl command: <em>YYYY-MM-DD</em>T<em>HH:MM:SS</em>Z.</td>
 </tr>
 <tr>
 <td> <strong>EndTime</strong></td>
 <td><code>datetime</code></td>
-<td>Time when the last data items are collected.<br><br> <strong>Note:</strong> Timestamps are interpreted into the Coordinated Universal Time (UTC) time standard. OSIsoft recommends the following format for entering a endTime in a curl command: <em>YYYY-MM-DD</em>T<em>HH:MM:SS</em>Z.</td>
+<td>Time when the last data items are collected. <strong>Note:</strong> Timestamps are interpreted into the Coordinated Universal Time (UTC) time standard. OSIsoft recommends the following format for entering a endTime in a curl command: <em>YYYY-MM-DD</em>T<em>HH:MM:SS</em>Z.</td>
 </tr>
 <tr>
 <td><strong>Checkpoint</strong></td>
@@ -140,7 +140,7 @@
 <tr>
 <td><strong>Status</strong></td>
 <td><code>enum</code></td>
-<td>Status of the history recovery.<br><br>The following statuses are available:<br><em>Active</em> - The operation is currently in progress<br><em>Complete</em> - The operation has been completed<br><em>Canceled</em> - The operation has been canceled<br><em>Failed</em> - The operation failed</td>
+<td>Status of the history recovery.The following statuses are available:<em>Active</em> - The operation is currently in progress<em>Complete</em> - The operation has been completed<em>Canceled</em> - The operation has been canceled<em>Failed</em> - The operation failed</td>
 </tr>
 <tr>
 <td><strong>Errors</strong></td>
@@ -207,7 +207,7 @@
 <tr>
 <td>api/v1/configuration/<em>&lt;componentId&gt;</em>/historyRecoveries/<em>&lt;operationId&gt;</em>/resume</td>
 <td>POST</td>
-<td>Resumes canceled or failed history recovery operation (<code>202</code>) from the checkpoint<br><br><strong>Note:</strong> If the <code>&lt;operationId&gt;</code> is not found, a 404 HTTP error message will be returned</td>
+<td>Resumes canceled or failed history recovery operation (<code>202</code>) from the checkpoint<strong>Note:</strong> If the <code>&lt;operationId&gt;</code> is not found, a 404 HTTP error message will be returned</td>
 </tr>
 </tbody>
 </table>
