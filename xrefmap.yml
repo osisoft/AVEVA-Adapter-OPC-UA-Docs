@@ -123,6 +123,12 @@ references:
   href: content/main/shared-content/configuration/egress-endpoints/prepare-egress-destinations.html
 - uid: ReleaseNotes
   name: Release notes
+  href: content/release-notes/release-notes.html
+- uid: ReleaseNotesOPCUA
+  name: Release notes
+  href: content/release-notes/release-notes-OPCUA.html
+- uid: ReleaseNotesOPCUAModule
+  name: Release notes
   href: content/release-notes/release-notes-OPCUA-module.html
 - uid: RetrieveProductVersionInformation
   name: Retrieve product version information

@@ -208,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/_includes/inline/framework-version.html",
-          "hash": "OTN0gnbp1t5YS890ZQJ+DciAt+ZQElp5Wk6pXa4gdw8="
+          "hash": "mSXULf0ibazRe40a8IgWOCghyjJhuPh0AH4i/DPmHLY="
         }
       },
       "is_incremental": false,
@@ -985,45 +985,36 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "content/release-notes/release-notes-OPCUA-module.md",
       "output": {
         ".html": {
           "relative_path": "content/release-notes/release-notes-OPCUA-module.html",
-          "hash": "kmo2/3sA4rMrQxLIT5eha7i3Abg4zQFe1naSlFucEeI="
+          "hash": "y5XmKb6/vfFWFEddDGaAXxBvNEenJtPqqbi2AJ9BlB8="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "content/release-notes/release-notes-OPCUA.md",
       "output": {
         ".html": {
           "relative_path": "content/release-notes/release-notes-OPCUA.html",
-          "hash": "0SXAkz2ld6zMxt3mdquB+fojrrLRXLcoUHSDYCbGG1s="
+          "hash": "tb3XCnJ93j9fcOGS1Wkuw//v8rbFuL/mH75qEd0hgyM="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "content/release-notes/release-notes.md",
       "output": {
         ".html": {
           "relative_path": "content/release-notes/release-notes.html",
-          "hash": "eDP3gDXOzOqk3HsQKbbdtcnriMMZXvVHcXO98lHElHI="
+          "hash": "fmSUT871UJYl/Cl6PfSGTF/RMz5bf1AGuf+dqcen0Es="
         }
       },
       "is_incremental": false,
@@ -1038,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "content/toc.html",
-          "hash": "jgMLkt15nwLmk4e5thHpqFitgePICew+qePrZvH7YJo="
+          "hash": "XUowEogvOUqoEhmtba8rGhb4Uw742R7kSSZSb/v+pRA="
         }
       },
       "is_incremental": false,
