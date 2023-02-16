@@ -16,6 +16,9 @@ references:
 - uid: AutomaticHistoryRecovery
   name: Automatic history recovery
   href: content/main/shared-content/configuration/history-recovery/automatic-history-recovery.html
+- uid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+  name: Principles of operation
+  href: content/overview/principles-of-operation.html
 - uid: BufferingConfiguration
   name: Buffering
   href: content/main/shared-content/configuration/buffering.html
@@ -109,9 +112,6 @@ references:
 - uid: PIAdapterForOPCUAOverview
   name: AVEVA Adapter for OPC UA overview
   href: content/pi-adapter-for-opc-ua-overview.html
-- uid: PIAdapterForOPCUAPrinciplesOfOperation
-  name: Principles of operation
-  href: content/overview/principles-of-operation.html
 - uid: PIAdapterForOPCUASecurityConfiguration
   name: Security
   href: content/configuration/security.html
@@ -123,7 +123,7 @@ references:
   href: content/main/shared-content/configuration/egress-endpoints/prepare-egress-destinations.html
 - uid: ReleaseNotes
   name: Release notes
-  href: content/release-notes/release-notes.html
+  href: content/release-notes/release-notes-OPCUA-module.html
 - uid: RetrieveProductVersionInformation
   name: Retrieve product version information
   href: content/main/shared-content/administration/retrieve-product-version-information.html

@@ -127,37 +127,37 @@
 <td><strong>Id</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Uniquely identifies the endpoint. This can be any alphanumeric string. If left blank, a unique value is generated automatically. Allowed value: any string identifierDefault value: new GUID</td>
+<td>Uniquely identifies the endpoint. This can be any alphanumeric string. If left blank, a unique value is generated automatically. Allowed value: any string identifier Default value: new GUID</td>
 </tr>
 <tr>
 <td><strong>Endpoint</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
-<td>The URL of the OMF endpoint to receive this health data Allowed value: well-formed http or https endpoint stringDefault: <code>null</code></td>
+<td>The URL of the OMF endpoint to receive this health data Allowed value: well-formed http or https endpoint string Default: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>Username</strong></td>
 <td>Required for PI Web API endpoints</td>
 <td><code>string</code></td>
-<td>The username used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any stringDefault: <code>null</code></td>
+<td>The username used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>Password</strong></td>
 <td>Required for PI Web API endpoints</td>
 <td><code>string</code></td>
-<td>The password used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any stringDefault: <code>null</code></td>
+<td>The password used to authenticate with a PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>ClientId</strong></td>
 <td>Required for AVEVA Data Hub endpoints</td>
 <td><code>string</code></td>
-<td>The client ID used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any stringDefault: <code>null</code></td>
+<td>The client ID used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any string Default: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>ClientSecret</strong></td>
 <td>Required for AVEVA Data Hub endpoints</td>
 <td><code>string</code></td>
-<td>The client secret used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any stringDefault: <code>null</code></td>
+<td>The client secret used for authentication with an AVEVA Data Hub OMF endpoint Allowed value: any string Default: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>TokenEndpoint</strong></td>
@@ -184,7 +184,7 @@
 </code></pre><h3 id="pi-web-api-endpoint">PI Web API endpoint</h3>
 <pre><code class="lang-code">{
     &quot;Id&quot;: &quot;PI Web API&quot;,
-    &quot;Endpoint&quot;: &quot;https://&lt;pi web aAVEVA Server&gt;:&lt;port&gt;/piwebapi/omf/&quot;,
+    &quot;Endpoint&quot;: &quot;https://&lt;pi web AVEVA Server&gt;:&lt;port&gt;/piwebapi/omf/&quot;,
     &quot;UserName&quot;: &quot;&lt;username&gt;&quot;,
     &quot;Password&quot;: &quot;&lt;password&gt;&quot;
 }

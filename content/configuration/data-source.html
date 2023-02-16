@@ -165,13 +165,13 @@
 <td><strong>defaultStreamIdPattern</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Specifies the default StreamId pattern to use. Possible parameters: <code>{NamespaceIndex}</code><sup>1</sup>, <code>{Identifier}</code>. Allowed value: any stringDefault value: <code>{NamespaceIndex}.{Identifier}</code></td>
+<td>Specifies the default StreamId pattern to use. Possible parameters: <code>{NamespaceIndex}</code> 1 , <code>{Identifier}</code>. Allowed value: any string Default value: <code>{NamespaceIndex}.{Identifier}</code></td>
 </tr>
 <tr>
 <td><strong>dataCollectionMode</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Specifies the data collection mode the adapter is in. The following data collection modes are available: <strong>HistoryOnly</strong> <sup>2</sup> - The adapter component does not get started and history recovery on-demand is enabled. For more information, see <a class="xref" href="../main/shared-content/configuration/history-recovery/on-demand-history-recovery-configuration.html">On-demand history recovery</a>.<strong>CurrentOnly</strong> - The adapter component operates normally and on-demand history recovery is disabled.<strong>CurrentWithBackfill</strong> <sup>2</sup> - The adapter component operates normally, but disconnections are recorded based on device status. History recovery backfills data once device status is <code>good</code>. On-demand history recovery is disabled. For more information, see <a class="xref" href="../main/shared-content/configuration/history-recovery/automatic-history-recovery.html">Automatic history recovery</a>. Changing the mode requires a restart of the adapter component.</td>
+<td>Specifies the data collection mode the adapter is in. The following data collection modes are available: <strong>HistoryOnly</strong>  2  - The adapter component does not get started and history recovery on-demand is enabled. For more information, see <a class="xref" href="../main/shared-content/configuration/history-recovery/on-demand-history-recovery-configuration.html">On-demand history recovery</a>.<strong>CurrentOnly</strong> - The adapter component operates normally and on-demand history recovery is disabled.<strong>CurrentWithBackfill</strong>  2  - The adapter component operates normally, but disconnections are recorded based on device status. History recovery backfills data once device status is <code>good</code>. On-demand history recovery is disabled. For more information, see <a class="xref" href="../main/shared-content/configuration/history-recovery/automatic-history-recovery.html">Automatic history recovery</a>. Changing the mode requires a restart of the adapter component.</td>
 </tr>
 <tr>
 <td><strong>serverFailoverEnabled</strong></td>
@@ -181,8 +181,8 @@
 </tr>
 </tbody>
 </table>
-<p><sup>1</sup> NamespaceIndex refers to the number specified in the <code>ns</code> keyword in the <strong>RootNodeIds</strong> parameter.</p>
-<p><sup>2</sup> Historical values are collected only for OPC UA items that have the AccessLevel attribute set to <code>HistoryRead</code>.</p>
+<p> 1  NamespaceIndex refers to the number specified in the <code>ns</code> keyword in the <strong>RootNodeIds</strong> parameter.</p>
+<p> 2  Historical values are collected only for OPC UA items that have the AccessLevel attribute set to <code>HistoryRead</code>.</p>
 <h2 id="opc-ua-data-source-examples">OPC UA data source examples</h2>
 <p>The following are examples of valid OPC UA data source configurations:</p>
 <h3 id="minimal-data-source-configuration">Minimal data source configuration</h3>

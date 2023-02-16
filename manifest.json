@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/data-source.html",
-          "hash": "YniPWEH9DWW1k2roCfE0cdLxg12TOF/O0bEoRHHTaC0="
+          "hash": "CKFipuPlu0oZw+KlKkrl5K3JJc3KQLAtR+jbnI9ZGTo="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/system-components.html",
-          "hash": "23GAas88YLMHpbhepUvWCh9lojQtdzPXdsLAhxieiTU="
+          "hash": "D14Dvo4TRy8UWv8+sgHsBI0rOtHi7tMJHefBQKXlP/M="
         }
       },
       "is_incremental": false,
@@ -155,15 +155,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "content/index.md",
       "output": {
         ".html": {
           "relative_path": "content/index.html",
-          "hash": "Q/2qxFh0z3tHr1jS4kwQJO3q12BFVRh3xEOMFTZld/Q="
+          "hash": "n4r15fXGmQGwOE9UzUZrSArrqU5wZJtliLQqamh3xGQ="
         }
       },
       "is_incremental": false,
@@ -355,7 +352,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/buffering.html",
-          "hash": "WYZ+k33wpQFf+sER7lJ4urSOCfcBU8QTqnFAyallfIA="
+          "hash": "I6XgG+BrmrdECcaax1qvXaUmZnUv6d6fORNKFkcTU9w="
         }
       },
       "is_incremental": false,
@@ -379,7 +376,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/data-filters.html",
-          "hash": "reQHCXaw+00v1rAzaBN8I02qiXKnyrt4f03BcJpdiVo="
+          "hash": "vt+cN7TSyRBAQALuMZNce7RGb08CgNwEzoCJK2XqZ2I="
         }
       },
       "is_incremental": false,
@@ -391,7 +388,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/diagnostics-and-metadata.html",
-          "hash": "6PUBF7ObGJ91Gjz8ARrGQR/AQgOTFYwlHC+IMhBsG2Y="
+          "hash": "gZJmzWvLNblpq0qw2zdB255tLif2Pv2y9AklMznSvGw="
         }
       },
       "is_incremental": false,
@@ -415,7 +412,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/egress-endpoints.html",
-          "hash": "43UVmjm25ghI9NH4aVEHBTBsaAnYTj6igCbv1sZxFy0="
+          "hash": "qZTgYuF1h9h/YmyOwCP/95hFcClqXckm5Uk44X2fTMY="
         }
       },
       "is_incremental": false,
@@ -451,7 +448,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/health-endpoints.html",
-          "hash": "1W6xa+GMIuW3ZiV4kQ+NcJhs9PneU4H5SnhxPaC+ghU="
+          "hash": "UeZ3Kv6RlxLKjIccRrbUE0pJ/Qbs+OSUM9X6goGTsMs="
         }
       },
       "is_incremental": false,
@@ -511,7 +508,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/schedules.html",
-          "hash": "XgHChJV6HpYklsmdJ+S3S2ELXqFKO1gDuaEfRRpPpAQ="
+          "hash": "k1gLuplURyEO+FgPS2DXQ3BbuMPgHncqwx4HLuIMBjc="
         }
       },
       "is_incremental": false,
@@ -535,7 +532,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/system-components.html",
-          "hash": "sLHBur6Fl6kY/xPzQOVKo06ljTMAhEugtjdo8007qPQ="
+          "hash": "MYTh+yQKZAWU+m/+7WsYyG8tytxRscS/JYo63hczPBU="
         }
       },
       "is_incremental": false,
@@ -643,7 +640,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/diagnostics/system.html",
-          "hash": "jSDeItYnje9MG43BlxU70mh114J1UXJsHUqRrZemR28="
+          "hash": "G5EqcHP44pvdq0aZ8yoKkWtHLUlVsC0bfBJs1aaidck="
         }
       },
       "is_incremental": false,
@@ -667,7 +664,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/health/health-and-diagnostics.html",
-          "hash": "iAyNR8g6qVNPeFxamcKdNig6uDixfmdAw8Lypqzk+MQ="
+          "hash": "KmnIa1eLUpM5+u+I9GK9/60lE1Sg00WAJGOdhSbJ49g="
         }
       },
       "is_incremental": false,
@@ -930,7 +927,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/metadata/metadata.html",
-          "hash": "It1qkTGL1JNF6YSCU5Mn2o/NkgTY6H9BVYXAFq+Yh/U="
+          "hash": "2213MHU8xIDY0zxF8L/2jkE9S7mOx+8eiR/EquujOXA="
         }
       },
       "is_incremental": false,
@@ -961,12 +958,27 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "content/overview/principles-of-operation.md",
       "output": {
         ".html": {
           "relative_path": "content/overview/principles-of-operation.html",
-          "hash": "f4IvecwHrXhFhpFtNDR6jYFdpPd/Q1u10Idyrds4qrc="
+          "hash": "q5ZaKlfihNkmHNV4VtWg1MldZyVrE/dYDUHFKOj2BQw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "content/pi-adapter-for-opc-ua-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "content/pi-adapter-for-opc-ua-overview.html",
+          "hash": "5zQDFeBW3f8zQIdmycklXaGzXX4NwfDhKnHdffYlkoo="
         }
       },
       "is_incremental": false,
@@ -974,38 +986,59 @@
     },
     {
       "log_codes": [
-        "InvalidFileLink"
+        "DuplicateUids"
       ],
       "type": "Conceptual",
-      "source_relative_path": "content/pi-adapter-for-opc-ua-overview.md",
+      "source_relative_path": "content/release-notes/release-notes-OPCUA-module.md",
       "output": {
         ".html": {
-          "relative_path": "content/pi-adapter-for-opc-ua-overview.html",
-          "hash": "P/rh7cRCmKKUG0M9QCsIpRCwZc0UFYbQxHScTdChOuM="
+          "relative_path": "content/release-notes/release-notes-OPCUA-module.html",
+          "hash": "kmo2/3sA4rMrQxLIT5eha7i3Abg4zQFe1naSlFucEeI="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "content/release-notes/release-notes-OPCUA.md",
+      "output": {
+        ".html": {
+          "relative_path": "content/release-notes/release-notes-OPCUA.html",
+          "hash": "0SXAkz2ld6zMxt3mdquB+fojrrLRXLcoUHSDYCbGG1s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "content/release-notes/release-notes.md",
       "output": {
         ".html": {
           "relative_path": "content/release-notes/release-notes.html",
-          "hash": "/gM0YGo2sapthzHCQmYbGKKctOwds6mL7JzfZT0qqIM="
+          "hash": "eDP3gDXOzOqk3HsQKbbdtcnriMMZXvVHcXO98lHElHI="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Toc",
       "source_relative_path": "content/toc.yml",
       "output": {
         ".html": {
           "relative_path": "content/toc.html",
-          "hash": "V28stTnferq6SoiCJLJ1CO9j7hi2Sdch9ORlaWxa1gs="
+          "hash": "jgMLkt15nwLmk4e5thHpqFitgePICew+qePrZvH7YJo="
         }
       },
       "is_incremental": false,
@@ -1050,7 +1083,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 69,
+          "total_file_count": 71,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
