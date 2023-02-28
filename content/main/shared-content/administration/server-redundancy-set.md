@@ -4,9 +4,9 @@ uid: RetrieveRedundancySet
 
 # Retrieve Redundant Server Set
 
-The AVEVA Opc Ua Adapter provides a rest endpoint for querying the current redundant server set the adapter is using for server failover.
+The AVEVA OPC UA Adapter provides a rest endpoint for querying the current redundant server set the adapter is using for server failover.
 
-Complete the following steps to retrieve the redundant server set of an AVEVA Opc Ua Adapter:
+Complete the following steps to retrieve the redundant server set of an AVEVA OPC UA Adapter:
 
 1. Use any of the [Configuration tools](xref:ConfigurationTools) capable of making HTTP requests.
 2. Run a `GET` command to the following endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/RedundantServerSet`
