@@ -45,7 +45,8 @@ The following tables provide examples for all configurations available for AVEVA
             "incomingTimestamp": "Source",
             "streamIdPrefix": "OPC_Prefix_",
             "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
-            "dataCollectionMode": "CurrentWithBackfill"
+            "dataCollectionMode": "CurrentWithBackfill",
+            "serverFailoverEnabled": false
         },
         "DataSelection": [
             {
