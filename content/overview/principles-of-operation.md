@@ -114,7 +114,7 @@ Upon successful connection to the primary OPC UA Server that is defined in the D
 | `i=11314`: Server URI array | This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
 | `i=2267`: Service level | This value will be used to track each server's health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set. |
 
-**Note:** The adapter does not currently support a runtime change to the server redundancy mode. A user must restart the adapter if they wish to change the server redundancy mode on their server and have it be seen by the adapter.
+**Note:** The adapter does not currently support a runtime change to the server redundancy mode or server URI array. A user must restart the adapter if they wish to change either the server redundancy mode or the server URI array.
 
 ### Supported Redundancy Modes
 
@@ -164,9 +164,9 @@ In Hot server failover, a failover occurs if the adapter loses connection to the
 
 ### Redundancy Server Set Cache
 
-On startup, when the adapter reads the Server URI array, it will store the results in a file on disk in the following locations:
+On startup, when the adapter connects to the initial primary server and reads the Server URI array, it will store the results in a json file at:
 
-* Windows: `%ProgramData%\OSIsoft\Adapters\OpcUa\<ComponentId>\RedundantServerSet.txt`
-* Linux: `/usr/share/OSIsoft/Adapters/OpcUa/<ComponentId>/RedundantServerSet.txt`
+* Windows: `%ProgramData%\OSIsoft\Adapters\OpcUa\Configuration\<ComponentId>_RedundantServerSet.json`
+* Linux: `/usr/share/OSIsoft/Adapters/OpcUa/Configuration/<ComponentId>_RedundantServerSet.json`
 
-On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will use the servers in this cache as the server redundancy set.
+On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will attempt to connect to each server in the cached server redundancy set. If the adapter is able to connect to one of the cached servers, it will then read and use the redundancy set configured on that server. The current redundancy set configuration can be found by following the steps in the [Retrieve Redundant Server Set](xref:RetrieveRedundancySet) section.
