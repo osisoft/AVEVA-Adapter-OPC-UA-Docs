@@ -261,7 +261,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> The adapter does not currently support a runtime change to the server redundancy mode. A user must restart the adapter if they wish to change the server redundancy mode on their server and have it be seen by the adapter.</p>
+<p><strong>Note:</strong> The adapter does not currently support a runtime change to the server redundancy mode or server URI array. A user must restart the adapter if they wish to change either the server redundancy mode or the server URI array.</p>
 <h3 id="supported-redundancy-modes">Supported Redundancy Modes</h3>
 <p>The following sections outline how the adapter behaves in each Server Redundancy Mode. For more information on server redundancy, see the <a href="https://reference.opcfoundation.org/v104/Core/docs/Part4/6.6.2/">OPC UA Online Reference part 4 - 6.6.2</a></p>
 <h4 id="none">None</h4>
@@ -293,15 +293,15 @@
 <li>Activate publishing and reporting for the data subscription on the healthiest server.</li>
 <li>Disable publishing and activate sampling for the data subscription on the rest of the servers.</li>
 </ul>
-<p>The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be buffered until it becomes the primary. The size of this buffer can be configured with the <code>MonitoredItemQueueSize</code> property in the Client Settings configuration (ADD LINK TO THAT PAGE HERE). Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode.</p>
+<p>The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be buffered until it becomes the primary. The size of this buffer can be configured with the <code>MonitoredItemQueueSize</code> property in the <a class="xref" href="../configuration/client-settings.html">Client Settings</a> configuration. Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode.</p>
 <p>In Hot server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server&#39;s Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and activate sampling on the current primary server. It will then enable publishing and reporting on whichever secondary server has the highest service level. This healthy server becomes the new primary. If the <code>MonitoredItemQueueSize</code> property in the Client Settings configuration is large enough to hold all of the data that occurred during the failover period, there will be no data loss.</p>
 <h3 id="redundancy-server-set-cache">Redundancy Server Set Cache</h3>
-<p>On startup, when the adapter reads the Server URI array, it will store the results in a file on disk in the following locations:</p>
+<p>On startup, when the adapter connects to the initial primary server and reads the Server URI array, it will store the results in a json file at:</p>
 <ul>
-<li>Windows: <code>%ProgramData%\OSIsoft\Adapters\OpcUa\&lt;ComponentId&gt;\RedundantServerSet.txt</code></li>
-<li>Linux: <code>/usr/share/OSIsoft/Adapters/OpcUa/&lt;ComponentId&gt;/RedundantServerSet.txt</code></li>
+<li>Windows: <code>%ProgramData%\OSIsoft\Adapters\OpcUa\Configuration\&lt;ComponentId&gt;_RedundantServerSet.json</code></li>
+<li>Linux: <code>/usr/share/OSIsoft/Adapters/OpcUa/Configuration/&lt;ComponentId&gt;_RedundantServerSet.json</code></li>
 </ul>
-<p>On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will use the servers in this cache as the server redundancy set.</p>
+<p>On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will attempt to connect to each server in the cached server redundancy set. If the adapter is able to connect to one of the cached servers, it will then read and use the redundancy set configured on that server. The current redundancy set configuration can be found by following the steps in the <a class="xref" href="../main/shared-content/administration/server-redundancy-set.html">Retrieve Redundant Server Set</a> section.</p>
 </article>
           </div>
           

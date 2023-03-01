@@ -133,6 +133,9 @@ references:
 - uid: RetrieveProductVersionInformation
   name: Retrieve product version information
   href: content/main/shared-content/administration/retrieve-product-version-information.html
+- uid: RetrieveRedundancySet
+  name: Retrieve Redundant Server Set
+  href: content/main/shared-content/administration/server-redundancy-set.html
 - uid: SchedulesConfiguration
   name: Schedules
   href: content/main/shared-content/configuration/schedules.html

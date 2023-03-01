@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Automatic history recovery </title>
+    <title>Retrieve Redundant Server Set </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Automatic history recovery ">
+    <meta name="title" content="Retrieve Redundant Server Set ">
     <meta name="generator" content="docfx 2.59.1.0">
     
-    <link rel="shortcut icon" href="../../../../../favicon.ico">
-    <link rel="stylesheet" href="../../../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../../../toc.html">
-    <meta property="docfx:tocrel" content="../../../../toc.html">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../../../toc.html">
     
-    <meta property="docfx:rel" content="../../../../../">
+    <meta property="docfx:rel" content="../../../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../../../content/index.html" width="46">
-                <img id="logo" src="../../../../../content/main/shared-content/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
+              <a class="navbar-brand" href="../../../../content/index.html" width="46">
+                <img id="logo" src="../../../../content/main/shared-content/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -75,14 +75,27 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="AutomaticHistoryRecovery">
-<h1 id="automatic-history-recovery">Automatic history recovery</h1>
+            <article class="content wrap" id="_content" data-uid="RetrieveRedundancySet">
+<h1 id="retrieve-redundant-server-set">Retrieve Redundant Server Set</h1>
 
-<p>In addition to on-demand history recovery, the AVEVA Adapter also supports automatic history recovery.</p>
-<p>For automatic history recovery, the adapter tracks changes to the <strong>DeviceStatus</strong> of each component. When the <strong>DeviceStatus</strong> changes to <code>DeviceInError</code>,<code>Shutdown</code>, or <code>Attempting Failover</code>, the adapter starts a new <a href="#history-recovery-intervals">History recovery interval</a>. The <strong>DeviceStatus</strong> changes to <code>Good</code> when the issue resolves or if the adapter restarts and then the adapter closes any current intervals for that component. The adapter tracks these intervals for each component and, when <strong>DeviceStatus</strong> has a value of <code>Good</code>, it performs history recovery for these intervals from oldest entry to newest. For more information, see also <a class="xref" href="../../health/device-status.html">Device status</a>.</p>
-<p><strong>Note:</strong> If the data collection mode is set to <code>CurrentWithBackfill</code>, the adapter clears periods not recovered for the component and stops keeping track of them. Only if the data collection mode is set to <code>HistoryOnly</code>, an automatic history recovery operation in progress will be canceled, otherwise it will be finished.</p>
-<h2 id="history-recovery-intervals">History recovery intervals</h2>
-<p>Automatic history intervals cannot be longer than four days. If an interval is longer than four days, the adapter automatically changes the start time of the interval to be no earlier than four days before the end time prior to starting a recovery. If an outage lasts longer than four days, the adapter recovers up to four days before the current time when the device status finally improves. This avoids introducing additional data gaps.</p>
+<p>The AVEVA OPC UA Adapter provides a rest endpoint for querying the current redundant server set the adapter is using for server failover.</p>
+<p>Complete the following steps to retrieve the redundant server set of an AVEVA OPC UA Adapter:</p>
+<ol>
+<li>Use any of the <a class="xref" href="../configuration/configuration-tools.html">Configuration tools</a> capable of making HTTP requests.</li>
+<li><p>Run a <code>GET</code> command to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/RedundantServerSet</code></p>
+<p><strong>Note:</strong> <code>5590</code> is the default port number. If you selected a different port number, replace it with that value.</p>
+<p>Example using <code>curl</code>:</p>
+<p><strong>Get redundant server set for adapter hosted on port 5590</strong></p>
+<pre><code class="lang-bash">curl -X GET &quot;http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/RedundantServerSet&quot;
+</code></pre><p>Example result:</p>
+<pre><code class="lang-json">{
+    &quot;ServerAddresses&quot;: [
+        &quot;opc.tcp://Server1&quot;
+        &quot;opc.tcp://Server2&quot;
+    ]
+}
+</code></pre></li>
+</ol>
 </article>
           </div>
           
@@ -91,7 +104,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/configuration/history-recovery/automatic-history-recovery.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter-OPC-UA-Docs/blob/main/content/main/shared-content/administration/server-redundancy-set.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -117,8 +130,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
   </body>
 </html>

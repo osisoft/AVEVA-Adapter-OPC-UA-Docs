@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/configuration-examples.html",
-          "hash": "ig1m8HGEEugv4yHwzmULllCswWaga+b58QS81/mpiNY="
+          "hash": "9IJofp5ISDApX/D+Y8hwE4SVvhencPXV35GaH3tYpGQ="
         }
       },
       "is_incremental": false,
@@ -324,6 +324,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "content/main/shared-content/administration/server-redundancy-set.md",
+      "output": {
+        ".html": {
+          "relative_path": "content/main/shared-content/administration/server-redundancy-set.html",
+          "hash": "PHtLsvlNgMhONt4EZKW97OEmmRSmv7eYDDwQF04JmJg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "content/main/shared-content/administration/start-and-stop-an-adapter.md",
       "output": {
         ".html": {
@@ -472,7 +484,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/history-recovery/automatic-history-recovery.html",
-          "hash": "tgwdUD7O3anQ9lul9xBgxZzSuH6AJ4C1QCdci8jA0Lk="
+          "hash": "iZzmrOUNHSZT6409eTtu2A5pCdCP7+UT9D4DTfeZ3HY="
         }
       },
       "is_incremental": false,
@@ -966,7 +978,7 @@
       "output": {
         ".html": {
           "relative_path": "content/overview/principles-of-operation.html",
-          "hash": "q5ZaKlfihNkmHNV4VtWg1MldZyVrE/dYDUHFKOj2BQw="
+          "hash": "bvM5Nrw0iuceRfRO/mosWDiEis2RBnpSdktCJkAyONQ="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1086,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 71,
+          "total_file_count": 72,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
