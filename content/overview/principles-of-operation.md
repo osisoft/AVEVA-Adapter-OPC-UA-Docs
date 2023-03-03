@@ -28,7 +28,7 @@ The OPC UA adapter collects time-series data from selected OPC UA dynamic variab
 
 ### Data types
 
-The following table lists OPC UA variable types that the adapter collects data from and types of streams that will be created.
+The following table lists OPC UA variable types that the adapter collects data from and types of streams that will be created. Types not listed below are currently unsupported. 
 
 | OPC UA data type | Stream data type |
 |------------------|------------------|
