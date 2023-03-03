@@ -52,15 +52,15 @@ Complete the following steps to configure adapter security:
 
 ## Adapter Custom Certificate
 
-If desired, the adapter can be configured to use a custom certificate for security instead of the auto-generated self-signed certificate. A certificate, private key, and configuration file are all needed to configure the adapter. **It is important that the `SubjectName` and `ApplicationUri` parameters in the configuration file match the `Subject` and `SubjectAlternativeName` URL line in the certificate details.** For an example on how to create these files on a Ubuntu machine see [Generate a custom certificate and configuration file example](#generate-a-custom-certificate-and-configuration-file-example).
+If desired, the adapter can be configured to use a custom certificate for security instead of the auto-generated self-signed certificate. A certificate, private key, and configuration file are necessary to configure the adapter. **It is important that the `SubjectName` and `ApplicationUri` parameters in the configuration file match the `Subject` and `SubjectAlternativeName` URL line in the certificate details.** For an example on how to create these files on a Ubuntu machine see [Generate a custom certificate and configuration file example](#generate-a-custom-certificate-and-configuration-file-example).
 
 ### Configure OPC UA adapter security using a custom certificate
 
-Follow the following steps to configure the adapter using a custom certificate:
+Follow the steps below to configure the adapter using a custom certificate:
 
 1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
 
-2. If the adapter has not connected to a data source previously using a secure connection then the certificate folder locations will not have been generated. To do this, set the `endpointURL` data source parameter to **"opc.tcp://dummyserver"** as shown below. This step can be skipped if the certificate folder locations have been generated previously.
+2. If the adapter has not connected to a data source previously using a secure connection, then the certificate folder locations will not have been generated. To do this, set the `endpointURL` data source parameter to **"opc.tcp://dummyserver"** as shown below. This step can be skipped if the certificate folder locations have been generated previously.
    ```json
    {
       "endpointURL": "opc.tcp://dummyserver",
