@@ -102,6 +102,12 @@ NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeI
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
 
+## ServiceLevel and the maintenance sub-range
+
+The OPC UA adapter will use the ServiceLevel ranges defined in the OPC UA specification in order to facilitate failover and to reduce load on a server that is in maintenance. For more information about how ServiceLevel is used to faciliate failover, see [Server Failover](#server-failover). 
+
+When an OPC UA server's ServiceLevel indicates maintenance, the adapter will disconnect and will wait until the server's EstimatedReturnTime before trying to reconnect. If the server does not provide the adapter with an EstimatedReturnTime, then the adapter will increase the ReconnectDelay by doubling the value configured in the client settings configuration. 
+
 ## Server Failover
 
 The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
