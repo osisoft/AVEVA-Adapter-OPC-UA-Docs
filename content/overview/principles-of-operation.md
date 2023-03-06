@@ -28,7 +28,7 @@ The OPC UA adapter collects time-series data from selected OPC UA dynamic variab
 
 ### Data types
 
-The following table lists OPC UA variable types that the adapter collects data from and types of streams that will be created.
+The following table lists OPC UA variable types that the adapter collects data from and types of streams that will be created. Types not listed below are currently unsupported. 
 
 | OPC UA data type | Stream data type |
 |------------------|------------------|
@@ -101,6 +101,12 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [AVEVAAdapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
+
+## ServiceLevel and the maintenance sub-range
+
+The OPC UA adapter will use the ServiceLevel ranges defined in the OPC UA specification in order to facilitate failover and to reduce load on a server that is in maintenance. For more information about how ServiceLevel is used to faciliate failover, see [Server Failover](#server-failover). 
+
+When an OPC UA server's ServiceLevel indicates maintenance, the adapter will disconnect and will wait until the server's EstimatedReturnTime before trying to reconnect. If the server does not provide the adapter with an EstimatedReturnTime, then the adapter will increase the ReconnectDelay by doubling the value configured in the client settings configuration. 
 
 ## Server Failover
 

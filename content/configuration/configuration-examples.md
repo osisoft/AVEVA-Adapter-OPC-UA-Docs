@@ -103,13 +103,12 @@ The following tables provide examples for all configurations available for AVEVA
                 "endpoint": "https://AVEVA Data HubEndpoint/omf",
                 "clientId": "CLIENTID",
                 "clientSecret": "CLIENTSECRET"
-            }
+            },
             {
                 "id": "EDS",
-                "endpoint": "http://localhost:/api/v1/tenants/default/namespaces/default/omf",
-                "clientId": "eds",
-                "clientSecret": "eds"
-            }        ]
+                "endpoint": "http://localhost:<EDSPORT>/api/v1/tenants/default/namespaces/default/omf"
+            }
+        ]
     }
 }
 ```

@@ -16,9 +16,9 @@ To troubleshoot issues with AVEVA Adapter for OPC UA, you should check the adapt
 
 3. In the [egress endpoints configuration](xref:EgressEndpointsConfiguration), verify that each configured endpoint's **Endpoint** property and credentials are correct. 
 
-  *  For a AVEVA Server or EDS endpoint, verify **UserName** and **Password**.
-  *  For a AVEVA Server endpoint, verify **UserName** and **Password**. 
+  *  For a AVEVA Server endpoint, verify **UserName** and **Password**.
   *  For an AVEVA Data Hub endpoint, verify **ClientId** and **ClientSecret**.
+  *  EDS does not currently require credentials for OMF connections.
 
 ## Check connectivity
 
