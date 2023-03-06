@@ -2,7 +2,7 @@
 uid: ReleaseNotesOPCUAModule
 ---
 
-# Release notes
+# Release notes (Module)
 
 [!include[product-name](../main/shared-content/_includes/inline/product-name.md)] [!include[product-version](../main/shared-content/_includes/inline/product-version.md)]<br/>
 Adapter Framework [!include[framework-version](../main/shared-content/_includes/inline/framework-version.md)]
