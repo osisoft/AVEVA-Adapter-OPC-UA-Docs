@@ -61,6 +61,5 @@ OSIsoft also provides the EdgeCmd utility, a proprietary command line tool to co
     - [Error rate](xref:ErrorRate)
   - [Egress diagnostics](xref:EgressDiagnostics)
   - [Release notes](xref:ReleaseNotes)
-  - [Technical support and feedback](xref:Feedback)
 -->
   
