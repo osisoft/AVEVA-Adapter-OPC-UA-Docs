@@ -26,7 +26,7 @@ Complete the following steps to retrieve the redundant server set of an AVEVA OP
     ```json
     {
         "ServerAddresses": [
-            "opc.tcp://Server1"
+            "opc.tcp://Server1",
             "opc.tcp://Server2"
         ]
     }

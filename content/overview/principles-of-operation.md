@@ -117,7 +117,7 @@ Upon successful connection to the primary OPC UA Server that is defined in the D
 | Node ID | How it's used |
 |---------|---------------|
 | `i=3709`: Server redundancy mode support | This value will be used to determine the redundancy mode the adapter will follow. Currently, the supported modes are `None`, `Cold`, `Warm`, and `Hot`. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
-| `i=11314`: Server URI array | This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
+| `i=11314`: Server URI array | This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. **For failover to work successfully, the Server URI array must only be populated with the URL of the servers in the redundancy set.** Some OPC UA servers use URNs instead of URLs, which is not currently supported by this adapter. |
 | `i=2267`: Service level | This value will be used to track each server's health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set. |
 
 **Note:** The adapter does not currently support a runtime change to the server redundancy mode or server URI array. A user must restart the adapter if they wish to change either the server redundancy mode or the server URI array.
@@ -164,15 +164,27 @@ If the servers in the redundancy set are operating in Hot mode, the adapter will
 * Activate publishing and reporting for the data subscription on the healthiest server.
 * Disable publishing and activate sampling for the data subscription on the rest of the servers.
 
-The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be buffered until it becomes the primary. The size of this buffer can be configured with the `MonitoredItemQueueSize` property in the [Client Settings](xref:PIAdapterForOPCUAClientSettingsConfiguration) configuration. Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode.
+The adapter will maintain a connection to every OPC UA server in the redundancy set. However, the secondary servers will have their data subscriptions set to Sampling only. This means the data from these servers will not be sent to the adapter. Instead, it will be held in the buffers that the server maintains for each monitored item until it becomes the primary server. The size of this buffer can be configured with the `MonitoredItemQueueSize` property in the [Client Settings](xref:PIAdapterForOPCUAClientSettingsConfiguration) configuration. Ensure that the buffer size is set to an appropriate amount so that data will not be lost during a server failover in Hot mode. This means that the buffer has to be large enough to hold all of the samples of data during a publishing interval, and that it is configured to have extra space to hold additional samples in the case of a failover event.
 
 In Hot server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and activate sampling on the current primary server. It will then enable publishing and reporting on whichever secondary server has the highest service level. This healthy server becomes the new primary. If the `MonitoredItemQueueSize` property in the Client Settings configuration is large enough to hold all of the data that occurred during the failover period, there will be no data loss.
 
 ### Redundancy Server Set Cache
 
-On startup, when the adapter connects to the initial primary server and reads the Server URI array, it will store the results in a json file at:
+On startup, when the adapter connects to the initial primary server and reads the Server URI array, it will store the results in a json file in the following directories:
 
 * Windows: `%ProgramData%\OSIsoft\Adapters\OpcUa\Configuration\<ComponentId>_RedundantServerSet.json`
 * Linux: `/usr/share/OSIsoft/Adapters/OpcUa/Configuration/<ComponentId>_RedundantServerSet.json`
 
 On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will attempt to connect to each server in the cached server redundancy set. If the adapter is able to connect to one of the cached servers, it will then read and use the redundancy set configured on that server. The current redundancy set configuration can be found by following the steps in the [Retrieve Redundant Server Set](xref:RetrieveRedundancySet) section.
+
+## Client Failover
+The OPC UA adapter also supports client failover. Two adapters can be configured as part of a redundant group, so that, in the event of a connection loss to the failover endpoint or data source, the secondary adapter may take the place of the primary. There are three client failover modes that the adapters can be configured to use: cold, warm and hot. These modes are detailed below. For more information about configuring client failover see [Client failover configuration](xref:ClientFailoverConfiguration). 
+
+### Cold
+If the adapters are operating in cold mode, the secondary adapter is configured but not started. Once a failover event occurs, the secondary will become primary and will then begin to collect and egress data.
+
+### Warm 
+When the adapters are configured in warm mode, the component is started and connected to the data source, but it is not collecting or egressing any data. Once a failover event occurs, the secondary will become primary and begin to collect and egress data.
+
+### Hot
+In hot mode, both adapters are configured and started. They both collect and buffer data, but only the primary egresses data to the endpoint. When the secondary adapter becomes primary, it will send its buffered data to the endpoint.
