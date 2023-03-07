@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUADataSourceConfiguration
+uid: AVEVAAdapterForOPCUADataSourceConfiguration
 ---
 
 # Data source
@@ -40,7 +40,7 @@ Complete the following steps to configure an OPC UA data source. Use the `PUT` m
 
 7. Configure data selection.
 
-    For more information, see [AVEVA Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration).
+    For more information, see [AVEVA Adapter for OPC UA data selection configuration](xref:AVEVAAdapterForOPCUADataSelectionConfiguration).
 
 ## OPC UA data source schema
 

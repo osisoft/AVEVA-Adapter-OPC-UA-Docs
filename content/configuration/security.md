@@ -24,7 +24,7 @@ To generate a new self-signed certificate, move or delete the OpcUa\Certificates
 
 Complete the following steps to configure adapter security:
 
-1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
+1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration).
 
    The adapter verifies whether the server certificate is present in the [adapter trusted certificates](#adapter-trusted-certificates) and hence trusts it. In case the certificates were not exchanged before the first attempted connection, the adapter persists the server certificate within the [adapter rejected certificates](#adapter-rejected-certificates) folder. The following warning message about the rejected server certificate will be printed:
 
@@ -58,7 +58,7 @@ If desired, the adapter can be configured to use a custom certificate for securi
 
 Follow the steps below to configure the adapter using a custom certificate:
 
-1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
+1. In your data source configuration, set `UseSecureConnection` to **true**. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration).
 
 2. If the adapter has not connected to a data source previously using a secure connection, then the certificate folder locations will not have been generated. To do this, set the `endpointURL` data source parameter to **"opc.tcp://dummyserver"** as shown below. This step can be skipped if the certificate folder locations have been generated previously.
    ```json
