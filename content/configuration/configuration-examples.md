@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAConfigurationExamples
+uid: AVEVAAdapterForOPCUAConfigurationExamples
 ---
 
 # Configuration examples

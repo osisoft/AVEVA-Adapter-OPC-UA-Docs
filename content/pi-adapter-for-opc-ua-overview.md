@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAOverview
+uid: AVEVAAdapterForOPCUAOverview
 ---
 
 # AVEVA Adapter for OPC UA overview

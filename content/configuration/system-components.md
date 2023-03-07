@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUASystemComponentsConfiguration
+uid: AVEVAAdapterForOPCUASystemComponentsConfiguration
 ---
 
 # System components

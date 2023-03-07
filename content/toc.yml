@@ -1,6 +1,6 @@
 - topicUid: index
   items: 
-  - topicUid: PIAdapterForOPCUAPrinciplesOfOperation
+  - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
@@ -10,26 +10,26 @@
   - topicUid: UninstallTheAdapter
 - topicUid: OPCUAConfiguration
   items:
-  - topicUid: PIAdapterForOPCUASecurity
+  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
     items:
     - topicUid: Secrets
     - topicUid: ReferenceSecrets
   - topicUid: ConfigurationTools
-  - topicUid: PIAdapterForOPCUASystemComponentsConfiguration
+  - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
-  - topicUid: PIAdapterForOPCUADataSourceConfiguration
+  - topicUid: AVEVAAdapterForOPCUADataSourceConfiguration
   - topicUid: DiscoveryConfiguration
     items:
     - topicUid: DataSourceDiscovery
-  - topicUid: PIAdapterForOPCUAClientSettingsConfiguration
+  - topicUid: AVEVAAdapterForOPCUAClientSettingsConfiguration
   - topicUid: HistoryRecovery
     items:
     - topicUid: OnDemandHistoryRecoveryConfiguration
     - topicUid: AutomaticHistoryRecovery
-  - topicUid: PIAdapterForOPCUADataSelectionConfiguration
+  - topicUid: AVEVAAdapterForOPCUADataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
-  - topicUid: PIAdapterForOPCUASecurityConfiguration
+  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
   - topicUid: GeneralConfiguration
     items:
     - topicUid: AdapterMetadata
@@ -40,13 +40,14 @@
     - topicUid: PrepareEgressDestinations
     - topicUid: ConfigureANetworkProxy
   - topicUid: HealthEndpointConfiguration 
-  - topicUid: PIAdapterForOPCUAConfigurationExamples
+  - topicUid: AVEVAAdapterForOPCUAConfigurationExamples
 - topicUid: Administration
   items:
   - topicUid: StartAndStopAnAdapter
   - topicUid: StartAndStopIngressComponent
   - topicUid: DeleteAnAdapterComponent
   - topicUid: RetrieveProductVersionInformation
+  - topicUid: RetrieveRedundancySet
 - topicUid: HealthAndDiagnostics
   items:
   - topicUid: AdapterHealth
@@ -62,7 +63,7 @@
     - topicUid: EgressDiagnostics
 - topicUid: TroubleshootTheAdapter
   items:
-  - topicUid: TroubleshootPIAdapterForOPCUA
+  - topicUid: TroubleshootAVEVAAdapterForOPCUA
 - topicUid: ReleaseNotes
   items:
   - topicUid: ReleaseNotesOPCUA

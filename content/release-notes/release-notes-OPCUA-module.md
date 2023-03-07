@@ -11,7 +11,7 @@ Adapter Framework [!include[framework-version](../main/shared-content/_includes/
 
 AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open MessageFormat (OMF) endpoints such as PI Web API and AVEVA Data Hub. AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
-For more information see [AVEVA Adapter for OPC UA overview](xref:PIAdapterForOPCUAOverview).
+For more information see [AVEVA Adapter for OPC UA overview](xref:AVEVAAdapterForOPCUAOverview).
 
 ## Fixes and enhancements
 
