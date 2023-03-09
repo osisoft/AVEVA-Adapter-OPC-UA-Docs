@@ -24,7 +24,7 @@ For more information on secure connections, see [AVEVA Adapter for OPC UA securi
 
 ## Data collection
 
-The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-8-data-access) and [Historical Data Access](https://opcfoundation.org/developer-tools/specifications-unified-architecture/part-11-historical-access).
+The OPC UA adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) and Historical Data Access (HDA) parts of OPC UA specification. For more information, see [Data Access](https://opcfoundation.org/developer-tools/documents/view/165) and [Historical Data Access](https://opcfoundation.org/developer-tools/documents/view/168).
 
 ### Data types
 
@@ -98,7 +98,7 @@ Each stream created by  the adapter for a given OPC UA item has a unique identif
 ```code
 <AdapterComponentID>.<NamespaceIndex>.<Identifier>
 ```
-NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [AVEVAAdapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeId** parameter of the data selection configuration item. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
 
