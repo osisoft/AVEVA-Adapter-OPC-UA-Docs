@@ -29,7 +29,6 @@
     - topicUid: AutomaticHistoryRecovery
   - topicUid: AVEVAAdapterForOPCUADataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
-  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
   - topicUid: GeneralConfiguration
     items:
     - topicUid: AdapterMetadata
