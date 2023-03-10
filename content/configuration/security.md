@@ -18,7 +18,7 @@ OPC UA connections may use certificates for identification and encryption. If ne
 
 When the adapter certificate approaches expiration, warnings will be logged daily starting 30 days prior to expiration. After the certificate is expired, errors will be logged daily.
 
-To generate a new self-signed certificate, move or delete the OpcUa\Certificates\own directory and restart the adapter.
+To generate a new self-signed certificate, move or delete the `OpcUa\Certificates\own` directory and restart the adapter.
 
 ### Configure OPC UA adapter security using the generated self-signed certificate
 
@@ -70,7 +70,7 @@ Follow the steps below to configure the adapter using a custom certificate:
 
 3. Delete the existing auto-generated public and private certificates in [certificate of the adapter location](#certificate-of-the-adapter).
 
-4. Add the custom .der file and the .pfx certificate files to the [certificate of the adapter location](#certificate-of-the-adapter) public and private locations, respectively.
+4. Add the custom **.der** file and the **.pfx** certificate files to the [certificate of the adapter location](#certificate-of-the-adapter) public and private locations, respectively.
 
 5. Add the **Application_Certificate.json** configuration file to the component configuration directory.
 
