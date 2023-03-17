@@ -2,7 +2,7 @@
 uid: ReleaseNotesOPCUAModule
 ---
 
-# Release notes (Module)
+# AVEVA Adapter for OPC UA Module
 
 AVEVA Adapter for OPC UA Module: 1.4.0.169<br>
 
