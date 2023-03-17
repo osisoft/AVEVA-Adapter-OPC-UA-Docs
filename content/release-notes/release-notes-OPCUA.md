@@ -4,9 +4,14 @@ uid: ReleaseNotesOPCUA
 
 # Release notes
 
+AVEVA Adapter for OPC UA: 1.4.0.169<br>
+
 [!include[product-name](../main/shared-content/_includes/inline/product-name.md)] [!include[product-version](../main/shared-content/_includes/inline/product-version.md)]<br/>
 Adapter Framework [!include[framework-version](../main/shared-content/_includes/inline/framework-version.md)]
 
+Edge Module Manager: 1.0.0.694 <br>
+
+Alpine Linux: 3.16.2 <br>
 ## Overview
 
 AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open MessageFormat (OMF) endpoints such as PI Web API and AVEVA Data Hub. AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
