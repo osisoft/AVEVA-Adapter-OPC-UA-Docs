@@ -4,8 +4,14 @@ uid: ReleaseNotesOPCUAModule
 
 # Release notes (Module)
 
+AVEVA Adapter for OPC UA Module: 1.4.0.169<br>
+
 [!include[product-name](../main/shared-content/_includes/inline/product-name.md)] [!include[product-version](../main/shared-content/_includes/inline/product-version.md)]<br/>
 Adapter Framework [!include[framework-version](../main/shared-content/_includes/inline/framework-version.md)]
+
+Edge Module Manager: 1.0.0.694 <br>
+
+Alpine Linux: 3.16.2 <br>
 
 ## Overview
 
