@@ -81,8 +81,8 @@ The following tables provide examples for all configurations available for AVEVA
         ],
     "Buffering": {
             "bufferLocation": "C:/ProgramData/OSIsoft/Adapters/OpcUa/Buffers",
-            "maxBufferSizeMB": -1,
-            "enableBuffering": true
+            "maxBufferSizeMB": 1024,
+            "enablePersistentBuffering": true
         }
      },
     "OmfEgress": {
