@@ -6,7 +6,9 @@ uid: ReleaseNotesOPCUAModule
 
 AVEVA Adapter for OPC UA Module: 1.4.0.169<br>
 
-Adapter Framework: 1.7
+AVEVA Adapter for OPC UA: 1.4.0.169<br>
+
+Adapter Framework: 1.7<br>
 
 Edge Module Manager: 1.0.0.694 <br>
 
