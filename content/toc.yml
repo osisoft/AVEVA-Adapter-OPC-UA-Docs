@@ -15,6 +15,7 @@
     - topicUid: Secrets
     - topicUid: ReferenceSecrets
   - topicUid: ConfigurationTools
+  - topicUid: ClientFailoverConfiguration
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
