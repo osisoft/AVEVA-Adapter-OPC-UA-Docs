@@ -61,6 +61,7 @@
     - topicUid: IORate
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
+    - topicUid: FailoverStatus
 - topicUid: TroubleshootTheAdapter
   items:
   - topicUid: TroubleshootAVEVAAdapterForOPCUA
