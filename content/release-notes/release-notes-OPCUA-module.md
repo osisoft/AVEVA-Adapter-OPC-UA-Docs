@@ -41,8 +41,8 @@ The following enhancements are added in this release.
 - Increase the payload size to 64MB.
 - No longer log and throw System.InvalidOperationException when the same component is added multiple times.
 - The DeviceStatus value "NotConfigured" has been changed to "Not Configured."
-- Server failover support for AVEVA Adapter for OPC US.
-- Client failover support for AVEVA Adapter for OPC US.
+- Server failover support for AVEVA Adapter for OPC UA.
+- Client failover support for AVEVA Adapter for OPC UA.
 
 ## Known issues
 
