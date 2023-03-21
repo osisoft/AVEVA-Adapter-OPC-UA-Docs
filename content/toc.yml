@@ -1,6 +1,7 @@
 - topicUid: index
   items: 
   - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+  - topicUid: TextParser
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
