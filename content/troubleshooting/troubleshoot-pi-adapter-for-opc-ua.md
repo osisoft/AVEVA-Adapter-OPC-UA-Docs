@@ -1,5 +1,5 @@
 ---
-uid: TroubleshootPIAdapterForOPCUA
+uid: TroubleshootAVEVAAdapterForOPCUA
 ---
 
 # Troubleshoot AVEVA Adapter for OPC UA
@@ -8,17 +8,17 @@ To troubleshoot issues with AVEVA Adapter for OPC UA, you should check the adapt
 
 ## Check configurations
 
-1. In the [data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration), verify that the configured **EndpointURL** and, if specified, the **UserName** and **Password** are correct. Verify that OPC UA server trusts AVEVA Adapter's certificate and vice versa.
-2. In the [data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration), verify that each configured data selection item below is correct.
+1. In the [data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration), verify that the configured **EndpointURL** and, if specified, the **UserName** and **Password** are correct. Verify that OPC UA server trusts AVEVA Adapter's certificate and vice versa.
+2. In the [data selection configuration](xref:AVEVAAdapterForOPCUADataSelectionConfiguration), verify that each configured data selection item below is correct.
 
     1. `NodeId` - Verify that the referenced nodeId exists on the server.
     2. `DataFilterId` - If configured, verify that the referenced data filter exists.
 
 3. In the [egress endpoints configuration](xref:EgressEndpointsConfiguration), verify that each configured endpoint's **Endpoint** property and credentials are correct. 
 
-  *  For a AVEVA Server or EDS endpoint, verify **UserName** and **Password**.
-  *  For a AVEVA Server endpoint, verify **UserName** and **Password**. 
+  *  For a AVEVA Server endpoint, verify **UserName** and **Password**.
   *  For an AVEVA Data Hub endpoint, verify **ClientId** and **ClientSecret**.
+  *  EDS does not currently require credentials for OMF connections.
 
 ## Check connectivity
 

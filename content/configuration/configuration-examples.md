@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAConfigurationExamples
+uid: AVEVAAdapterForOPCUAConfigurationExamples
 ---
 
 # Configuration examples
@@ -45,7 +45,8 @@ The following tables provide examples for all configurations available for AVEVA
             "incomingTimestamp": "Source",
             "streamIdPrefix": "OPC_Prefix_",
             "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
-            "dataCollectionMode": "CurrentWithBackfill"
+            "dataCollectionMode": "CurrentWithBackfill",
+            "serverFailoverEnabled": false
         },
         "DataSelection": [
             {
@@ -80,8 +81,8 @@ The following tables provide examples for all configurations available for AVEVA
         ],
     "Buffering": {
             "bufferLocation": "C:/ProgramData/OSIsoft/Adapters/OpcUa/Buffers",
-            "maxBufferSizeMB": -1,
-            "enableBuffering": true
+            "maxBufferSizeMB": 1024,
+            "enablePersistentBuffering": true
         }
      },
     "OmfEgress": {
@@ -102,13 +103,12 @@ The following tables provide examples for all configurations available for AVEVA
                 "endpoint": "https://AVEVA Data HubEndpoint/omf",
                 "clientId": "CLIENTID",
                 "clientSecret": "CLIENTSECRET"
-            }
+            },
             {
                 "id": "EDS",
-                "endpoint": "http://localhost:/api/v1/tenants/default/namespaces/default/omf",
-                "clientId": "eds",
-                "clientSecret": "eds"
-            }        ]
+                "endpoint": "http://localhost:<EDSPORT>/api/v1/tenants/default/namespaces/default/omf"
+            }
+        ]
     }
 }
 ```

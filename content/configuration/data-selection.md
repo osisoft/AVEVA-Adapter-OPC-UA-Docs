@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUADataSelectionConfiguration
+uid: AVEVAAdapterForOPCUADataSelectionConfiguration
 ---
 
 # Data selection

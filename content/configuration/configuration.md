@@ -18,18 +18,18 @@ These steps guide you through setup of each configuration file available for AVE
 
 1. Configure one or several OPC UA system components.See [System components](xref:SystemComponentsConfiguration#configure-system-components).
 
-1. Configure an OPC UA data source for each OPC UA device.See [Data source](xref:PIAdapterForOPCUADataSourceConfiguration#configure-opc-ua-data-source).
+1. Configure an OPC UA data source for each OPC UA device.See [Data source](xref:AVEVAAdapterForOPCUADataSourceConfiguration#configure-opc-ua-data-source).
 
-1. **Optional**: Configure client settings. See [Client settings](xref:PIAdapterForOPCUAClientSettingsConfiguration#configure-opc-ua-client-settings).
+1. **Optional**: Configure client settings. See [Client settings](xref:AVEVAAdapterForOPCUAClientSettingsConfiguration#configure-opc-ua-client-settings).
 
 1. **Optional**: Perform data source discovery. See [Discovery](xref:DataSourceDiscovery).
 
-1. Configure an OPC UA data selection for each OPC UA data source.See [Data selection](xref:PIAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).
+1. Configure an OPC UA data selection for each OPC UA data source.See [Data selection](xref:AVEVAAdapterForOPCUADataSelectionConfiguration#configure-opc-ua-data-selection).
 
 1. **Optional**: Configure data filters, security, diagnostics and metadata, buffering, and logging.See the following topics:
 
     - [Data filters](xref:DataFiltersConfiguration#configure-data-filters)
-    - [Security](xref:PIAdapterForOPCUASecurityConfiguration#configure-opc-ua-adapter-security)
+    - [Security](xref:AVEVAAdapterForOPCUASecurityConfiguration#configure-opc-ua-adapter-security)
     - [Diagnostics and metadata](xref:GeneralConfiguration#configure-general)
     - [Buffering](xref:BufferingConfiguration#configure-buffering)
     - [Logging](xref:LoggingConfiguration#configure-logging)

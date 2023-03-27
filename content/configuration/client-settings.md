@@ -1,5 +1,5 @@
 ---
-uid: PIAdapterForOPCUAClientSettingsConfiguration
+uid: AVEVAAdapterForOPCUAClientSettingsConfiguration
 ---
 
 # Client settings
@@ -14,7 +14,7 @@ Complete the following steps to generate the default client settings file:
 
 1. Add an OPC UA adapter with a unique `ComponentId`. For more information, see [System components configuration](xref:SystemComponentsConfiguration).
   
-2. Configure a valid OPC UA data source. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
+2. Configure a valid OPC UA data source. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration).
 
    Once you complete these steps, a default OPC UA client settings configuration file generates in the configuration directory for the corresponding platform.
   
@@ -89,7 +89,7 @@ The following parameters are available for configuring OPC UA client settings:
 | **createMonitoredItemsTimeout**      | Optional | `TimeSpan` | Create monitored items timeout. * Allowed value: greater than `00:00:05`Default value: `0:00:30`|
 | **samplingInterval**      | Optional | `TimeSpan` | Monitored item sampling interval. * Allowed value: cannot be negative Default value: `0:00:00:5` |
 | **monitoredItemDataChangeTrigger** | Optional | `string` | Determines on what conditions a subscription sends new values to the adapter. Allowed values: `Status`, `StatusValue`, `StatusValueTimestamp` Default value: `StatusValue`
-| **monitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. Minimum value: `1` Maximum value: `4294967295` Default value: `2`|
+| **monitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. This parameter controls the size of the per-item publishing queue on the OPC UA server. This value must be set large enough to hold the amount of samples expected within a publishing interval. For Hot server failover, set this large enough to buffer enough samples during a failover event so that data will not be lost. Minimum value: `1` Maximum value: `4294967295` Default value: `2`|
 | **maxInternalQueueSize**      | Optional | `integer` | Maximum number of items that can be in the adapter internal queue. Minimum value: `1000`Maximum value: `2147483647`Default value: `500000` |
 | **HistoryReadBlockSize**      | Optional | `integer` | Maximum number of nodes for history to read in one call. Minimum value: `1`Maximum value: `4294967295`Default value: `10` |
 | **HistoryReadTimeout**      | Optional | `TimeSpan` | History read operation timeout. * Allowed value: greater than `00:00:05`Default value: `0:01:00` |
