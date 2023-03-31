@@ -27,7 +27,7 @@ The AVEVA adapter supports performing history recovery on-demand by specifying s
 Parameter | Type| Description
 ---------|----------|---------
  **Id** | `string` | The Id of the history recovery   **Note:** You cannot run multiple history recoveries with the same Id.
- **StartTime** | `datetime` | Time when the the first data items are collected.
+ **StartTime** | `datetime` | Time when the first data items are collected.
  **EndTime** | `datetime`| Time when the last data items are collected.
 | **Checkpoint** | `datetime` | The latest timestamp that the history recovery has completed with the range being between **startTime** and **endTime**.
 | **Items** | `double` | The amount of data selection items in the history recovery operation.
