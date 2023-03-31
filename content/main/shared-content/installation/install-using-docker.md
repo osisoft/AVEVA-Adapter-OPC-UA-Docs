@@ -15,15 +15,15 @@ To create a startup script for the adapter, follow the instructions below.
 1. Use a text editor to create a script similar to one of the following examples:
 
     **Note:** The script varies slightly by processor.
-    
+
     **ARM32**
 
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-        exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host
     else
-        exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host --port:$portnum
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
 
@@ -32,9 +32,9 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-        exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host
     else
-        exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host --port:$portnum
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
 
@@ -43,9 +43,9 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-        exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host
     else
-        exec /AVEVA-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host --port:$portnum
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
 
@@ -67,7 +67,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
-    ADD ./AVEVA-Adapter-for-OpcUa_1.3.0.169-arm_.tar.gz .
+    ADD ./AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_.tar.gz .
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
 
@@ -79,7 +79,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
-    ADD ./AVEVA-Adapter-for-OpcUa_1.3.0.169-arm64_.tar.gz .
+    ADD ./AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_.tar.gz .
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
     
@@ -91,7 +91,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
-    ADD ./AVEVA-Adapter-for-OpcUa_1.3.0.169-x64_.tar.gz .
+    ADD ./AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_.tar.gz .
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
 
@@ -117,7 +117,6 @@ To run the adapter inside a Docker container with access to its REST API from th
 
 2. Type the following in the command line (`sudo` may be necessary):
 
-	<!-- PRERELEASE REMINDER: Customize for opcuaadapter. Example:bacnetadapter -->
 
     ```bash
     docker run -d --network host opcuaadapter
@@ -137,7 +136,7 @@ To run the adapter inside a Docker container while using the host for persistent
     docker run -d --network host -v /opcua:/usr/share/OSIsoft/ opcuaadapter
     ```
 
-Port `5590` is accessible from the host and you can make REST calls to the adapter from applications on the local host computer. In this example, all data that is typically written to the container is instead written to the host directory on the local machine. For example, `/opcua`. You can specify any directory.
+Port `5590` is accessible from the host and you can make REST calls to the adapter from applications on the local host computer. In this example, all data that is written to the container is instead written to the host directory and the host directory is a directory on the local machine, `/opcua`. You can specify any directory.
 
 ### Change port number
 
@@ -155,10 +154,4 @@ curl http://localhost:6000/api/v1/configuration
 
 ### Remove REST access
 
-To disable REST access from outside the container, remove the `--network host` option from the docker run command:
-
-```bash
-    docker run -d opcuaadapter
-    ```
-
-This may be of value where you want to host an application in the same container as the adapter but do not want to have external REST access enabled.
+If you remove the `--network host` option from the docker run command, REST access is not possible from outside the container. This may be of value where you want to host an application in the same container as the adapter but do not want to have external REST access enabled.

@@ -7,11 +7,11 @@ uid: EgressEndpointsConfiguration
 AVEVA Adapters collect time series data, which  they can send to a permanent data store (endpoint). This operation is called data egress. The following endpoints are available for data egress:
 
 - AVEVA Data Hub (ADH)
-- AVEVA Servers through PI Web API
+- PI servers through PI Web API
 
 For long term storage and analysis, you can configure any adapter to send time series data to one or several of these endpoints in any combination. An egress endpoint is comprised of the properties specified under [Egress endpoint parameters](#egress-endpoint-parameters).
 
-Data egress to a AVEVA Server creates a PI point in the AVEVA Adapter configuration. Data egress to AVEVA Data Hub creates a stream in the AVEVA Adapter configuration.
+Data egress to a PI server creates a PI point in the AVEVA Adapter configuration. Data egress to AVEVA Data Hub creates a stream in the AVEVA Adapter configuration.
 
 The name of the PI point or AVEVA Data Hub stream is a combination of the StreamIdPrefix specified in the adapter data source configuration and the StreamId specified in the adapter data selection configuration.
 
@@ -19,7 +19,7 @@ The name of the PI point or AVEVA Data Hub stream is a combination of the Stream
 
 Complete the following steps to configure egress endpoints. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/OmfEgress/dataendpoints` REST endpoint to initialize the configuration.
 
-1. Use a text editor to create an empty text file.
+1. Using a text editor, create an empty text file.
 
 2. Copy and paste an example configuration for egress endpoints into the file.
 
@@ -58,16 +58,15 @@ Linux: `/opt/OSIsoft/Adapters/<AdapterName>/Schemas`
 
 The following parameters are available for configuring egress endpoints:
 
-| Parameter                       | Required                  | Type      | Description                                        |
-|---------------------------------|---------------------------|-----------|-------------|
-| **Id**                          | Optional                  | `string`    | Unique identifierAllowed value: any string identifier Default value: new GUID |
-| **Endpoint**                    | Required                  | `string`    | Destination that accepts OMF v1.2 messages. Supported destinations include AVEVA Data Hub and AVEVA Server.Allowed value: well-formed http or https endpoint string Default: `null` |
-| **Username**                    | Required for AVEVA Server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: `null`**Note:** If your username contains a backslash, you must add an escape character, for example, type `OilCompany\TestUser` as `OilCompany\\TestUser`.|
-| **Password**                    | Required for AVEVA Server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint _AVEVA Server:_Allowed value: any string Default: `null`  |
-| **ClientId**                    | Required for AVEVA Data Hub endpoint | `string`    | Authentication with the AVEVA Data Hub OMF endpoint Allowed value: any string, can be null if the endpoint URL schema is `HTTP`Default: `null`|
-| **ClientSecret**                | Required for AVEVA Data Hub endpoint | `string`    | Authentication with the AVEVA Data Hub OMF endpoint Allowed value: any string, can be null if the endpoint URL schema is `HTTP`Default: `null`|
-| **TokenEndpoint**               | Optional for AVEVA Data Hub endpoint | `string`    | Retrieves an AVEVA Data Hub token from an alternative endpoint Allowed value: well-formed http or https endpoint string Default value: `null` |
-| **ValidateEndpointCertificate** | Optional                  | `boolean`   | Disables verification of destination certificate. **Note:** Only use for testing with self-signed certificates. Allowed value: `true` or `false`Default value: `true` |
+| **Id**                          | Optional                  | `string`    | Unique identifier  Allowed value: any string identifier Default value: new GUID |
+| **Endpoint**                    | Required                  | `string`    | Destination that accepts OMF v1.2 messages. Supported destinations include AVEVA Data Hub and AVEVA Server.  Allowed value: well-formed http or https endpoint string Default: `null` |
+| **Username**                    | Optional for PI server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint   _PI server:_ Allowed value: any string Default: `null` **Note:** If your username contains a backslash, you must add an escape character, for example, type `OilCompany\TestUser` as `OilCompany\\TestUser`.  **Note:** If neither Username nor ClientID is supplied, it will use Negotiation instead (i.e. Kerberos, NTLM)|
+| **Password**                    | Optional for PI server endpoint  | `string`    | Basic authentication to the PI Web API OMF endpoint   _PI server:_ Allowed value: any string or `{{<secretId>}}` (see [Reference Secrets](xref:ReferenceSecrets)) Default: `null`  |
+| **ClientId**                    | Required for AVEVA Data Hub endpoint | `string`    | Authentication with the AVEVA Data Hub OMF endpoint   Allowed value: any string, can be null if the endpoint URL schema is `HTTP` Default: `null`|
+| **ClientSecret**                | Required for AVEVA Data Hub endpoint | `string`    | Authentication with the AVEVA Data Hub OMF endpoint   Allowed value: any string or `{{<secretId>}}` (see [Reference Secrets](xref:ReferenceSecrets)); can be null if the endpoint URL schema is `HTTP` Default: `null`|
+| **DebugExpiration**             | Optional                  | string    | Enables logging of detailed information to disk for each outbound HTTP request pertaining to the egress endpoint. The value represents the date and time this detailed information should stop being saved. Examples of valid strings representing date and time:  UTC: `yyyy-mm-ddThh:mm:ssZ`, Local: `yyyy-mm-ddThh:mm:ss`. For more information, see [Egress debug logging](xref:TroubleshootTheAdapter#egress-debug-logging).  Default: `null`|
+| **TokenEndpoint**               | Optional for AVEVA Data Hub endpoint | `string`    | Retrieves an AVEVA Data Hub token from an alternative endpoint   Allowed value: well-formed http or https endpoint string  Default value: `null` |
+| **ValidateEndpointCertificate** | Optional                  | `boolean`   | Disables verification of destination certificate. **Note:** Only use for testing with self-signed certificates.   Allowed value: `true` or `false` Default value: `true` |
 
 ### Special characters encoding
 
@@ -108,9 +107,33 @@ The following examples are valid egress configurations:
 ```json
 [{
      "Id": "PI Web API",
-     "Endpoint": "https://<pi web AVEVA Server>:<port>/piwebapi/omf/",
+     "Endpoint": "https://<pi web api server>:<port>/piwebapi/omf/",
      "UserName": "<username>",
      "Password": "<password>"
+}]
+```
+
+### Egress data to PI Web API using a valid secret Id
+
+See [Reference Secrets](xref:ReferenceSecrets) for more information on how to use a secret Id.
+
+```json
+[{
+     "Id": "PI Web API",
+     "Endpoint": "https://<pi web api server>:<port>/piwebapi/omf/",
+     "UserName": "<username>",
+     "Password": "{{<secretId>}}"
+}]
+```
+
+### Egress data to PI Web API using negotiate
+
+See [Reference Secrets](xref:ReferenceSecrets) for more information on how to use a secret Id.
+
+```json
+[{
+     "Id": "PI Web API",
+     "Endpoint": "https://<pi web api server>:<port>/piwebapi/omf/"
 }]
 ```
 
@@ -122,11 +145,11 @@ The following examples are valid egress configurations:
 | api/v1/configuration/omfegress/DataEndpoints      | DELETE    | Deletes all configured egress endpoints |
 | api/v1/configuration/omfegress/DataEndpoints      | POST      | Adds an array of egress endpoints or a single endpoint. Fails if any endpoint already exists |
 | api/v1/configuration/omfegress/DataEndpoints      | PUT       | Replaces all egress endpoints |
-| api/v1/configuration/omfegress/DataEndpoints      | PATCH     | Allows partial updating of configured endpoints.**Note:** The request must be an array containing one or more endpoints. Each endpoint in the array must include its *Id*. |
-| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | GET       | Gets configured endpoint by *Id* |
-| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | DELETE    | Deletes configured endpoint by *Id* |
-| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | PUT       | Updates or creates a new endpoint with the specified *Id* |
-| api/v1/configuration/omfegress/DataEndpoints/\<Id\> | PATCH     | Allows partial updating of configured endpoint by *Id* |
+| api/v1/configuration/omfegress/DataEndpoints      | PATCH     | Allows partial updating of configured endpoints. **Note:** The request must be an array containing one or more endpoints. Each endpoint in the array must include its *Id*. |
+| api/v1/configuration/omfegress/DataEndpoints/{Id} | GET       | Gets configured endpoint by *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/{Id} | DELETE    | Deletes configured endpoint by *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/{Id} | PUT       | Updates or creates a new endpoint with the specified *Id* |
+| api/v1/configuration/omfegress/DataEndpoints/{Id} | PATCH     | Allows partial updating of configured endpoint by *Id* |
 
 ## Egress execution details
 

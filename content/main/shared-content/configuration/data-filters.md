@@ -4,7 +4,7 @@ uid: DataFiltersConfiguration
 
 # Data filters
 
-AVEVA Adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.
+AVEVA adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.
 
 **Note:** If data filters are enabled and data quality changes, both the old and current data quality values are passed on.
 
@@ -12,7 +12,7 @@ AVEVA Adapters can be configured to perform data filtering to save network bandw
 
 Complete the following steps to configure data filters. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/<ComponentId>/DataFilters` REST endpoint to initialize the configuration.
 
-1. Use a text editor to create an empty text file.
+1. Using a text editor, create an empty text file.
 
 2. Copy and paste an example configuration for data filters into the file.
 
@@ -55,10 +55,10 @@ The following parameters are available for configuring data filters:
 
 | Parameter                | Required | Type      | Description |
 | ------------------------ | -------- | --------- | ----------- |
-|**Id**              | Required | `string` | Unique identifier for the data filter. Allowed value: any string identifier |
-|**AbsoluteDeadband** | Optional | `double` | Specifies the absolute change in data value that should cause the current value to pass the filter test.  **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.Allowed value: double value representing absolute deadband numberDefault value: `null` |
-|**PercentChange**     | Optional | `double` | Specifies the percent change from previous value that should cause the current value to pass the filter test.  **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.Allowed value: double value representing percent change Default value: `null` |
-|**ExpirationPeriod**     | Optional | `timespan` | The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.* Allowed value: any timespan Default value: `null`|
+|**Id**              | Required | `string` | Unique identifier for the data filter.   Allowed value: any string identifier  |
+|**AbsoluteDeadband** | Optional | `double` | Specifies the absolute change in data value that should cause the current value to pass the filter test.   **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.  Allowed value: double value representing absolute deadband number Default value: `null` |
+|**PercentChange**     | Optional | `double` | Specifies the percent change from previous value that should cause the current value to pass the filter test.   **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.  Allowed value: double value representing percent change Default value: `null` |
+|**ExpirationPeriod**     | Optional | `timespan` | The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.*   Allowed value: any timespan  Default value: `null`|
 
 **\* Note:** For example, `"ExpirationPeriod": 5:00` and `"ExpirationPeriod": 300` both specify an expiration period of 5 minutes and 0 seconds.
 
@@ -79,13 +79,13 @@ The following parameters are available for configuring data filters:
 
 | Relative URL | HTTP verb | Action |
 | ------------ | --------- | ------ |
-| api/v1/configuration/\<ComponentId\>/DataFilters      | GET       | Gets all configured data filters. |
-| api/v1/configuration/\<ComponentId\>/DataFilters      | DELETE    | Deletes all configured data filters. |
-| api/v1/configuration/\<ComponentId\>/DataFilters      | POST      | Adds an array of data filters or a single data filter. Fails if any data filter already exists. |
-| api/v1/configuration/\<ComponentId\>/DataFilters      | PUT       | Replaces all data. |
-| api/v1/configuration/\<ComponentId\>/DataFilters      | PATCH     | Allows partial updating of configured data filter. |
-| api/v1/configuration/\<ComponentId\>/DataFilters/\<Id\> | GET       | Gets configured data filter by \<Id\>. |
-| api/v1/configuration/\<ComponentId\>/DataFilters/\<Id\>| DELETE     | Deletes configured data filter by \<Id\>. |
-| api/v1/configuration/\<ComponentId\>/DataFilters/\<Id\> | PUT       | Replaces data filter by \<Id\>. Fails if data filter does not exist. |
+| api/v1/configuration/_ComponentId_/DataFilters      | GET       | Gets all configured data filters. |
+| api/v1/configuration/_ComponentId_/DataFilters      | DELETE    | Deletes all configured data filters. |
+| api/v1/configuration/_ComponentId_/DataFilters      | POST      | Adds an array of data filters or a single data filter. Fails if any data filter already exists. |
+| api/v1/configuration/_ComponentId_/DataFilters      | PUT       | Replaces all data. |
+| api/v1/configuration/_ComponentId_/DataFilters      | PATCH     | Allows partial updating of configured data filter. |
+| api/v1/configuration/_ComponentId_/DataFilters/*id* | GET       | Gets configured data filter by *id*. |
+| api/v1/configuration/_ComponentId_/DataFilters/*id*| DELETE     | Deletes configured data filter by *id*. |
+| api/v1/configuration/_ComponentId_/DataFilters/*id* | PUT       | Replaces data filter by *id*. Fails if data filter does not exist. |
 
-**Note:** Replace \<ComponentId\> with the Id of your adapter component.
+**Note:** Replace *ComponentId* with the Id of your adapter component.
