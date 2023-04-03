@@ -1,7 +1,6 @@
 - topicUid: index
   items: 
   - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
-  - topicUid: TextParser
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
@@ -17,6 +16,8 @@
     - topicUid: ReferenceSecrets
   - topicUid: ConfigurationTools
   - topicUid: ClientFailoverConfiguration
+    items:
+    - topicUid: FailoverHealth
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
