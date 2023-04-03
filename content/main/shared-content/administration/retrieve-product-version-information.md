@@ -25,10 +25,10 @@ Complete the following steps to retrieve the product version information of an A
 
     ```code
     {
-    "Application Name": "AVEVA Adapter for <AdapterName>",
-    "Adapter Framework Version": "1.3.0.351",
-    "Application Version":"1.2.0.37",
-    ".Net Core Version":".NET Core 3.1.5",
-    "Operating System":"Linux 4.15.0-106-generic #107-Ubuntu SMP Thu Jun 4 11:27:52 UTC 2020"
+      "Product Name": "AVEVA Adapter for OpcUa",
+      "Product Version": "1.4.0.196",
+      "Adapter Framework Version": "1.7.0.109",
+      "Runtime Version": ".NET 6.0.14",
+      "Operating System": "Microsoft Windows 10.0.19045"
     }
     ```
