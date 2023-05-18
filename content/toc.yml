@@ -55,12 +55,14 @@
   - topicUid: AdapterHealth
     items:
     - topicUid: DeviceStatus
+    - topicUid: FailoverHealth
     - topicUid: NextHealthMessageExpected
   - topicUid: AdapterDiagnostics
     items:
     - topicUid: System
     - topicUid: StreamCount
     - topicUid: IORate
+    - topicUid: FailoverStatus
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
     - topicUid: FailoverStatus
