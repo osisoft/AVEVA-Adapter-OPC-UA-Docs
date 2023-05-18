@@ -16,8 +16,6 @@
     - topicUid: ReferenceSecrets
   - topicUid: ConfigurationTools
   - topicUid: ClientFailoverConfiguration
-    items:
-    - topicUid: FailoverHealth
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
@@ -65,7 +63,6 @@
     - topicUid: FailoverStatus
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
-    - topicUid: FailoverStatus
 - topicUid: TroubleshootTheAdapter
   items:
   - topicUid: TroubleshootAVEVAAdapterForOPCUA
