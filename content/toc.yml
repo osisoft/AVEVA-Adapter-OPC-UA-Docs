@@ -1,6 +1,7 @@
 - topicUid: index
   items: 
   - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+  - topicUid: FailoverCapabilities
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements

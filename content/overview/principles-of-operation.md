@@ -102,6 +102,7 @@ NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeI
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
 
+<!---
 ## ServiceLevel and the maintenance sub-range
 
 The OPC UA adapter will use the ServiceLevel ranges defined in the OPC UA specification in order to facilitate failover and to reduce load on a server that is in maintenance. For more information about how ServiceLevel is used to faciliate failover, see [Server Failover](#server-failover). 
@@ -188,3 +189,4 @@ When the adapters are configured in warm mode, the component is started and conn
 
 ### Hot
 In hot mode, both adapters are configured and started. They both collect and buffer data, but only the primary egresses data to the endpoint. When the secondary adapter becomes primary, it will send its buffered data to the endpoint.
+--->
