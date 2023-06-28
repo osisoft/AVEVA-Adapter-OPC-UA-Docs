@@ -71,7 +71,7 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
 | Timestamp     | DateTime  | Timestamp of the given OPC UA item value update. |
-| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value. **Note:** For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in OCS and the **Zero**/**Span** properties in AVEVA Web API are populated. For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in OCS and the **Eng Units** property in AVEVA Web API are populated. 1  |
+| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value. **Note:** For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in ADH and the **Zero**/**Span** properties in AVEVA Web API are populated. For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in ADH and the **Eng Units** property in AVEVA Web API are populated. 1  |
 | Quality | Unsigned integer | Data quality of the given OPC UA item update.  |
 
 1  **Note:** `Null` values with `Good` quality are discarded. `Null` values with `Bad` or `Questionable` quality send the default value `0` or `null` to the destination.
@@ -110,7 +110,7 @@ When an OPC UA server's ServiceLevel indicates maintenance, the adapter will dis
 
 ## Server Failover
 
-The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [PI Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
 Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read 3 node ID's that hold server redundancy related information:
 
