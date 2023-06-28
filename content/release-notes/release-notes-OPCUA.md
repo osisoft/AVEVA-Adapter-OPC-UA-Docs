@@ -27,7 +27,7 @@ The following issues reported from earlier versions are fixed in this release.
 The following enhancements are added in this release.
 
 - Enhanced error handling while attempting to read server redundancy related nodes from the server
-- Adapter no longer requires ServiceLevel node when not configured for server failover.
+- The Adapter no longer reads the ServiceLevel node when not configured for server failover.
 - Added support for manually configuring the redundancy set used during server failover
 
 ## Known issues
