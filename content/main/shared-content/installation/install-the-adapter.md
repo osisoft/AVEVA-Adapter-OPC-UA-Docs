@@ -8,13 +8,13 @@ You can install adapters on either a Windows or Linux operating system. Before i
 
 ## Windows
 
-Complete the following steps to install a AVEVA Adapter on a Windows computer:
+Complete the following steps to install an AVEVA adapter on a Windows computer:
 
 1. Download <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> from the [OSIsoft Customer portal](https://customers.osisoft.com/s/products).
 
     **Note:** Customer login credentials are required to access the portal.
 
-2. Run the <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> file.
+2. Run <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> file.
 
 3. Follow the setup wizard.
 

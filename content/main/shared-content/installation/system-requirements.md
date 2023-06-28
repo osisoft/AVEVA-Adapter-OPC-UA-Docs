@@ -17,8 +17,8 @@ Alternatively, you can use tar.gz files with binaries to build your own custom i
 
 ## PI Web API compatibility
 
-This version of [!include[product](../_includes/inline/product-name.md)] is compatible with PI Web API 2021 and later.
+This version of [!include[product](../_includes/inline/product-name.md)] is compatible with PI Web API 2021 and later. 
 
 ## AVEVA Adapter for OPC UA upgrade
 
-If you are upgrading AVEVA Adapter for OPC UA from version 1.1 to 1.3 and are sending data to PI Web API 2019, AVEVA Data Hub, or both, read [OPC UA Adapter - Upgrade from v1.1 to v1.3](https://osisoft.lightning.force.com/lightning/r/Knowledge__kav/ka08W000000frOFQAY/view). This knowledge article contains important information about upgrade scenarios.
+If you are upgrading AVEVA Adapter for OPC UA from version 1.1 to 1.3 or newer and are sending data to PI Web API 2019, AVEVA Data Hub, or both, read [OPC UA Adapter - Upgrade from v1.1 to v1.2](https://osisoft.lightning.force.com/lightning/r/Knowledge__kav/ka08W000000frOFQAY/view). This knowledge article contains important information about upgrade scenarios.

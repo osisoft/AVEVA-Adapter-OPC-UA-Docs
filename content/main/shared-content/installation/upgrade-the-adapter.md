@@ -8,7 +8,7 @@ When a new version of the adapter is released, you can upgrade to the latest ver
 
 ## Windows upgrade
 
-Complete the following steps to upgrade a AVEVA Adapter on a Windows computer:
+Complete the following steps to upgrade an AVEVA adapter on a Windows computer:
 
 1. Download <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> from the [AVEVA Customer Portal](https://customers.osisoft.com/s/products).
 
@@ -28,7 +28,7 @@ Complete the following steps to upgrade a AVEVA Adapter on a Windows computer:
 
    ```json
    {
-    "Application Version": "1.3.0.169",                 // upgraded version
+    "Application Version": "1.4.0.196",                 // upgraded version
     ".Net Core Version": ".NET Core 3.1.15",
     "Operating System": "Microsoft Windows 10.0.19041"
    }
@@ -36,7 +36,7 @@ Complete the following steps to upgrade a AVEVA Adapter on a Windows computer:
 
 ## Linux upgrade
 
-Complete the following steps to upgrade a AVEVA Adapter on a Linux computer:
+Complete the following steps to upgrade an AVEVA adapter on a Linux computer:
 
 1. Download the appropriate Linux distribution file from the [AVEVA Customer Portal](https://customers.osisoft.com/s/products).
 
@@ -62,8 +62,8 @@ Complete the following steps to upgrade a AVEVA Adapter on a Linux computer:
 
    ```json
    {
-    "Application Version": "1.3.0.169",                 // upgraded version
+    "Application Version": "1.4.0.196",                 // upgraded version
     ".Net Core Version": ".NET Core 3.1.15",
-    "Operating System": "Microsoft Windows 10.0.19041"
+    "Operating System": "Linux 4.15.0-106-generic #107-Ubuntu SMP Thu Jun 4 11:27:52 UTC 2020"
    }
    ```

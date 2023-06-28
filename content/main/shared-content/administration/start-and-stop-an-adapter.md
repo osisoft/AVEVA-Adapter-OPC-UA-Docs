@@ -10,26 +10,30 @@ Complete the procedure appropriate for your operating system to start or stop an
 
 1. Open Windows services.
 
-1. Select **AVEVA Adapter for \<AdapterName\>**.
+2. Select **[!include[product-name](../_includes/inline/product-name.md)]**.
 
-1. Select **Stop** to stop your adapter or select **Start** to start your adapter.
+3. Depending on whether your adapter is running or not, click either **Start** or **Stop**.
 
 ## Linux
 
 1. Open command line.
 
-1. Confirm the status of your adapter, then run one of the following:
+2. Depending on whether your adapter is running or not, type one of the following commands:
 
- To **Start** AVEVA Adapter for \<AdapterName\>:
+    Example:
+
+    _Start_ [!include[product-name](../_includes/inline/product-name.md)]
 
     ```cmdline
-    sudo systemctl start pi.adapter.<adapterName>
+    sudo systemctl start aveva.adapter.opcua
     ```
 
- To **Stop** AVEVA Adapter for \<AdapterName\>:
+    Example:
+
+    _Stop_ [!include[product-name](../_includes/inline/product-name.md)]
   
       ```cmdline
-      sudo systemctl stop pi.adapter.<adapterName>
+      sudo systemctl stop aveva.adapter.opcua
       ```
   
-1. Press Enter.
+3. Press Enter.

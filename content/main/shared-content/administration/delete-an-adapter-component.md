@@ -24,7 +24,7 @@ Complete the following steps to delete an adapter component:
 
 ## File relocation
 
-All configuration and log files are renamed and moved when you remove an adapter component. The files are renamed according to the timestamp of removal. For example, `FileName.json_removed_yyyy-MM-dd--hh-mm-ss`.
+All configuration and log files are renamed and moved. The files are renamed according to the timestamp of removal, for example, `FileName.json_removed_yyyy-MM-dd--hh-mm-ss`.
 
 Configuration files are moved to the following location:
 
@@ -52,6 +52,6 @@ In the following example, one adapter service is installed on a particular Windo
 
 | Relative URL                                              | HTTP verb | Action               |
 |-----------------------------------------------------------|-----------|----------------------|
-| api/v1/configuration/system/components/\<ComponentId\>      | DELETE       | Deletes specified component |
+| api/v1/configuration/system/components/*ComponentId*      | DELETE       | Deletes specified component |
 
-**Note:** Replace \<ComponentId\> with the `Id` of the component that you want to delete.
+**Note:** Replace `ComponentId` with the `Id` of the component that you want to delete.
