@@ -2,7 +2,7 @@
 
 AVEVA Adapter for OPC UA is a data-collection component that transfers time-series data from source devices to Open Message Format (OMF) endpoints in AVEVA Data Hub (ADH) or AVEVA PI Servers.
 
-This repository contains the documentation for AVEVA Adapter for OPC UA. You can access a readable version of this documentation [here.](https://aveva-dev.zoominsoftware.io/bundle/aveva-adapter-modbus-tcp/page/index.html)
+This repository contains the documentation for AVEVA Adapter for OPC UA. You can access a readable version of this documentation [here.](https://aveva-dev.zoominsoftware.io/bundle/aveva-adapter-opc-ua/page/index.html)
 
 ## Subtree
 
