@@ -4,7 +4,7 @@ uid: ReleaseNotesOPCUA
 
 # AVEVA Adapter for OPC UA
 
-AVEVA Adapter for OPC UA: 1.4.0.196<br>
+AVEVA Adapter for OPC UA: 1.4.1.32<br>
 
 Adapter Framework: 1.7
 
