@@ -96,7 +96,7 @@ The following are examples of valid OPC UA data source configurations:
     "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
     "dataCollectionMode": "CurrentWithBackfill",
     "serverFailoverEnabled": false,
-    "BackupEndpointUrls": []
+    "backupEndpointUrls": []
 }
 ```
 
