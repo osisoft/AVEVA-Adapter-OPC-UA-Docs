@@ -26,9 +26,7 @@ For more information see [AVEVA Adapter for OPC UA overview](xref:AVEVAAdapterFo
 
 The following issues reported from earlier versions are fixed in this release.
 
-- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server has invalid data item attributes like: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
-- History recovery starttime and endtime supplied in local time format will be treated as a local time by the adapter node instead of the UTC time.
-- The OpcUa Data Type 'UtcTime' is now supported as a DateTime type.
+- The adapter no longer creates duplicate subscriptions for data selection items on startup in some scenarios
 
 ### Enhancements
 
