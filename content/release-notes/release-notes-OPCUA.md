@@ -30,15 +30,10 @@ The following issues reported from earlier versions are fixed in this release.
 
 The following enhancements are added in this release.
 
-- Reduce load on OPC UA server during history recovery by caching user access level.
-- Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
-- Manage edge system configuration secrets in a centralized location while keeping backward compatibility.
-- Exclude read-only facets from top level configuration in Get request.
-- Increase the payload size to 64MB.
-- No longer log and throw System.InvalidOperationException when the same component is added multiple times.
-- The DeviceStatus value "NotConfigured" has been changed to "Not Configured."
-- Server failover support for AVEVA Adapter for OPC UA.
-- Client failover support for AVEVA Adapter for OPC UA.
+- Enhanced error handling while attempting to read server redundancy related nodes from the server
+- Adapter no longer requires ServiceLevel node when not configured for server failover.
+- The Adapter no longer reads the ServiceLevel node when not configured for server failover.
+- Added support for manually configuring the redundancy set used during server failover
 
 ## Known issues
 
