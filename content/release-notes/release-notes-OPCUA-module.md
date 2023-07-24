@@ -4,11 +4,11 @@ uid: ReleaseNotesOPCUAModule
 
 # AVEVA Adapter for OPC UA Module
 
-AVEVA Adapter for OPC UA Module: 1.4.1.32<br>
+AVEVA Adapter for OPC UA Module: 1.3<br>
 
-AVEVA Adapter for OPC UA: 1.4.1.32<br>
+AVEVA Adapter for OPC UA: 1.4.0.196<br>
 
-Adapter Framework: 1.8<br>
+Adapter Framework: 1.7<br>
 
 Edge Module Manager: 1.0.0.694 <br>
 
@@ -16,7 +16,7 @@ Alpine Linux: 3.16.2 <br>
 
 ## Overview
 
-AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open MessageFormat (OMF) endpoints such as PI Web API and AVEVA Data Hub. AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
+AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open Message Format (OMF) endpoints such as PI Web API and AVEVA Data Hub (ADH). AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
 For more information see [AVEVA Adapter for OPC UA overview](xref:AVEVAAdapterForOPCUAOverview).
 
@@ -26,15 +26,23 @@ For more information see [AVEVA Adapter for OPC UA overview](xref:AVEVAAdapterFo
 
 The following issues reported from earlier versions are fixed in this release.
 
-- The adapter no longer creates duplicate subscriptions for data selection items on startup in some scenarios.
+- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server has invalid data item attributes like: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
+- History recovery starttime and endtime supplied in local time format will be treated as a local time by the adapter node instead of the UTC time.
+- The OpcUa Data Type 'UtcTime' is now supported as a DateTime type.
 
 ### Enhancements
 
 The following enhancements are added in this release.
 
-- Enhanced error handling while attempting to read server redundancy related nodes from the server
-- Adapter no longer requires ServiceLevel node when not configured for server failover.
-- Added support for manually configuring the redundancy set used during server failover.
+- Reduce load on OPC UA server during history recovery by caching user access level.
+- Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
+- Manage edge system configuration secrets in a centralized location while keeping backward compatibility.
+- Exclude read-only facets from top level configuration in Get request.
+- Increase the payload size to 64MB.
+- No longer log and throw System.InvalidOperationException when the same component is added multiple times.
+- The DeviceStatus value "NotConfigured" has been changed to "Not Configured."
+- Server failover support for AVEVA Adapter for OPC UA.
+- Client failover support for AVEVA Adapter for OPC UA.
 
 ## Known issues
 
@@ -66,7 +74,8 @@ This section is intended to provide relevant security-related information to gui
 
 | Component | Version | CVE or Reference | CVSS | Mitigation                                                                                                 |
 | ----------| ------- | --------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------- |
-| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032) | 7.5  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities |
+| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032) | 7.5  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
+| zlib      | 1.2.11  | [BSDA-2018-5271](https://nvd.nist.gov/vuln/detail/BSDA-2018-5271) | 7.1  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
 | zlib      | 1.2.11  | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434) | 9.3  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
 
 ## Documentation overview
