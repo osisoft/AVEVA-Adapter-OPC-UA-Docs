@@ -16,7 +16,7 @@ Alpine Linux: 3.16.2 <br>
 
 ## Overview
 
-AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open Message Format (OMF) endpoints such as PI Web API and AVEVA Data Hub (ADH). AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
+AVEVA Adapter for OPC UA collects time series data and relevant metadata from an OPC UA (OPC Unified Architecture) server and sends it to configured "Open MessageFormat (OMF) endpoints such as PI Web API and AVEVA Data Hub. AVEVA Adapter for OPC UA can also collect health and diagnostics information. It supports buffering, unsolicited data collection, on-demand discovery of available data items on a data source, on-demand or automatic history recovery of data items, and various Windows and Linux-based operating systems as well as containerization.
 
 For more information see [AVEVA Adapter for OPC UA overview](xref:AVEVAAdapterForOPCUAOverview).
 
@@ -64,19 +64,19 @@ Refer to [Uninstall the adapter](xref:UninstallTheAdapter).
 
 ## Security information and guidance
 
-AVEVA is [committed to releasing secure products](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html). This section is intended to provide relevant security-related information to guide your installation or upgrade decision.  
+OSIsoft is [committed to releasing secure products](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html). This section is intended to provide relevant security-related information to guide your installation or upgrade decision.  
 
-AVEVA [proactively discloses](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-communication) aggregate information about the number and severity of security vulnerabilities addressed in each release. The tables below provide an overview of security issues addressed and their relative severity based on [standard scoring](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-scoring). 
+OSIsoft [proactively discloses](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-communication) aggregate information about the number and severity of security vulnerabilities addressed in each release. The tables below provide an overview of security issues addressed and their relative severity based on [standard scoring](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-scoring). 
 
 ### Overview of new vulnerabilities found or fixed
 
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. AVEVA is proactively disclosing aggregate information about the number and severity of AVEVA Adapter for OPC UA security vulnerabilities that are fixed in this release.
+This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of AVEVA Adapter for OPC UA security vulnerabilities that are fixed in this release.
 
 | Component | Version | CVE or Reference | CVSS | Mitigation                                                                                                 |
 | ----------| ------- | --------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------- |
-| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032) | 7.5  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
-| zlib      | 1.2.11  | [BSDA-2018-5271](https://nvd.nist.gov/vuln/detail/BSDA-2018-5271) | 7.1  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
-| zlib      | 1.2.11  | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434) | 9.3  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
+| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032)                                   | 7.5  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities  |                                                      |
+| zlib      | 1.2.11  | [BSDA-2018-5271](https://osisoft.blackducksoftware.com/api/vulnerabilities/BDSA-2018-5271/overview) | 7.1  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
+| zlib      | 1.2.11  | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434)                                   | 9.3  | The AVEVA Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
 
 ## Documentation overview
 
