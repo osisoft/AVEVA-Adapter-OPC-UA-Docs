@@ -1,1 +1,1 @@
-AVEVA-Adapter-for-OpcUa-1.4.0.96
+AVEVA-Adapter-for-OpcUa-1.4.0.196
