@@ -100,6 +100,16 @@ The following are examples of valid OPC UA data source configurations:
 }
 ```
 
+### Minimal configuration using BackupEndpointUrls to specify a redundant server set
+
+```json
+{
+    "endpointUrl": "opc.tcp://<IP-Address>:<Port>/<RedundantServer1>",
+    "serverFailoverEnabled": true,
+    "backupEndpointUrls": ["opc.tcp://<IP-Address>:<Port>/<RedundantServer2>"]
+}
+```
+
 ## REST URLs
 
 | Relative URL | HTTP verb | Action |
