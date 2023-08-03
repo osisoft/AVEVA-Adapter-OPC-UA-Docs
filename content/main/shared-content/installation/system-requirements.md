@@ -32,4 +32,4 @@ Actual performance of AVEVA Adapters vary depending on different factors, such a
 
 ## AVEVA Adapter for OPC UA upgrade
 
-If you are upgrading AVEVA Adapter for OPC UA from version 1.1 to 1.3 or newer and are sending data to PI Web API 2019, AVEVA Data Hub, or both, read [OPC UA Adapter - Upgrade from v1.1 to v1.2](https://osisoft.lightning.force.com/lightning/r/Knowledge__kav/ka08W000000frOFQAY/view). This knowledge article contains important information about upgrade scenarios.
+If you are upgrading AVEVA Adapter for OPC UA from version 1.1 to 1.2 or newer and are sending data to PI Web API 2019, AVEVA Data Hub, or both, read [OPC UA Adapter - Upgrade from v1.1 to v1.2](https://osisoft.lightning.force.com/lightning/r/Knowledge__kav/ka08W000000frOFQAY/view). This knowledge article contains important information about upgrade scenarios.
