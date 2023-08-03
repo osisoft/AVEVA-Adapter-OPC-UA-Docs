@@ -34,7 +34,7 @@ The following enhancements are added in this release.
 
 ## Known issues
 
-There are no known issues at this time.
+- The adapter does not properly sanitize OMF Type Ids for OPC UA enumeration types containing invalid characters. For example, if the enumeration contains a `?` character within the identifier, the adapter will be unable to egress data for this item. (Work Item 421479)
 
 ## Setup
 
