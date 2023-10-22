@@ -1,5 +1,5 @@
 ---
-uid: HealthEndpointConfiguration
+uid: ConfigureHealthEndpoint
 ---
 
 # Health endpoints
