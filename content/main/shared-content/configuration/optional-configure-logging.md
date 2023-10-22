@@ -1,5 +1,5 @@
 ---
-uid: LoggingConfiguration
+uid: OptionalConfigureLogging
 ---
 
 # Logging
