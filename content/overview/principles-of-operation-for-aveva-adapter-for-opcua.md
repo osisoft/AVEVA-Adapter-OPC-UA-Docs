@@ -1,5 +1,5 @@
 ---
-uid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+uid: PrinciplesOfOperationForAVEVAAdapterForOPCUA
 ---
 
 # Principles of operation
