@@ -1,5 +1,5 @@
 ---
-uid: AVEVAAdapterForOPCUASystemComponentsConfiguration
+uid: ConfigureSystemComponents
 ---
 
 # System components
