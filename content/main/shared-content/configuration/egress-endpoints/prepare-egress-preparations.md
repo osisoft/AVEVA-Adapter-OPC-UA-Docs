@@ -1,10 +1,10 @@
 ---
-uid: PrepareEgressDestinations
+uid: PrepareEgressPreparations
 ---
 
-# Prepare egress destinations
+# Prepare egress preparations
 
-AVEVA Data Hub and AVEVA Server destinations may require additional configuration to receive OMF messages.
+AVEVA Data Hub and AVEVA Server preparations may require additional configuration to receive OMF messages.
 
 ## AVEVA Data Hub
 
