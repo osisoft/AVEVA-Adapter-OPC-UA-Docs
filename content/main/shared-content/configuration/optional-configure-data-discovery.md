@@ -1,5 +1,5 @@
 ---
-uid: DiscoveryConfiguration
+uid: OptionalConfigureDataDiscovery
 ---
 
 # Discovery
