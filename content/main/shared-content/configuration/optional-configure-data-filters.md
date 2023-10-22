@@ -1,5 +1,5 @@
 ---
-uid: DataFiltersConfiguration
+uid: OptionalConfigureDataFilters
 ---
 
 # Data filters
