@@ -1,5 +1,5 @@
 ---
-uid: ClientFailoverConfiguration
+uid: ClientLevelFailover
 ---
 
 # Client failover configuration
