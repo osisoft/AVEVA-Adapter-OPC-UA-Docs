@@ -1,61 +1,55 @@
-- topicUid: ReleaseNotes
+- topicUid: index
+  items: 
+  - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+- topicUid: Installation
   items:
-  - topicUid: ReleaseNotesOPCUA
-  - topicUid: ReleaseNotesOPCUAModule
-- topicUid: WelcomeToAVEVAAdapterForOPCUA
+  - topicUid: SystemRequirements
+  - topicUid: InstallTheAdapter
+  - topicUid: InstallUsingDocker
+  - topicUid: UpgradeTheAdapter
+  - topicUid: UninstallTheAdapter
+- topicUid: OPCUAConfiguration
   items:
-  - topicUid: LegalInformation
-  - topicUid: ContactInformation
-  - topicUid: WhatsNewInAVEVAAdapterForOPCUA
-- topicUid: BeforeGettingStartedWithAVEVAAdapterForOPCUA
-  items:
-  - topicUid: PrinciplesOfOperationForAVEVAAdapterForOPCUA
-  - topicUid: Metadata
-  - topicUid: SupportedDataFiles
-  - topicUid: FailoverCapabilities
-- topicUid: GetStartedWithAVEVAAdapterForOPCUA
-  items:
-  - topicUid: ConfigurationTools
-  - topicUid: SecurityConfigurationForAVEVAAdapterForOPCUA
+  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
     items:
     - topicUid: Secrets
     - topicUid: ReferenceSecrets
-  - topicUid: EgressEndpointPreparations
+  - topicUid: ConfigurationTools
+  - topicUid: ClientFailoverConfiguration
+  - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
     items:
+    - topicUid: SystemAndAdapterConfiguration
+  - topicUid: AVEVAAdapterForOPCUADataSourceConfiguration
+  - topicUid: DiscoveryConfiguration
+    items:
+    - topicUid: DataSourceDiscovery
+  - topicUid: AVEVAAdapterForOPCUAClientSettingsConfiguration
+  - topicUid: HistoryRecovery
+    items:
+    - topicUid: OnDemandHistoryRecoveryConfiguration
+    - topicUid: AutomaticHistoryRecovery
+  - topicUid: AVEVAAdapterForOPCUADataSelectionConfiguration
+  - topicUid: DataFiltersConfiguration
+  - topicUid: GeneralConfiguration
+    items:
+    - topicUid: AdapterMetadata
+  - topicUid: BufferingConfiguration
+  - topicUid: LoggingConfiguration
+  - topicUid: EgressEndpointsConfiguration
+    items:
+    - topicUid: PrepareEgressDestinations
     - topicUid: ConfigureANetworkProxy
-- topicUid: UseAVEVAAdapterForOPCUA
-  - topicUid: Installation
-    items:
-    - topicUid: SystemRequirements
-    - topicUid: InstallTheAdapter
-    - topicUid: UpgradeTheAdapter
-    - topicUid: UninstallTheAdapter
-    - topicUid: DeployUsingEdgeManagement
-    - topicUid: InstallUsingDocker
-      items:
-      - topicUid: CreateStartupScript
-      - topicUid: CreateADockerContainer
-      - topicUid: DockerContainerStartup
-- topicUid: ConfigureAnAdapterInstance
-    items:
-    - topicUid: ConfigureSystemComponents
-      items:
-      - topicUid: SystemAndAdapterConfiguration
-    - topicUid: ConfigureDataSource
-    - topicUid: ConfigureDataEndpoints	
-    - topicUid: OptionalConfigureClientSettings	
-    - topicUid: OptionalConfigureDataDiscovery
-    - topicUid: ConfigureDataSelection
-    - topicUid: OptionalConfigureDataFilters
-    - topicUid: OptionalConfigureBuffering
-    - topicUid: OptionalConfigureLogging
-- topicUid: ConfigureAdaptersInFailover
-    items:
-    - topicUid: ServerLevelFailover
-    - topicUid: ClientLevelFailover	
+  - topicUid: HealthEndpointConfiguration 
+  - topicUid: AVEVAAdapterForOPCUAConfigurationExamples
+- topicUid: Administration
+  items:
+  - topicUid: StartAndStopAnAdapter
+  - topicUid: StartAndStopIngressComponent
+  - topicUid: DeleteAnAdapterComponent
+  - topicUid: RetrieveProductVersionInformation
+  - topicUid: RetrieveRedundancySet
 - topicUid: HealthAndDiagnostics
-    items:
-    - topicUid: ConfigureHealthEndpoints
+  items:
   - topicUid: AdapterHealth
     items:
     - topicUid: DeviceStatus
@@ -69,23 +63,11 @@
     - topicUid: FailoverStatus
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
-  - topicUid: HistoryRecovery
-    items:
-    - topicUid: OnDemandHistoryRecoveryConfiguration
-    - topicUid: AutomaticHistoryRecovery
-- topicUid: Administration
+- topicUid: TroubleshootTheAdapter
   items:
-  - topicUid: StartAndStopAnAdapter
-  - topicUid: StartAndStopIngressComponent
-  - topicUid: DeleteAnAdapterComponent
-  - topicUid: RetrieveProductVersionInformation
-  - topicUid: RetrieveRedundancySet
-- topicUid: TroubleshootAVEVAAdapterForOPCUA
-    items: 
-    - topicUid: ConnectionIssues
-    - topicUid: DataFlowIssues
-- topicUid: Appendix
-    items:
-    - topicUid: FullAdapterInstanceConfigurationExample
-    items:
+  - topicUid: TroubleshootAVEVAAdapterForOPCUA
+- topicUid: ReleaseNotes
+  items:
+  - topicUid: ReleaseNotesOPCUA
+  - topicUid: ReleaseNotesOPCUAModule
 - topicUid: TechnicalSupportAndFeedback
