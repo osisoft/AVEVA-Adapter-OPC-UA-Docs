@@ -1,7 +1,6 @@
 - topicUid: index
   items: 
-  - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
-  - topicUid: TextParser
+  - topicUid: PIAdapterForOPCUAPrinciplesOfOperation
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
@@ -11,26 +10,22 @@
   - topicUid: UninstallTheAdapter
 - topicUid: OPCUAConfiguration
   items:
-  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
-    items:
-    - topicUid: Secrets
-    - topicUid: ReferenceSecrets
   - topicUid: ConfigurationTools
-  - topicUid: ClientFailoverConfiguration
-  - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
+  - topicUid: PIAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
-  - topicUid: AVEVAAdapterForOPCUADataSourceConfiguration
+  - topicUid: PIAdapterForOPCUADataSourceConfiguration
   - topicUid: DiscoveryConfiguration
     items:
     - topicUid: DataSourceDiscovery
-  - topicUid: AVEVAAdapterForOPCUAClientSettingsConfiguration
+  - topicUid: PIAdapterForOPCUAClientSettingsConfiguration
   - topicUid: HistoryRecovery
     items:
     - topicUid: OnDemandHistoryRecoveryConfiguration
     - topicUid: AutomaticHistoryRecovery
-  - topicUid: AVEVAAdapterForOPCUADataSelectionConfiguration
+  - topicUid: PIAdapterForOPCUADataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
+  - topicUid: PIAdapterForOPCUASecurityConfiguration
   - topicUid: GeneralConfiguration
     items:
     - topicUid: AdapterMetadata
@@ -41,14 +36,13 @@
     - topicUid: PrepareEgressDestinations
     - topicUid: ConfigureANetworkProxy
   - topicUid: HealthEndpointConfiguration 
-  - topicUid: AVEVAAdapterForOPCUAConfigurationExamples
+  - topicUid: PIAdapterForOPCUAConfigurationExamples
 - topicUid: Administration
   items:
   - topicUid: StartAndStopAnAdapter
   - topicUid: StartAndStopIngressComponent
   - topicUid: DeleteAnAdapterComponent
   - topicUid: RetrieveProductVersionInformation
-  - topicUid: RetrieveRedundancySet
 - topicUid: HealthAndDiagnostics
   items:
   - topicUid: AdapterHealth
@@ -62,12 +56,8 @@
     - topicUid: IORate
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
-    - topicUid: FailoverStatus
 - topicUid: TroubleshootTheAdapter
   items:
-  - topicUid: TroubleshootAVEVAAdapterForOPCUA
+  - topicUid: TroubleshootPIAdapterForOPCUA
 - topicUid: ReleaseNotes
-  items:
-  - topicUid: ReleaseNotesOPCUA
-  - topicUid: ReleaseNotesOPCUAModule
 - topicUid: TechnicalSupportAndFeedback
