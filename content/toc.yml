@@ -1,6 +1,9 @@
 - topicUid: index
   items: 
-  - topicUid: AVEVAAdapterForOPCUAOverview
+  - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+  - topicUid: TextParser
+    items:
+    - topicUid: JSONPathSyntaxForValueRetrieval
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
@@ -9,25 +12,29 @@
   - topicUid: UpgradeTheAdapter
   - topicUid: UninstallTheAdapter
 - topicUid: Configuration
-  items:
+  items: 
+  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
+    items:
+    - topicUid: Secrets
+    - topicUid: ReferenceSecrets
+    - topicUid: ClientCertificate
   - topicUid: ConfigurationTools
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
-    items:
+    items: 
     - topicUid: SystemAndAdapterConfiguration
   - topicUid: AVEVAAdapterForOPCUADataSourceConfiguration
-  - topicUid: DiscoveryConfiguration
-    items:
-    - topicUid: DataSourceDiscovery
+  - topicUid: ClientLevelFailover
+  - topicUid: ServerLevelFailover
   - topicUid: AVEVAAdapterForOPCUAClientSettingsConfiguration
   - topicUid: HistoryRecovery
     items:
     - topicUid: OnDemandHistoryRecoveryConfiguration
     - topicUid: AutomaticHistoryRecovery
+  - topicUid: DiscoveryConfiguration
   - topicUid: AVEVAAdapterForOPCUADataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
-  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
   - topicUid: GeneralConfiguration
-    items:
+    items: 
     - topicUid: AdapterMetadata
   - topicUid: BufferingConfiguration
   - topicUid: LoggingConfiguration
@@ -35,7 +42,7 @@
     items:
     - topicUid: PrepareEgressDestinations
     - topicUid: ConfigureANetworkProxy
-  - topicUid: HealthEndpointConfiguration 
+  - topicUid: HealthEndpointConfiguration
   - topicUid: AVEVAAdapterForOPCUAConfigurationExamples
 - topicUid: Administration
   items:
@@ -48,12 +55,14 @@
   - topicUid: AdapterHealth
     items:
     - topicUid: DeviceStatus
+    - topicUid: FailoverHealth
     - topicUid: NextHealthMessageExpected
   - topicUid: AdapterDiagnostics
     items:
     - topicUid: System
     - topicUid: StreamCount
     - topicUid: IORate
+    - topicUid: FailoverStatus
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
 - topicUid: TroubleshootTheAdapter
