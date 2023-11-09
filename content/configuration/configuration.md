@@ -1,5 +1,5 @@
 ---
-uid: OPCUAConfiguration
+uid: AVEVAAdapterForOPCUAConfiguration
 ---
 
 # Configuration
