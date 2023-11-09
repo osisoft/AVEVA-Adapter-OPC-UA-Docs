@@ -1,4 +1,8 @@
-Self-signed certificate (OPC UA)
+---
+uid: ClientCertificate
+---
+
+# Self-signed certificate (OPC UA)
 Last UpdatedOct 29, 2023
 AdaptersAVEVA Adapter for OPC UA 1.4
 Adapter connections may use certificates for identification and encryption. If needed, the OPC UA adapter will generate a self-signed certificate. The generated certificate will expire 10 years from the date of generation.
