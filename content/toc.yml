@@ -8,7 +8,7 @@
   - topicUid: InstallUsingDocker
   - topicUid: UpgradeTheAdapter
   - topicUid: UninstallTheAdapter
-- topicUid: OPCUAConfiguration
+- topicUid: AVEVAAdapterForOPCUAConfiguration
   items:
   - topicUid: ConfigurationTools
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
