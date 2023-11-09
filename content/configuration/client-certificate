@@ -12,7 +12,7 @@ To generate a new self-signed certificate, move or delete the OpcUa Adapter\Cert
 
 **Note:** AVEVA strongly recommends using CA signed certificates for production systems. Self-signed certificates are not safe to use for production systems. If you use a self-signed certificate for the AVEVA Adapter, every computer that uses it will need to manually trust the certificate. This can be a difficult and error prone process that makes the system less secure.
 
-Configure OPC UA adapter security using the generated self-signed certificate
+## Configure OPC UA adapter security using the generated self-signed certificate
 Complete the following steps to configure adapter security:
 
 In your data source configuration, set  UseSecureConnection  to  true. For more information, see AVEVA Adapter for OPC UA data Data source configuration.
@@ -39,10 +39,10 @@ The connection succeeds only when the adapter certificate is trusted on the serv
 
 When certificates are mutually trusted, the connection attempt succeeds and the adapter is connected to the most secure endpoint provided by the server.
 
-Adapter Custom Certificate
+## Adapter Custom Certificate
 If desired, the adapter can be configured to use a custom certificate for security instead of the auto-generated self-signed certificate. A certificate, private key, and configuration file are necessary to configure the adapter.  It is important that the SubjectName and ApplicationUri parameters in the configuration file match the Subject and SubjectAlternativeName URL line in the certificate details.  For an example on how to create these files on a Ubuntu machine see  Generate a custom certificate and configuration file example.
 
-Configure OPC UA adapter security using a custom certificate
+## Configure OPC UA adapter security using a custom certificate
 Follow the steps below to configure the adapter using a custom certificate:
 
 In your data source configuration, set  UseSecureConnection  to  true. For more information, see AVEVA Adapter for OPC UA data Data source configuration.
@@ -77,7 +77,7 @@ Repost the data source using the address for the primary server.
 
 Manually move the server certificate from the Adapter rejected certificates  Security location to the Adapter trusted certificates  Security location using a file explorer or command-line interpreter.
 
-Linux example using command-line:
+## Linux example using command-line:
  sudo mv /usr/share/OSIsoft/Adapters/OpcUa/Certificates/rejected/certs/'Si mulationServer'SimulationServer
       [F9823DCF607063DBCECCF6F8F39FD2584F46AEBB].der' /usr/shar eshare/OSIsoft/Adapters/OpcUa/Certificates/trusted/certs/
    
@@ -88,7 +88,7 @@ Once the certificate is in the adapter trusted certificates folder, the adapter 
 
 Add the certificate of the adapter  Security to the server's trust store.
 
-Generate a custom certificate and configuration file example
+## Generate a custom certificate and configuration file example
 Follow the steps below to create the certificate, private key, and configuration file on a Ubuntu machine:
 
 Install openssl
@@ -172,8 +172,8 @@ Add the  Application_Certificate.json  shown below to  cert. If the values in th
 
  }
 
-Certificate locations
-Adapter rejected certificates
+## Certificate locations
+## Adapter rejected certificates
 Windows:
 
  %programdata%\AVEVA\Adapters\OpcUa\Certificates\rejected\certs
@@ -182,7 +182,7 @@ Linux:
 
  /usr/share/AVEVA/Adapters/OpcUa/Certificates/rejected/certs
 
-Adapter trusted certificates
+## Adapter trusted certificates
 Windows:
 
  %programdata%\AVEVA\Adapters\OpcUa\Certificates\trusted\certs
@@ -191,7 +191,7 @@ Linux:
 
  /usr/share/AVEVA/Adapters/OpcUa/Certificates/trusted/certs
 
-Certificate of the adapter
+## Certificate of the adapter
 Windows:
 
  %programdata%\AVEVA\Adapters\OpcUa\Certificates\own\certs
