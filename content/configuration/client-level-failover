@@ -4,10 +4,6 @@ uid: ClientLevelFailover
 
 # **Client-level failover**
 
-- **Last Updated** Oct 29, 2023
-  - [**Adapters**](https://aveva-dev.zoominsoftware.io/search?labelkey=adapter)
-  - [**AVEVA Adapter for OPC UA 1.4**](https://aveva-dev.zoominsoftware.io/search?labelkey=AVEVA-Adapter-for-OPC-UA_1.4)
-
 You can configure the adapter for failover by using client failover to register the adapter to a failover group managed by a failover endpoint. When you register the adapter to a failover group it allows the adapter to work with other adapter instances in the group as mutual backups. This minimizes the likelihood of data loss if an adapter in the group goes offline due to incidences like scheduled maintenance or an unexpected power outage.
 
 Using client failover, you can do the following:
