@@ -1,4 +1,8 @@
-Server-level failover
+---
+uid: ServerLevelFailover
+---
+
+# Server-level failover
 Last UpdatedOct 28, 2023
 AdaptersAVEVA Adapter for OPC UA 1.4
 To ensure that data continues to flow in the event of a server disconnection or shutdown, you can configure server-level failover for the MQTT Adapter. This ensures a constant connection between the MQTT adapter and at least one MQTT data source at all times.
