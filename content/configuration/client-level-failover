@@ -19,7 +19,7 @@ Using client failover, you can do the following:
 
 **Note:**  Failover group will be created by the adapter if it does not exist on the failover endpoint.
 
-**Configure client failover**
+## **Configure client failover**
 
 Complete the following steps to configure client failover.
 
