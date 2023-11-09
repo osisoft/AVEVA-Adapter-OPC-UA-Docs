@@ -39,7 +39,7 @@ curl -d "@ConfigureClientFailover.json" -H "Content-Type: application/json" -X P
 
 On successful execution, the client failover change takes effect immediately during runtime.
 
-**Client failover parameters**
+## **Client failover parameters**
 
 | **Parameter** | **Required** | **Type** | **Description** |
 | --- | --- | --- | --- |
@@ -103,7 +103,7 @@ On successful execution, the client failover change takes effect immediately dur
 
 **Note:**  Failover group name, description and failover timeout cannot be changed once created. To change it the group must be deleted on the failover service side.
 
-**Failover Modes**
+## **Failover Modes**
 
 The failover behavior outlined below corresponds to adapter instances with the 'Secondary' failover role. Available failover modes may vary based on adapter. For more information on failover role, see [Failover Role](https://aveva-dev.zoominsoftware.io/bundle/adapter-for-opc-ua/page/1227813.html#failover-role).
 
@@ -114,7 +114,7 @@ The failover behavior outlined below corresponds to adapter instances with the '
 | **Warm** | When in Warm failover mode, configured components for the Secondary adapter instance start and connect to the data source but do not collect data from the data source. Since data is not being collected, data is not buffered nor egressed to the data endpoint(s). |
 | **Cold** | When in Cold failover mode, none of the configured components for the Secondary adapter instance start. The adapter does not connect to nor collect data from the data source, and data is not egressed to the data endpoint(s). |
 
-**Example client failover configuration**
+## **Example client failover configuration**
 
 The following is an example of a complete client failover configuration.
 
@@ -144,7 +144,7 @@ The following is an example of a complete client failover configuration.
 
 **Note:**  When On Demand history recovery is required a new AVEVA Adapter instance should be configured to perform the operation. It isn't recommended to use On Demand history recovery on an Adapter instance that participates in a failover pair.
 
-**Query current failover state**
+## **Query current failover state**
 
 You can query the current failover state with the adapter's diagnostics. Follow the instruction below to query the current failover state:
 
@@ -164,7 +164,7 @@ The following is an example of failover state returned from the adapter:
 
 }
 
-**Failover Role**
+## **Failover Role**
 
 The current failover Role is determined by the client failover endpoint. The current failover role is visible by querying the failover state, or by looking at the failover status diagnostics streams. For more information on failover status, see [Failover Status](https://aveva-dev.zoominsoftware.io/bundle/adapter-for-opc-ua/page/1227844.html).
 
@@ -178,11 +178,11 @@ The current failover Role is determined by the client failover endpoint. The cur
 
 When an adapter with a valid client failover configuration registers with an endpoint and it is the only adapter registered in the group, it becomes the Primary adapter instance. If the adapter is not the only adapter registered in the client failover group, the Primary adapter instance is that with the highest FailoverScore value. For more information on FailoverScore, see [Failover Status](https://aveva-dev.zoominsoftware.io/bundle/adapter-for-opc-ua/page/1227844.html).
 
-**Health**
+## **Health**
 
 If the adapter has health endpoints configured, the client failover configuration values Mode and FailoverGroupId are included in the static failover health data. For more information, see [Failover Health](https://aveva-dev.zoominsoftware.io/bundle/adapter-for-opc-ua/page/1227853.html).
 
-**REST URLs**
+## **REST URLs**
 
 | **Relative URL** | **HTTP verb** | **Action** |
 | --- | --- | --- |
